@@ -1,0 +1,203 @@
+{
+ "url": "https://www.myntra.com/",
+ "results": [
+  {
+   "task": {
+    "id": "t1",
+    "goal": "Go to the Personal Care section and filter the results to show only 'Lipstick' from the brand 'Maybelline'.",
+    "start_url": "https://www.myntra.com/personal-care",
+    "success": "The product list displays Maybelline lipsticks.",
+    "stop_before": "login",
+    "features": [
+     "filters",
+     "seat_or_grid_map"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-myntra/t2"
+   },
+   "reference": {
+    "status": "stuck",
+    "answer": "",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8095 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Hyaluron Moisture Shampoo - 1L Rs. 759Rs. 1615(53% OF\"\nel:14 a \"The Face Shop Ceramide Moisturizing Emulsion Rs. 479Rs. 599(\"\nel:15 a \"LOreal Professionnel Absolut Repair Hair Mask-250g Rs. 999\"\nel:16 a \"Lakme Eyeconic Liquid Eyeliner Rs. 165Rs. 325(49% OFF)\"\nel:17 a \"LOreal Total Repair 5 Shampoo 1L Rs. 577Rs. 1409(59% OFF)\"\nel:18 a \"Blue Heaven Bridal Makeup Kit Rs. 479Rs. 1599(70% OFF)\"\nel:19 a \"SWISS BEAUTY Concealer - Light Moyen 03 Rs. 216Rs. 249(13% O\"\nel:20 a \"The Derma co. 5% Vitamin C Oil-Free Daily Face Moisturizer 1\"\nel:21 a \"Vaseline Lip Therapy Tins - Rosy Lips Rs. 214Rs. 320(33% OFF\"\nel:22 a \"GHAR SOAPS Magic Face Wash - 100 ml Rs. 249Rs. 333(25% OFF)\"\nel:23 a \"The Derma co. 10% Vitamin C Face Serum 30ml Rs. 615Rs. 699(1\"\nel:24 a \"Personal Touch Skincare Melakey Radiance Cream 20gm Rs. 449R\"\nel:25 a \"FACES CANADA Strobe Cream - 18ml Rose Gold Rs. 289Rs. 299(3%\"\nel:26 a \"Streax Professional Canvoline Conditioner 240 g Rs. 416Rs. 5\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:28 a \"Insight Cosmetics Foundation - Chai & Chill Rs. 303Rs. 319(5\"\nel:29 a \"The Face Shop Rice & Ceramide Emulsion 150ml Rs. 792Rs. 990(\"\nel:30 a \"FRENCH ESSENCE Men Noir Deodorants - 50 ml Rs. 40Rs. 85(52% \"\nel:31 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 749Rs. 999(2\"\nel:32 a \"Bare Anatomy Anti-Dandruff Hair Conditioner Rs. 379Rs. 449(1\"\nel:33 a \"WROGN Perfume Necklace & Card Holder Rs. 1259Rs. 3599(65% OF\"\nel:34 a \"Vilvah Store Skin Finish Sunscreen - 30 ml Rs. 359Rs. 399(10\"\nel:35 a \"The Derma co. 2% Salicylic Acid Face Was",
+      "thought": "I need to filter the results to show only 'Lipstick' and then filter by the brand 'Maybelline'. I will start by clicking on the 'Lipstick' category.",
+      "action": {
+       "type": "click",
+       "ref": "el:164"
+      },
+      "result": "ok; newly visible: Care - 21044 | items FILTERS CLEAR ALL | Girls CATEGORIES Perfume(24332) Lipstick(21044) | Lipstick(21044) Nail Polish(17163) Attar(13360) | Mask and Peel(10820) | and Nail Care(10635) | Bindi(10067) Hair Extension(8983) | more BRAND PERPAA...",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(2) > label",
+      "t": 1793925096.2103703,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Lipstick(21084)\"",
+      "focus_px": null
+     },
+     {
+      "i": 1,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Wine Rs. 197Rs. 329(40%\"\nel:228 a \"Maybelline",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to filter the results by the brand 'Maybelline'. I will look for the brand filter section.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925103.3636584,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 2,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 500–1300 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Wine Rs. 197Rs. 329(40%\"\nel:228 a \"Maybell",
+      "thought": "I have already navigated to the Lipstick category. Now I need to filter the results by the brand 'Maybelline'. I can see a '+ 445 more' option under the BRAND section, which likely contains Maybelline.",
+      "action": {
+       "type": "click",
+       "ref": "el:171"
+      },
+      "result": "ok; newly visible: 178 more #ABCDEFGHIJKLMNOPQRSTUVWXYZ A Attar(13360) After Shave Lotion and Balm(173) B Bindi(10067) Body Cream and Lotion(4551) Body Wash and Shower Gel(2186) Body Wax and Essentials(1762) Blush(1532) Brush Set(1420) Body Mist and Spray(109...",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > div:nth-of-type(2)",
+      "t": 1793925108.9188783,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "div \"+ 178 more\"",
+      "focus_px": null
+     },
+     {
+      "i": 3,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 241–1041 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Wine",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the brand filters are visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925114.1957018,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 4,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 741–1541 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Wine",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the brand filter is visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925119.5525389,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 5,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 1241–2041 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Win",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the brand filters are visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925125.6461353,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 6,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 1741–2541 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Win",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the brand filters are visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925131.1425502,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 7,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 2241–3041 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Win",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the brand filters are visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925136.449308,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 8,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 2741–3541 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:263 input/text \"Search categories\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"FACES CANADA Comfy Matte Wow Lipstick-07 Rs. 249Rs. 299(17% \"\nel:208 a \"Maybelline Liquid Lipstick - Witty Rs. 509Rs. 849(40% OFF)\"\nel:27 a \"ETUDE Dear Darling Water Tint - 4 Rs. 405Rs. 450(10% OFF)\"\nel:209 a \"Maybelline Super Stay Matte Ink - Artist Rs. 389Rs. 749(48% \"\nel:210 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 203Rs. 329(38%\"\nel:211 a \"Maybelline Super Stay Matte - Founder 115 Rs. 389Rs. 749(48%\"\nel:212 a \"Maybelline Super Stay Lipstick - 50 Rs. 415Rs. 799(48% OFF)\"\nel:213 a \"FACES CANADA Comfy Matte Liquid Lipstick-30 Rs. 327Rs. 449(2\"\nel:214 a \"MARS Creamy Matte Lipstick - 09 Rs. 195Rs. 199(2% OFF)\"\nel:215 a \"Maybelline Super Stay Matte - Transformer Rs. 389Rs. 749(48%\"\nel:216 a \"ETUDE Fixing Lip Tint Mini - 05 Rs. 552Rs. 650(15% OFF)\"\nel:217 a \"ETUDE Dear Darling Water Tint - 02 Rs. 405Rs. 450(10% OFF)\"\nel:218 a \"Lakme Xtraordin-airy Lip Mousse Rs. 301Rs. 700(57% OFF)\"\nel:219 a \"ETUDE Dear Darling Water Tint - 08 Rs. 405Rs. 450(10% OFF)\"\nel:220 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 389Rs. 749(48% \"\nel:221 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 298Rs. 595(50% OFF)\"\nel:222 a \"Typsy Beauty Cocoa Peptide Velvet Lipstick Rs. 555Rs. 649(14\"\nel:223 a \"Mamaearth Creamy Matte Rose Nude Rs. 239Rs. 399(40% OFF)\"\nel:224 a \"Lakme Powerplay Primer Lipstick Rs. 279Rs. 650(57% OFF)\"\nel:225 a \"Maybelline Superstay Teddy Tint LipColour Rs. 524Rs. 749(30%\"\nel:226 a \"Maybelline Super Stay Matte - Ambitious Rs. 352Rs. 749(53% O\"\nel:227 a \"Maybelline Creamy Matte - 695 Divine Win",
+      "thought": "I have already navigated to the Lipstick category within Personal Care. Now I need to find the brand filter for 'Maybelline'. I will scroll down to see if the Brand filter is visible.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": null,
+      "t": 1793925141.8278365,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     }
+    ]
+   },
+   "profiles": {},
+   "findings": [],
+   "invalid": "reference agent could not complete the task (stuck: kept repeating the same actions with the same results (no progress))"
+  }
+ ],
+ "usage": {
+  "nav": {
+   "calls": 1445,
+   "input": 4021866,
+   "output": 113859,
+   "cached": 0
+  },
+  "endpoints": {
+   "openrouter_paid": 1445
+  }
+ },
+ "model_fallbacks": []
+}

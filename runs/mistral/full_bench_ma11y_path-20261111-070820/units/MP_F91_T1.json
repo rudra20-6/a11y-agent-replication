@@ -1,0 +1,136 @@
+{
+ "task": {
+  "id": "MP_F91_T1",
+  "goal": "Search for one-way flights from Hyderabad to Delhi departing on Wednesday 21 October 2026 for 1 passenger, and find out how many flights are available.",
+  "start_url": "http://127.0.0.1:10827/#/flights"
+ },
+ "reference": {
+  "status": "error",
+  "answer": "",
+  "tool_error": true,
+  "steps": [
+   {
+    "i": 0,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\"\nel:8 combobox/text \"To\"\nel:9 button/button \"Departure date: choose a date\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\n\nVISIBLE TEXT:\nSkip to main content BenchBook Flights Bus seats SIP calculator Shop Cart: 0 items Search flights From To Departure date Departure date: choose a date Passengers Search flights BenchBook is a test application for accessibility research.",
+    "thought": "I need to select the departure date first, as the other fields are not mandatory. I will click on the departure date field to open the date picker.",
+    "action": {
+     "type": "click",
+     "ref": "el:9"
+    },
+    "result": "ok; newly visible: accessibility research. ‹ October 2026 › Su Mo Tu We Th Fr Sa 1 – 2 – 3 – 4 – 5 – 6 – 7 – 8 – 9 – 10 – 11 – 12 ₹4,400 13 ₹3,500 14 ₹4,900 15 ₹4,000 16 ₹3,100 lowest 17 ₹4,500 18 ₹3,600 19 ₹5,000 20 ₹4,100 21 ₹3,200 22 ₹4,600 23 ₹3,700 24 ₹5...",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": "#date",
+    "t": 1794374877.3127913,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": "button \"Departure date: choose a date\"",
+    "focus_px": null
+   },
+   {
+    "i": 1,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\"\nel:8 combobox/text \"To\"\nel:9 button/button \"Departure date: choose a date\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\nel:13 button/button \"Previous month\"\nel:14 button/button \"Next month\"\nel:15 gridcell \"Thursday, 1 October 2026, unavailable\" [disabled]\nel:16 gridcell \"Friday, 2 October 2026, unavailable\" [disabled]\nel:17 gridcell \"Saturday, 3 October 2026, unavailable\" [disabled]\nel:18 gridcell \"Sunday, 4 October 2026, unavailable\" [disabled]\nel:19 gridcell \"Monday, 5 October 2026, unavailable\" [disabled]\nel:20 gridcell \"Tuesday, 6 October 2026, unavailable\" [disabled]\nel:21 gridcell \"Wednesday, 7 October 2026, unavailable\" [disabled]\nel:22 gridcell \"Thursday, 8 October 2026, unavailable\" [disabled]\nel:23 gridcell \"Friday, 9 October 2026, unavailable\" [disabled]\nel:24 gridcell \"Saturday, 10 October 2026, unavailable\" [disabled]\nel:25 gridcell \"Sunday, 11 October 2026, unavailable\" [disabled]\nel:12 gridcell \"Monday, 12 October 2026, fare ₹4,400\"\nel:26 gridcell \"Tuesday, 13 October 2026, fare ₹3,500\"\nel:27 gridcell \"Wednesday, 14 October 2026, fare ₹4,900\"\nel:28 gridcell \"Thursday, 15 October 2026, fare ₹4,000\"\nel:29 gridcell \"Friday, 16 October 2026, fare ₹3,100, lowest fare\"\nel:30 gridcell \"Saturday, 17 October 2026, fare ₹4,500\"\nel:31 gridcell \"Sunday, 18 October 2026, fare ₹3,600\"\nel:32 gridcell \"Monday, 19 October 2026, fare ₹5,000\"\nel:33 gridcell \"Tuesday, 20 October 2026, fare ₹4,100\"\nel:34 gridcell \"Wednesday, 21 October 2026, fare ₹3,200\"\nel:35 gridcell \"Thursday, 22 October 2026, fare ₹4,600\"\nel:36 gridcell \"Friday, 23 October 2026, fare ₹3,700\"\nel:37 gridcell \"Saturday, 24 October 2026, fare ₹5,100\"\nel:38 gridcell \"Sunday, 25 ",
+    "thought": "I need to select the departure date as Wednesday, 21 October 2026, and then search for flights. I will click on the date first.",
+    "action": {
+     "type": "click",
+     "ref": "el:34"
+    },
+    "result": "ok; newly visible: Departure date: 21 Oct 2026",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": "div > table > tbody > tr:nth-of-type(4) > td:nth-of-type(4)",
+    "t": 1794374882.0933707,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": "gridcell \"Wednesday, 21 October 2026, fare ₹3,200\"",
+    "focus_px": null
+   },
+   {
+    "i": 2,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\"\nel:8 combobox/text \"To\"\nel:9 button/button \"Departure date: 21 Oct 2026\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\n\nVISIBLE TEXT:\nSkip to main content BenchBook Flights Bus seats SIP calculator Shop Cart: 0 items Search flights From To Departure date Departure date: 21 Oct 2026 Passengers Search flights BenchBook is a test application for accessibility research.",
+    "thought": "I need to specify the departure and arrival locations and then search for flights.",
+    "action": {
+     "type": "type",
+     "ref": "el:7",
+     "text": "Hyderabad"
+    },
+    "result": "ok; the field now contains \"Hyderabad\"; newly visible: flights From Hyderabad (HYD)",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": "#from",
+    "t": 1794374885.050029,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": "combobox \"From\"",
+    "focus_px": null
+   },
+   {
+    "i": 3,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\" value=Hyderabad\nel:46 option \"Hyderabad (HYD)\" value=0\nel:8 combobox/text \"To\"\nel:9 button/button \"Departure date: 21 Oct 2026\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\n\nVISIBLE TEXT:\nSkip to main content BenchBook Flights Bus seats SIP calculator Shop Cart: 0 items Search flights From Hyderabad (HYD) To Departure date Departure date: 21 Oct 2026 Passengers Search flights BenchBook is a test application for accessibility research.",
+    "thought": "I need to specify the destination as Delhi and then search for flights.",
+    "action": {
+     "type": "type",
+     "ref": "el:8",
+     "text": "Delhi"
+    },
+    "result": "ok; the field now contains \"Delhi\"; newly visible: From To Delhi (DEL)",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": "#to",
+    "t": 1794374894.397288,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": "combobox \"To\"",
+    "focus_px": null
+   },
+   {
+    "i": 4,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\" value=Hyderabad (HYD)\nel:8 combobox/text \"To\" value=Delhi\nel:47 option \"Delhi (DEL)\" value=0\nel:9 button/button \"Departure date: 21 Oct 2026\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\n\nVISIBLE TEXT:\nSkip to main content BenchBook Flights Bus seats SIP calculator Shop Cart: 0 items Search flights From To Delhi (DEL) Departure date Departure date: 21 Oct 2026 Passengers Search flights BenchBook is a test application for accessibility research.",
+    "thought": "I need to search for the flights with the current settings. I will click the 'Search flights' button.",
+    "action": {
+     "type": "click",
+     "ref": "el:11"
+    },
+    "result": "ok; newly visible: Search flights 6 flights found from Hyderabad to Delhi on 21 Oct 2026. Choose a fare IndiGo 6E 201, 06:10 to 08:25, ₹3,350 (cheapest) Air India AI 218, 08:10 to 11:25, ₹4,310 Akasa Air QP 235, 10:10 to 12:25, ₹4,190 SpiceJet SG 252, 12:10 t...",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": "#main > section > form > button",
+    "t": 1794374959.8524396,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": "button \"Search flights\"",
+    "focus_px": null
+   },
+   {
+    "i": 5,
+    "observation": "URL: http://127.0.0.1:10827/#/flights\nTITLE: Search flights – BenchBook\nPAGE POSITION: showing 0–800 px of a 955 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"BenchBook\"\nel:3 a \"Flights\"\nel:4 a \"Bus seats\"\nel:5 a \"SIP calculator\"\nel:6 a \"Shop\"\nel:7 combobox/text \"From\" value=Hyderabad (HYD)\nel:8 combobox/text \"To\" value=Delhi (DEL)\nel:9 button/button \"Departure date: 21 Oct 2026\"\nel:10 input/number \"Passengers\" value=1\nel:11 button/submit \"Search flights\"\nel:48 input/radio \"IndiGo 6E 201, 06:10 to 08:25, ₹3,350 (cheapest)\" value=6E201\nel:49 input/radio \"Air India AI 218, 08:10 to 11:25, ₹4,310\" value=AI218\nel:50 input/radio \"Akasa Air QP 235, 10:10 to 12:25, ₹4,190\" value=QP235\nel:51 input/radio \"SpiceJet SG 252, 12:10 to 15:25, ₹4,070\" value=SG252\nel:52 input/radio \"IndiGo 6E 269, 14:10 to 16:25, ₹3,950\" value=6E269\nel:53 input/radio \"Air India AI 286, 16:10 to 19:25, ₹3,830\" value=AI286\nel:54 button/submit \"Continue to passenger details\"\n\nVISIBLE TEXT:\nSkip to main content BenchBook Flights Bus seats SIP calculator Shop Cart: 0 items Search flights From To Departure date Departure date: 21 Oct 2026 Passengers Search flights 6 flights found from Hyderabad to Delhi on 21 Oct 2026. Choose a fare IndiGo 6E 201, 06:10 to 08:25, ₹3,350 (cheapest) Air India AI 218, 08:10 to 11:25, ₹4,310 Akasa Air QP 235, 10:10 to 12:25, ₹4,190 SpiceJet SG 252, 12:10 to 15:25, ₹4,070 IndiGo 6E 269, 14:10 to 16:25, ₹3,950 Air India AI 286, 16:10 to 19:25, ₹3,830 Continue to passenger details BenchBook is a test application for accessibility research.",
+    "thought": "I need to check if there are more flights available. I will scroll down to see if there are additional options.",
+    "action": {
+     "type": "scroll",
+     "dir": "down"
+    },
+    "result": "ok; nothing visible changed",
+    "url": "http://127.0.0.1:10827/#/flights",
+    "target_selector": null,
+    "t": 1794374967.7849836,
+    "fallback": null,
+    "problem": null,
+    "probe": null,
+    "target": null,
+    "focus_px": null
+   }
+  ]
+ },
+ "profiles": {},
+ "findings": [],
+ "invalid": "not tested: the model/API failed during the reference run: model call failed after 8 tries: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metada",
+ "tool_errors": [
+  {
+   "profile": "REF",
+   "step": 6,
+   "where": "agent",
+   "error": "model call failed after 8 tries: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'mistralai/mistral-small-3.2-24b-instruct is temporarily rate-limit"
+  }
+ ],
+ "secs": 774
+}

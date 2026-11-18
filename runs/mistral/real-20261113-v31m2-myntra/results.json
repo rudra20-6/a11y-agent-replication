@@ -1,0 +1,671 @@
+{
+ "url": "https://www.myntra.com/",
+ "results": [
+  {
+   "task": {
+    "id": "t1",
+    "goal": "Go to the Personal Care section and filter the results to show only 'Lipstick' from the brand 'Maybelline'.",
+    "start_url": "https://www.myntra.com/personal-care",
+    "success": "The product list displays Maybelline lipsticks.",
+    "stop_before": "login",
+    "features": [
+     "filters",
+     "seat_or_grid_map"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-myntra/t2"
+   },
+   "reference": {
+    "status": "max_steps",
+    "answer": "",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:14 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:15 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:16 a \"Dermatouch 2% Kojic Acid Cream-30 gm Rs. 179Rs. 299(40% OFF)\"\nel:17 a \"Plum Kumkumadi Oil Moisturizer Rs. 352Rs. 415(15% OFF)\"\nel:18 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:19 a \"Plum Niacinamide Toner 150 ml Rs. 374Rs. 440(15% OFF)\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:21 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:22 a \"Maybelline Liquid Foundation - Ivory 115 Rs. 263Rs. 329(20% \"\nel:23 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:24 a \"NEW ADONI Nail polish - PINK METALLICA Rs. 84Rs. 109(23% OFF\"\nel:25 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:26 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:27 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:28 a \"Renee Kohl Pencil - 0.8 g - Black Rs. 250Rs. 275(9% OFF)\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:30 a \"MARS Dance Of Joy Eyeshadow Palette Rs. 257Rs. 299(14% OFF)\"\nel:31 a \"ETUDE Dear Darling Water Tint - 4 Rs. 427Rs. 450(5% OFF)\"\nel:32 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:33 a \"KOKILA Hair Color Shampoo Rs. 861Rs. 1499(43% OFF)\"\nel:34 a \"haikai 9 Pm Eau de Parfum 100 ml Rs. 1240Rs. 2499(50% OFF)\"\nel:35 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\nel:36 a \"FRENCH ES",
+      "thought": "The task requires filtering the Personal Care section to show only 'Lipstick' from the brand 'Maybelline'. First, I need to locate and click the 'Lipstick' category in the FILTERS section under CATEGORIES.",
+      "action": {
+       "type": "click",
+       "ref": "el:164"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(2) > label",
+      "t": 1794525405.8081272,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Lipstick(22896)\"",
+      "focus_px": null
+     },
+     {
+      "i": 1,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:14 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:15 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:16 a \"Dermatouch 2% Kojic Acid Cream-30 gm Rs. 179Rs. 299(40% OFF)\"\nel:17 a \"Plum Kumkumadi Oil Moisturizer Rs. 352Rs. 415(15% OFF)\"\nel:18 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:19 a \"Plum Niacinamide Toner 150 ml Rs. 374Rs. 440(15% OFF)\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:21 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:22 a \"Maybelline Liquid Foundation - Ivory 115 Rs. 263Rs. 329(20% \"\nel:23 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:24 a \"NEW ADONI Nail polish - PINK METALLICA Rs. 84Rs. 109(23% OFF\"\nel:25 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:26 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:27 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:28 a \"Renee Kohl Pencil - 0.8 g - Black Rs. 250Rs. 275(9% OFF)\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:30 a \"MARS Dance Of Joy Eyeshadow Palette Rs. 257Rs. 299(14% OFF)\"\nel:31 a \"ETUDE Dear Darling Water Tint - 4 Rs. 427Rs. 450(5% OFF)\"\nel:32 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:33 a \"KOKILA Hair Color Shampoo Rs. 861Rs. 1499(43% OFF)\"\nel:34 a \"haikai 9 Pm Eau de Parfum 100 ml Rs. 1240Rs. 2499(50% OFF)\"\nel:35 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% ",
+      "thought": "The current page shows Personal Care items filtered to Lipstick, but the brand filter is not applied yet. I need to open the BRAND filter section and select 'Maybelline' to complete the task.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Care - 1897 | Women CATEGORIES Lipstick(1897) Lip Oil(605) Lip Gloss(483) Lip Balm(172) Mascara(1) | more PRICE ₹300 | ₹300 - ₹800+ | COLOR Pink (1353) | (1353) Red (312) Peach (62) Orange (52) | (52) Maroon (49) Yellow (36) Green (10) | (1...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525418.2663949,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8967)\"",
+      "focus_px": null
+     },
+     {
+      "i": 2,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8165 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:207 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:208 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:209 a \"Aylily Gel Lipstick- 5 g Rs. 351Rs. 499(30% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:211 a \"Aylily Long Lasting Lipstick - 3.5 g Rs. 351Rs. 499(30% OFF)\"\nel:212 a \"Aylily Jelly Lipstick - 5 g - Pink Rs. 499\"\nel:213 a \"Aylily Bullet Lipstick - 3.6 - Pink Rs. 499\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:215 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:216 a \"Aylily Plumping Lipstick-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:217 a \"Aylily Color Changing Lipstick-3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:219 a \"Aylily Gel Lipstick Shade 39 Rs. 499\"\nel:220 a \"Aylily Gel Lipstick Shade 41 Rs. 499\"\nel:221 a \"Aylily Gel Lipstick Shade 026 Rs. 599\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:223 a \"Aylily Gel Lipstick Shade 80 Rs. 499\"\nel:224 a \"Aylily Long Lasting Lipstick- 18 g Rs. 499\"\nel:225 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:227 a \"Aylily Color-Changing Lipstick- 3.6 g Rs. 499\"\nel:228 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:229 a \"Aylily Long-Lasting Lipsticks-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:230 a \"Maybelline Serum Bullet Lipstick - 012 Rs. 599\"\nel:231 a \"Aylily Long-Lasting Lipstick",
+      "thought": "The current page shows Lipstick results filtered by brand 'Aylily'. Need to change the brand filter to 'Maybelline' while keeping the Lipstick category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:174"
+      },
+      "result": "ok; newly visible: Care - 3250 | Women CATEGORIES Lipstick(3250) Nail Polish(787) | Lip Gloss(483) Bindi(226) Beauty Gift Set(199) | Lip Balm(172) Sindoor(92) + 5 more | more PRICE ₹0 | ₹0 - ₹700+ | COLOR Pink (1646) | (1646) Red (530) Multi (306) Maroon (161...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(2) > label",
+      "t": 1794525428.858698,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"PERPAA(1353)\"",
+      "focus_px": null
+     },
+     {
+      "i": 3,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:265 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:266 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:267 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:269 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:270 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:272 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:273 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:207 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:208 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:274 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:275 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:276 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:277 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:278 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:279 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current URL shows filters for 'Brand:Aylily,PERPAA' and 'Categories:Lipstick'. I need to remove the brand filter for Aylily and PERPAA, then add the brand filter for Maybelline while keeping the Lipstick category filter.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Personal Care Women Personal Care Personal Care | Care - 1353 | ALL CATEGORIES Lipstick(1353) | Set(199) Sindoor(92) Eyeliner(43) Makeup Pouch(29) Kajal(17) | Kajal(17) + 1 | ₹0 - ₹500+ | ₹500+ COLOR Multi (305) | (305) Pink (293) | (293) R...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525439.1924362,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 4,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:312 a \"Personal Care\"\nel:313 a \"Women Personal Care\"\nel:11 button \"\"\nel:12 button \"\"\nel:265 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:266 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:267 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:269 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:270 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:272 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:273 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:274 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:275 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:276 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:277 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:278 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:279 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs. 747(66% OFF)\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:280 a \"PERPAA Sensational Set Of 3 Lipsticks Rs. 276Rs. 747(63% OFF\"\nel:",
+      "thought": "The current page shows Personal Care items filtered to brand PERPAA and category Lipstick. I need to change the brand filter to Maybelline while keeping Lipstick as the category.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 3250 | CLEAR ALL Men Women | Women CATEGORIES Lipstick(3250) | Nail Polish(787) Lip Oil(605) Lip Gloss(483) | Gift Set(199) Lip Balm(172) | Sindoor(92) + 5 | ₹0 - ₹700+ | ₹700+ COLOR Pink (1646) Red (530) | (530) Multi (306) Maroon (...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525449.115268,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 5,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:265 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:266 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:267 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:269 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:270 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:272 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:273 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:317 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:318 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:274 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:275 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:276 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:277 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:278 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:279 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current URL shows the Personal Care section with Lipstick category and brands Aylily and PERPAA selected. Need to deselect Aylily and select Maybelline from the brand filters.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now unticked; newly visible: Personal Care Women Personal Care Personal Care | Care - 1353 | ALL CATEGORIES Lipstick(1353) | Set(199) Sindoor(92) Eyeliner(43) Makeup Pouch(29) Kajal(17) | Kajal(17) + 1 | ₹0 - ₹500+ | ₹500+ COLOR Multi (305) | (305) Pink (293) | (293) R...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(1) > label",
+      "t": 1794525459.2351346,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 6,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:323 a \"Personal Care\"\nel:324 a \"Women Personal Care\"\nel:11 button \"\"\nel:12 button \"\"\nel:265 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:266 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:267 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:269 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:270 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:272 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:273 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:274 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:275 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:276 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:277 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:278 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:279 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs. 747(66% OFF)\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:280 a \"PERPAA Sensational Set Of 3 Lipsticks Rs. 276Rs. 747(63% OFF\"\nel:",
+      "thought": "The current URL shows results filtered by brand 'PERPAA' and category 'Lipstick'. I need to adjust the brand filter to 'Maybelline' while keeping the 'Lipstick' category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 3250 | CLEAR ALL Men Women | Women CATEGORIES Lipstick(3250) | Nail Polish(787) Lip Oil(605) Lip Gloss(483) | Gift Set(199) Lip Balm(172) | Sindoor(92) + 5 | ₹0 - ₹700+ | ₹700+ COLOR Pink (1646) Red (530) | (530) Multi (306) Maroon (...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525468.7683594,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 7,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:265 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:266 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:267 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:210 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:269 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:270 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:272 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:273 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:218 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:328 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:329 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:274 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:222 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:275 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:276 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:277 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:278 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:279 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current URL shows filters for brands Aylily and PERPAA, but not Maybelline. The task requires filtering to show only Lipstick from Maybelline. I need to remove the current brand filters and add Maybelline as the brand filter.",
+      "action": {
+       "type": "click",
+       "ref": "el:257"
+      },
+      "result": "ok; newly visible: Care - 272576 | Men Women Boys Girls | Girls CATEGORIES Perfume(24148) Lipstick(22859) | Lipstick(22859) Nail Polish(17112) Attar(13473) Mask and Peel(10862) Bindi(10070) Nail Art and Nail Care(9981) Hair Extension(9077) | Extension(9077) +...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "t": 1794525478.619299,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "span \"CLEAR ALL\"",
+      "focus_px": null
+     },
+     {
+      "i": 8,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:334 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:335 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:336 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:337 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:338 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:339 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:340 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:341 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:342 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:343 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:344 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:345 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:346 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:347 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:348 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:349 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:350 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:351 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:352 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:353 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:354 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:355 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:356 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\n",
+      "thought": "The task requires filtering Personal Care results to show only 'Lipstick' from the brand 'Maybelline'. The current page shows Personal Care items, but no filters are applied yet. I need to open the BRAND filter and select 'Maybelline', then open the CATEGORIES filter and select 'Lipstick'.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3Alorshel",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525486.538607,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8961)\"",
+      "focus_px": null
+     },
+     {
+      "i": 9,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3Alorshel\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8139 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:334 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:335 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:336 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:337 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:338 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:339 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:340 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:341 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:342 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:343 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:344 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:345 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:346 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:347 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:348 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:349 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:350 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:351 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:352 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:353 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:354 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:355 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:356 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449",
+      "thought": "The current page shows 'Personal Care' filtered by brand 'Lorshel'. I need to change the brand filter to 'Maybelline' and ensure the category is set to 'Lipstick'.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now unticked; newly visible: Care - 272576 | Men Women Boys Girls | Girls CATEGORIES Perfume(24148) Lipstick(22859) Nail Polish(17112) Attar(13473) | Mask and Peel(10862) Bindi(10070) Nail Art | Art and Nail Care(9981) | Care(9981) Hair Extension(9077) | Extension(9077...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525498.9538271,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8961)\"",
+      "focus_px": null
+     },
+     {
+      "i": 10,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:386 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:387 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:388 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:389 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:390 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:391 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:392 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:341 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:393 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:394 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:395 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:396 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:397 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:398 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:399 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:400 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:350 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:401 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:402 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:353 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:403 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:404 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:405 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\n",
+      "thought": "The task requires filtering to show only 'Lipstick' from the brand 'Maybelline'. The current page shows the Personal Care section with no filters applied. I need to open the BRAND filter and select 'Maybelline' to filter the results.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 8961 | items FILTERS CLEAR ALL | Mask and Peel(5347) Body Cream | Cream and Lotion(1437) | Lotion(1437) Hair Colour(1224) Brush Set(166) Face Wash and Cleanser(146) Sunscreen(131) Sheet Masks(110) Facial Wipes and Tissues(86) | Tissu...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3Alorshel",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525509.864971,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8961)\"",
+      "focus_px": null
+     },
+     {
+      "i": 11,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3Alorshel\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8139 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:435 a \"lorshel Hair Color Comb - 20 g - Black Rs. 212Rs. 401(47% OF\"\nel:436 a \"lorshel 3Pcs Peel Off Mask With Brush Rs. 227Rs. 499(55% OFF\"\nel:437 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 447(53% OFF)\"\nel:438 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 450(53% OFF)\"\nel:439 a \"BBLUNT Hot Shot Heat Protection Mist Rs. 439Rs. 499(12% OFF)\"\nel:440 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 457(54% OFF)\"\nel:441 a \"lorshel 2Pcs Massage Gel - 100 g Each Rs. 259Rs. 715(64% OFF\"\nel:442 a \"lorshel Ginger Footpads -1 Pcs Rs. 94Rs. 499(81% OFF)\"\nel:443 a \"lorshel 2Pcs Hair Colour - 250 ml Each Rs. 345Rs. 799(57% OF\"\nel:444 a \"lorshel Fruit Vinegar Hair Color-250ml Rs. 339Rs. 799(58% OF\"\nel:445 a \"lorshel Cyperus Rotundus Oil - 60 ml Rs. 273Rs. 599(54% OFF)\"\nel:446 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 339Rs. 626(46% OFF\"\nel:447 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 601(43% OFF\"\nel:341 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:448 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 666(48% OFF\"\nel:449 a \"lorshel Hair Root Touch Up Powder -4g Rs. 239Rs. 590(59% OFF\"\nel:450 a \"BBLUNT Hot Shot Hold Hair Spray-300ml Rs. 545Rs. 599(9% OFF)\"\nel:451 a \"lorshel Hair Color Comb - 20 g - Black Rs. 209Rs. 404(48% OF\"\nel:452 a \"lorshel Gel Hair Color - 500 ml Rs. 345Rs. 799(57% OFF)\"\nel:350 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:453 a \"lorshel Collagen Peel Off Mask - 75 g Rs. 228Rs. 499(54% OFF\"\nel:454 a \"lorshel Hairline Shadow Powder - 4 g Rs. 243Rs. 584(58% OFF)\"\n",
+      "thought": "The current page shows Personal Care items filtered by the brand 'lorshel'. The task requires filtering for 'Lipstick' from the brand 'Maybelline'. I need to navigate to the Personal Care section and apply the correct filters for both category and brand.",
+      "action": {
+       "type": "click",
+       "ref": "el:10"
+      },
+      "result": "ok; newly visible: Wishlist Bag 1 2 3 | 3 4 SHOP BY CATEGORY | ₹300 OFF ONLINE SHOPPING Men Women Kids Home Beauty Genz Gift Cards Myntra Insider USEFUL LINKS Blog Careers Site Map Corporate Information Whitehat Cleartrip Myntra Global CUSTOMER POLICIES Conta...",
+      "url": "https://www.myntra.com/?src=bc",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(1) > div > ul > li:nth-of-type(1) > a",
+      "t": 1794525522.1766913,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Home\"",
+      "focus_px": null
+     },
+     {
+      "i": 12,
+      "observation": "URL: https://www.myntra.com/?src=bc\nTITLE: Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra\nPAGE POSITION: showing 0–800 px of a 6421 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 button/submit \"1\"\nel:11 button/submit \"2\"\nel:12 button/submit \"3\"\nel:13 button/submit \"4\"\nel:14 a \"\"\nel:15 a \"\"\nel:16 a \"\"\nel:17 a \"\"\nel:18 a \"\"\nel:19 a \"\"\nel:20 a \"\"\nel:21 a \"\"\nel:22 a \"\"\nel:23 a \"\"\nel:24 a \"\"\nel:25 a \"\"\nel:26 a \"\"\nel:27 a \"\"\nel:28 a \"\"\nel:29 a \"\"\nel:30 a \"\"\nel:31 a \"\"\nel:32 a \"\"\nel:33 a \"\"\nel:34 a \"\"\nel:35 a \"\"\nel:36 a \"\"\nel:37 a \"\"\nel:38 a \"\"\nel:39 a \"\"\nel:40 a \"\"\nel:41 a \"\"\nel:42 a \"\"\nel:43 a \"\"\nel:44 a \"\"\nel:45 a \"\"\nel:46 a \"\"\nel:47 a \"\"\nel:48 a \"\"\nel:49 a \"ONLINE SHOPPING\"\nel:50 a \"Men\"\nel:51 a \"Women\"\nel:52 a \"Kids\"\nel:53 a \"Home\"\nel:54 a \"Beauty\"\nel:55 a \"Genz\"\nel:56 a \"Gift Cards\"\nel:57 a \"Myntra Insider\"\nel:58 a \"Blog\"\nel:59 a \"Careers\"\nel:60 a \"Site Map\"\nel:61 a \"Corporate Information\"\nel:62 a \"Whitehat\"\nel:63 a \"Cleartrip\"\nel:64 a \"Myntra Global\"\nel:65 a \"Contact Us\"\nel:66 a \"FAQ\"\nel:67 a \"T&C\"\nel:68 a \"Terms Of Use\"\nel:69 a \"Track Orders\"\nel:70 a \"Shipping\"\nel:71 a \"Cancellation\"\nel:72 a \"Privacy policy\"\nel:73 a \"Grievance Redressal\"\nel:74 a \"FSSAI Food Safety Connect app\"\nel:75 a \"\"\nel:76 a \"Makeup\"\nel:77 a \"Dresses For Girls\"\nel:78 a \"T-Shirts\"\nel:79 a \"Sandals\"\nel:80 a \"Headphones\"\nel:81 a \"Babydolls\"\nel:82 a \"Blazers For Men\"\nel:83 a \"Handbags\"\nel:84 a \"Ladies Watches\"\nel:85 a \"Bags\"\nel:86 a \"Sport Shoes\"\nel:87 a \"Reebok Shoes\"\nel:88 a \"Puma Shoes\"\nel:89 a \"Boxers\"\nel:90 a \"Wallets\"\nel:91 a \"Tops\"\nel:92 a \"Earrings\"\nel:93 a \"Fastrack Watches\"\nel:94 a \"Kurtis\"\nel:95 a \"Nike\"\nel:96 a \"Smart Watches\"\nel:97 a \"Titan Watches\"\nel:98 a \"Designer Blouse\"\nel:99 a \"Gowns\"\nel:100 a \"Rings\"\nel:101 a \"Cricket Shoes\"\nel:102 a \"Forever 21\"\nel:103 a \"Eye Makeup\"\nel:104 a \"Photo Frames\"\nel:105",
+      "thought": "The task requires navigating to the Personal Care section and filtering for 'Lipstick' from the brand 'Maybelline'. The current page is the homepage, so I need to find and click the Personal Care category link.",
+      "action": {
+       "type": "click",
+       "ref": "el:54"
+      },
+      "result": "ok; newly visible: Wishlist Bag Home Personal Care Personal Care - 272576 items FILTERS Men Women Boys Girls CATEGORIES Perfume(24148) Lipstick(22859) Nail Polish(17112) Attar(13473) Mask and Peel(10862) Bindi(10070) Nail Art and Nail Care(9981) Hair Extensio...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#web-footerMount > div > footer > div > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "t": 1794525532.8679671,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Beauty\"",
+      "focus_px": null
+     },
+     {
+      "i": 13,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:14 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:15 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:16 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:17 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:18 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:19 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:21 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:22 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:23 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:24 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:25 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:26 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:27 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:28 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:30 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:31 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:32 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:33 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:34 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:35 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\nel:36 a \"Maybelline Liq",
+      "thought": "The task requires filtering Personal Care results to show only 'Lipstick' from the brand 'Maybelline'. The current page shows Personal Care items, but no filters are applied yet. I need to open the BRAND filter section and select 'Maybelline'.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Care - 8961 | items FILTERS CLEAR ALL | Mask and Peel(5347) Body Cream | Cream and Lotion(1437) | Lotion(1437) Hair Colour(1224) Brush Set(166) Face Wash and Cleanser(146) Sunscreen(131) Sheet Masks(110) Facial Wipes and Tissues(86) | Tissu...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3Alorshel",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525544.2928848,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8961)\"",
+      "focus_px": null
+     },
+     {
+      "i": 14,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3Alorshel\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8139 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:208 a \"lorshel Hair Color Comb - 20 g - Black Rs. 212Rs. 401(47% OF\"\nel:209 a \"lorshel 3Pcs Peel Off Mask With Brush Rs. 227Rs. 499(55% OFF\"\nel:210 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 447(53% OFF)\"\nel:211 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 450(53% OFF)\"\nel:212 a \"BBLUNT Hot Shot Heat Protection Mist Rs. 439Rs. 499(12% OFF)\"\nel:213 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 457(54% OFF)\"\nel:214 a \"lorshel 2Pcs Massage Gel - 100 g Each Rs. 259Rs. 715(64% OFF\"\nel:215 a \"lorshel Ginger Footpads -1 Pcs Rs. 94Rs. 499(81% OFF)\"\nel:216 a \"lorshel 2Pcs Hair Colour - 250 ml Each Rs. 345Rs. 799(57% OF\"\nel:217 a \"lorshel Fruit Vinegar Hair Color-250ml Rs. 339Rs. 799(58% OF\"\nel:218 a \"lorshel Cyperus Rotundus Oil - 60 ml Rs. 273Rs. 599(54% OFF)\"\nel:219 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 339Rs. 626(46% OFF\"\nel:220 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 601(43% OFF\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:221 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 666(48% OFF\"\nel:222 a \"lorshel Hair Root Touch Up Powder -4g Rs. 239Rs. 590(59% OFF\"\nel:223 a \"BBLUNT Hot Shot Hold Hair Spray-300ml Rs. 545Rs. 599(9% OFF)\"\nel:224 a \"lorshel Hair Color Comb - 20 g - Black Rs. 209Rs. 404(48% OF\"\nel:225 a \"lorshel Gel Hair Color - 500 ml Rs. 345Rs. 799(57% OFF)\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:226 a \"lorshel Collagen Peel Off Mask - 75 g Rs. 228Rs. 499(54% OFF\"\nel:227 a \"lorshel Hairline Shadow Powder - 4 g Rs. 243Rs. 584(58% OFF)\"\nel",
+      "thought": "The current page shows Personal Care items filtered by the brand 'lorshel'. The task requires filtering for 'Lipstick' from the brand 'Maybelline'. I need to navigate to the Personal Care section and apply the correct filters for both category and brand.",
+      "action": {
+       "type": "click",
+       "ref": "el:10"
+      },
+      "result": "ok; newly visible: Wishlist Bag 1 2 3 | 3 4 SHOP BY CATEGORY | ₹300 OFF ONLINE SHOPPING Men Women Kids Home Beauty Genz Gift Cards Myntra Insider USEFUL LINKS Blog Careers Site Map Corporate Information Whitehat Cleartrip Myntra Global CUSTOMER POLICIES Conta...",
+      "url": "https://www.myntra.com/?src=bc",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(1) > div > ul > li:nth-of-type(1) > a",
+      "t": 1794525556.4449768,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Home\"",
+      "focus_px": null
+     },
+     {
+      "i": 15,
+      "observation": "URL: https://www.myntra.com/?src=bc\nTITLE: Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra\nPAGE POSITION: showing 0–800 px of a 6421 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 button/submit \"1\"\nel:11 button/submit \"2\"\nel:12 button/submit \"3\"\nel:13 button/submit \"4\"\nel:14 a \"\"\nel:15 a \"\"\nel:16 a \"\"\nel:17 a \"\"\nel:18 a \"\"\nel:19 a \"\"\nel:20 a \"\"\nel:21 a \"\"\nel:22 a \"\"\nel:23 a \"\"\nel:24 a \"\"\nel:25 a \"\"\nel:26 a \"\"\nel:27 a \"\"\nel:28 a \"\"\nel:29 a \"\"\nel:30 a \"\"\nel:31 a \"\"\nel:32 a \"\"\nel:33 a \"\"\nel:34 a \"\"\nel:35 a \"\"\nel:36 a \"\"\nel:37 a \"\"\nel:38 a \"\"\nel:39 a \"\"\nel:40 a \"\"\nel:41 a \"\"\nel:42 a \"\"\nel:43 a \"\"\nel:44 a \"\"\nel:45 a \"\"\nel:46 a \"\"\nel:47 a \"\"\nel:48 a \"\"\nel:49 a \"ONLINE SHOPPING\"\nel:50 a \"Men\"\nel:51 a \"Women\"\nel:52 a \"Kids\"\nel:53 a \"Home\"\nel:54 a \"Beauty\"\nel:55 a \"Genz\"\nel:56 a \"Gift Cards\"\nel:57 a \"Myntra Insider\"\nel:58 a \"Blog\"\nel:59 a \"Careers\"\nel:60 a \"Site Map\"\nel:61 a \"Corporate Information\"\nel:62 a \"Whitehat\"\nel:63 a \"Cleartrip\"\nel:64 a \"Myntra Global\"\nel:65 a \"Contact Us\"\nel:66 a \"FAQ\"\nel:67 a \"T&C\"\nel:68 a \"Terms Of Use\"\nel:69 a \"Track Orders\"\nel:70 a \"Shipping\"\nel:71 a \"Cancellation\"\nel:72 a \"Privacy policy\"\nel:73 a \"Grievance Redressal\"\nel:74 a \"FSSAI Food Safety Connect app\"\nel:75 a \"\"\nel:76 a \"Makeup\"\nel:77 a \"Dresses For Girls\"\nel:78 a \"T-Shirts\"\nel:79 a \"Sandals\"\nel:80 a \"Headphones\"\nel:81 a \"Babydolls\"\nel:82 a \"Blazers For Men\"\nel:83 a \"Handbags\"\nel:84 a \"Ladies Watches\"\nel:85 a \"Bags\"\nel:86 a \"Sport Shoes\"\nel:87 a \"Reebok Shoes\"\nel:88 a \"Puma Shoes\"\nel:89 a \"Boxers\"\nel:90 a \"Wallets\"\nel:91 a \"Tops\"\nel:92 a \"Earrings\"\nel:93 a \"Fastrack Watches\"\nel:94 a \"Kurtis\"\nel:95 a \"Nike\"\nel:96 a \"Smart Watches\"\nel:97 a \"Titan Watches\"\nel:98 a \"Designer Blouse\"\nel:99 a \"Gowns\"\nel:100 a \"Rings\"\nel:101 a \"Cricket Shoes\"\nel:102 a \"Forever 21\"\nel:103 a \"Eye Makeup\"\nel:104 a \"Photo Frames\"\nel:105",
+      "thought": "The Personal Care section is now visible with filters. I need to locate the brand filter and select 'Maybelline', then ensure the category is set to 'Lipstick'.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "no such control",
+      "url": "https://www.myntra.com/?src=bc",
+      "target_selector": null,
+      "t": 1794525562.4896855,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     },
+     {
+      "i": 16,
+      "observation": "URL: https://www.myntra.com/?src=bc\nTITLE: Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra\nPAGE POSITION: showing 0–800 px of a 6421 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 button/submit \"1\"\nel:11 button/submit \"2\"\nel:12 button/submit \"3\"\nel:13 button/submit \"4\"\nel:14 a \"\"\nel:15 a \"\"\nel:16 a \"\"\nel:17 a \"\"\nel:18 a \"\"\nel:19 a \"\"\nel:20 a \"\"\nel:21 a \"\"\nel:22 a \"\"\nel:23 a \"\"\nel:24 a \"\"\nel:25 a \"\"\nel:26 a \"\"\nel:27 a \"\"\nel:28 a \"\"\nel:29 a \"\"\nel:30 a \"\"\nel:31 a \"\"\nel:32 a \"\"\nel:33 a \"\"\nel:34 a \"\"\nel:35 a \"\"\nel:36 a \"\"\nel:37 a \"\"\nel:38 a \"\"\nel:39 a \"\"\nel:40 a \"\"\nel:41 a \"\"\nel:42 a \"\"\nel:43 a \"\"\nel:44 a \"\"\nel:45 a \"\"\nel:46 a \"\"\nel:47 a \"\"\nel:48 a \"\"\nel:49 a \"ONLINE SHOPPING\"\nel:50 a \"Men\"\nel:51 a \"Women\"\nel:52 a \"Kids\"\nel:53 a \"Home\"\nel:54 a \"Beauty\"\nel:55 a \"Genz\"\nel:56 a \"Gift Cards\"\nel:57 a \"Myntra Insider\"\nel:58 a \"Blog\"\nel:59 a \"Careers\"\nel:60 a \"Site Map\"\nel:61 a \"Corporate Information\"\nel:62 a \"Whitehat\"\nel:63 a \"Cleartrip\"\nel:64 a \"Myntra Global\"\nel:65 a \"Contact Us\"\nel:66 a \"FAQ\"\nel:67 a \"T&C\"\nel:68 a \"Terms Of Use\"\nel:69 a \"Track Orders\"\nel:70 a \"Shipping\"\nel:71 a \"Cancellation\"\nel:72 a \"Privacy policy\"\nel:73 a \"Grievance Redressal\"\nel:74 a \"FSSAI Food Safety Connect app\"\nel:75 a \"\"\nel:76 a \"Makeup\"\nel:77 a \"Dresses For Girls\"\nel:78 a \"T-Shirts\"\nel:79 a \"Sandals\"\nel:80 a \"Headphones\"\nel:81 a \"Babydolls\"\nel:82 a \"Blazers For Men\"\nel:83 a \"Handbags\"\nel:84 a \"Ladies Watches\"\nel:85 a \"Bags\"\nel:86 a \"Sport Shoes\"\nel:87 a \"Reebok Shoes\"\nel:88 a \"Puma Shoes\"\nel:89 a \"Boxers\"\nel:90 a \"Wallets\"\nel:91 a \"Tops\"\nel:92 a \"Earrings\"\nel:93 a \"Fastrack Watches\"\nel:94 a \"Kurtis\"\nel:95 a \"Nike\"\nel:96 a \"Smart Watches\"\nel:97 a \"Titan Watches\"\nel:98 a \"Designer Blouse\"\nel:99 a \"Gowns\"\nel:100 a \"Rings\"\nel:101 a \"Cricket Shoes\"\nel:102 a \"Forever 21\"\nel:103 a \"Eye Makeup\"\nel:104 a \"Photo Frames\"\nel:105",
+      "thought": "The task requires navigating to the Personal Care section, filtering for 'Lipstick', and then filtering by the brand 'Maybelline'. The current page is the homepage, so I need to first locate and click the 'Beauty' category link to access the Personal Care section.",
+      "action": {
+       "type": "click",
+       "ref": "el:54"
+      },
+      "result": "ok; newly visible: Wishlist Bag Home Personal Care Personal Care - 272576 items FILTERS Men Women Boys Girls CATEGORIES Perfume(24148) Lipstick(22859) Nail Polish(17112) Attar(13473) Mask and Peel(10861) Bindi(10071) Nail Art and Nail Care(9982) Hair Extensio...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#web-footerMount > div > footer > div > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "t": 1794525575.2298143,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Beauty\"",
+      "focus_px": null
+     },
+     {
+      "i": 17,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:14 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:15 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:16 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:17 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:18 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:19 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:21 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:22 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:23 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:24 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:25 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:26 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:27 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:28 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:30 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:31 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:32 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:33 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:34 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:35 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\nel:36 a \"Maybelline Liq",
+      "thought": "The task requires filtering to show only 'Lipstick' from the brand 'Maybelline'. The 'Lipstick' category is already ticked in the CATEGORIES filter. Now, I need to find and tick the 'Maybelline' brand in the BRAND filter section.",
+      "action": {
+       "type": "click",
+       "ref": "el:174"
+      },
+      "result": "ok; newly visible: Care - 8248 | items FILTERS CLEAR ALL | Women CATEGORIES Attar(8187) Perfume(61) | PERFUME PLANET(4695) VOORKOMS(4601) | NOY(2951) + 5565 | more PRICE ₹200 | ₹200 - ₹1,200+ | ₹1,200+ COLOR Transparent (7054) | (7054) White (515) Silver (168...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3ATHE%20RUPAWAT%20Perfumery%20House",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(2) > label",
+      "t": 1794525586.1021602,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"THE RUPAWAT Perfumery House(8248)\"",
+      "focus_px": null
+     },
+     {
+      "i": 18,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3ATHE%20RUPAWAT%20Perfumery%20House\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8139 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:208 a \"THE RUPAWAT Perfumery House Jannat Firdaus Attar - 12 ml Rs.\"\nel:209 a \"FLiCKA 3 in 1 Moisturizer and Primer Rs. 799Rs. 899(11% OFF)\"\nel:210 a \"THE RUPAWAT Perfumery House Bakhoor Al Mahabba Attar Rs. 349\"\nel:211 a \"THE RUPAWAT Perfumery House Kesar Attar 12ml Rs. 324Rs. 799(\"\nel:44 a \"&DONE Rebuilding Serum - 30 ml Rs. 1599\"\nel:212 a \"THE RUPAWAT Perfumery House Kasturi Attar 12ml Rs. 303Rs. 79\"\nel:213 a \"THE RUPAWAT Perfumery House White Lotus Attar - 12 ml Rs. 27\"\nel:214 a \"&DONE Serum-In-Oil - 30 ml Rs. 1199\"\nel:215 a \"THE RUPAWAT Perfumery House Night Blooming Attar-12ml Rs. 28\"\nel:216 a \"THE RUPAWAT Perfumery House Kashmiri Rose Attar - 12 ml Rs. \"\nel:217 a \"Philips OneBlade QP1624/10 Trimmer Rs. 1724Rs. 2299(25% OFF)\"\nel:218 a \"THE RUPAWAT Perfumery House Vanilla Attar - 12 ml Rs. 349\"\nel:219 a \"THE RUPAWAT Perfumery House Sandal Alcohol-Free Attar-12ml R\"\nel:220 a \"The Face Shop Ceramide Moisturizing Emulsion Rs. 479Rs. 599(\"\nel:221 a \"THE RUPAWAT Perfumery House Real Rose Premium Attar -12ml Rs\"\nel:222 a \"THE RUPAWAT Perfumery House Fasli Rose 100% Natural Attar Rs\"\nel:223 a \"SUROSKIE 2Pcs Capsule Cream - 68 g Each Rs. 1998\"\nel:224 a \"THE RUPAWAT Perfumery House Mitti 2 Attar - 12 ml Rs. 282Rs.\"\nel:225 a \"THE RUPAWAT Perfumery House Kesar Chandan Attar 12ml Rs. 326\"\nel:226 a \"Suncros Neo Face Sunscreen Gel- 50 g Rs. 830Rs. 925(10% OFF)\"\nel:227 a \"THE RUPAWAT Perfumery House Royal Mogra Attar -12ml Rs. 276R\"\nel:228 a \"THE RUPAWAT Perfumery House Oud Prestige Attar - 12 ml Rs. 2\"\nel:229 a \"The Face Shop ",
+      "thought": "The task requires filtering Personal Care results to show only 'Lipstick' from the brand 'Maybelline'. The current page is filtered to show only 'THE RUPAWAT Perfumery House' brand. I need to clear the current brand filter and apply the 'Lipstick' category filter, then search for 'Maybelline' in the brand filter.",
+      "action": {
+       "type": "click",
+       "ref": "el:257"
+      },
+      "result": "ok; newly visible: Care - 272576 | Men Women Boys Girls | Girls CATEGORIES Perfume(24148) Lipstick(22859) Nail Polish(17112) Attar(13473) Mask and Peel(10861) Bindi(10071) Nail Art and Nail Care(9982) Hair Extension(9077) + 178 more | PERFUME PLANET(4695) VOO...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "t": 1794525598.2897098,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "span \"CLEAR ALL\"",
+      "focus_px": null
+     },
+     {
+      "i": 19,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:259 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:260 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:261 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:262 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:263 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:264 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:265 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:266 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:267 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:268 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:269 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:270 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:271 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:272 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:273 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:274 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:275 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:276 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:277 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:278 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:279 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:280 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:281 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\n",
+      "thought": "The task requires filtering Personal Care results to show only 'Lipstick' from the brand 'Maybelline'. The 'Lipstick' category is already ticked in the CATEGORIES filter. Now, I need to find and tick the 'Maybelline' brand in the BRAND filter section.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Care - 8961 | items FILTERS CLEAR ALL | Mask and Peel(5347) Body Cream | Cream and Lotion(1437) | Lotion(1437) Hair Colour(1224) Brush Set(166) Face Wash and Cleanser(146) Sunscreen(131) Sheet Masks(110) Facial Wipes and Tissues(86) | Tissu...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3Alorshel",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525609.6409593,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"lorshel(8961)\"",
+      "focus_px": null
+     },
+     {
+      "i": 20,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3Alorshel\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8139 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:320 a \"lorshel Hair Color Comb - 20 g - Black Rs. 212Rs. 401(47% OF\"\nel:321 a \"lorshel 3Pcs Peel Off Mask With Brush Rs. 227Rs. 499(55% OFF\"\nel:322 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 447(53% OFF)\"\nel:323 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 450(53% OFF)\"\nel:324 a \"BBLUNT Hot Shot Heat Protection Mist Rs. 439Rs. 499(12% OFF)\"\nel:325 a \"lorshel Soothing Massage Gel - 100 g Rs. 211Rs. 457(54% OFF)\"\nel:326 a \"lorshel 2Pcs Massage Gel - 100 g Each Rs. 259Rs. 715(64% OFF\"\nel:327 a \"lorshel Ginger Footpads -1 Pcs Rs. 94Rs. 499(81% OFF)\"\nel:328 a \"lorshel 2Pcs Hair Colour - 250 ml Each Rs. 345Rs. 799(57% OF\"\nel:329 a \"lorshel Fruit Vinegar Hair Color-250ml Rs. 339Rs. 799(58% OF\"\nel:330 a \"lorshel Cyperus Rotundus Oil - 60 ml Rs. 273Rs. 599(54% OFF)\"\nel:331 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 339Rs. 626(46% OFF\"\nel:332 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 601(43% OFF\"\nel:266 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:333 a \"lorshel 2Pcs Hair Color - 250 ml Each Rs. 345Rs. 666(48% OFF\"\nel:334 a \"lorshel Hair Root Touch Up Powder -4g Rs. 239Rs. 590(59% OFF\"\nel:335 a \"BBLUNT Hot Shot Hold Hair Spray-300ml Rs. 545Rs. 599(9% OFF)\"\nel:336 a \"lorshel Hair Color Comb - 20 g - Black Rs. 209Rs. 404(48% OF\"\nel:337 a \"lorshel Gel Hair Color - 500 ml Rs. 345Rs. 799(57% OFF)\"\nel:275 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:338 a \"lorshel Collagen Peel Off Mask - 75 g Rs. 228Rs. 499(54% OFF\"\nel:339 a \"lorshel Hairline Shadow Powder - 4 g Rs. 243Rs. 584(58% OFF)\"\n",
+      "thought": "The current page is filtered to show only 'lorshel' brand products in the Personal Care section. I need to navigate back to the main Personal Care page to access the category and brand filters properly.",
+      "action": {
+       "type": "click",
+       "ref": "el:10"
+      },
+      "result": "ok; newly visible: Wishlist Bag 1 2 3 | 3 4 SHOP BY CATEGORY | ₹300 OFF ONLINE SHOPPING Men Women Kids Home Beauty Genz Gift Cards Myntra Insider USEFUL LINKS Blog Careers Site Map Corporate Information Whitehat Cleartrip Myntra Global CUSTOMER POLICIES Conta...",
+      "url": "https://www.myntra.com/?src=bc",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(1) > div > ul > li:nth-of-type(1) > a",
+      "t": 1794525622.0363371,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Home\"",
+      "focus_px": null
+     },
+     {
+      "i": 21,
+      "observation": "URL: https://www.myntra.com/?src=bc\nTITLE: Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra\nPAGE POSITION: showing 0–800 px of a 6421 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 button/submit \"1\"\nel:11 button/submit \"2\"\nel:12 button/submit \"3\"\nel:13 button/submit \"4\"\nel:14 a \"\"\nel:15 a \"\"\nel:16 a \"\"\nel:17 a \"\"\nel:18 a \"\"\nel:19 a \"\"\nel:20 a \"\"\nel:21 a \"\"\nel:22 a \"\"\nel:23 a \"\"\nel:24 a \"\"\nel:25 a \"\"\nel:26 a \"\"\nel:27 a \"\"\nel:28 a \"\"\nel:29 a \"\"\nel:30 a \"\"\nel:31 a \"\"\nel:32 a \"\"\nel:33 a \"\"\nel:34 a \"\"\nel:35 a \"\"\nel:36 a \"\"\nel:37 a \"\"\nel:38 a \"\"\nel:39 a \"\"\nel:40 a \"\"\nel:41 a \"\"\nel:42 a \"\"\nel:43 a \"\"\nel:44 a \"\"\nel:45 a \"\"\nel:46 a \"\"\nel:47 a \"\"\nel:48 a \"\"\nel:49 a \"ONLINE SHOPPING\"\nel:50 a \"Men\"\nel:51 a \"Women\"\nel:52 a \"Kids\"\nel:53 a \"Home\"\nel:54 a \"Beauty\"\nel:55 a \"Genz\"\nel:56 a \"Gift Cards\"\nel:57 a \"Myntra Insider\"\nel:58 a \"Blog\"\nel:59 a \"Careers\"\nel:60 a \"Site Map\"\nel:61 a \"Corporate Information\"\nel:62 a \"Whitehat\"\nel:63 a \"Cleartrip\"\nel:64 a \"Myntra Global\"\nel:65 a \"Contact Us\"\nel:66 a \"FAQ\"\nel:67 a \"T&C\"\nel:68 a \"Terms Of Use\"\nel:69 a \"Track Orders\"\nel:70 a \"Shipping\"\nel:71 a \"Cancellation\"\nel:72 a \"Privacy policy\"\nel:73 a \"Grievance Redressal\"\nel:74 a \"FSSAI Food Safety Connect app\"\nel:75 a \"\"\nel:76 a \"Makeup\"\nel:77 a \"Dresses For Girls\"\nel:78 a \"T-Shirts\"\nel:79 a \"Sandals\"\nel:80 a \"Headphones\"\nel:81 a \"Babydolls\"\nel:82 a \"Blazers For Men\"\nel:83 a \"Handbags\"\nel:84 a \"Ladies Watches\"\nel:85 a \"Bags\"\nel:86 a \"Sport Shoes\"\nel:87 a \"Reebok Shoes\"\nel:88 a \"Puma Shoes\"\nel:89 a \"Boxers\"\nel:90 a \"Wallets\"\nel:91 a \"Tops\"\nel:92 a \"Earrings\"\nel:93 a \"Fastrack Watches\"\nel:94 a \"Kurtis\"\nel:95 a \"Nike\"\nel:96 a \"Smart Watches\"\nel:97 a \"Titan Watches\"\nel:98 a \"Designer Blouse\"\nel:99 a \"Gowns\"\nel:100 a \"Rings\"\nel:101 a \"Cricket Shoes\"\nel:102 a \"Forever 21\"\nel:103 a \"Eye Makeup\"\nel:104 a \"Photo Frames\"\nel:105",
+      "thought": "The Personal Care section is currently visible with categories listed. I need to navigate to the Lipstick category and then filter by the brand 'Maybelline'.",
+      "action": {
+       "type": "click",
+       "ref": "el:108"
+      },
+      "result": "ok; newly visible: Wishlist Bag Home Personal Care Lipstick Lipstick - 22859 items FILTERS Men Women Boys Girls BRAND Aylily(1897) PERPAA(1353) CATERINACHIARA(1151) VOLO(771) ridoy(767) FOPE(591) ForSure(523) BELLABLOOM(501) + 451 more PRICE ₹0 - ₹5,000+ COLO...",
+      "url": "https://www.myntra.com/lipstick",
+      "target_selector": "#web-footerMount > div > footer > div > div:nth-of-type(2) > div > div:nth-of-type(2) > a:nth-of-type(33)",
+      "t": 1794525632.8305228,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Lipstick\"",
+      "focus_px": null
+     },
+     {
+      "i": 22,
+      "observation": "URL: https://www.myntra.com/lipstick\nTITLE: Lipsticks - Buy Lipstick Online @ Best Price in India | Myntra\nPAGE POSITION: showing 0–800 px of a 9148 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 a \"Personal Care\"\nel:12 button \"\"\nel:13 button \"\"\nel:14 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 263Rs. 329(20%\"\nel:15 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:16 a \"ETUDE Dear Darling Water Tint - 4 Rs. 427Rs. 450(5% OFF)\"\nel:17 a \"Mamaearth Creamy Matte Rose Nude Rs. 359Rs. 399(10% OFF)\"\nel:18 a \"Maybelline Super Stay Matte - 75 Fighter Rs. 486Rs. 749(35% \"\nel:19 a \"Pilgrim Matte Bullet Lipstick - 06 Rs. 428Rs. 595(28% OFF)\"\nel:20 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 428Rs. 595(28% OFF)\"\nel:21 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:22 a \"Pilgrim Matte Bullet Lipstick - 31 Rs. 428Rs. 595(28% OFF)\"\nel:23 a \"TRENDING Maybelline 660 Touch Of Spice Lipstick Rs. 246Rs. 3\"\nel:24 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:25 a \"Pilgrim Matte Bullet Lipstick - 26 Rs. 428Rs. 595(28% OFF)\"\nel:26 a \"Maybelline Super Stay Matte - Transformer Rs. 486Rs. 749(35%\"\nel:27 a \"Typsy Beauty Lipstick-37g-Rum Pum Pum 06 Rs. 377Rs. 899(58% \"\nel:28 a \"Mamaearth Creamy Matte Hibiscus Nude Rs. 239Rs. 399(40% OFF)\"\nel:29 a \"Maybelline Creamy Matte - 695 Divine Wine Rs. 246Rs. 329(25%\"\nel:30 a \"Maybelline Superstay Teddy Tint LipColour Rs. 636Rs. 749(15%\"\nel:31 a \"ETUDE Dear Darling Water Tint - 02 Rs. 427Rs. 450(5% OFF)\"\nel:32 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 486Rs. 749(35% \"\nel:33 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:34 a \"Pilgrim Lipstick 4.2g Maroon Affair 23 Rs. 428Rs. 595(28% OF\"\nel:35 a \"MARS Creamy Matte Lipstick - 09 Rs. 193Rs. 199(3% OFF)\"\nel:36 a \"Maybelline Superstay Lipstick ",
+      "thought": "The task requires filtering the current Lipstick page to show only products from the brand 'Maybelline'. The BRAND filter section is visible with a list of brands including 'Maybelline'. I need to click on the 'Maybelline' checkbox to apply the filter.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Personal Care Face Wash Face Wash | Wash - 9286 | Boys Girls CATEGORIES Face Wash and Cleanser(5633) Skin Care Combo(3653) | Combo(3653) BRAND I TOUCH HERBAL(423) FEELHIGH(359) CARET ORGANIC(283) Globus naturals(218) Park Daniel(154) lorshe...",
+      "url": "https://www.myntra.com/face-wash",
+      "target_selector": "#web-footerMount > div > footer > div > div:nth-of-type(3) > div > div:nth-of-type(2) > a:nth-of-type(37)",
+      "t": 1794525643.89034,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Face Wash\"",
+      "focus_px": null
+     },
+     {
+      "i": 23,
+      "observation": "URL: https://www.myntra.com/face-wash\nTITLE: Buy Face Wash for Men and Women with Upto 80% Off Myntra\nPAGE POSITION: showing 0–800 px of a 9530 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 a \"Personal Care\"\nel:12 button \"\"\nel:13 button \"\"\nel:14 a \"CeraVe Foaming Cleanser - 88 ml Rs. 503Rs. 559(10% OFF)\"\nel:15 a \"CeraVe Hydrating Cleanser - 473 ml Rs. 1079Rs. 1199(10% OFF)\"\nel:16 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:17 a \"GHAR SOAPS Magic Face Wash - 100 ml Rs. 299Rs. 333(10% OFF)\"\nel:18 a \"Garnier Set of 2 Facewash - 150g each Rs. 478Rs. 798(40% OFF\"\nel:19 a \"Dermatouch Sizes: 20-30 ML Rs. 179Rs. 299(40% OFF)\"\nel:20 a \"The Derma co. Anti-Pigmentation Combo-130ml Rs. 399Rs. 798(5\"\nel:21 a \"Mamaearth Rice Face Wash 100ml Rs. 257Rs. 285(10% OFF)\"\nel:22 a \"Aqualogica Everyday Glow+ Combo Rs. 383Rs. 698(45% OFF)\"\nel:23 a \"The Derma co. Set Of 4 Skin Care Combo Rs. 999Rs. 1796(44% O\"\nel:24 a \"The Derma co. Sali-Cinamide Face Wash-150ml Rs. 384Rs. 549(3\"\nel:25 a \"NEW De mezcla Charcoal Face Wash- 100 ml Rs. 199\"\nel:26 a \"Dermatouch Kojic Acid 2% Cream - 15 g Rs. 99Rs. 199(50% OFF)\"\nel:27 a \"The Derma co. 2% Salicylic Acid Face Wash Rs. 269Rs. 329(18%\"\nel:28 a \"Dermatouch Dailyglow Bright Face Wash 30g Rs. 129Rs. 150(14%\"\nel:29 a \"Cetaphil Gentle Skin Cleanser - 118 ml Rs. 417Rs. 459(9% OFF\"\nel:30 a \"Mamaearth Ubtan Face Wash - 200 ml Rs. 449Rs. 599(25% OFF)\"\nel:31 a \"Dermatouch Salicylic Acid Face Wash 50ml Rs. 129Rs. 170(24% \"\nel:32 a \"MOLECULAR COMPANY Glow & Protect Combo Rs. 699Rs. 898(22% OF\"\nel:33 a \"DOT & KEY Face Cream & Sunscreen Combo Rs. 672Rs. 840(20% OF\"\nel:34 a \"Ponds Bright Beauty Face Wash - 200g Rs. 272Rs. 515(47% OFF)\"\nel:35 a \"NEW Der-man Multi Active Facewash - 100 ml Rs. 349Rs. 599(42\"\nel:36 a \"Garnier Bright Complete Face Wash 200g Rs. 309Rs. 499(38% OF\"",
+      "thought": "The current page is showing Face Wash results, but the task requires navigating to the Personal Care section and filtering for 'Lipstick' from 'Maybelline'. I need to go back to the Personal Care section and apply the correct filters.",
+      "action": {
+       "type": "click",
+       "ref": "el:11"
+      },
+      "result": "ok; newly visible: Personal Care Personal Care | Care - 272576 | Girls CATEGORIES Perfume(24148) Lipstick(22859) Nail Polish(17112) Attar(13473) Mask | Mask and Peel(10861) Bindi(10071) Nail Art and Nail Care(9982) Hair Extension(9077) + 178 more | more BRAND...",
+      "url": "https://www.myntra.com/personal-care?src=bc",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(1) > div > ul > li:nth-of-type(2) > a",
+      "t": 1794525654.916058,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "a \"Personal Care\"",
+      "focus_px": null
+     },
+     {
+      "i": 24,
+      "observation": "URL: https://www.myntra.com/personal-care?src=bc\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:13 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:14 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:15 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:16 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:17 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:18 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:19 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:20 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:21 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:22 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:23 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:24 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:25 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:26 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:27 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:28 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:29 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:30 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:31 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:32 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:33 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:34 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:35 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\nel:36 a \"Maybell",
+      "thought": "The Personal Care section is already open. Now I need to filter for 'Lipstick' category and 'Maybelline' brand. First, I will click the 'Lipstick' category filter, then scroll to find and click the 'Maybelline' brand filter.",
+      "action": {
+       "type": "click",
+       "ref": "el:164"
+      },
+      "result": "ok; newly visible: Care - 22859 | items FILTERS CLEAR ALL | more BRAND Aylily(1897) PERPAA(1353) CATERINACHIARA(1151) VOLO(771) ridoy(767) FOPE(591) ForSure(523) BELLABLOOM(501) | BELLABLOOM(501) + 451 | ₹0 - ₹5,000+ | COLOR Pink (5622) Red (5374) | (5374) Br...",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(2) > label",
+      "t": 1794525666.3000648,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Lipstick(22859)\"",
+      "focus_px": null
+     },
+     {
+      "i": 25,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:208 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 263Rs. 329(20%\"\nel:209 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:46 a \"ETUDE Dear Darling Water Tint - 4 Rs. 427Rs. 450(5% OFF)\"\nel:210 a \"Mamaearth Creamy Matte Rose Nude Rs. 359Rs. 399(10% OFF)\"\nel:211 a \"Maybelline Super Stay Matte - 75 Fighter Rs. 486Rs. 749(35% \"\nel:212 a \"Pilgrim Matte Bullet Lipstick - 06 Rs. 428Rs. 595(28% OFF)\"\nel:213 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 428Rs. 595(28% OFF)\"\nel:214 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:215 a \"Pilgrim Matte Bullet Lipstick - 31 Rs. 428Rs. 595(28% OFF)\"\nel:216 a \"TRENDING Maybelline 660 Touch Of Spice Lipstick Rs. 246Rs. 3\"\nel:217 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:218 a \"Pilgrim Matte Bullet Lipstick - 26 Rs. 428Rs. 595(28% OFF)\"\nel:219 a \"Maybelline Super Stay Matte - Transformer Rs. 486Rs. 749(35%\"\nel:220 a \"Typsy Beauty Lipstick-37g-Rum Pum Pum 06 Rs. 377Rs. 899(58% \"\nel:221 a \"Mamaearth Creamy Matte Hibiscus Nude Rs. 239Rs. 399(40% OFF)\"\nel:222 a \"Maybelline Creamy Matte - 695 Divine Wine Rs. 246Rs. 329(25%\"\nel:223 a \"Maybelline Superstay Teddy Tint LipColour Rs. 636Rs. 749(15%\"\nel:224 a \"ETUDE Dear Darling Water Tint - 02 Rs. 427Rs. 450(5% OFF)\"\nel:225 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 486Rs. 749(35% \"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:227 a \"Pilgrim Lipstick 4.2g Maroon Affair 23 Rs. 428Rs. 595(28% OF\"\nel:228 a \"MARS Creamy Matte Lipstick - 09 Rs. 193Rs. 199(3% OFF)\"\nel:229 a \"",
+      "thought": "The current page shows Personal Care - Lipstick items, but the brand filter is not applied yet. Need to locate and click the 'Maybelline' brand filter to refine the results.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Care - 1897 | Women CATEGORIES Lipstick(1897) Lip Oil(605) Lip Gloss(483) Lip Balm(172) Mascara(1) | more PRICE ₹300 | ₹300 - ₹800+ | COLOR Pink (1353) | (1353) Red (312) Peach (62) Orange (52) | (52) Maroon (49) Yellow (36) Green (10) | (1...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525674.6642218,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 26,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8165 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:264 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:265 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:266 a \"Aylily Gel Lipstick- 5 g Rs. 351Rs. 499(30% OFF)\"\nel:267 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:268 a \"Aylily Long Lasting Lipstick - 3.5 g Rs. 351Rs. 499(30% OFF)\"\nel:269 a \"Aylily Jelly Lipstick - 5 g - Pink Rs. 499\"\nel:270 a \"Aylily Bullet Lipstick - 3.6 - Pink Rs. 499\"\nel:209 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:271 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:272 a \"Aylily Plumping Lipstick-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:273 a \"Aylily Color Changing Lipstick-3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:214 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:274 a \"Aylily Gel Lipstick Shade 39 Rs. 499\"\nel:275 a \"Aylily Gel Lipstick Shade 41 Rs. 499\"\nel:276 a \"Aylily Gel Lipstick Shade 026 Rs. 599\"\nel:217 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:277 a \"Aylily Gel Lipstick Shade 80 Rs. 499\"\nel:278 a \"Aylily Long Lasting Lipstick- 18 g Rs. 499\"\nel:279 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:280 a \"Aylily Color-Changing Lipstick- 3.6 g Rs. 499\"\nel:281 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:282 a \"Aylily Long-Lasting Lipsticks-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:235 a \"Maybelline Serum Bullet Lipstick - 012 Rs. 599\"\nel:283 a \"Aylily Long-Lasting Lipstick",
+      "thought": "The current page shows Lipstick items filtered by the brand Aylily. I need to change the brand filter to Maybelline while keeping the Lipstick category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:174"
+      },
+      "result": "ok; newly visible: Care - 3250 | Women CATEGORIES Lipstick(3250) Nail Polish(787) | Lip Gloss(483) Bindi(226) Beauty Gift Set(199) | Lip Balm(172) Sindoor(92) + 5 more | more PRICE ₹0 | ₹0 - ₹700+ | COLOR Pink (1646) | (1646) Red (530) Multi (306) Maroon (161...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(2) > label",
+      "t": 1794525681.3276448,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"PERPAA(1353)\"",
+      "focus_px": null
+     },
+     {
+      "i": 27,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:309 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:310 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:311 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:267 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:312 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:313 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:314 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:209 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:315 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:316 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:317 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:214 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:264 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:265 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:318 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:217 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:319 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:320 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:321 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:226 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:322 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:323 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current page shows Personal Care - Lipstick results filtered by brands Aylily and PERPAA. I need to remove the PERPAA filter and add the Maybelline brand filter to show only Maybelline Lipsticks.",
+      "action": {
+       "type": "click",
+       "ref": "el:257"
+      },
+      "result": "ok; newly visible: Care - 272576 | Men Women Boys Girls | Girls CATEGORIES Perfume(24148) Lipstick(22859) | Lipstick(22859) Nail Polish(17112) Attar(13473) Mask and Peel(10861) Bindi(10071) Nail Art and Nail Care(9982) Hair Extension(9077) | Extension(9077) +...",
+      "url": "https://www.myntra.com/personal-care",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "t": 1794525688.7203364,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "span \"CLEAR ALL\"",
+      "focus_px": null
+     },
+     {
+      "i": 28,
+      "observation": "URL: https://www.myntra.com/personal-care\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8096 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:356 a \"LOreal Total Repair 5 Shampoo 1L Rs. 674Rs. 1499(55% OFF)\"\nel:357 a \"Plum Clear Moisture Gel Cream-50g Rs. 466Rs. 549(15% OFF)\"\nel:358 a \"Blue Heaven Bridal Makeup Kit Rs. 559Rs. 1599(65% OFF)\"\nel:359 a \"Gillette Venus Venus Skin Love Razor Rs. 145Rs. 175(17% OFF)\"\nel:360 a \"Plum Kumkumadi Oil Moisturizer Rs. 404Rs. 415(3% OFF)\"\nel:361 a \"GHAR SOAPS Set Of 3 Soaps -100g Each Rs. 399Rs. 470(15% OFF)\"\nel:362 a \"LOreal Extraordinary Oil Hair Combo Rs. 722Rs. 1078(33% OFF)\"\nel:363 a \"The Derma co. 1% Hyaluronic Sunscreen 30g Rs. 278Rs. 299(7% \"\nel:364 a \"WishCare Tinted Ceramide SPF50 Lip Balm Rs. 248Rs. 299(17% O\"\nel:365 a \"Marks & Spencer Cherry Cleansing Shower Gel Rs. 999\"\nel:366 a \"DR. SHETHS Ceramide & Vit C Moisturiser Rs. 314Rs. 349(10% O\"\nel:367 a \"NEW SINGULAR Scalp Care Hair Oil 200 ml Rs. 499Rs. 770(35% O\"\nel:368 a \"Minimalist Salicylic Face Wash- - 100 ml Rs. 299\"\nel:369 a \"DR. SHETHS Vitamin C Oil-Free Moisturizer Rs. 479Rs. 599(20%\"\nel:370 a \"Maybelline Fit Me Matte Foundation Rs. 263Rs. 329(20% OFF)\"\nel:371 a \"Vaseline Cocoa Glow Body Lotion 600 ml Rs. 474Rs. 930(49% OF\"\nel:372 a \"Streax Heat Protect Hair Spray 100ml Rs. 264Rs. 330(20% OFF)\"\nel:373 a \"Maybelline Colossal Bold Liner - Black Rs. 255Rs. 319(20% OF\"\nel:374 a \"WROGN Eau de Parfum - 50 ml Rs. 449Rs. 899(50% OFF)\"\nel:375 a \"GHAR SOAPS Magic De-Tan Combo Rs. 449Rs. 499(10% OFF)\"\nel:376 a \"Lakme Eyeconic Liquid Eyeliner Rs. 230Rs. 325(29% OFF)\"\nel:377 a \"CALYX LONDON Soak Off Gel Polish - 15 ml Rs. 899Rs. 999(10% \"\nel:378 a \"Plum Dew-It-Light Gel Cream - 50 g Rs. 449Rs. 499(10% OFF)\"\n",
+      "thought": "The task requires filtering Personal Care results to show only 'Lipstick' from the brand 'Maybelline'. The current page shows Personal Care with all categories and brands. I need to select the 'Lipstick' category and then filter by the brand 'Maybelline'.",
+      "action": {
+       "type": "click",
+       "ref": "el:164"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 22859 | items FILTERS CLEAR ALL | more BRAND Aylily(1897) PERPAA(1353) CATERINACHIARA(1151) VOLO(771) ridoy(767) FOPE(591) ForSure(523) BELLABLOOM(501) | BELLABLOOM(501) + 451 | ₹0 - ₹5,000+ | COLOR Pink (5622) Red (5374) | (5374) Br...",
+      "url": "https://www.myntra.com/personal-care?f=Categories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(2) > label",
+      "t": 1794525695.6440027,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Lipstick(22859)\"",
+      "focus_px": null
+     },
+     {
+      "i": 29,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Categories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:408 a \"Maybelline Nude Nuance Matte Lipstick 657 Rs. 263Rs. 329(20%\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:389 a \"ETUDE Dear Darling Water Tint - 4 Rs. 427Rs. 450(5% OFF)\"\nel:410 a \"Mamaearth Creamy Matte Rose Nude Rs. 359Rs. 399(10% OFF)\"\nel:411 a \"Maybelline Super Stay Matte - 75 Fighter Rs. 486Rs. 749(35% \"\nel:412 a \"Pilgrim Matte Bullet Lipstick - 06 Rs. 428Rs. 595(28% OFF)\"\nel:413 a \"Pilgrim Matte Bullet Lipstick - 04 Rs. 428Rs. 595(28% OFF)\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:415 a \"Pilgrim Matte Bullet Lipstick - 31 Rs. 428Rs. 595(28% OFF)\"\nel:416 a \"TRENDING Maybelline 660 Touch Of Spice Lipstick Rs. 246Rs. 3\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:418 a \"Pilgrim Matte Bullet Lipstick - 26 Rs. 428Rs. 595(28% OFF)\"\nel:419 a \"Maybelline Super Stay Matte - Transformer Rs. 486Rs. 749(35%\"\nel:420 a \"Typsy Beauty Lipstick-37g-Rum Pum Pum 06 Rs. 377Rs. 899(58% \"\nel:421 a \"Mamaearth Creamy Matte Hibiscus Nude Rs. 239Rs. 399(40% OFF)\"\nel:422 a \"Maybelline Creamy Matte - 695 Divine Wine Rs. 246Rs. 329(25%\"\nel:423 a \"Maybelline Superstay Teddy Tint LipColour Rs. 636Rs. 749(15%\"\nel:424 a \"ETUDE Dear Darling Water Tint - 02 Rs. 427Rs. 450(5% OFF)\"\nel:425 a \"Maybelline Super Stay Matte - Pioneer 20 Rs. 486Rs. 749(35% \"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:427 a \"Pilgrim Lipstick 4.2g Maroon Affair 23 Rs. 428Rs. 595(28% OF\"\nel:428 a \"MARS Creamy Matte Lipstick - 09 Rs. 193Rs. 199(3% OFF)\"\nel:429 a ",
+      "thought": "The current page shows Lipstick results under Personal Care, but the brand filter is not yet applied. I need to locate and click the 'Maybelline' brand checkbox to filter the results.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 1897 | Women CATEGORIES Lipstick(1897) Lip Oil(605) Lip Gloss(483) Lip Balm(172) Mascara(1) | more PRICE ₹300 | ₹300 - ₹800+ | COLOR Pink (1353) | (1353) Red (312) Peach (62) Orange (52) | (52) Maroon (49) Yellow (36) Green (10) | (1...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525701.118784,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 30,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8165 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:463 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:464 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:465 a \"Aylily Gel Lipstick- 5 g Rs. 351Rs. 499(30% OFF)\"\nel:466 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:467 a \"Aylily Long Lasting Lipstick - 3.5 g Rs. 351Rs. 499(30% OFF)\"\nel:468 a \"Aylily Jelly Lipstick - 5 g - Pink Rs. 499\"\nel:469 a \"Aylily Bullet Lipstick - 3.6 - Pink Rs. 499\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:470 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:471 a \"Aylily Plumping Lipstick-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:472 a \"Aylily Color Changing Lipstick-3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:473 a \"Aylily Gel Lipstick Shade 39 Rs. 499\"\nel:474 a \"Aylily Gel Lipstick Shade 41 Rs. 499\"\nel:475 a \"Aylily Gel Lipstick Shade 026 Rs. 599\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:476 a \"Aylily Gel Lipstick Shade 80 Rs. 499\"\nel:477 a \"Aylily Long Lasting Lipstick- 18 g Rs. 499\"\nel:478 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:479 a \"Aylily Color-Changing Lipstick- 3.6 g Rs. 499\"\nel:480 a \"Aylily Long-Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:481 a \"Aylily Long-Lasting Lipsticks-3.8g Rs. 351Rs. 499(30% OFF)\"\nel:435 a \"Maybelline Serum Bullet Lipstick - 012 Rs. 599\"\nel:482 a \"Aylily Long-Lasting Lipstick",
+      "thought": "The current page shows Lipstick results filtered by brand Aylily. I need to change the brand filter to Maybelline while keeping the Lipstick category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:174"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 3250 | Women CATEGORIES Lipstick(3250) Nail Polish(787) | Lip Gloss(483) Bindi(226) Beauty Gift Set(199) | Lip Balm(172) Sindoor(92) + 5 more | more PRICE ₹0 | ₹0 - ₹700+ | COLOR Pink (1646) | (1646) Red (530) Multi (306) Maroon (161...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(2) > label",
+      "t": 1794525707.3227334,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"PERPAA(1353)\"",
+      "focus_px": null
+     },
+     {
+      "i": 31,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:508 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:509 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:510 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:466 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:511 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:512 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:513 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:514 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:515 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:516 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:463 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:464 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:517 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:518 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:519 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:520 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:521 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:522 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current page shows Personal Care items filtered by Lipstick category and brands Aylily and PERPAA. I need to uncheck Aylily and PERPAA, then check Maybelline to filter for Maybelline Lipsticks.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; newly visible: Personal Care Women Personal Care Personal Care | Care - 1353 | ALL CATEGORIES Lipstick(1353) | Set(199) Sindoor(92) Eyeliner(43) Makeup Pouch(29) Kajal(17) | Kajal(17) + 1 | ₹0 - ₹500+ | ₹500+ COLOR Multi (305) | (305) Pink (293) | (293) R...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525715.8682463,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 32,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:555 a \"Personal Care\"\nel:556 a \"Women Personal Care\"\nel:11 button \"\"\nel:12 button \"\"\nel:508 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:509 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:510 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:466 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:511 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:512 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:513 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:514 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:515 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:516 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:517 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:518 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:519 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:520 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:521 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:522 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs. 747(66% OFF)\"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:523 a \"PERPAA Sensational Set Of 3 Lipsticks Rs. 276Rs. 747(63% OFF\"\nel:",
+      "thought": "The current page shows Lipstick results filtered by the brand PERPAA. I need to change the brand filter to Maybelline while keeping the Lipstick category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 3250 | CLEAR ALL Men Women | Women CATEGORIES Lipstick(3250) | Nail Polish(787) Lip Oil(605) Lip Gloss(483) | Gift Set(199) Lip Balm(172) | Sindoor(92) + 5 | ₹0 - ₹700+ | ₹700+ COLOR Pink (1646) Red (530) | (530) Multi (306) Maroon (...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525722.1756759,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 33,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:11 button \"\"\nel:12 button \"\"\nel:508 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:509 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:510 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:466 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:511 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:512 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:513 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:514 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:515 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:516 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:560 a \"Aylily Shimmer Lipstick 3.8 g Rs. 351Rs. 499(30% OFF)\"\nel:561 a \"Aylily Long Lasting Lipstick - 3.6 g Rs. 351Rs. 499(30% OFF)\"\nel:517 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:518 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:519 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:520 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:521 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:522 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs.",
+      "thought": "The current page shows Personal Care items filtered by Lipstick category and brands Aylily and PERPAA. The task requires filtering to show only Lipstick from the brand Maybelline. Need to uncheck Aylily and PERPAA and check Maybelline in the BRAND filter section.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now unticked; newly visible: Personal Care Women Personal Care Personal Care | Care - 1353 | ALL CATEGORIES Lipstick(1353) | Set(199) Sindoor(92) Eyeliner(43) Makeup Pouch(29) Kajal(17) | Kajal(17) + 1 | ₹0 - ₹500+ | ₹500+ COLOR Multi (305) | (305) Pink (293) | (293) R...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(3) > ul > li:nth-of-type(1) > label",
+      "t": 1794525728.5852923,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     },
+     {
+      "i": 34,
+      "observation": "URL: https://www.myntra.com/personal-care?f=Brand%3APERPAA%3A%3ACategories%3ALipstick\nTITLE: Buy Personal Care & Beauty Products Online at Best Price | Myntra\nPAGE POSITION: showing 0–800 px of a 8166 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"\"\nel:2 a \"MEN\"\nel:3 a \"WOMEN\"\nel:4 a \"KIDS\"\nel:5 a \"HOME\"\nel:6 a \"BEAUTY\"\nel:7 a \"GENZ\"\nel:8 a \"STUDIO\"\nel:9 input/text \"Search for products, brands and more\"\nel:10 a \"Home\"\nel:566 a \"Personal Care\"\nel:567 a \"Women Personal Care\"\nel:11 button \"\"\nel:12 button \"\"\nel:508 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:509 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 272Rs. 747(64% OFF)\"\nel:510 a \"PERPAA Antique 4Pcs Matte Lipstick Rs. 402Rs. 1396(71% OFF)\"\nel:466 a \"Maybelline Superstay Vinyl Ink Lipstick Rs. 849\"\nel:511 a \"PERPAA Power Stay Liquid Lipstick -23 Rs. 275Rs. 325(15% OFF\"\nel:512 a \"PERPAA Power Stay Liquid Lipstick -10 Rs. 275Rs. 325(15% OFF\"\nel:513 a \"PERPAA Velvet Kiss Liquid Lipstick-02 Rs. 258Rs. 549(53% OFF\"\nel:409 a \"Maybelline Liquid Lipstick - Witty Rs. 636Rs. 849(25% OFF)\"\nel:514 a \"PERPAA Velvet Kiss Matte Lipstick Rs. 229Rs. 549(58% OFF)\"\nel:515 a \"PERPAA Set Of 4 Waterproof Liquid Matte Power Stay Lipstick \"\nel:516 a \"PERPAA Set Of 4 Creamy Matte Lipstick Rs. 159Rs. 996(84% OFF\"\nel:414 a \"Maybelline Liquid Lipstick - Nude Nuance Rs. 343Rs. 429(20% \"\nel:517 a \"PERPAA Set of 2 Push Button Lipstick Rs. 335Rs. 626(46% OFF)\"\nel:518 a \"PERPAA Power Stay Liquid Lipstick -16 Rs. 254Rs. 325(22% OFF\"\nel:519 a \"PERPAA Power Stay Liquid Lipstick -01 Rs. 275Rs. 325(15% OFF\"\nel:417 a \"SWISS BEAUTY Matte Lipstick- Hazelnut 203 Rs. 206Rs. 229(10%\"\nel:520 a \"PERPAA Set of 4 Creamy Matte Lipstick Rs. 247Rs. 996(75% OFF\"\nel:521 a \"PERPAA Power Stay Liquid Lipstick -03 Rs. 275Rs. 325(15% OFF\"\nel:522 a \"PERPAA 3-Pcs Cremy Matte Lipstick Rs. 254Rs. 747(66% OFF)\"\nel:426 a \"SUGAR POP 4 Pcs Mini Matte Lipcolor Kit Rs. 239Rs. 799(70% O\"\nel:523 a \"PERPAA Sensational Set Of 3 Lipsticks Rs. 276Rs. 747(63% OFF\"\nel:",
+      "thought": "The current page shows Personal Care items filtered to Lipstick from PERPAA brand. Need to change the brand filter to Maybelline while keeping Lipstick category selected.",
+      "action": {
+       "type": "click",
+       "ref": "el:173"
+      },
+      "result": "ok; it is now ticked; newly visible: Care - 3250 | CLEAR ALL Men Women | Women CATEGORIES Lipstick(3250) | Nail Polish(787) Lip Oil(605) Lip Gloss(483) | Gift Set(199) Lip Balm(172) | Sindoor(92) + 5 | ₹0 - ₹700+ | ₹700+ COLOR Pink (1646) Red (530) | (530) Multi (306) Maroon (...",
+      "url": "https://www.myntra.com/personal-care?f=Brand%3AAylily%2CPERPAA%3A%3ACategories%3ALipstick",
+      "target_selector": "#mountRoot > div > main > div:nth-of-type(3) > div:nth-of-type(1) > section > div > div:nth-of-type(4) > ul > li:nth-of-type(1) > label",
+      "t": 1794525735.8100972,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": "label \"Aylily(1897)\"",
+      "focus_px": null
+     }
+    ]
+   },
+   "profiles": {},
+   "findings": [],
+   "invalid": "reference agent could not complete the task (max_steps: ran out of steps)"
+  }
+ ],
+ "usage": {
+  "nav": {
+   "calls": 35,
+   "input": 254578,
+   "output": 2559,
+   "cached": 0
+  },
+  "endpoints": {
+   "openrouter": 35
+  }
+ },
+ "model_fallbacks": []
+}

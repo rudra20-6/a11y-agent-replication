@@ -1,0 +1,1257 @@
+{
+ "url": "https://www.icicibank.com/calculator/home-loan-emi-calculator",
+ "results": [
+  {
+   "task": {
+    "id": "t1",
+    "goal": "Calculate the monthly EMI for a home loan of ₹50,00,000 with an interest rate of 8.5% and a tenure of 20 years.",
+    "start_url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+    "success": "The calculated monthly EMI amount is displayed on the screen.",
+    "stop_before": "APPLY NOW",
+    "features": [
+     "form",
+     "slider",
+     "dynamic_results"
+    ],
+    "validation": {
+     "verdict": "valid",
+     "checks": {
+      "typical": "yes",
+      "feasible_here": "yes",
+      "no_login_or_payment": "yes",
+      "concrete": "yes",
+      "checkable": "yes",
+      "sequence_valid": "unknown"
+     },
+     "reasons": {
+      "typical": "Calculating loan EMI is a very common task for users on a banking website.",
+      "feasible_here": "The inventory shows Amount and Interest Rate fields, and sliders are available for adjustment.",
+      "no_login_or_payment": "The task only involves using a calculator and does not require submission or login.",
+      "concrete": "The goal provides specific values: ₹50,00,000, 8.5%, and 20 years.",
+      "checkable": "Success is defined by the display of the calculated EMI amount.",
+      "sequence_valid": "The tenure field is not explicitly listed in the inventory text, but it is implied by the calculator's purpose and the presence of sliders."
+     },
+     "steps_outline": [
+      "open the home loan emi calculator",
+      "enter 5000000 in the Amount field",
+      "enter 8.5 in the Interest Rate field",
+      "adjust the tenure to 20 years",
+      "view the calculated monthly EMI"
+     ]
+    }
+   },
+   "reference": {
+    "status": "done",
+    "answer": "₹43,392",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–800 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=2000000\nel:22 input/text \"Amount\" value=20,00,000\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summary \"What is the bene",
+      "thought": "I need to set the loan amount to ₹50,00,000. I will type this value into the Amount input field.",
+      "action": {
+       "type": "type",
+       "ref": "el:22",
+       "text": "50,00,000"
+      },
+      "result": "ok; the field now contains \"\"; nothing visible changed",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+      "t": 1793647940.0041854,
+      "fallback": null
+     },
+     {
+      "i": 1,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–800 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=25050000\nel:22 input/text \"Amount\"\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summary \"What is",
+      "thought": "I have already attempted to type the amount, but it seems it didn't register. I will now try to set the interest rate to 8.5% in the interest rate field and press Enter to ensure the value is applied.",
+      "action": {
+       "type": "type",
+       "ref": "el:24",
+       "text": "8.5"
+      },
+      "result": "ok; the field now contains \"8.5\"; newly visible: Monthly EMI ₹24,798 | Total Interest ₹9,75,657 | Total Payable ₹29,75,657",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+      "t": 1793647952.373326,
+      "fallback": null
+     },
+     {
+      "i": 2,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 27–827 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=25050000\nel:22 input/text \"Amount\" value=0\nel:23 input/range \"Interest Rate\" value=8\nel:24 input/text \"Interest Rate\" value=8.5\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summary \"W",
+      "thought": "I have already entered the amount and interest rate, but the amount field seems to have reset to 0. I need to re-enter the amount and then set the tenure to 20 years. First, I'll re-enter the amount.",
+      "action": {
+       "type": "type",
+       "ref": "el:22",
+       "text": "5000000"
+      },
+      "result": "ok; the field now contains \"5000000\"; newly visible: Monthly EMI ₹61,993 | Total Interest ₹24,39,141 | Total Payable ₹74,39,141",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+      "t": 1793648063.981412,
+      "fallback": null
+     },
+     {
+      "i": 3,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 27–827 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=5000000\nel:22 input/text \"Amount\" value=5000000\nel:23 input/range \"Interest Rate\" value=8.5\nel:24 input/text \"Interest Rate\" value=8.5%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 su",
+      "thought": "I have set the amount and interest rate, but I still need to set the tenure to 20 years. I need to find the duration/tenure control, which is likely below the interest rate section.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; newly visible: Dropdown Login EMI Calculator About Need more information FAQs",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793648142.2996619,
+      "fallback": null
+     },
+     {
+      "i": 4,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=5000000\nel:22 input/text \"Amount\" value=5000000\nel:23 input/range \"Interest Rate\" value=8.5\nel:24 input/text \"Interest Rate\" value=8.5%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the",
+      "thought": "The duration buttons (10 Year, 15 Years, 20 Year) are visible in the screenshot but are missing from the provided list of visible controls. I will try to click the 'Custom' button to see if it allows me to input the tenure manually.",
+      "action": {
+       "type": "click",
+       "ref": "el:25"
+      },
+      "result": "ok; newly visible: Duration Years Months",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(3) > div:nth-of-type(2) > div > ul > li:nth-of-type(4) > button",
+      "t": 1793648225.7663913,
+      "fallback": null
+     },
+     {
+      "i": 5,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4844 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=5000000\nel:22 input/text \"Amount\" value=50,00,000\nel:23 input/range \"Interest Rate\" value=8.5\nel:24 input/text \"Interest Rate\" value=8.5%\nel:220 button/button \"Years\"\nel:221 button/button \"Months\"\nel:222 input/number \"custom-duration-input\"\nel:223 button/button \"close button\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing cus",
+      "thought": "I need to set the tenure to 20 years. I will type '20' into the duration input field.",
+      "action": {
+       "type": "type",
+       "ref": "el:222",
+       "text": "20"
+      },
+      "result": "ok; the field now contains \"20\"; newly visible: Monthly EMI ₹41,202 | Total Interest ₹48,88,432 | Total Payable ₹98,88,432",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(3) > div:nth-of-type(2) > input",
+      "t": 1793648295.8500862,
+      "fallback": null
+     },
+     {
+      "i": 6,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4844 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=5000000\nel:22 input/text \"Amount\" value=50,00,000\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:220 button/button \"Years\"\nel:221 button/button \"Months\"\nel:222 input/number \"custom-duration-input\" value=20\nel:223 button/button \"close button\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Exi",
+      "thought": "The loan amount and tenure are correct, but the interest rate is currently 7.8%. I need to change it to 8.5% to get the correct EMI.",
+      "action": {
+       "type": "type",
+       "ref": "el:24",
+       "text": "8.5"
+      },
+      "result": "ok; the field now contains \"8.5\"; newly visible: Monthly EMI ₹43,392 | Total Interest ₹54,13,879 | Total Payable ₹1,04,13,879",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+      "t": 1793648375.6072507,
+      "fallback": null
+     },
+     {
+      "i": 7,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4844 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=5000000\nel:22 input/text \"Amount\" value=50,00,000\nel:23 input/range \"Interest Rate\" value=8\nel:24 input/text \"Interest Rate\" value=8.5\nel:220 button/button \"Years\"\nel:221 button/button \"Months\"\nel:222 input/number \"custom-duration-input\" value=20\nel:223 button/button \"close button\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existi",
+      "thought": "I have entered the loan amount (50,00,000), the interest rate (8.5%), and the tenure (20 years). The calculator displays the monthly EMI as ₹43,392.",
+      "action": {
+       "type": "done",
+       "answer": "₹43,392"
+      },
+      "result": "done",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793648547.340092,
+      "fallback": null
+     }
+    ]
+   },
+   "profiles": {
+    "P1": {
+     "status": "done",
+     "reason": "",
+     "answer": "₹43,392",
+     "tool_error": false,
+     "effort": {
+      "actions": 12,
+      "key_presses": 5
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: page ()\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calculator to estim",
+       "thought": "I need to set the loan amount to ₹50,00,000. I will focus on the Amount textbox and replace its current value.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:3776"
+       },
+       "result": "ok; focus: text field Amount",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+       "t": 1793648562.7330287,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Amount (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calculator t",
+       "thought": "I need to change the loan amount to ₹50,00,000. I will select the existing value and type the new amount.",
+       "action": {
+        "type": "press",
+        "key": "Control+A"
+       },
+       "result": "ok; focus: text field Amount",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648568.8125691,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Amount (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calculator t",
+       "thought": "I have selected the existing amount in the textbox. Now I will type the required amount of 5000000.",
+       "action": {
+        "type": "type",
+        "text": "5000000"
+       },
+       "result": "ok; the field now contains \"5000000\"; focus: text field Amount",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648575.3732917,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Amount (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calculator t",
+       "thought": "I have set the loan amount to 50,00,000. Now I need to set the interest rate to 8.5%.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:3800"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+       "t": 1793648583.060481,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calcu",
+       "thought": "I need to set the interest rate to 8.5%. I am currently focused on the Interest Rate textbox.",
+       "action": {
+        "type": "press",
+        "key": "Control+A"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648589.3990638,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calcu",
+       "thought": "I need to set the interest rate to 8.5%. I will first clear the current value and then type the new value.",
+       "action": {
+        "type": "press",
+        "key": "Control+A"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648592.339,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calcu",
+       "thought": "I need to set the interest rate to 8.5%. I will first clear the current value in the Interest Rate field and then type the new value.",
+       "action": {
+        "type": "press",
+        "key": "Control+A"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648598.1459045,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calcu",
+       "thought": "I have already set the amount to 50,00,000. Now I need to set the interest rate to 8.5%. The interest rate field is currently focused and contains '7.8'. I will type '8.5' to replace it.",
+       "action": {
+        "type": "type",
+        "text": "8.5"
+       },
+       "result": "ok; the field now contains \"8.5\"; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648608.937229,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  main\n    navigation \"breadcrumb\"\n      list\n        listitem (level=1)\n          [ax:1593] link \"Loans\"\n        listitem (level=1)\n          [ax:1596] link \"Home Loan\"\n        listitem (level=1)\n          [ax:1599] link \"EMI Calculator\"\n    heading \"Home Loan EMI Calculator\" (level=1)\n    paragraph\n    text \"Use the ICICI Bank Home Loan calcu",
+       "thought": "I have already set the amount to 50,00,000 and the interest rate to 8.5%. Now I need to set the tenure to 20 years.",
+       "action": {
+        "type": "activate",
+        "ref": "ax:3812"
+       },
+       "result": "ok; focus: radio button (checked) 20 Year",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#\\32 40",
+       "t": 1793648618.1934109,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: 20 Year (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  navigation \"Breadcrumb\"\n    list\n      listitem (level=1)\n        [ax:1558] link \"EMI Calculator\"\n          paragraph\n            text \"EMI Calculator\"\n      listitem (level=1)\n        [ax:1561] link \"About\"\n          paragraph\n            text \"About\"\n      listitem (level=1)\n        [ax:1564] link \"Need more information\"\n          paragraph\n     ",
+       "thought": "The interest rate is currently 7.8%, but the task requires 8.5%. I will re-enter the interest rate to ensure it is correctly set.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:3800"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+       "t": 1793648624.470835,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  navigation \"Breadcrumb\"\n    list\n      listitem (level=1)\n        [ax:1558] link \"EMI Calculator\"\n          paragraph\n            text \"EMI Calculator\"\n      listitem (level=1)\n        [ax:1561] link \"About\"\n          paragraph\n            text \"About\"\n      listitem (level=1)\n        [ax:1564] link \"Need more information\"\n          paragraph",
+       "thought": "The interest rate is currently 7.8, but it should be 8.5. I will clear the interest rate field and type 8.5.",
+       "action": {
+        "type": "press",
+        "key": "Control+A"
+       },
+       "result": "ok; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648637.49599,
+       "fallback": null
+      },
+      {
+       "i": 11,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  navigation \"Breadcrumb\"\n    list\n      listitem (level=1)\n        [ax:1558] link \"EMI Calculator\"\n          paragraph\n            text \"EMI Calculator\"\n      listitem (level=1)\n        [ax:1561] link \"About\"\n          paragraph\n            text \"About\"\n      listitem (level=1)\n        [ax:1564] link \"Need more information\"\n          paragraph",
+       "thought": "The interest rate is currently 7.8, but the task requires 8.5%. I have already selected the text in the Interest Rate field using Control+A, so I will now type the correct value.",
+       "action": {
+        "type": "type",
+        "text": "8.5"
+       },
+       "result": "ok; the field now contains \"8.5\"; focus: text field Interest Rate",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648655.910934,
+       "fallback": null
+      },
+      {
+       "i": 12,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: Interest Rate (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Home Loan EMI Calculator - Housing Loan EMI Calculator Online\" (focused)\n  banner\n    banner\n      [ax:246] link \"ICICI Bank Logo\"\n      navigation \"main navigation\"\n        list\n          listitem (level=1)\n            [ax:259] link \"Personal\"\n              [ax:260] button \"Personal\"\n            [ax:263] button \"Personal menu\"\n          listitem (level=1)\n            [ax:669] link \"NRI\"\n              [ax:670] button \"NRI\"\n            [ax:673] button \"NRI menu\"\n          listitem (level=1)\n            [ax:999] link \"Business\"\n              [ax:1000] button \"Business\"\n            [ax:1003] button \"Business menu\"\n        list\n          listitem (level=1)\n            [ax:1325] button \"Resources\"\n          listitem (level=1)\n            [ax:1347] button \"About\"\n          listitem (level=1)\n            [ax:1376] button \"Help\"\n        list\n          listitem (level=1)\n            text \"1800 1080\"\n          listitem (level=1)\n            [ax:1432] link \"Ask iPal ipal ipal chat\"\n              text \"Ask iPal\"\n              image \"ipal\"\n              image \"ipal\"\n              image \"chat\"\n          listitem (level=1)\n            [ax:1438] link \"Save Items\"\n          listitem (level=1)\n            [ax:1442] button \"Open Accessibility Menu\"\n            heading (level=5)\n          listitem (level=1)\n            [ax:1473] button \"Country Dropdown\"\n        navigation\n          [ax:1523] button \"Login\"\n  navigation \"Breadcrumb\"\n    list\n      listitem (level=1)\n        [ax:1558] link \"EMI Calculator\"\n          paragraph\n            text \"EMI Calculator\"\n      listitem (level=1)\n        [ax:1561] link \"About\"\n          paragraph\n            text \"About\"\n      listitem (level=1)\n        [ax:1564] link \"Need more information\"\n          paragraph",
+       "thought": "I have entered the amount (50,00,000), the interest rate (8.5%), and selected the tenure (20 years). The calculator shows the Monthly EMI as ₹43,392, which matches the expected calculation.",
+       "action": {
+        "type": "done",
+        "answer": "₹43,392"
+       },
+       "result": "done",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648691.704007,
+       "fallback": null
+      }
+     ]
+    },
+    "P2": {
+     "status": "max_steps",
+     "reason": "ran out of steps",
+     "answer": "",
+     "tool_error": false,
+     "effort": {
+      "actions": 35,
+      "key_presses": 35
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Loans\"\n- a \"Home Loan\"\n- a \"EMI Calculator\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"HOME LOAN DETAILS\"\n- input/range \"Amount\" value=2000000\n- input/text \"Amount\" value=20,00,000\n- input/text \"Interest Rate\" value=7.8%\n- button/button \"Know more.\"\n- button/button \"OK\"\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate Monthly EMI ₹24,055 Total Interest ₹8,86,561 Total Payable ₹28,86,561 The Home Loan EMI Calculator is a simple financial planning tool that helps borrowers estimate monthly repayment obligations accurately. Customers can calculate EMI amounts instantly by entering the loan amount, applicable interest rate and repayment tenure. ICICI Bank’s Home Loan EMI Calculator is an apt option to plan your EMI and have accurate figures for better planning. By simply entering your desired loan amount, interest rate and tenure, get an accurate Home Loan EMI calculation. Our user-friendly interface allows you to estimat",
+       "thought": "I need to navigate to the 'Amount' input field to change the loan amount to ₹50,00,000. I will start by pressing Tab to find the focus.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button Know more.; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648628.8378303,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: button \"Know more.\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Loans\"\n- a \"Home Loan\"\n- a \"EMI Calculator\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"HOME LOAN DETAILS\"\n- input/range \"Amount\" value=2000000\n- input/text \"Amount\" value=20,00,000\n- input/text \"Interest Rate\" value=7.8%\n- button/button \"Know more.\"\n- button/button \"OK\"\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate Monthly EMI ₹24,055 Total Interest ₹8,86,561 Total Payable ₹28,86,561 To enhance your experience, we use cookies. Know more. OK",
+       "thought": "The cookie banner is obscuring the view and I need to dismiss it. The focus is currently on 'Know more.', so I will press Tab to move focus to the 'OK' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button OK; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648639.906399,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: button \"OK\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Loans\"\n- a \"Home Loan\"\n- a \"EMI Calculator\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"HOME LOAN DETAILS\"\n- input/range \"Amount\" value=2000000\n- input/text \"Amount\" value=20,00,000\n- input/text \"Interest Rate\" value=7.8%\n- button/button \"Know more.\"\n- button/button \"OK\"\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate Monthly EMI ₹24,055 Total Interest ₹8,86,561 Total Payable ₹28,86,561 To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I need to dismiss the cookie consent banner to interact with the calculator. The focus is currently on the 'OK' button.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; you cannot see where focus is; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648649.6397262,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Loans\"\n- a \"Home Loan\"\n- a \"EMI Calculator\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"HOME LOAN DETAILS\"\n- input/range \"Amount\" value=2000000\n- input/text \"Amount\" value=20,00,000\n- input/text \"Interest Rate\" value=7.8%\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate Monthly EMI ₹24,055 Total Interest ₹8,86,561 Total Payable ₹28,86,561",
+       "thought": "I need to reach the 'Amount' input field to change it to 50,00,000. I will press Tab to navigate through the controls.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ICICI Bank Footer Logo; newly visible: Dropdown Login EMI Calculator About Need more information FAQs Making part payments reduces your outstanding loan amount, lowering the interest due. While your | Loan EMI remains unchanged, a larger portion goes towards repaying the princip...",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648662.109927,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"ICICI Bank Footer Logo\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- summary \"Does the ICICI Bank Home Loan EMI calculator include propert\"\n- summary \"What are the benefits of using a home loan calculator before\"\n- summary \"How does the ICICI Bank Home Loan EMI calculator work?\"\n- summary \"How much Home Loan can I get on a ₹60,000 salary?\"\n- summary \"What is EMI on a ₹50 lakh Home Loan?\"\n- a \"\"\n- summary \"What is the EMI on a ₹1.5 Crore Home Loan?\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"Depositor Education and Awareness Fund (DEAF)\"\n- a \"Form Center\"\n- a \"Raise a service request\"\n",
+       "thought": "I am currently at the bottom of the page in the footer. I need to navigate back up to the EMI calculator section to input the loan details.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648741.1655514,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- summary \"Does the ICICI Bank Home Loan EMI calculator include propert\"\n- summary \"What are the benefits of using a home loan calculator before\"\n- summary \"How does the ICICI Bank Home Loan EMI calculator work?\"\n- summary \"How much Home Loan can I get on a ₹60,000 salary?\"\n- summary \"What is EMI on a ₹50 lakh Home Loan?\"\n- a \"\"\n- summary \"What is the EMI on a ₹1.5 Crore Home Loan?\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"Depositor Education and Awareness Fund (DEAF)\"\n- a \"Form Center\"\n- a \"Raise a service request\"\n- a ",
+       "thought": "I am currently in the footer area of the page. I need to navigate back up to find the actual EMI calculator inputs. I will use Shift+Tab to move the focus upwards.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹40 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648807.5469701,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹40 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- summary \"Does the ICICI Bank Home Loan EMI calculator include propert\"\n- summary \"What are the benefits of using a home loan calculator before\"\n- summary \"How does the ICICI Bank Home Loan EMI calculator work?\"\n- summary \"How much Home Loan can I get on a ₹60,000 salary?\"\n- summary \"What is EMI on a ₹50 lakh Home Loan?\"\n- a \"\"\n- summary \"What is the EMI on a ₹1.5 Crore Home Loan?\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"Depositor Education and Awareness Fund (DEAF)\"\n- a \"Form Center\"\n- a \"Raise a service request\"\n- a ",
+       "thought": "I am currently at the bottom of the page in the footer area. I need to go back to the top to find the EMI calculator input fields.",
+       "action": {
+        "type": "press",
+        "key": "Home"
+       },
+       "result": "ok; focus now visibly on: link ₹40 Lakh Home Loan; newly visible: Dropdown Login Loans | Loan EMI Calculator | Loan EMI Calculator Use | Home Loan calculator to estimate your | your EMI easily. | EMI calculator helps you understand monthly repayments based on | loan amount, tenure, | interest rate. This |...",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648869.559162,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹40 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Loans\"\n- a \"Home Loan\"\n- a \"EMI Calculator\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"HOME LOAN DETAILS\"\n- input/range \"Amount\" value=2000000\n- input/text \"Amount\" value=20,00,000\n- input/text \"Interest Rate\" value=7.8%\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate Monthly EMI ₹24,055 Total Interest ₹8,86,561 Total Payable ₹28,86,561",
+       "thought": "I need to reach the 'Amount' input field to change the loan amount to ₹50,00,000. I will press Tab to navigate through the controls.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; newly visible: Dropdown Login EMI Calculator About Need more information FAQs The outstanding Loan amount after the payment of each EMI. Sound Financial Planning: Knowing the EMI amount and Loan duration helps you plan your finances effectively– you can b...",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648924.9111981,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently on a section of the EMI calculator page that shows preset loan amounts. I need to find the actual input fields for the loan amount, interest rate, and tenure. I will press Tab to move past these preset links.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ICICI Bank Footer Logo; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648979.8113656,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"ICICI Bank Footer Logo\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new",
+       "thought": "I am currently at the bottom of the page in the footer. I need to navigate back up to find the EMI calculator inputs. I will use Shift+Tab to move the focus upwards.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649023.348088,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently on the EMI calculator page, but I am focused on a preset budget link. I need to find the actual input fields for the loan amount, interest rate, and tenure. I will press Tab to see if the calculator inputs are reachable.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ICICI Bank Footer Logo; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649066.005641,
+       "fallback": null
+      },
+      {
+       "i": 11,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"ICICI Bank Footer Logo\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new",
+       "thought": "I am currently at the footer of the page. I need to find the EMI calculator input fields. I will use Shift+Tab to navigate upwards towards the main content and the calculator.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649111.906205,
+       "fallback": null
+      },
+      {
+       "i": 12,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently focused on the '₹35 Lakh Home Loan' link. I need to find the actual EMI calculator input fields for loan amount, interest rate, and tenure. I will press Tab to see if I can navigate to the calculator inputs.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ICICI Bank Footer Logo; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649127.2430384,
+       "fallback": null
+      },
+      {
+       "i": 13,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"ICICI Bank Footer Logo\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new",
+       "thought": "I am currently at the bottom of the page. I need to navigate back up to find the EMI calculator input fields.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649132.312686,
+       "fallback": null
+      },
+      {
+       "i": 14,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently focused on the '₹35 Lakh Home Loan' link. I need to find the actual EMI calculator input fields for loan amount, interest rate, and tenure. I will try to navigate upwards using Shift+Tab to see if the calculator inputs are located above the 'Home Loan for Different Budgets' section.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹40 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649163.9462948,
+       "fallback": null
+      },
+      {
+       "i": 15,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹40 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently on the EMI calculator page, but I only see links for different loan budgets. I need to find the actual input fields for the loan amount, interest rate, and tenure. I will press Tab to navigate further down the page.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹35 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649170.1289313,
+       "fallback": null
+      },
+      {
+       "i": 16,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹35 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently at the bottom of the page near the footer. I need to find the actual EMI calculator input fields (Loan Amount, Interest Rate, and Tenure). I will use Shift+Tab to move the focus back up the page to find the calculator.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹40 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649191.1407223,
+       "fallback": null
+      },
+      {
+       "i": 17,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹40 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently focused on the '₹40 Lakh Home Loan' link. To reach the '₹50 Lakh Home Loan' link, which appears to be earlier in the tab order, I will use Shift+Tab.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹45 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649203.7421768,
+       "fallback": null
+      },
+      {
+       "i": 18,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹45 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "I am currently focused on the '₹45 Lakh Home Loan' link. To reach the '₹50 Lakh Home Loan' link, I need to move the focus backwards in the tab order.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link ₹50 Lakh Home Loan; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649220.93183,
+       "fallback": null
+      },
+      {
+       "i": 19,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nFOCUS: focus indicator visible on: a \"₹50 Lakh Home Loan\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"EMI Calculator\"\n- a \"About\"\n- a \"Need more information\"\n- a \"FAQs\"\n- summary \"How many times can I use the Home Loan EMI calculator?\"\n- summary \"How can I reduce my Home Loan EMI amount?\"\n- summary \"Is the EMI amount fixed?\"\n- summary \"What is the impact of part payments on the EMI?\"\n- summary \"How do I change my Home Loan EMI date?\"\n- summary \"How does the payment of EMI towards your Home Loan reduce yo\"\n- summary \"What does pre-EMI interest mean in the context of Home Loans\"\n- summary \"What is the maximum amount that can be borrowed as a Home Lo\"\n- summary \"When do Home Loan EMIs start?\"\n- summary \"What are the essential inputs required for the ICICI Bank Ho\"\n- summary \"How accurate are the results from the ICICI Bank Home Loan E\"\n- a \"₹1 Crore Home Loan\"\n- a \"₹75 Lakh Home Loan\"\n- a \"₹70 Lakh Home Loan\"\n- a \"₹60 Lakh Home Loan\"\n- a \"₹50 Lakh Home Loan\"\n- a \"₹45 Lakh Home Loan\"\n- a \"₹40 Lakh Home Loan\"\n- a \"₹35 Lakh Home Loan\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"ICICI Foundation (opens in new tab)\"\n- a \"ICICI Lombard General Insurance (opens in new tab)\"\n- a \"ICICI Life Insurance (opens in new tab)\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers (opens in new tab",
+       "thought": "The focus is currently on the '₹50 Lakh Home Loan' link. I will press Enter to see if this navigates me to the calculator or pre-fills the values, which might be a shortcut to the task.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; you cannot see where focus is; newly visible: Dropdown Login Blogs | Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 | Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider app...",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649240.1668735,
+       "fallback": null
+      },
+      {
+       "i": 20,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions. Purchasing a home is not just a financial transaction, it is the beginning of a new chapter in your life where memories are created and dreams are realised.",
+       "thought": "I am on a blog page. I need to find an EMI calculator to perform the task. I will start by tabbing through the navigation menu to see if I can find a 'Calculators' or 'Tools' section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button skip to main content; newly visible: Skip to main content",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649250.1130414,
+       "fallback": null
+      },
+      {
+       "i": 21,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: button \"skip to main content\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will start by tabbing past the header elements to reach the main content.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ICICI Bank Logo; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649257.7250063,
+       "fallback": null
+      },
+      {
+       "i": 22,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: a \"ICICI Bank Logo\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will start by tabbing through the header to see if a calculator or a more relevant tool is available.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Personal; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649269.1480336,
+       "fallback": null
+      },
+      {
+       "i": 23,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: a \"Personal\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will start by tabbing through the navigation menu to see if a calculator or a more relevant section is available.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button Personal menu; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649278.3109734,
+       "fallback": null
+      },
+      {
+       "i": 24,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: span \"Personal menu\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- button \"Personal menu\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I am on a blog page. I need to find an EMI calculator to perform the task. I will start by Tabbing through the navigation menu to see if I can find a calculator or a more relevant section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link NRI; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649287.1383808,
+       "fallback": null
+      },
+      {
+       "i": 25,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: a \"NRI\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I am currently on a blog page. I need to find an EMI calculator to perform the requested calculation. I will continue tabbing through the navigation menu to find a link to an EMI calculator or a more relevant product page.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button NRI menu; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649296.9230113,
+       "fallback": null
+      },
+      {
+       "i": 26,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: span \"NRI menu\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- button \"NRI menu\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will continue tabbing through the navigation to see if I can find a link to a calculator or a more relevant section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Business; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649306.5624256,
+       "fallback": null
+      },
+      {
+       "i": 27,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: a \"Business\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I am currently on a blog page. I need to find an EMI calculator to perform the calculation. I will continue tabbing through the navigation to find a link to a calculator or a more relevant section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button Business menu; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649317.6856673,
+       "fallback": null
+      },
+      {
+       "i": 28,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: span \"Business menu\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button \"Business menu\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will continue tabbing through the navigation to see if I can find a link to an EMI calculator or a more relevant section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button Resources; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649330.3431435,
+       "fallback": null
+      },
+      {
+       "i": 29,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: button \"Resources\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I am currently on a blog page. I need to find an EMI calculator to perform the task. I will continue tabbing through the navigation menu to see if I can find a link to a calculator or a more relevant section.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button About; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649342.215381,
+       "fallback": null
+      },
+      {
+       "i": 30,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: button \"About\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I am currently navigating the header. I need to find the EMI calculator, which is likely in the main content. I will continue tabbing to reach the main content or find a link to a calculator.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button (expanded=false) Help; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649354.2226837,
+       "fallback": null
+      },
+      {
+       "i": 31,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: button \"Help\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the requested calculation. I will start by skipping to the main content to see if the calculator is available on this page.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Save Items; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan",
+       "target_selector": null,
+       "t": 1793649362.0045166,
+       "fallback": null
+      },
+      {
+       "i": 32,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/blogs/loan/home-loan/50-lakh-home-loan\nTITLE: ₹50 Lakh Home Loan EMI Up to 30 Years\nFOCUS: focus indicator visible on: a \"Save Items\"\nVISIBLE CONTROLS:\n- button/submit \"skip to main content\"\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Blogs\"\n- a \"Loan\"\n- a \"Home Loan\"\n- a \"₹50 Lakh Home Loan EMI Up to 30 Years\"\n- a \"Share this article\"\n- a \"APPLY NOW (opens in new tab)\"\n- a \"know more about home loan\"\n\nVISIBLE TEXT:\nSkip to main content ICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Save Items Open Accessibility Menu Country Dropdown Login Blogs Loan Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years Loan | Home Loan ₹50 Lakh Home Loan EMI Up to 30 Years 2 mins Read | 3 Months Ago Share this article APPLY NOW KNOW MORE To meet various financial needs and emergencies, we often consider applying for a Loan. Banks and financial institutions offer diverse credit options, but it is crucial to understand the distinctions. Two common types of Loans are Home Loans and Mortgage Loans. While both involve property, they serve different purposes. Here is a closer look at the distinctions between Home Loans and Mortgage Loans to help you make informed financial decisions.",
+       "thought": "I need to find an EMI calculator to perform the calculation. I will skip the header navigation to see if the calculator is located within the main content of this page.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; you cannot see where focus is; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/saved-products",
+       "target_selector": null,
+       "t": 1793649372.3486345,
+       "fallback": null
+      },
+      {
+       "i": 33,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/saved-products\nTITLE: Saved Products\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Personal Banking\"\n- a \"Saved Products\"\n- a \"ICICI Bank Footer Logo\"\n- button/submit \"ICICI Bank Country Websites\"\n- button/button \"Scroll To Top\"\n- a \"CONTACT US\"\n- a \"1800 1080\"\n- a \"LOCATE US\"\n- a \"Contact Us\"\n- a \"Customer Care\"\n- a \"Report unauthorized transaction\"\n- a \"Depositor Education and Awareness Fund (DEAF)\"\n- a \"Form Center\"\n- a \"Raise a service request\"\n- a \"Report suspicious activities\"\n- a \"Lodge a complaint\"\n- a \"Complaint form\"\n- a \"ICICI Foundation\"\n- a \"ICICI Lombard General Insurance\"\n- a \"ICICI Life Insurance\"\n- a \"ICICI Prudential AMC\"\n- a \"ICICI Venture\"\n- a \"ICICI Direct\"\n- a \"ICICI Securities Primary Dealership Ltd\"\n- a \"ICICI Home Finance\"\n- a \"Safe Banking\"\n- a \"Reserve Bank of India (RBI) Awareness Campaign\"\n- a \"RBI: Beware of Fictitious Offers\"\n- a \"RBI Kehta Hai\"\n- a \"Regulatory disclosure section\"\n- a \"Customer Literature on Non-Performing Assets (NPAs) and Spec\"\n- a \"Regulatory disclosure section 2024\"\n- a \"Interest rates\"\n- a \"Service charges and fee\"\n- a \"Forex rates\"\n- a \"Terms and conditions\"\n- a \"Frequently asked questions (FAQs)\"\n- a \"Important information related to digital lending\"\n- a \"Account activation process\"\n\nVISIBLE TEXT:\nICICI Bank Logo Personal NRI Business Resources About Help 1800 1080 Ask iPal Save Items Open Accessibility Menu Country Dropdown Login Personal Banking Saved Products Saved by you ICICI Bank Footer Logo ICICI Bank Country Websites ICICI Bank Country Websites SCROLL TO TOP CONTACT US 1800 1080 LOCATE US Find branches and Automated Teller Mach",
+       "thought": "I am currently on the 'Saved Products' page, which is not helpful for calculating an EMI. I need to find an EMI calculator, likely under 'Personal' or by going to the home page. I will try to navigate back to the home page by Tabbing to the ICICI Bank Logo.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link Code of Commitment; newly visible: Dropdown Login Deceased Claim Settlement Other Career opportunities Do not call registry Customer service policies Business conduct and ethics Use of unparliamentary language by customers Fair practice code for lenders Multilingual disclaim...",
+       "url": "https://www.icici.bank.in/personal-banking/saved-products",
+       "target_selector": null,
+       "t": 1793649381.4390392,
+       "fallback": null
+      },
+      {
+       "i": 34,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/saved-products\nTITLE: Saved Products\nFOCUS: focus indicator visible on: a \"Code of Commitment\"\nVISIBLE CONTROLS:\n- a \"ICICI Bank Logo\"\n- a \"Personal\"\n- button \"Personal\"\n- a \"NRI\"\n- button \"NRI\"\n- a \"Business\"\n- button \"Business\"\n- button/button \"Resources\"\n- button/button \"About\"\n- button/button \"Help\"\n- a \"Ask iPal\"\n- a \"Save Items\"\n- button/submit \"Open Accessibility Menu\"\n- button/submit \"Country Dropdown\"\n- button/submit \"Login\"\n- a \"Deceased Claim Settlement\"\n- a \"Career opportunities (opens in new tab)\"\n- a \"Do not call registry\"\n- a \"Customer service policies\"\n- a \"PDF, 495 KB\"\n- a \"Use of unparliamentary language by customers\"\n- a \"PDF, 1 MB\"\n- a \"Multilingual disclaimer\"\n- a \"Sitemap\"\n- a \"Offers\"\n- a \"Nearby offers\"\n- a \"Update KYC (opens in new tab)\"\n- a \"PDF, 84 KB\"\n- a \"Ways to Bank\"\n- a \"Digital Banking\"\n- a \"Mobile Banking\"\n- a \"Net Banking\"\n- a \"ICICI Bank's iMobile app\"\n- a \"WhatsApp Banking\"\n- a \"Pockets by ICICI Bank\"\n- a \"ATMs and branches\"\n- a \"Insta Banking\"\n- a \"IVR Banking\"\n- a \"Investor Center\"\n- a \"Annual reports\"\n- a \"Investor presentation\"\n- a \"Quarterly results\"\n- a \"Notice\"\n- a \"Investor contact\"\n- a \"About Us\"\n- a \"Board of Directors\"\n- a \"Awards and Recognition\"\n- a \"Environment, Social and Governance\"\n- a \"Notices\"\n- a \"Calculators\"\n- a \"Fixed Deposit Calculator\"\n- a \"Personal Loan Equated Monthly Instalment (EMI) calculator\"\n- a \"Home Loan EMI Calculator\"\n- a \"Car Loan EMI calculator\"\n- a \"Mutual fund calculator\"\n- a \"Systematic Investment Plan (SIP) calculator\"\n- a \"Education Loan EMI calculator\"\n- a \"Retirement calculator\"\n- a \"Two - Wheeler Loan EMI Calculator\"\n- a \"NPS calculator\"\n- a \"PPF calculator\"\n- a \"Gold Loan Calculator (opens in new tab)\"\n- a \"iOS link to download ICICI Bank's iMobile app (opens in new \"\n- a \"android link to download ICICI Bank's iMobile app (opens in \"\n- a \"ICICI Bank Facebook Page (opens in new tab)\"\n- a \"ICICI Bank LinkedIn Page (opens in new tab)\"\n- a ",
+       "thought": "I need to find the Home Loan EMI Calculator. I am currently focused on 'Code of Commitment', which is near the end of the page. I will use Shift+Tab to move backwards through the links to find the calculator.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: link Privacy Policy; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/saved-products",
+       "target_selector": null,
+       "t": 1793649395.5515778,
+       "fallback": null
+      }
+     ]
+    },
+    "P3": {
+     "status": "done",
+     "reason": "",
+     "answer": "₹43,392",
+     "tool_error": false,
+     "effort": {
+      "actions": 10,
+      "key_presses": 0
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–640 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:6 a \"Loans\"\nel:7 a \"Home Loan\"\nel:8 a \"EMI Calculator\"\nel:9 a \"APPLY NOW (opens in new tab)\"\nel:10 a \"HOME LOAN DETAILS\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login Loans Home Loan EMI Calculator Home Loan EMI Calculator Use the ICICI Bank Home Loan calculator to estimate your EMI easily. The Home Loan EMI calculator helps you understand monthly repayments based on loan amount, tenure, and interest rate. This Home Loan interest calculator supports better financial planning before applying. T&Cs apply. APPLY NOW HOME LOAN DETAILS The Home Loan EMI Calculator is a simple financial planning tool that helps borrowers estimate monthly repayment obligations accurately. Customers can calculate EMI amounts instantly by entering the loan amount, applicable interest rate and repayment tenure. ICICI Bank’s Home Loan EMI Calculator is an apt option to plan your EMI and have accurate figures for better planning. By simply entering your desired loan amount, interest rate and tenure, get an accurate Home Loan EMI calculation. Our user-friendly interface allows you to estimate a budget and plan your finances accordingly. Our Home Loan EMI Calculator uses a simple mathematical formula to ensure accurate results for your financial planning. A Home Loan EMI Calculator helps customers estimate monthly EMI obligations before applying for a loan. By entering the loan amount, applicable interest rate and repayment tenure, borrowers can calculate approximate EMI amounts instantly. The calculator also helps compare different loan scenarios and repayment structures for be",
+       "thought": "I am on the Home Loan EMI Calculator page, but the calculator itself is not visible in the current view. I need to scroll down to find the input fields for loan amount, interest rate, and tenure.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: EMI Calculator About Need more information FAQs | EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648561.0189655,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=2000000\nel:18 input/text \"Amount\" value=20,00,000\nel:19 input/range \"Interest Rate\" value=7.8\nel:20 input/text \"Interest Rate\" value=7.8%\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I need to set the loan amount to 50,00,000. I will type the value into the Amount text field.",
+       "action": {
+        "type": "type",
+        "ref": "el:18",
+        "text": "5000000"
+       },
+       "result": "ok; the field now contains \"5000000\"; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+       "t": 1793648633.1056116,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=5000000\nel:19 input/range \"Interest Rate\" value=7.8\nel:20 input/text \"Interest Rate\" value=7.8%\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I have set the amount to 50,00,000. Now I need to set the interest rate to 8.5%.",
+       "action": {
+        "type": "type",
+        "ref": "el:20",
+        "text": "8.5%"
+       },
+       "result": "ok; the field now contains \"7.8\"; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+       "t": 1793648637.8465238,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=7\nel:20 input/text \"Interest Rate\" value=7.8\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "The interest rate was incorrectly entered as 7.8 instead of 8.5. I will try to type '8.5' into the interest rate field to correct it.",
+       "action": {
+        "type": "type",
+        "ref": "el:20",
+        "text": "8.5"
+       },
+       "result": "ok; the field now contains \"8.5\"; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+       "t": 1793648647.761622,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=8\nel:20 input/text \"Interest Rate\" value=8.5\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I have set the amount and the interest rate. Now I need to set the duration to 20 years by clicking on the '20Y' button.",
+       "action": {
+        "type": "click",
+        "ref": "el:24"
+       },
+       "result": "ok; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(3) > div:nth-of-type(2) > div > ul > li:nth-of-type(3) > label:nth-of-type(2)",
+       "t": 1793648726.3312845,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=7.8\nel:20 input/text \"Interest Rate\" value=7.8%\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "The interest rate is currently 7.8%, but the task requires 8.5%. I will re-type 8.5 into the interest rate field and press Tab to ensure it is applied.",
+       "action": {
+        "type": "type",
+        "ref": "el:20",
+        "text": "8.5"
+       },
+       "result": "ok; the field now contains \"8.5\"; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+       "t": 1793648795.5499504,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=8\nel:20 input/text \"Interest Rate\" value=8.5\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I have already set the amount to 50,00,000 and the interest rate to 8.5. I also clicked on '20Y' for the duration. Now I need to find the calculated EMI, which is likely further down the page.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: Monthly EMI ₹43,392 Total Interest ₹54,13,879 Total Payable ₹1,04,13,879 APPLY NOW Disclaimer* : *For representation purpose only. Final values may vary subject to bank’s policy. VIEW AMORTIZATION SCHEDULE About Home Loan EMI Calculator",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648858.4985464,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 1000–1640 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:21 button/button \"Custom\"\nel:26 a \"APPLY NOW\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs 1Y 15 Years 20Y Custom Monthly EMI ₹43,392 Total Interest ₹54,13,879 Total Payable ₹1,04,13,879 APPLY NOW Disclaimer* : *For representation purpose only. Final values may vary subject to bank’s policy. VIEW AMORTIZATION SCHEDULE About Home Loan EMI Calculator To enhance your experience, we use cookies. Know more. OK",
+       "thought": "I have successfully entered the loan amount, interest rate, and tenure, and the calculator has displayed the results. The monthly EMI is shown as ₹43,392.",
+       "action": {
+        "type": "scroll",
+        "dir": "up"
+       },
+       "result": "ok; newly visible: information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793648940.8986335,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=8\nel:20 input/text \"Interest Rate\" value=8.5\nel:21 button/button \"Custom\"\nel:11 button/button \"Know more.\"\nel:12 button/button \"OK\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI To enhance your experience, we use cookies. Know more. OK",
+       "thought": "The values for amount, interest rate, and duration are correctly set. I need to clear the cookie banner to see the results clearly and confirm the EMI.",
+       "action": {
+        "type": "click",
+        "ref": "el:12"
+       },
+       "result": "ok; nothing visible changed",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": "#container-bc76d38143 > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > button",
+       "t": 1793648995.6284316,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 500–1140 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:10 a \"HOME LOAN DETAILS\"\nel:17 input/range \"Amount\" value=5000000\nel:18 input/text \"Amount\" value=50,00,000\nel:19 input/range \"Interest Rate\" value=8.5\nel:20 input/text \"Interest Rate\" value=8.5%\nel:21 button/button \"Custom\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs APPLY NOW HOME LOAN DETAILS Home Loan EMI Calculator Amount 20L 1Cr 2Cr 3Cr 4Cr 5Cr Interest Rate 1% 5% 10% 15% 20% Duration 1Y 15 Years 20Y Custom Monthly EMI",
+       "thought": "The inputs for amount, interest rate, and duration are correctly set. I need to scroll down to see the calculated Monthly EMI to confirm the result.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: Monthly EMI ₹43,392 Total Interest ₹54,13,879 Total Payable ₹1,04,13,879 APPLY NOW Disclaimer* : *For representation purpose only. Final values may vary subject to bank’s policy. VIEW AMORTIZATION SCHEDULE About Home Loan EMI Calculator",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649041.6647227,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 1000–1640 px of a 7937 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Toll Free No\"\nel:3 a \"Ask iPal\"\nel:4 a \"Save Items\"\nel:5 button/submit \"Login\"\nel:13 a \"EMI Calculator\"\nel:14 a \"About\"\nel:15 a \"Need more information\"\nel:21 button/button \"Custom\"\nel:26 a \"APPLY NOW\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:22 label \"1Y\"\nel:23 label \"15 Years\"\nel:24 label \"20Y\"\n\nVISIBLE TEXT:\nICICI Bank Logo Toll Free No Ask iPal Save Items Login EMI Calculator About Need more information FAQs 1Y 15 Years 20Y Custom Monthly EMI ₹43,392 Total Interest ₹54,13,879 Total Payable ₹1,04,13,879 APPLY NOW Disclaimer* : *For representation purpose only. Final values may vary subject to bank’s policy. VIEW AMORTIZATION SCHEDULE About Home Loan EMI Calculator",
+       "thought": "The EMI calculation for a loan of ₹50,00,000 at 8.5% interest for 20 years is displayed on the screen as ₹43,392. I have verified the inputs and the result.",
+       "action": {
+        "type": "done",
+        "answer": "₹43,392"
+       },
+       "result": "done",
+       "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+       "target_selector": null,
+       "t": 1793649092.5719907,
+       "fallback": null
+      }
+     ]
+    }
+   },
+   "findings": [
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.1.1",
+     "step": 0,
+     "target": "input \"\"",
+     "message": "can't be reached with the keyboard (Tab never lands on it)",
+     "severity": "blocks",
+     "evidence": {
+      "tabs": 80
+     }
+    },
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.1.1",
+     "step": 0,
+     "target": "task",
+     "message": "task stalled: input \"\": can't be reached with the keyboard (Tab never lands on it)",
+     "severity": "blocks",
+     "evidence": {
+      "source": "agent",
+      "corroborated": true,
+      "agent_reason": "ran out of steps"
+     }
+    }
+   ],
+   "tool_errors": []
+  },
+  {
+   "task": {
+    "id": "t2",
+    "goal": "Set a loan amount of ₹75,00,000 at a 9% interest rate for 15 years and click on 'VIEW AMORTIZATION SCHEDULE' to see the repayment breakdown.",
+    "start_url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+    "success": "The amortization schedule table or dialog is displayed showing the breakdown of principal and interest.",
+    "stop_before": "APPLY NOW",
+    "features": [
+     "form",
+     "slider",
+     "dialog",
+     "dynamic_results"
+    ],
+    "validation": {
+     "verdict": "valid",
+     "checks": {
+      "typical": "yes",
+      "feasible_here": "yes",
+      "no_login_or_payment": "yes",
+      "concrete": "yes",
+      "checkable": "yes",
+      "sequence_valid": "unknown"
+     },
+     "reasons": {
+      "typical": "Users often use EMI calculators to plan their home loan repayments.",
+      "feasible_here": "The inventory shows amount, interest rate, and a button for the amortization schedule.",
+      "no_login_or_payment": "The task only involves using a calculator and viewing a schedule, no submission or payment required.",
+      "concrete": "The goal provides specific values: ₹75,00,000, 9% interest, and 15 years.",
+      "checkable": "Success is defined by the visibility of the amortization schedule table or dialog.",
+      "sequence_valid": "The tenure field is not explicitly listed in the inventory text, but it is implied by the calculator's purpose and the 'Durati' text fragment."
+     },
+     "steps_outline": [
+      "open the home loan emi calculator",
+      "set the loan amount to 75,00,000",
+      "set the interest rate to 9%",
+      "set the tenure to 15 years",
+      "click on 'VIEW AMORTIZATION SCHEDULE'"
+     ]
+    }
+   },
+   "reference": {
+    "status": "stuck",
+    "answer": "",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–800 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=2000000\nel:22 input/text \"Amount\" value=20,00,000\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summary \"What is the bene",
+      "thought": "I need to set the loan amount to ₹75,00,000. I will use the text input field for the amount.",
+      "action": {
+       "type": "type",
+       "ref": "el:22",
+       "text": "75,00,000"
+      },
+      "result": "ok; the field now contains \"\"; nothing visible changed",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+      "t": 1793649412.2809367,
+      "fallback": null
+     },
+     {
+      "i": 1,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–800 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=25050000\nel:22 input/text \"Amount\"\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summary \"What is",
+      "thought": "The previous attempt to type the amount didn't seem to work as the field is reported as empty. I will try typing the amount again and press Enter to ensure it is registered.",
+      "action": {
+       "type": "type",
+       "ref": "el:22",
+       "text": "7500000"
+      },
+      "result": "ok; the field now contains \"7500000\"; newly visible: Monthly EMI ₹90,206 | Total Interest ₹33,24,604 | Total Payable ₹1,08,24,604",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(1) > form > span > input",
+      "t": 1793649416.1284535,
+      "fallback": null
+     },
+     {
+      "i": 2,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 0–800 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=7500000\nel:22 input/text \"Amount\" value=7500000\nel:23 input/range \"Interest Rate\" value=7.8\nel:24 input/text \"Interest Rate\" value=7.8%\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 sum",
+      "thought": "The loan amount is already set to 7500000. Now I need to set the interest rate to 9%.",
+      "action": {
+       "type": "type",
+       "ref": "el:24",
+       "text": "9"
+      },
+      "result": "ok; the field now contains \"9\"; newly visible: Monthly EMI ₹95,007 | Total Interest ₹39,00,820 | Total Payable ₹1,14,00,820",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": "#container-a4c6b0bac0 > div > div:nth-of-type(3) > div > div > article > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > form > span > input",
+      "t": 1793649433.6121342,
+      "fallback": null
+     },
+     {
+      "i": 3,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 27–827 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=7500000\nel:22 input/text \"Amount\" value=75,00,000\nel:23 input/range \"Interest Rate\" value=9\nel:24 input/text \"Interest Rate\" value=9\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summa",
+      "thought": "I have set the amount and interest rate. Now I need to set the duration to 15 years. I don't see the duration controls in the current view, so I will scroll down to find them.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; newly visible: Dropdown Login EMI Calculator About Need more information FAQs",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793649450.569078,
+      "fallback": null
+     },
+     {
+      "i": 4,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=7500000\nel:22 input/text \"Amount\" value=75,00,000\nel:23 input/range \"Interest Rate\" value=9\nel:24 input/text \"Interest Rate\" value=9\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Ho",
+      "thought": "I have set the amount and interest rate, but the duration is currently set to '10 Year'. I need to change it to '15 Years'. However, the '15 Years' button is not appearing in the list of visible controls with a reference ID. I will try to scroll up to see if I can find it or if it was missed.",
+      "action": {
+       "type": "scroll",
+       "dir": "up"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793649509.2588234,
+      "fallback": null
+     },
+     {
+      "i": 5,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 27–827 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=7500000\nel:22 input/text \"Amount\" value=75,00,000\nel:23 input/range \"Interest Rate\" value=9\nel:24 input/text \"Interest Rate\" value=9\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Home Loan EMI calculator\"\nel:47 summary \"What is a Home Loan amortization schedule?\"\nel:48 summa",
+      "thought": "I have set the amount and interest rate, but I cannot see the duration (tenure) controls in the visible controls list, even though they are mentioned in the visible text. I will try to scroll down to see if they appear in the controls list.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; newly visible: Dropdown Login EMI Calculator About Need more information FAQs",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793649552.7362893,
+      "fallback": null
+     },
+     {
+      "i": 6,
+      "observation": "URL: https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nTITLE: Home Loan EMI Calculator - Housing Loan EMI Calculator Online\nPAGE POSITION: showing 527–1327 px of a 4824 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"ICICI Bank Logo\"\nel:2 a \"Personal\"\nel:3 button \"Personal\"\nel:4 a \"NRI\"\nel:5 button \"NRI\"\nel:6 a \"Business\"\nel:7 button \"Business\"\nel:8 button/button \"Resources\"\nel:9 button/button \"About\"\nel:10 button/button \"Help\"\nel:11 a \"Ask iPal\"\nel:12 a \"Save Items\"\nel:13 button/submit \"Open Accessibility Menu\"\nel:14 button/submit \"Country Dropdown\"\nel:15 button/submit \"Login\"\nel:216 a \"EMI Calculator\"\nel:217 a \"About\"\nel:218 a \"Need more information\"\nel:219 a \"FAQs\"\nel:16 a \"Loans\"\nel:17 a \"Home Loan\"\nel:18 a \"EMI Calculator\"\nel:19 a \"APPLY NOW (opens in new tab)\"\nel:20 a \"HOME LOAN DETAILS\"\nel:21 input/range \"Amount\" value=7500000\nel:22 input/text \"Amount\" value=75,00,000\nel:23 input/range \"Interest Rate\" value=9\nel:24 input/text \"Interest Rate\" value=9\nel:25 button/button \"Custom\"\nel:26 a \"APPLY NOW (opens in new tab)\"\nel:27 button/button \"VIEW AMORTIZATION SCHEDULE\"\nel:28 summary \"Home Loan EMI Calculator: Overview\"\nel:210 a \"\"\nel:29 summary \"Home Loan Calculator: Benefits and Features\"\nel:30 summary \"ICICI Bank Home Loan EMI calculator\"\nel:31 summary \"How to calculate Home Loan EMI?\"\nel:32 summary \"How can a Home Loan EMI Calculator help you?\"\nel:33 summary \"Advantages of Using a Home Loan Interest Rate calculator\"\nel:34 summary \"How to use ICICI Bank's Home Loan EMI calculator?\"\nel:35 summary \"What are the key features and advantages of ICICI Bank Home \"\nel:211 a \"\"\nel:36 a \"Home Loan Prepayment calculator\"\nel:37 a \"Home Loan\"\nel:38 a \"Home Loan Interest Rates\"\nel:39 a \"Home Loan Service Charges\"\nel:40 a \"Home Loan eligibility\"\nel:41 a \"Home Loan Balance Transfer\"\nel:42 a \"Home Loan documents required\"\nel:43 a \"Existing customers login\"\nel:44 a \"Pre-approved Home Loan\"\nel:45 summary \"What is Home Loan EMI?\"\nel:46 summary \"Why use the Ho",
+      "thought": "I have set the loan amount and interest rate, but the duration buttons (specifically '15 Years') are not present in the visible controls list, so I cannot select the required tenure.",
+      "action": {
+       "type": "stuck",
+       "reason": "The duration buttons ('10 Year', '15 Years', '20 Year') are visible in the screenshot but are missing from the list of interactive controls, making it impossible to select the 15-year tenure."
+      },
+      "result": "stuck",
+      "url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+      "target_selector": null,
+      "t": 1793649577.2635996,
+      "fallback": null
+     }
+    ]
+   },
+   "profiles": {},
+   "findings": [],
+   "invalid": "reference agent could not complete the task (stuck: The duration buttons ('10 Year', '15 Years', '20 Year') are visible in the screenshot but are missing from the list of i)"
+  }
+ ],
+ "usage": {
+  "planner": {
+   "calls": 1,
+   "input": 2024,
+   "output": 2464,
+   "cached": 0
+  },
+  "validator": {
+   "calls": 2,
+   "input": 6191,
+   "output": 703,
+   "cached": 0
+  },
+  "nav": {
+   "calls": 77,
+   "input": 270631,
+   "output": 43058,
+   "cached": 0
+  },
+  "endpoints": {
+   "gemini#1": 5,
+   "gemini#5": 24,
+   "cloudflare#4": 48,
+   "cloudflare#5": 3
+  }
+ },
+ "model_fallbacks": []
+}

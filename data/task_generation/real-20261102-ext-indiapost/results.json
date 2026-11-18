@@ -1,0 +1,1118 @@
+{
+ "url": "https://www.indiapost.gov.in/",
+ "results": [
+  {
+   "task": {
+    "id": "t1",
+    "goal": "Calculate the postage for a domestic letter weighing 250 grams from origin pincode 110001 to destination pincode 400001.",
+    "start_url": "https://www.indiapost.gov.in/calculate-postage",
+    "success": "The calculated postage amount is displayed on the screen.",
+    "stop_before": null,
+    "features": [
+     "form",
+     "combobox",
+     "dynamic_results"
+    ],
+    "validation": {
+     "verdict": "valid",
+     "checks": {
+      "typical": "yes",
+      "feasible_here": "yes",
+      "no_login_or_payment": "yes",
+      "concrete": "yes",
+      "checkable": "yes",
+      "sequence_valid": "yes"
+     },
+     "reasons": {
+      "typical": "Calculating postage is a standard activity for postal service website visitors.",
+      "feasible_here": "The calculate postage page contains the necessary form fields for article type, pincodes, and weight.",
+      "no_login_or_payment": "Calculating postage is an informational service that does not require login or payment.",
+      "concrete": "The task provides specific pincodes (110001, 400001) and a specific weight (250 grams).",
+      "checkable": "The success criteria specifies that the calculated postage amount must be displayed.",
+      "sequence_valid": "All steps are possible using the form elements provided on the calculate-postage page."
+     },
+     "steps_outline": [
+      "open the calculate postage page",
+      "select 'Letter' as the article type",
+      "enter '110001' in the origin pincode field",
+      "enter '400001' in the destination pincode field",
+      "enter '250' in the weight field",
+      "click 'Calculate Postage'"
+     ]
+    }
+   },
+   "reference": {
+    "status": "done",
+    "answer": "₹ 77.00",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–800 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\"\nel:23 combobox/text \"Destination Pincode or Location\"\nel:24 input/text \"Weight (gms)*\"\nel:25 button/submit \"Calculate Postage\" [disabled]\nel:26 button/button \"Reset\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:43 a \"Customize Cookies\"\nel:44 button/button \"Decline Optional Cookies\"\nel:45 button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Ori",
+      "thought": "I need to enter the origin pincode first. I will type '110001' into the Origin Pincode field.",
+      "action": {
+       "type": "type",
+       "ref": "el:22",
+       "text": "110001"
+      },
+      "result": "ok; the field now contains \"110001\"; newly visible: Media Connect Menu closed | or Location* Searching...",
+      "url": "https://www.indiapost.gov.in/calculate-postage",
+      "target_selector": "#office-search-sendFrom",
+      "t": 1793578055.19096,
+      "fallback": null
+     },
+     {
+      "i": 1,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–800 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\" value=110001\nel:46 option \"Baroda House SO NEW DELHI, Delhi 110001\" value=0\nel:47 option \"Bengali Market SO NEW DELHI, Delhi 110001\" value=0\nel:48 option \"CAT EXTENSION COUNTER NEW DELHI, Delhi 110001\" value=0\nel:49 option \"Connaught Place SO NEW DELHI, Delhi 110001\" value=0\nel:50 option \"Election Commission SO NEW DELHI, Delhi 110001\" value=0\nel:51 option \"Krishi Bhawan SO NEW DELHI, Delhi 110001\" value=0\nel:52 option \"Lady Harding Medical College SO NEW DELHI, Delhi 110001\" value=0\nel:53 option \"New Delhi GPO DC NEW DELHI, Delhi 110001\" value=0\nel:54 option \"New Delhi HO NEW DELHI, Delhi 110001\" value=0\nel:55 option \"NGT EXTENSION COUNTER NEW DELHI, Delhi 110001\" value=0\nel:56 option \"North Avenue SO NEW DELHI, Delhi 110001\" value=0\nel:57 option \"Parliament House SO NEW DELHI, Delhi 110001\" value=0\nel:58 option \"Patiala House SO NEW DELHI, Delhi 110001\" value=0\nel:59 option \"Pragati Maidan SO NEW DELHI, Delhi 110001\" value=0\nel:60 option \"Rail Bhawan SO NEW DELHI, Delhi 110001\" value=0\nel:61 option \"RML EXTN COUNTER NDHO NEW DELHI, Delhi 110001\" value=0\nel:62 optio",
+      "thought": "I have entered the origin pincode, and a list of suggestions has appeared. I need to select one of the suggestions to confirm the origin pincode.",
+      "action": {
+       "type": "click",
+       "ref": "el:46"
+      },
+      "result": "ok; newly visible: Media Connect Menu closed",
+      "url": "https://www.indiapost.gov.in/calculate-postage",
+      "target_selector": "#office-search-results-sendFrom-0",
+      "t": 1793578064.8998241,
+      "fallback": null
+     },
+     {
+      "i": 2,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–800 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\" value=110001\nel:23 combobox/text \"Destination Pincode or Location\"\nel:24 input/text \"Weight (gms)*\"\nel:25 button/submit \"Calculate Postage\" [disabled]\nel:26 button/button \"Reset\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:43 a \"Customize Cookies\"\nel:44 button/button \"Decline Optional Cookies\"\nel:45 button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Menu closed Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Selec",
+      "thought": "I have entered the origin pincode. Now I need to enter the destination pincode.",
+      "action": {
+       "type": "type",
+       "ref": "el:23",
+       "text": "400001"
+      },
+      "result": "ok; the field now contains \"400001\"; newly visible: Media Connect Menu closed",
+      "url": "https://www.indiapost.gov.in/calculate-postage",
+      "target_selector": "#office-search-sendTo",
+      "t": 1793578071.4502134,
+      "fallback": null
+     },
+     {
+      "i": 3,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–800 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\" value=110001\nel:23 combobox/text \"Destination Pincode or Location\" value=400001\nel:68 option \"Bazargate SO MUMBAI, Maharashtra 400001\" value=0\nel:69 option \"Mumbai GPO MUMBAI, Maharashtra 400001\" value=0\nel:70 option \"Mumbai GPO IDC MUMBAI, MAHARASHTRA 400001\" value=0\nel:71 option \"Stock Exchange SO MUMBAI, Maharashtra 400001\" value=0\nel:72 option \"Tajmahal SO MUMBAI, Maharashtra 400001\" value=0\nel:73 option \"Town Hall SO Mumbai MUMBAI, Maharashtra 400001\" value=0\nel:24 input/text \"Weight (gms)*\"\nel:25 button/submit \"Calculate Postage\" [disabled]\nel:26 button/button \"Reset\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:",
+      "thought": "I have entered the origin and destination pincodes. I need to select a specific location from the dropdown for the destination pincode to ensure it's correctly registered, then I will enter the weight.",
+      "action": {
+       "type": "click",
+       "ref": "el:69"
+      },
+      "result": "ok; newly visible: Media Connect Menu closed",
+      "url": "https://www.indiapost.gov.in/calculate-postage",
+      "target_selector": "#office-search-results-sendTo-1",
+      "t": 1793578082.0389836,
+      "fallback": null
+     },
+     {
+      "i": 4,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 48–848 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\" value=110001\nel:23 combobox/text \"Destination Pincode or Location\" value=400001\nel:24 input/text \"Weight (gms)*\"\nel:25 button/submit \"Calculate Postage\" [disabled]\nel:26 button/button \"Reset\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:43 a \"Customize Cookies\"\nel:44 button/button \"Decline Optional Cookies\"\nel:45 button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Menu closed Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to k",
+      "thought": "I have entered the origin and destination pincodes. Now I need to enter the weight of the letter.",
+      "action": {
+       "type": "type",
+       "ref": "el:24",
+       "text": "250"
+      },
+      "result": "ok; the field now contains \"250\"; newly visible: Media Connect Menu closed",
+      "url": "https://www.indiapost.gov.in/calculate-postage",
+      "target_selector": "#floating-input-weight",
+      "t": 1793578218.2722611,
+      "fallback": null
+     },
+     {
+      "i": 5,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 39–839 px of a 1306 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:21 combobox/button \"Select Article Type\"\nel:22 combobox/text \"Origin Pincode or Location\" value=110001\nel:23 combobox/text \"Destination Pincode or Location\" value=400001\nel:24 input/text \"Weight (gms)*\" value=250\nel:25 button/submit \"Calculate Postage\"\nel:26 button/button \"Reset\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:43 a \"Customize Cookies\"\nel:44 button/button \"Decline Optional Cookies\"\nel:45 button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Menu closed Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to kn",
+      "thought": "I have filled in the origin pincode, destination pincode, and weight. Now I need to click the 'Calculate Postage' button to get the result.",
+      "action": {
+       "type": "click",
+       "ref": "el:25"
+      },
+      "result": "ok; newly visible: Media Connect Menu closed | know more From: 110001 (NEW DELHI) To: 400001 (MUMBAI) Type: | Type: Letter Weight: 250 gms Edit search details Loading available shipping services...",
+      "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15660153&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24350001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+      "target_selector": "#tabpanel-domestic > div > form > div:nth-of-type(4) > button:nth-of-type(1)",
+      "t": 1793578228.3728836,
+      "fallback": null
+     },
+     {
+      "i": 6,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15660153&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24350001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 106–906 px of a 1109 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:74 button/button \"From: 110001 (NEW DELHI) To: 400001 (MUMBAI) Type: Letter We\"\nel:27 button \"Open Megha chatbot\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\nel:36 a \"India Post on X (Twitter)\"\nel:37 a \"India Post on YouTube\"\nel:38 a \"India Post on Facebook\"\nel:39 a \"India Post on Instagram\"\nel:40 a \"MyGov\"\nel:41 a \"National Portal of India - india.gov.in\"\nel:42 a \"Cookie Settings.\"\nel:43 a \"Customize Cookies\"\nel:44 button/button \"Decline Optional Cookies\"\nel:45 button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Menu closed Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Cl",
+      "thought": "The page is currently loading the available shipping services. I will scroll down to see if the results appear.",
+      "action": {
+       "type": "scroll",
+       "dir": "down"
+      },
+      "result": "ok; nothing visible changed",
+      "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15660153&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24350001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+      "target_selector": null,
+      "t": 1793578243.0580556,
+      "fallback": null
+     },
+     {
+      "i": 7,
+      "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15660153&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24350001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 606–1406 px of a 1685 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Skip to main content\"\nel:2 a \"Government of India emblem, home\"\nel:3 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:4 combobox/text \"Search\"\nel:5 a \"India Post, home\"\nel:6 a \"\"\nel:7 button/button \"Skip to main content\"\nel:8 combobox/submit \"Language Translator\"\nel:9 button/button \"Accessibility Links\"\nel:10 button/button \"Login\"\nel:11 menuitem \"Home\"\nel:12 menuitem \"Ministry\"\nel:13 menuitem \"Offerings\"\nel:14 menuitem \"Documents\"\nel:15 menuitem \"Media\"\nel:16 menuitem \"Connect\"\nel:17 a \"Home\"\nel:18 tab/button \"Domestic\"\nel:19 tab/button \"International\"\nel:20 a \"Restricted & Prohibited Articles Click here to know more\"\nel:74 button/button \"From: 110001 (NEW DELHI) To: 400001 (MUMBAI) Type: Letter We\"\nel:75 button/button \"How the postage for Speed Post is calculated\"\nel:76 button/button \"Value added services available for Speed Post\"\nel:77 a \"Book Now Speed Post (opens in a new tab)\"\nel:78 button/button \"How the postage for Letter Card is calculated\"\nel:79 a \"Book Now Letter Card (opens in a new tab)\"\nel:80 button/button \"How the postage for Letter is calculated\"\nel:81 a \"Book Now Letter (opens in a new tab)\"\nel:82 button/button \"How the postage for Postcard is calculated\"\nel:83 a \"Book Now Postcard (opens in a new tab)\"\nel:84 a \"Locate Your Post Office\"\nel:27 button \"Open Megha chatbot\"\nel:85 button/button \"Go to top of page\"\nel:28 a \"› About Us\"\nel:29 a \"› Contact Us\"\nel:30 a \"› Privacy Policy\"\nel:31 a \"› Terms & Condition\"\nel:32 a \"› Feedback\"\nel:33 a \"› Help & FAQs\"\nel:34 a \"› Sitemap\"\nel:35 a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\ne",
+      "thought": "I have successfully entered all the required details (origin pincode, destination pincode, type, and weight) and the page has loaded the available shipping services. For a 'Letter' weighing 250 grams, the total postage is shown as ₹ 77.00.",
+      "action": {
+       "type": "done",
+       "answer": "₹ 77.00"
+      },
+      "result": "done",
+      "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15660153&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24350001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+      "target_selector": null,
+      "t": 1793578272.728758,
+      "fallback": null
+     }
+    ]
+   },
+   "profiles": {
+    "P1": {
+     "status": "done",
+     "reason": "",
+     "answer": "₹ 77.00",
+     "tool_error": false,
+     "effort": {
+      "actions": 10,
+      "key_presses": 2
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: page ()\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [ax:780] combobox \"Origin Pi",
+       "thought": "I need to enter the origin pincode. I will focus on the 'Origin Pincode or Location' combobox and type '110001'.",
+       "action": {
+        "type": "type",
+        "text": "110001",
+        "ref": "ax:780"
+       },
+       "result": "ok; focus: page",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578299.671296,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: page ()\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [ax:780] combobox \"Origin Pi",
+       "thought": "I have entered the origin pincode. Now I need to enter the destination pincode.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:784"
+       },
+       "result": "ok; focus: combobox (expanded=false) Destination Pincode or Location",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-sendTo",
+       "t": 1793578310.9171531,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Destination Pincode or Location (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n    ",
+       "thought": "I need to enter the destination pincode '400001' into the focused combobox.",
+       "action": {
+        "type": "type",
+        "text": "400001"
+       },
+       "result": "ok; the field now contains \"400001\"; focus: combobox (expanded=false) Destination Pincode or Location",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578319.5061157,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Destination Pincode or Location (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n    ",
+       "thought": "I have entered the origin and destination pincodes. Now I need to enter the weight of the letter.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:790"
+       },
+       "result": "ok; focus: text field Weight (gms)*",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#floating-input-weight",
+       "t": 1793578340.4266152,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Weight (gms)* (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [ax:780] combo",
+       "thought": "I need to enter the weight of the letter, which is 250 grams, into the focused weight field.",
+       "action": {
+        "type": "type",
+        "text": "250"
+       },
+       "result": "ok; the field now contains \"250\"; focus: text field Weight (gms)*",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578352.3057215,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Weight (gms)* (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [ax:780] combo",
+       "thought": "The 'Calculate Postage' button is currently disabled. I have entered the weight, but I need to ensure the value is committed by moving focus away from the field.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus: button Reset",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578364.229636,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Reset (button)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [ax:780] combobox \"Or",
+       "thought": "The 'Calculate Postage' button is disabled, which likely means the Origin Pincode was not correctly registered, as its value is not appearing in the accessibility tree unlike the other fields. I will go back to the Origin Pincode field to ensure it is correctly set.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:780"
+       },
+       "result": "ok; focus: combobox (expanded=false) Origin Pincode or Location",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-sendFrom",
+       "t": 1793578386.346947,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Origin Pincode or Location (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [",
+       "thought": "The 'Calculate Postage' button is disabled, likely because the Origin Pincode in the combobox (ax:780) hasn't been properly selected or committed. I will try to re-type the pincode and press Enter to ensure it is registered.",
+       "action": {
+        "type": "type",
+        "text": "110001"
+       },
+       "result": "ok; the field now contains \"110001\"; focus: combobox (expanded=false) Origin Pincode or Location",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578415.385509,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: Origin Pincode or Location (input)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    tabpanel \"Domestic\"\n      form\n        LabelText\n          text \"Select Article Type\"\n        [ax:776] combobox \"Select Article Type\" (value=\"Letter\")\n          text \"Letter\"\n        LabelText\n          text \"Origin Pincode or Location\"\n        [",
+       "thought": "The 'Calculate Postage' button is disabled, and the status says 'Searching...', which likely means the origin pincode is still being validated or needs to be selected from a list. I will press Enter to attempt to select the pincode from the search results.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; focus: page; announced: ['Menu closed']",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&toPincode=400001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": null,
+       "t": 1793578430.430926,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&toPincode=400001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nFOCUS: page ()\nANNOUNCED SINCE LAST ACTION: ['Menu closed']\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n      text \"Menu closed\"\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    [ax:1534] button \"From: 110001 (Area for 110001) To: 400001 (Area for 400001) Type: Letter Weight: 250 gms Edit search details\"\n    ",
+       "thought": "The page indicates it is 'Loading available shipping services...'. I need to see if the results have loaded or if there is a button to trigger the calculation. I will try to navigate to the 'Shipping services' region to check for updates.",
+       "action": {
+        "type": "focus",
+        "ref": "ax:1534"
+       },
+       "result": "ok; focus: button (expanded=false) From: 110001 (Area for 110001) To: 400001 (Area fo",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&toPincode=400001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": "#main-content > div > div > button",
+       "t": 1793578449.4785085,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&toPincode=400001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nFOCUS: From: 110001 (Area for 110001) To: 400001 (Area for 400001) Type: Letter Weight: (button)\nANNOUNCED SINCE LAST ACTION: []\n\nACCESSIBILITY TREE:\nRootWebArea \"Calculate Postage | India Post\" (focused)\n  [ax:67] link \"Skip to main content\"\n  banner \"Department of Posts header\"\n    [ax:73] link \"Government of India emblem, home\"\n    [ax:75] link \"Department of Posts, Government of India, Ministry of Communications, home\"\n      paragraph\n        text \"Government of India\"\n      text \"Ministry of Communications\"\n      text \"Department of Posts\"\n    [ax:86] combobox \"Search\"\n    [ax:92] link \"India Post, home\"\n      image \"India Post\"\n    [ax:100] link \"Digital India\"\n      image \"Digital India\"\n    [ax:114] button \"Skip to main content\"\n      image \"Skip To Main Content\"\n    [ax:898] combobox \"Language Translator\"\n    [ax:122] button \"Accessibility Links\"\n    [ax:134] button \"Login\"\n  navigation \"Main Navigation\"\n    menubar\n      [ax:149] menuitem \"Home\"\n      [ax:151] menuitem \"Ministry\"\n      [ax:191] menuitem \"Offerings\"\n      [ax:387] menuitem \"Documents\"\n      [ax:476] menuitem \"Media\"\n      [ax:509] menuitem \"Connect\"\n    status\n  [ax:556] main\n    region \"Calculate Postage\"\n      heading \"Calculate Postage\" (level=1)\n      navigation \"Breadcrumb\"\n        list\n          listitem (level=1)\n            [ax:755] link \"Home\"\n          listitem (level=1)\n            text \"/\"\n            text \"Calculate Postage\"\n    tablist \"Postage type\"\n      [ax:763] tab \"Domestic\" (selected)\n      [ax:764] tab \"International\"\n    [ax:772] link \"Restricted & Prohibited Articles Click here to know more\"\n      strong\n        text \"Restricted & Prohibited Articles\"\n      text \"Click here to know more\"\n    [ax:1534] button \"From: 110001 (Area for 110001) To: 400001 (Area for 400001) Type: Lett",
+       "thought": "I have entered the origin pincode, destination pincode, and weight. The results are now displayed on the page. I can see that for a 'Letter' with a weight of '250' gms, the total postage is '₹ 77.00'.",
+       "action": {
+        "type": "done",
+        "answer": "₹ 77.00"
+       },
+       "result": "done",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&toPincode=400001&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": null,
+       "t": 1793578471.63252,
+       "fallback": null
+      }
+     ]
+    },
+    "P2": {
+     "status": "max_steps",
+     "reason": "ran out of steps",
+     "answer": "",
+     "tool_error": false,
+     "effort": {
+      "actions": 35,
+      "key_presses": 32
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to ensure it doesn't interfere with my navigation. I will start by tabbing through the page to reach the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Skip to main content; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578310.2047396,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Skip to main content\"\nVISIBLE CONTROLS:\n- a \"Skip to main content\"\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to ensure it doesn't interfere with my navigation. I will press Tab until I reach 'Accept All Cookies' and then press Enter.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Government of India emblem, home; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578327.7379022,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Government of India emblem, home\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate to the postage calculation form. I will start by Tabbing through the header elements to reach the 'Select Article Type' field, which is already set to 'Letter'.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Department of Posts, Government of India, Ministry; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578366.2753172,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Department of Posts, Government of India, Ministry of Communications, home\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate to the postage calculation form. I will start by tabbing through the page to reach the 'Select Article Type' or the pincode fields. I'll also need to handle the cookie banner if it interferes.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; you cannot see where focus is; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578397.072766,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate to the 'Origin Pincode or Location' field. I will press Tab to move through the interactive elements.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link India Post, home; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578423.0731957,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"India Post, home\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate through the menu and tabs to reach the postage calculation form. I am currently focused on the 'India Post, home' link.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link ; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578441.358074,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to ensure it doesn't interfere with my navigation. I will tab until I reach the 'Accept All Cookies' button and then press Enter.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; you cannot see where focus is; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578460.0953078,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to interact with the page properly. I will press Tab to navigate towards the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Language Translator; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578483.1751664,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Language Translator\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate past the cookie banner to interact with the postage calculator. I will Tab through the controls until I reach the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; you cannot see where focus is; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578502.7165425,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: no visible focus indicator\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to ensure it doesn't obstruct my view or interaction. I will Tab through the controls until I reach the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: button (expanded=false) Login; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578531.4693604,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Login\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to interact with the page properly. I will Tab from the 'Login' button until I reach the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem Home; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578553.4653964,
+       "fallback": null
+      },
+      {
+       "i": 11,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Home\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to clear the cookie banner to ensure it doesn't interfere with my interactions. I will Tab through the menu items to reach the 'Accept All Cookies' button.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem (expanded=false) Ministry; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578575.9328315,
+       "fallback": null
+      },
+      {
+       "i": 12,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Ministry\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to navigate past the menu items to reach the cookie banner and accept cookies so they don't obstruct my view or interaction.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem (expanded=false) Offerings; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578598.651858,
+       "fallback": null
+      },
+      {
+       "i": 13,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Offerings\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently focused on the 'Offerings' menu item. I need to navigate through the menu and tabs to reach the postage calculation form fields.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem (expanded=false) Documents; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578617.922632,
+       "fallback": null
+      },
+      {
+       "i": 14,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Documents\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently focused on the 'Documents' menu item. I need to navigate to the postage calculation form. I will tab through the remaining menu items to reach the main content area.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem (expanded=false) Media; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578639.3186152,
+       "fallback": null
+      },
+      {
+       "i": 15,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Media\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently on the 'Media' menu item. I need to navigate to the postage calculation form. I will press Tab to move to the next element.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: menuitem (expanded=false) Connect; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578648.0215247,
+       "fallback": null
+      },
+      {
+       "i": 16,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Connect\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently on the 'Connect' menu item. I need to navigate to the postage calculation form. I will press Tab to move towards the 'Domestic' tab and the input fields.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Home; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578664.8344975,
+       "fallback": null
+      },
+      {
+       "i": 17,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Home\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently on the 'Home' link. I need to navigate to the postage calculation form by Tabbing through the elements.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=true) Domestic; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578676.6093807,
+       "fallback": null
+      },
+      {
+       "i": 18,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Domestic\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am on the Domestic tab and need to fill in the postage calculation details. The next step is to ensure the article type is correct and then move to the pincode fields.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=false) International; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578687.7385826,
+       "fallback": null
+      },
+      {
+       "i": 19,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"International\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "The 'International' tab is currently focused, but I need to calculate postage for a domestic letter. I will press Shift+Tab to move the focus back to the 'Domestic' tab.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=true) Domestic; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578699.3402565,
+       "fallback": null
+      },
+      {
+       "i": 20,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Domestic\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am on the Domestic tab, which is already selected. I need to move to the 'Select Article Type' field, but it seems to be already set to 'Letter'. I will Tab through the elements to reach the 'Origin Pincode or Location' field.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=false) International; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578715.956278,
+       "fallback": null
+      },
+      {
+       "i": 21,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"International\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently on the 'International' tab, but the task requires calculating postage for a domestic letter. I need to switch to the 'Domestic' tab.",
+       "action": {
+        "type": "press",
+        "key": "Shift+Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=true) Domestic; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578727.69097,
+       "fallback": null
+      },
+      {
+       "i": 22,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Domestic\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am on the Domestic tab and the article type is already set to Letter. I need to navigate to the Origin Pincode field.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: tab (selected=false) International; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578744.8316767,
+       "fallback": null
+      },
+      {
+       "i": 23,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"International\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "The focus is currently on the 'International' tab, but the task requires a domestic letter. I need to ensure the 'Domestic' tab is selected and then move to the next field. Since the previous actions suggest 'Domestic' was already selected, I will press Tab to move to the next interactive element.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: link Restricted & Prohibited Articles Click here to kno; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578770.471286,
+       "fallback": null
+      },
+      {
+       "i": 24,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: a \"Restricted & Prohibited Articles Click here to know more\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am on the Calculate Postage page with the Domestic tab selected. The current focus is on the 'Restricted & Prohibited Articles' link. I need to navigate to the form fields to enter the required information.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Select Article Type; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578850.1922038,
+       "fallback": null
+      },
+      {
+       "i": 25,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: button \"Select Article Type\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "The 'Select Article Type' is already set to 'Letter'. I need to move to the 'Origin Pincode or Location' field to enter the origin pincode.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Origin Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578865.419997,
+       "fallback": null
+      },
+      {
+       "i": 26,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Origin Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\"\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I am currently focused on the 'Origin Pincode or Location' field. I need to enter the origin pincode '110001'.",
+       "action": {
+        "type": "type",
+        "text": "110001"
+       },
+       "result": "ok; the field now contains \"110001\"; focus now visibly on: combobox (expanded=true) Origin Pincode or Location; newly visible: Location * Baroda House SO NEW DELHI , Delhi 110001 Bengali Market SO 110001",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578886.5406022,
+       "fallback": null
+      },
+      {
+       "i": 27,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Origin Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- option \"Baroda House SO NEW DELHI, Delhi 110001\" value=0\n- option \"Bengali Market SO NEW DELHI, Delhi 110001\" value=0\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Baroda House SO NEW DELHI , Delhi 110001 Bengali Market SO 110001 Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I have typed the origin pincode, and a list of suggestions has appeared. I need to select one of these suggestions to ensure the pincode is correctly set.",
+       "action": {
+        "type": "press",
+        "key": "ArrowDown"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=true) Origin Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578903.236919,
+       "fallback": null
+      },
+      {
+       "i": 28,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Origin Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- option \"Baroda House SO NEW DELHI, Delhi 110001\" value=0\n- option \"Bengali Market SO NEW DELHI, Delhi 110001\" value=0\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Baroda House SO NEW DELHI , Delhi 110001 Bengali Market SO 110001 Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I have typed the origin pincode and pressed ArrowDown. I need to select one of the suggestions to ensure the pincode is correctly set.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Origin Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578914.3517601,
+       "fallback": null
+      },
+      {
+       "i": 29,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Origin Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I have entered the origin pincode. Now I need to move to the destination pincode field.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Destination Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578923.9116652,
+       "fallback": null
+      },
+      {
+       "i": 30,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Destination Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\"\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to enter the destination pincode '400001' into the focused field.",
+       "action": {
+        "type": "type",
+        "text": "400001"
+       },
+       "result": "ok; the field now contains \"400001\"; focus now visibly on: combobox (expanded=true) Destination Pincode or Location; newly visible: Location * Bazargate SO MUMBAI , Maharashtra 400001 Mumbai GPO 400001",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578933.3064022,
+       "fallback": null
+      },
+      {
+       "i": 31,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Destination Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\" value=400001\n- option \"Bazargate SO MUMBAI, Maharashtra 400001\" value=0\n- option \"Mumbai GPO MUMBAI, Maharashtra 400001\" value=0\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Bazargate SO MUMBAI , Maharashtra 400001 Mumbai GPO 400001 Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to select one of the suggested locations for the destination pincode to ensure the form recognizes it.",
+       "action": {
+        "type": "press",
+        "key": "ArrowDown"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=true) Destination Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578946.2259169,
+       "fallback": null
+      },
+      {
+       "i": 32,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Destination Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\" value=400001\n- option \"Bazargate SO MUMBAI, Maharashtra 400001\" value=0\n- option \"Mumbai GPO MUMBAI, Maharashtra 400001\" value=0\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Bazargate SO MUMBAI , Maharashtra 400001 Mumbai GPO 400001 Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to select the destination from the autocomplete list to ensure the pincode is correctly registered.",
+       "action": {
+        "type": "press",
+        "key": "Enter"
+       },
+       "result": "ok; focus now visibly on: combobox (expanded=false) Destination Pincode or Location; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578958.8813593,
+       "fallback": null
+      },
+      {
+       "i": 33,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Destination Pincode or Location\"\nVISIBLE CONTROLS:\n- a \"Government of India emblem, home\"\n- a \"Department of Posts, Government of India, Ministry of Commun\"\n- combobox/text \"Search\"\n- a \"India Post, home\"\n- a \"\"\n- button/button \"Skip to main content\"\n- combobox/submit \"Language Translator\"\n- button/button \"Accessibility Links\"\n- button/button \"Login\"\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- a \"Home\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\" value=400001\n- button \"Open Megha chatbot\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nSkip to main content Government of India Ministry of Communications Department of Posts Home Ministry Offerings Documents Media Connect Calculate Postage Home Calculate Postage Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I have entered the origin and destination pincodes. Now I need to enter the weight of the letter.",
+       "action": {
+        "type": "press",
+        "key": "Tab"
+       },
+       "result": "ok; focus now visibly on: text field Weight (gms)*; newly visible: (gms) * Max 0.5 kg for letters Calculate Postage Reset Useful Links › About Us › Contact Us › Privacy Policy › Terms & Condition › Feedback › Help & FAQs › Sitemap Subscribe for Updates Last Updated On: 30.10.2026",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578970.4695277,
+       "fallback": null
+      },
+      {
+       "i": 34,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nFOCUS: focus indicator visible on: input \"Weight (gms)*\"\nVISIBLE CONTROLS:\n- menuitem \"Home\"\n- menuitem \"Ministry\"\n- menuitem \"Offerings\"\n- menuitem \"Documents\"\n- menuitem \"Media\"\n- menuitem \"Connect\"\n- tab/button \"Domestic\"\n- tab/button \"International\"\n- a \"Restricted & Prohibited Articles Click here to know more\"\n- combobox/button \"Select Article Type\"\n- combobox/text \"Origin Pincode or Location\" value=110001\n- combobox/text \"Destination Pincode or Location\" value=400001\n- input/text \"Weight (gms)*\"\n- button/submit \"Calculate Postage\" [disabled]\n- button/button \"Reset\"\n- button \"Open Megha chatbot\"\n- button/button \"Go to top of page\"\n- a \"› About Us\"\n- a \"› Contact Us\"\n- a \"› Privacy Policy\"\n- a \"› Terms & Condition\"\n- a \"› Feedback\"\n- a \"› Help & FAQs\"\n- a \"› Sitemap\"\n- a \"GIGW 3.0 Accessibility Certificate (PDF, opens in a new tab)\"\n- a \"India Post on X (Twitter)\"\n- a \"India Post on YouTube\"\n- a \"India Post on Facebook\"\n- a \"India Post on Instagram\"\n- a \"MyGov\"\n- a \"National Portal of India - india.gov.in\"\n- a \"Cookie Settings.\"\n- a \"Customize Cookies\"\n- button/button \"Decline Optional Cookies\"\n- button/button \"Accept All Cookies\"\n\nVISIBLE TEXT:\nHome Ministry Offerings Documents Media Connect Domestic International Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location * Package Details Weight (gms) * Max 0.5 kg for letters Calculate Postage Reset Useful Links › About Us › Contact Us › Privacy Policy › Terms & Condition › Feedback › Help & FAQs › Sitemap Subscribe for Updates Last Updated On: 30.10.2026 This website uses cookies to provide a better user experience. By clicking accept, you agree to the policies outlined in the Cookie Settings. Customize Cookies Decline Optional Cookies Accept All Cookies",
+       "thought": "I need to enter the weight of the letter into the weight field.",
+       "action": {
+        "type": "type",
+        "text": "250"
+       },
+       "result": "ok; the field now contains \"250\"; focus now visibly on: text field Weight (gms)*; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578979.7105489,
+       "fallback": null
+      }
+     ]
+    },
+    "P3": {
+     "status": "done",
+     "reason": "",
+     "answer": "The postage for a domestic letter weighing 250 grams from 110001 to 400001 is ₹ 77.00.",
+     "tool_error": false,
+     "effort": {
+      "actions": 11,
+      "key_presses": 0
+     },
+     "reference_effort": {
+      "actions": 7,
+      "key_presses": 0
+     },
+     "steps": [
+      {
+       "i": 0,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–640 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Government of India emblem, home\"\nel:2 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:3 combobox/text \"Search\"\nel:4 button/button \"Open mobile menu\"\nel:5 button/button \"Skip to main content\"\nel:6 combobox/submit \"Language Translator\"\nel:7 button/button \"Accessibility Links\"\nel:8 button/button \"Login\"\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Phi",
+       "thought": "I need to clear the cookie banner to see the postage calculation form more clearly.",
+       "action": {
+        "type": "click",
+        "ref": "el:91"
+       },
+       "result": "ok; newly visible: of Posts Menu closed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "body > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
+       "t": 1793578288.133954,
+       "fallback": null
+      },
+      {
+       "i": 1,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 0–640 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Government of India emblem, home\"\nel:2 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:3 combobox/text \"Search\"\nel:4 button/button \"Open mobile menu\"\nel:5 button/button \"Skip to main content\"\nel:6 combobox/submit \"Language Translator\"\nel:7 button/button \"Accessibility Links\"\nel:8 button/button \"Login\"\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Phi",
+       "thought": "I am on the Calculate Postage page and the 'Domestic' tab is selected. I need to enter the origin pincode.",
+       "action": {
+        "type": "type",
+        "ref": "el:86",
+        "text": "110001"
+       },
+       "result": "ok; the field now contains \"110001\"; newly visible: of Posts Menu closed | Location * Searching...",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-sendFrom",
+       "t": 1793578296.3591313,
+       "fallback": null
+      },
+      {
+       "i": 2,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 33–673 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:1 a \"Government of India emblem, home\"\nel:2 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:3 combobox/text \"Search\"\nel:4 button/button \"Open mobile menu\"\nel:5 button/button \"Skip to main content\"\nel:6 combobox/submit \"Language Translator\"\nel:7 button/button \"Accessibility Links\"\nel:8 button/button \"Login\"\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Ph",
+       "thought": "I have entered the origin pincode. Now I need to find the destination pincode and weight fields, which are likely further down the page.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: Location * Krishi Bhawan SO NEW DELHI , Delhi 110001 Lady Harding Medical College SO NEW DELHI , Delhi 110001 New Delhi GPO DC NEW DELHI , Delhi 110001 New Delhi HO NEW DELHI , Delhi 110001 NGT EXTENSION COUNTER NEW DELHI , Delhi 110001 Nor...",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578304.3447065,
+       "fallback": null
+      },
+      {
+       "i": 3,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 533–1173 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "I have entered the origin pincode, and now I need to select one of the suggested locations to confirm it.",
+       "action": {
+        "type": "click",
+        "ref": "el:95"
+       },
+       "result": "ok; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-results-sendFrom-7",
+       "t": 1793578314.7224672,
+       "fallback": null
+      },
+      {
+       "i": 4,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 533–1173 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "I have entered the origin pincode. Now I need to enter the destination pincode.",
+       "action": {
+        "type": "type",
+        "ref": "el:103",
+        "text": "400001"
+       },
+       "result": "ok; the field now contains \"400001\"; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-sendTo",
+       "t": 1793578322.2099028,
+       "fallback": null
+      },
+      {
+       "i": 5,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 533–1173 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "I have entered the origin and destination pincodes. Now I need to enter the weight of the letter to enable the calculation.",
+       "action": {
+        "type": "type",
+        "ref": "el:104",
+        "text": "250"
+       },
+       "result": "can't click input \"Weight (gms)*\": <div> \"MUMBAI, Maharashtra\" covers it at that point, so a click would land on that instead; close or dismiss it first",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": null,
+       "t": 1793578332.0000138,
+       "fallback": null
+      },
+      {
+       "i": 6,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 794–1434 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "The destination pincode selection overlay is blocking the weight input field. I need to select one of the suggested locations for the destination pincode 400001 to clear the overlay.",
+       "action": {
+        "type": "click",
+        "ref": "el:108"
+       },
+       "result": "ok; newly visible: FAQs RTI Restricted & Prohibited Articles Click here to know more Select Article Type Letter Origin Pincode or Location * Destination Pincode or Location *",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#office-search-results-sendTo-0",
+       "t": 1793578341.3555152,
+       "fallback": null
+      },
+      {
+       "i": 7,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 463–1103 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "I have successfully entered the origin and destination pincodes. Now I need to enter the weight of 250 grams into the 'Weight (gms)*' field.",
+       "action": {
+        "type": "type",
+        "ref": "el:104",
+        "text": "250"
+       },
+       "result": "ok; the field now contains \"250\"; nothing visible changed",
+       "url": "https://www.indiapost.gov.in/calculate-postage",
+       "target_selector": "#floating-input-weight",
+       "t": 1793578355.8665173,
+       "fallback": null
+      },
+      {
+       "i": 8,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 463–1103 px of a 1876 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"\nel:49 button/button \"Tenders\"\nel:50 button/button \"Initiatives\"\nel:51 button/submit \"Toggle Initiatives submenu\"\nel:52 button/button \"DIGIPIN\"\nel:53 button/button \"Competitions & Awards\"\nel:54 button/submit \"Toggl",
+       "thought": "I have filled in all the required fields: Article Type is Letter, Origin Pincode is 110001, Destination Pincode is 400001, and Weight is 250 grams. Now I need to click the 'Calculate Postage' button to get the result.",
+       "action": {
+        "type": "click",
+        "ref": "el:105"
+       },
+       "result": "ok; newly visible: Department of Posts Menu closed | FAQs RTI Calculate Postage Home Calculate Postage Domestic International | know more From: 110001 (NEW DELHI) To: 400001 (MUMBAI) Type: | Type: Letter Weight: 250 gms Edit search details",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": "#tabpanel-domestic > div > form > div:nth-of-type(4) > button:nth-of-type(1)",
+       "t": 1793578365.6889682,
+       "fallback": null
+      },
+      {
+       "i": 9,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 85–725 px of a 1571 px page (more below)\nVISIBLE CONTROLS:\nel:2 a \"Department of Posts, Government of India, Ministry of Commun\"\nel:3 combobox/text \"Search\"\nel:4 button/button \"Open mobile menu\"\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:4",
+       "thought": "I have entered all the required details: origin pincode 110001, destination pincode 400001, type 'Letter', and weight '250 gms'. The page appears to be loading the results. I will scroll down to find the calculated postage amount.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: Speed Post RECOMMENDED Total postage ₹ 84.00 Delivery Time 1-2 days Weight (gms) 250 Rating 4.8 Value Added Services Available Book Now Speed Post (opens in a new tab) Letter Card Total postage ₹ 2.50",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": null,
+       "t": 1793578374.7581363,
+       "fallback": null
+      },
+      {
+       "i": 10,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 585–1225 px of a 3040 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies\"",
+       "thought": "I have entered all the required details: origin pincode 110001, destination pincode 400001, and weight 250g for a letter. The results are visible, showing Speed Post at ₹ 84.00 and Letter Card at ₹ 2.50. Since the page mentions 4 available services and I only see 2, I will scroll down to see the remaining options to provide a complete answer.",
+       "action": {
+        "type": "scroll",
+        "dir": "down"
+       },
+       "result": "ok; newly visible: RTI Letter Card | postage ₹ 2.50 | Delivery Time 2-3 | Weight (gms) 5 | 5 Rating 4.5 No | Book Now Letter Card | postage ₹ 77.00 Delivery Time 3-4 days Weight (gms) 250 Rating 4.5",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": null,
+       "t": 1793578385.209645,
+       "fallback": null
+      },
+      {
+       "i": 11,
+       "observation": "URL: https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0\nTITLE: Calculate Postage | India Post\nPAGE POSITION: showing 1085–1725 px of a 3040 px page (more below)\nVISIBLE CONTROLS:\nel:9 button/submit \"Close Menu\"\nel:10 button/button \"Home ›\"\nel:11 button/button \"Ministry ›\"\nel:12 button/button \"About Us\"\nel:13 button/button \"Our Team\"\nel:14 button/button \"Our Organisation\"\nel:15 button/button \"Our Performance\"\nel:16 button/button \"Organogram\"\nel:17 button/button \"Offerings ›\"\nel:18 button/button \"Mail Parcel\"\nel:19 button/submit \"Toggle Mail Parcel submenu\"\nel:20 button/button \"Mail Products\"\nel:21 button/button \"24/48 Speed Post\"\nel:22 button/button \"Business Services\"\nel:23 button/button \"Banking\"\nel:24 button/submit \"Toggle Banking submenu\"\nel:25 button/button \"Saving Schemes\"\nel:26 button/button \"India Post Payments Bank\"\nel:27 button/button \"Net Banking\"\nel:28 button/button \"Handbooks\"\nel:29 button/button \"Money Remittance Services\"\nel:30 button/button \"Insurance\"\nel:31 button/submit \"Toggle Insurance submenu\"\nel:32 button/button \"Postal Life Insurance\"\nel:33 button/button \"Rural Postal Life Insurance\"\nel:34 button/button \"Pradhan Mantri Suraksha Bima Yojana\"\nel:35 button/button \"Pradhan Mantri Jeevan Jyoti Bima Yojana\"\nel:36 button/button \"Atal Pension Yojana\"\nel:37 button/button \"Citizen services\"\nel:38 button/submit \"Toggle Citizen services submenu\"\nel:39 button/button \"Aadhaar Services\"\nel:40 button/button \"India Post Passenger Reservation System\"\nel:41 button/button \"Post Office Passport Seva Kendra\"\nel:42 button/button \"Self Service Portal\"\nel:43 button/button \"Gangajal Services\"\nel:44 button/button \"Holy Blessings\"\nel:45 button/button \"Philately\"\nel:46 button/button \"Notices\"\nel:47 button/submit \"Toggle Notices submenu\"\nel:48 button/button \"Vacancies",
+       "thought": "I have successfully entered the origin pincode, destination pincode, and weight. I have scrolled to view the results. The results show that for a 'Letter' weighing 250 grams, the total postage is ₹ 77.00.",
+       "action": {
+        "type": "done",
+        "answer": "The postage for a domestic letter weighing 250 grams from 110001 to 400001 is ₹ 77.00."
+       },
+       "result": "done",
+       "url": "https://www.indiapost.gov.in/calculate-postage?tab=domestic&fromPincode=110001&fromCity=NEW+DELHI&fromState=Delhi&fromOfficeId=15840066&toPincode=400001&toCity=MUMBAI&toState=Maharashtra&toOfficeId=24660573&product=letter&weight=250&POD=false&ACK=0&REG=0&COD=0",
+       "target_selector": null,
+       "t": 1793578421.0342886,
+       "fallback": null
+      }
+     ]
+    }
+   },
+   "findings": [
+    {
+     "profile": "P1",
+     "check": "Notice",
+     "sc": "4.1.3",
+     "step": 5,
+     "target": "button \"Calculate Postage\"",
+     "message": "the page changed but a screen-reader user isn't told",
+     "severity": "degrades",
+     "evidence": {
+      "new_words": [
+       "110001",
+       "250",
+       "400001",
+       "available",
+       "delhi",
+       "edit",
+       "from",
+       "loading",
+       "mumbai",
+       "new",
+       "search",
+       "services"
+      ],
+      "dialogs": []
+     }
+    },
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.4.11",
+     "step": 4,
+     "target": "input \"Weight (gms)*\"",
+     "message": "focused control is hidden under By clicking accept, you agree to the pol",
+     "severity": "degrades",
+     "evidence": {
+      "obscured": true,
+      "offscreen": false,
+      "by": "By clicking accept, you agree to the policies outlined in theCookie Settings."
+     }
+    },
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.4.11",
+     "step": 4,
+     "target": "task",
+     "message": "task stalled: input \"Weight (gms)*\": focused control is hidden under By clicking accept, you agree to the pol",
+     "severity": "blocks",
+     "evidence": {
+      "source": "agent",
+      "corroborated": true,
+      "agent_reason": "ran out of steps"
+     }
+    }
+   ],
+   "tool_errors": []
+  }
+ ],
+ "usage": {
+  "planner": {
+   "calls": 1,
+   "input": 16732,
+   "output": 5429,
+   "cached": 0
+  },
+  "validator": {
+   "calls": 2,
+   "input": 35560,
+   "output": 1753,
+   "cached": 0
+  },
+  "nav": {
+   "calls": 69,
+   "input": 136527,
+   "output": 33194,
+   "cached": 0
+  },
+  "endpoints": {
+   "gemini#2": 2,
+   "cloudflare#1": 66,
+   "cloudflare#2": 4
+  }
+ },
+ "model_fallbacks": []
+}

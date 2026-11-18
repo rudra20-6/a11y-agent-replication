@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Change context</title></head>
+<body><main><h1 id="title" tabindex="-1">Change context</h1>
+<form id="auto" method="get"><label for="pin">Pincode</label> <input id="pin" name="pin" type="text" onchange="this.form.submit()"></form>
+<form id="search" method="get"><label for="q">Search</label> <input id="q" name="q" type="text"> <button type="submit">Go</button></form>
+<p id="state"></p>
+<script>document.getElementById('state').textContent = location.search || 'fresh';</script>
+</main></body></html>

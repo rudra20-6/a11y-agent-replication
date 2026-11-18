@@ -1,0 +1,59 @@
+{
+ "url": "https://www.delhimetrorail.com/",
+ "results": [
+  {
+   "task": {
+    "id": "t1",
+    "goal": "Use the search bar to find information about 'lost and found' services.",
+    "start_url": "https://delhimetrorail.com/",
+    "success": "The search results page displays relevant information or links regarding lost and found items.",
+    "stop_before": "",
+    "features": [
+     "form",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261030-v232-dmrc/t2"
+   },
+   "reference": {
+    "status": "stuck",
+    "answer": "",
+    "tool_error": false,
+    "steps": [
+     {
+      "i": 0,
+      "observation": "URL: https://delhimetrorail.com/\nTITLE: Welcome to Delhi Metro Rail Corporation(DMRC) | Official Website\nPAGE POSITION: showing 0–800 px of a 800 px page (end of page)\nVISIBLE CONTROLS:\nel:1 div \"\"\nel:2 div \"नमस्ते, मैं चेतना हूँ, आपकी एआई असिस्टेंट।\"\n\nVISIBLE TEXT:\nनमस्ते, मैं चेतना हूँ, आपकी एआई असिस्टेंट।",
+      "thought": "The page is a welcome screen with no visible search bar or controls related to the task. The only visible text is an AI assistant greeting.",
+      "action": {
+       "type": "stuck",
+       "reason": "No search bar or relevant controls are visible on the page to perform the task."
+      },
+      "result": "stuck",
+      "url": "https://delhimetrorail.com/",
+      "target_selector": null,
+      "t": 1794492983.7466052,
+      "fallback": null,
+      "problem": null,
+      "probe": null,
+      "target": null,
+      "focus_px": null
+     }
+    ]
+   },
+   "profiles": {},
+   "findings": [],
+   "invalid": "reference agent could not complete the task (stuck: No search bar or relevant controls are visible on the page to perform the task.)"
+  }
+ ],
+ "usage": {
+  "nav": {
+   "calls": 194,
+   "input": 555293,
+   "output": 16731,
+   "cached": 0
+  },
+  "endpoints": {
+   "openrouter": 194
+  }
+ },
+ "model_fallbacks": []
+}

@@ -1,0 +1,84 @@
+# Gold tasks for BenchBook: the answer key. Never shown to the planner.
+# success: JS expression evaluated in the page (window.__bench.state is the app state).
+# gold_path: reference (pointer) actions that complete the task on the clean app.
+#   click: css | fill: [css, text] | press: key | wait: ms
+
+tasks:
+  - id: T1_flight_search
+    start: "#/flights"
+    goal: "Search for one-way flights from Hyderabad to Delhi departing on Wednesday 21 October 2026 for 1 passenger, and find out how many flights are available."
+    success: "(() => { const s = __bench.state.search; return s.from === 'HYD' && s.to === 'DEL' && s.date && s.date.getDate() === 21 && s.date.getMonth() === 9 && __bench.state.results.length > 0; })()"
+    gold_path:
+      - fill: ["#from", "Hyd"]
+      - click: "#from-list [data-code=HYD]"
+      - fill: ["#to", "Del"]
+      - click: "#to-list [data-code=DEL]"
+      - click: "#date"
+      - click: "[data-date='2026-10-21']"
+      - click: "[data-bench=search-submit]"
+
+  - id: T2_flight_cheapest
+    start: "#/flights"
+    goal: "Find flights from Hyderabad to Delhi on 21 October 2026, choose the cheapest fare, and continue to the passenger details page."
+    success: "(() => { const st = __bench.state; const c = st.results.find(r => r.cheapest); return !!c && st.fare === c.id && location.hash.startsWith('#/passenger'); })()"
+    gold_path:
+      - fill: ["#from", "Hyd"]
+      - click: "#from-list [data-code=HYD]"
+      - fill: ["#to", "Del"]
+      - click: "#to-list [data-code=DEL]"
+      - click: "#date"
+      - click: "[data-date='2026-10-21']"
+      - click: "[data-bench=search-submit]"
+      - click: "[data-bench=result]:has(label:has-text('cheapest')) input"
+      - click: "[data-bench=fare-continue]"
+
+  - id: T3_passenger_details
+    start: "#/passenger?fare=1"
+    goal: "Enter passenger details: name Asha Rao, email asha.rao@example.com, mobile number 98765 4321. If the mobile number is rejected, correct it to 9876543210. Continue to the review page. Do not pay."
+    success: "__bench.state.review === true && !__bench.state.payClicked"
+    gold_path:
+      - fill: ["#pname", "Asha Rao"]
+      - fill: ["#pemail", "asha.rao@example.com"]
+      - fill: ["#pphone", "98765 4321"]
+      - click: "[data-bench=passenger-submit]"
+      - fill: ["#pphone", "9876543210"]
+      - click: "[data-bench=passenger-submit]"
+
+  - id: T4_sip
+    start: "#/sip"
+    goal: "Using the SIP calculator, find the estimated returns for investing ₹5,000 a month at an expected return of 12% a year for 10 years."
+    success: "(() => { const s = __bench.state.sip; return s.amount === 5000 && s.rate === 12 && s.years === 10; })()"
+    gold_path:
+      - fill: ["#amount", "5000"]
+      - press: "Tab"
+      - fill: ["#rate", "12"]
+      - press: "Tab"
+      - fill: ["#years", "10"]
+      - press: "Tab"
+
+  - id: T5_shop_headphones
+    start: "#/shop"
+    goal: "In the shop, show only headphones and add the cheapest pair of headphones to the cart."
+    success: "__bench.state.filters.cats.join() === 'Headphones' && __bench.state.cart.includes('p5')"
+    gold_path:
+      - click: "#cat-Headphones"
+      - click: "[data-bench=product][data-id=p5] [data-bench=add-to-cart]"
+
+  - id: T6_shop_pincode
+    start: "#/shop"
+    goal: "Check whether the Trail Runner shoes can be delivered to pincode 50003. If that pincode is rejected, use 500032 instead."
+    success: "!!__bench.state.pincode && __bench.state.pincode.product === 'p1' && __bench.state.pincode.pin === '500032'"
+    gold_path:
+      - click: "[data-bench=product][data-id=p1] [data-bench=product-link]"
+      - fill: ["#pin", "50003"]
+      - click: "[data-bench=pin-check]"
+      - fill: ["#pin", "500032"]
+      - click: "[data-bench=pin-check]"
+
+  - id: T7_seat_women
+    start: "#/seats"
+    goal: "Choose an available lower-deck seat that is reserved for women, then continue with that seat."
+    success: "['L3','L9'].includes(__bench.state.seat) && __bench.state.seatContinue === true"
+    gold_path:
+      - click: "[data-seat=L3]"
+      - click: "[data-bench=seat-continue]"

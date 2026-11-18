@@ -1,0 +1,31 @@
+# Seeded barriers. Ground truth for scoring:
+#   affects:     profiles whose task this mutant blocks or clearly degrades (a finding here is a true positive)
+#   may_affect:  profiles where a report is defensible (not counted as a false positive, not required)
+#   any other profile reporting it  -> false positive
+#   axe_expected: our prediction (checked in E4)
+# Profiles: P1 screen reader, P2 keyboard only, P3 400% zoom, P4 colour-vision deficiency, P5 voice control.
+
+mutants:
+  - {id: C1_remove_alt,        op: remove_alt,         sel: "[data-bench=detail-img]",          task: T6_shop_pincode,      check: Identify, sc: "1.1.1", affects: [P1], may_affect: [],        severity: degrades, axe_expected: caught}
+  - {id: C2_remove_label,      op: remove_label,       sel: "#pemail",                          task: T3_passenger_details,     check: Identify, sc: "1.3.1, 4.1.2", affects: [P1, P5], may_affect: [], severity: degrades, axe_expected: caught}
+  - {id: C3_icon_no_name,      op: icon_no_name,       sel: "[data-bench=search-submit]",       task: T1_flight_search,     check: Identify, sc: "4.1.2",  affects: [P1, P5], may_affect: [],    severity: blocks,   axe_expected: caught}
+  - {id: I1_generic_alt,       op: generic_alt,        sel: "[data-bench=detail-img]", text: "image", task: T6_shop_pincode, check: Identify, sc: "1.1.1", affects: [P1], may_affect: [],      severity: degrades, axe_expected: missed}
+  - {id: I2_identical_names,   op: identical_names,    sel: "[data-bench=add-to-cart]", text: "Add to cart", task: T5_shop_headphones, check: Identify, sc: "2.4.6, 2.4.4", affects: [P1], may_affect: [P5], severity: degrades, axe_expected: missed}
+  - {id: I3_generic_labels,    op: generic_field_label, sel: "#from, #to", text: "City",       task: T1_flight_search,     check: Identify, sc: "1.3.1, 2.4.6, 2.5.3", affects: [P1, P5], may_affect: [], severity: blocks, axe_expected: missed}
+  - {id: I4_label_mismatch,    op: label_mismatch,     sel: "[data-bench=search-submit]", text: "Find", task: T1_flight_search, check: Identify, sc: "2.5.3", affects: [P5], may_affect: [P1],    severity: blocks,   axe_expected: partly}
+  - {id: R1_div_button,        op: div_button,         sel: "[data-bench=fare-continue]",       task: T2_flight_cheapest,   check: Reach,    sc: "2.1.1, 4.1.2", affects: [P1, P2, P5], may_affect: [], severity: blocks, axe_expected: missed}
+  - {id: R2_tabindex_neg,      op: tabindex_neg,       sel: "[data-bench=seat]",                task: T7_seat_women,        check: Reach,    sc: "2.1.1",  affects: [P2], may_affect: [P1],    severity: blocks,   axe_expected: missed}
+  - {id: O1_strip_keys,        op: strip_keys,         sel: "[data-bench=date-grid]",           task: T1_flight_search,     check: Operate,  sc: "2.1.1",  affects: [P2], may_affect: [P1],    severity: blocks,   axe_expected: missed}  # NVDA browse-mode Enter still clicks the cell, so P1 is degraded, not blocked
+  - {id: N1_remove_live,       op: remove_live,        sel: "[data-bench=results-status]",      task: T1_flight_search,     check: Notice,   sc: "4.1.3",  affects: [P1], may_affect: [],        severity: degrades, axe_expected: missed}
+  - {id: N2_no_focus_move,     op: no_focus_move,      sel: "[data-bench=date-dialog]",         task: T1_flight_search,     check: Notice,   sc: "2.4.3",  affects: [P1, P2], may_affect: [],    severity: blocks,   axe_expected: missed}
+  - {id: N3_strip_state,       op: strip_state,        sel: "[data-bench=seat]", attrs: [aria-pressed], task: T7_seat_women, check: Notice, sc: "4.1.2", affects: [P1], may_affect: [],    severity: degrades, axe_expected: missed}
+  - {id: V1_unlink_errors,     op: unlink_errors,      sel: "[data-bench=passenger-form]",      task: T3_passenger_details, check: Recover,  sc: "3.3.1, 4.1.3", affects: [P1], may_affect: [P2], severity: blocks, axe_expected: missed}
+  - {id: K1_no_outline,        op: no_outline,         sel: "*",                                task: T3_passenger_details, check: Reach,    sc: "2.4.7",  affects: [P2], may_affect: [],        severity: blocks,   axe_expected: missed}
+  - {id: K2_sticky_cover,      op: sticky_cover,       sel: "[data-bench=passenger-form]", height: 46, task: T3_passenger_details, check: Reach, sc: "2.4.11", affects: [P2], may_affect: [P3], severity: degrades, axe_expected: missed}
+  - {id: Z1_min_width,         op: min_width,          sel: "main", px: 1200,                   task: T4_sip,               check: Reach,    sc: "1.4.10", affects: [P3], may_affect: [],        severity: blocks,   axe_expected: missed}
+  - {id: CV1_red_border_only,  op: red_border_only,    sel: "[data-bench=pin-form]",            task: T6_shop_pincode,      check: Recover,  sc: "1.4.1, 3.3.1", affects: [P4], may_affect: [P2, P3], severity: blocks, axe_expected: missed}
+  - {id: CV2_colour_only,      op: colour_only,        sel: "[data-bench=seat-women-tag], [data-bench=seat-sold-tag], [data-bench=seat-legend]", task: T7_seat_women, check: Identify, sc: "1.4.1", affects: [P4], may_affect: [P2, P3], severity: blocks, axe_expected: missed}
+  # Benign: nothing a user can notice changes. Any report is a false positive.
+  - {id: B1_offpath_generic_alt, op: generic_alt,      sel: "[data-bench=footer-logo]", text: "image", task: T5_shop_headphones, check: none, sc: "", affects: [], may_affect: [P1], severity: none, axe_expected: missed}
+  - {id: B2_wrap_text,         op: benign_wrap,        sel: "[data-bench=nav-flights], [data-bench=search-submit]", task: T1_flight_search, check: none, sc: "", affects: [], may_affect: [], severity: none, axe_expected: missed}
+  - {id: B3_add_class,         op: benign_class,       sel: "[data-bench=result]",              task: T2_flight_cheapest,   check: none, sc: "", affects: [], may_affect: [],        severity: none,     axe_expected: missed}

@@ -1,0 +1,558 @@
+{
+ "govuk_holiday": {
+  "url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": false
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Start the holiday entitlement calculator and select 'Yes' to indicate that the employee works irregular hours.",
+    "start_url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+    "success": "The next question in the holiday entitlement calculation process.",
+    "stop_before": "Entering specific dates or personal information.",
+    "features": [
+     "form"
+    ],
+    "frozen_from": "real-20261030-v23-govuk_holiday/t1"
+   },
+   {
+    "id": "t2",
+    "goal": "Search for 'National Insurance' using the search bar on the GOV.UK homepage.",
+    "start_url": "https://www.gov.uk/",
+    "success": "A list of search results for 'National Insurance'.",
+    "stop_before": "None",
+    "features": [
+     "combobox",
+     "form"
+    ],
+    "frozen_from": "real-20261030-v23-govuk_holiday/t2"
+   },
+   {
+    "id": "t3",
+    "goal": "Calculate holiday entitlement for a standard employee by clicking 'Start now' and selecting 'No' to the question 'Does the employee work irregular hours or for part of the year?'",
+    "start_url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+    "success": "The next question in the holiday entitlement calculation flow.",
+    "stop_before": null,
+    "features": [
+     "form"
+    ],
+    "frozen_from": "real-20261103-r2c-govuk_holiday/t1"
+   },
+   {
+    "id": "t4",
+    "goal": "Search for 'maternity pay' using the search box on the GOV.UK homepage to find relevant guidance.",
+    "start_url": "https://www.gov.uk/",
+    "success": "A list of search results related to maternity pay.",
+    "stop_before": null,
+    "features": [
+     "combobox",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261103-r2c-govuk_holiday/t2"
+   }
+  ],
+  "sources": [
+   "real-20261030-v23-govuk_holiday",
+   "real-20261103-r2c-govuk_holiday"
+  ]
+ },
+ "dmrc": {
+  "url": "https://www.delhimetrorail.com/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": false
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Use the search bar to find information about 'lost and found' services.",
+    "start_url": "https://delhimetrorail.com/",
+    "success": "The search results page displays relevant information or links regarding lost and found items.",
+    "stop_before": "",
+    "features": [
+     "form",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261030-v232-dmrc/t2"
+   }
+  ],
+  "sources": [
+   "real-20261030-v232-dmrc"
+  ]
+ },
+ "flipkart": {
+  "url": "https://www.flipkart.com/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": true,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": false
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Search for 'Running Shoes' using the search bar and browse the resulting product list.",
+    "start_url": "https://www.flipkart.com/",
+    "success": "The search results page displaying various running shoes.",
+    "stop_before": "Adding a product to the shopping cart.",
+    "features": [
+     "form",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261030-v232-flipkart/t2"
+   },
+   {
+    "id": "t2",
+    "goal": "Search for 'Gaming Laptops' using the search bar and browse the results.",
+    "start_url": "https://www.flipkart.com/",
+    "success": "A list of gaming laptops is displayed on the screen.",
+    "stop_before": "Logging in or adding an item to the cart.",
+    "features": [
+     "form",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-r2b-flipkart/t1"
+   },
+   {
+    "id": "t3",
+    "goal": "Navigate to the Fashion category and then select 'Casual shoes' to browse the collection.",
+    "start_url": "https://www.flipkart.com/",
+    "success": "The page displays a variety of casual shoes.",
+    "stop_before": "Selecting a specific product to view details or purchase.",
+    "features": [
+     "images"
+    ],
+    "frozen_from": "real-20261102-r2b-flipkart/t2"
+   }
+  ],
+  "sources": [
+   "real-20261030-v232-flipkart",
+   "real-20261102-r2b-flipkart"
+  ]
+ },
+ "indiapost": {
+  "url": "https://www.indiapost.gov.in/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Calculate the postage for a domestic letter weighing 250 grams from origin pincode 110001 to destination pincode 400001.",
+    "start_url": "https://www.indiapost.gov.in/calculate-postage",
+    "success": "The calculated postage amount is displayed on the screen.",
+    "stop_before": null,
+    "features": [
+     "form",
+     "combobox",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-indiapost/t1"
+   },
+   {
+    "id": "t2",
+    "goal": "Calculate the postage cost for a 250g letter being sent from Mumbai (400001) to Chennai (600001).",
+    "start_url": "https://www.indiapost.gov.in/calculate-postage",
+    "success": "The calculated postage amount for the specified letter is displayed on the screen.",
+    "stop_before": "any payment or login step",
+    "features": [
+     "form",
+     "combobox"
+    ],
+    "frozen_from": "real-20261102-ext-r2b-indiapost/t1"
+   },
+   {
+    "id": "t3",
+    "goal": "Locate a post office in the Bangalore area by entering the pincode 560001 and completing the captcha verification.",
+    "start_url": "https://www.indiapost.gov.in/locate-postoffice",
+    "success": "A list of post offices located in or near the 560001 pincode area is displayed.",
+    "stop_before": "any login or registration step",
+    "features": [
+     "form",
+     "combobox"
+    ],
+    "frozen_from": "real-20261102-ext-r2b-indiapost/t2"
+   }
+  ],
+  "sources": [
+   "real-20261102-ext-indiapost",
+   "real-20261102-ext-r2b-indiapost"
+  ]
+ },
+ "nhs_bmi": {
+  "url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": false
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Use the search bar on the homepage to search for information about 'Diabetes'.",
+    "start_url": "https://www.nhs.uk/",
+    "success": "The search results page for 'Diabetes'.",
+    "stop_before": "Clicking on a specific search result.",
+    "features": [
+     "form",
+     "combobox",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-nhs_bmi/t2"
+   },
+   {
+    "id": "t2",
+    "goal": "Use the search bar on the homepage to search for 'diabetes', then select the first relevant search result to view its information.",
+    "start_url": "https://www.nhs.uk/",
+    "success": "The page containing detailed information about diabetes is displayed.",
+    "stop_before": null,
+    "features": [
+     "combobox",
+     "form"
+    ],
+    "frozen_from": "real-20261102-ext-r2c-nhs_bmi/t1"
+   },
+   {
+    "id": "t3",
+    "goal": "Navigate to the adult BMI calculator and confirm that you are 18 or over to reach the measurement input stage.",
+    "start_url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+    "success": "The form asking for height and weight measurements is displayed.",
+    "stop_before": "Entering height and weight.",
+    "features": [
+     "form"
+    ],
+    "frozen_from": "real-20261102-ext-r2c-nhs_bmi/t2"
+   }
+  ],
+  "sources": [
+   "real-20261102-ext-nhs_bmi",
+   "real-20261102-ext-r2c-nhs_bmi"
+  ]
+ },
+ "tata1mg": {
+  "url": "https://www.1mg.com/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": true,
+   "Operate": true,
+   "Notice": true,
+   "Recover": false,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Navigate to the Lab Tests page and select the 'Thyroid' category to view specific thyroid test packages.",
+    "start_url": "https://www.1mg.com/labs/",
+    "success": "The page displays thyroid-related test packages such as 'Thyroid Profile Total (T3, T4 & TSH)'.",
+    "stop_before": "Booking the test",
+    "features": [
+     "images",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-r2c-tata1mg/t1"
+   },
+   {
+    "id": "t2",
+    "goal": "Open the 'All filters' dialog on the Sexual Wellness top picks page and select 'Condoms' to refine the results.",
+    "start_url": "https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363",
+    "success": "The product list is updated to show only items in the selected category, such as Okamoto or KamaSutra products.",
+    "stop_before": "Adding an item to the cart",
+    "features": [
+     "dialog",
+     "filters",
+     "images",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-r2c-tata1mg/t2"
+   },
+   {
+    "id": "t3",
+    "goal": "Navigate to the Lab Tests page, select the 'Full Body Packages' category, and click on the 'Comprehensive Gold Full Body Checkup' package to view its details.",
+    "start_url": "https://www.1mg.com/labs/",
+    "success": "The product details page for the Comprehensive Gold Full Body Checkup is displayed.",
+    "stop_before": "Login or payment",
+    "features": [
+     "filters",
+     "button",
+     "images",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-tata1mg/t1"
+   },
+   {
+    "id": "t4",
+    "goal": "Navigate to the Sexual Wellness category, open the 'All filters' dialog, and select 'Condoms' to filter the product list.",
+    "start_url": "https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363",
+    "success": "The product list is updated to show only products within the Condoms category.",
+    "stop_before": "Login or payment",
+    "features": [
+     "filters",
+     "dialog",
+     "button",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-ext-tata1mg/t2"
+   }
+  ],
+  "sources": [
+   "real-20261102-ext-r2c-tata1mg",
+   "real-20261102-ext-tata1mg"
+  ]
+ },
+ "uidai": {
+  "url": "https://uidai.gov.in/en/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": false,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Navigate to the Documents page and use the category selection to filter for 'Enrolment & Updates' to find specific official forms.",
+    "start_url": "https://uidai.gov.in/en/documents",
+    "success": "The page displays the list of documents specifically categorized under 'Enrolment & Updates'.",
+    "stop_before": "Any login or personal information entry.",
+    "features": [
+     "combobox",
+     "filters"
+    ],
+    "frozen_from": "real-20261102-extb-uidai/t1"
+   },
+   {
+    "id": "t2",
+    "goal": "Navigate through the 'How to Videos' section using the pagination links to view the second page of tutorials.",
+    "start_url": "https://uidai.gov.in/en/how-to-videos",
+    "success": "The video gallery updates to show the second set of instructional videos.",
+    "stop_before": "Clicking play on any video.",
+    "features": [
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-uidai/t2"
+   }
+  ],
+  "sources": [
+   "real-20261102-extb-uidai",
+   "real-20261103-ext-r2b-uidai"
+  ]
+ },
+ "swiggy": {
+  "url": "https://www.swiggy.com/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Search for 'Korean Noodles' in the search bar and select a restaurant from the results to view its menu.",
+    "start_url": "https://www.swiggy.com/search",
+    "success": "The menu page for the selected restaurant is displayed.",
+    "stop_before": "Adding any item to the cart",
+    "features": [
+     "form",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-r2b-swiggy/t1"
+   }
+  ],
+  "sources": [
+   "real-20261102-r2b-swiggy"
+  ]
+ },
+ "practo": {
+  "url": "https://www.practo.com/hyderabad/dentist",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": true,
+   "Operate": true,
+   "Notice": true,
+   "Recover": false,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Filter the list of dentists in Hyderabad to show only female doctors with 10+ years of experience.",
+    "start_url": "https://www.practo.com/hyderabad/dentist",
+    "success": "The list of dentists is updated to show only female doctors with 10 or more years of experience.",
+    "stop_before": "Booking a clinic visit",
+    "features": [
+     "filters",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261102-v234-practo/t1"
+   }
+  ],
+  "sources": [
+   "real-20261102-v234-practo"
+  ]
+ },
+ "icici_emi": {
+  "url": "https://www.icicibank.com/calculator/home-loan-emi-calculator",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Calculate the monthly EMI for a home loan of ₹50,00,000 with an interest rate of 8.5% and a tenure of 20 years.",
+    "start_url": "https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator",
+    "success": "The calculated monthly EMI amount is displayed on the screen.",
+    "stop_before": "APPLY NOW",
+    "features": [
+     "form",
+     "slider",
+     "dynamic_results"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-icici_emi/t1"
+   }
+  ],
+  "sources": [
+   "real-20261103-ext-r2b-icici_emi",
+   "real-20261103-extb-icici_emi"
+  ]
+ },
+ "myntra": {
+  "url": "https://www.myntra.com/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": false,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Go to the Personal Care section and filter the results to show only 'Lipstick' from the brand 'Maybelline'.",
+    "start_url": "https://www.myntra.com/personal-care",
+    "success": "The product list displays Maybelline lipsticks.",
+    "stop_before": "login",
+    "features": [
+     "filters",
+     "seat_or_grid_map"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-myntra/t2"
+   }
+  ],
+  "sources": [
+   "real-20261103-ext-r2b-myntra"
+  ]
+ },
+ "passportseva": {
+  "url": "https://www.passportindia.gov.in/",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": true,
+   "Operate": true,
+   "Notice": true,
+   "Recover": false,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Navigate to the Tatkaal Passport information page and find the heading 'Documents Required for Tatkaal Application'.",
+    "start_url": "https://www.passportindia.gov.in/psp",
+    "success": "The Tatkaal Passport page is displayed with the heading 'Documents Required for Tatkaal Application'.",
+    "stop_before": "logging in",
+    "features": [
+     "combobox",
+     "images"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-passportseva/t1"
+   },
+   {
+    "id": "t2",
+    "goal": "Browse through the latest news and circulars by using the pagination buttons to view different sets of updates. Click on button '2' and then button '3'.",
+    "start_url": "https://www.passportindia.gov.in/psp",
+    "success": "The list of circulars or news items updates to show different entries as the page number changes.",
+    "stop_before": "creating an account",
+    "features": [
+     "dynamic_results",
+     "images"
+    ],
+    "frozen_from": "real-20261103-ext-r2b-passportseva/t2"
+   }
+  ],
+  "sources": [
+   "real-20261103-ext-r2b-passportseva"
+  ]
+ },
+ "wikipedia": {
+  "url": "https://en.wikipedia.org/wiki/Main_Page",
+  "specialists": {
+   "Reach": true,
+   "Identify-names": true,
+   "Identify-semantic": false,
+   "Operate": true,
+   "Notice": true,
+   "Recover": true,
+   "Colour": true
+  },
+  "tasks": [
+   {
+    "id": "t1",
+    "goal": "Search for 'Sovetsky Soyuz-class battleship' and navigate to its revision history page to see previous edits.",
+    "start_url": "https://en.wikipedia.org/wiki/Main_Page",
+    "success": "The revision history page for the Sovetsky Soyuz-class battleship is displayed, showing a list of past contributors and dates.",
+    "stop_before": null,
+    "features": [
+     "form",
+     "filters"
+    ],
+    "frozen_from": "real-20261103-extb-wikipedia/t1"
+   }
+  ],
+  "sources": [
+   "real-20261103-extb-wikipedia"
+  ]
+ }
+}

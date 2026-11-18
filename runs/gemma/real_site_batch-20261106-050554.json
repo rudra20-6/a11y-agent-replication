@@ -1,0 +1,337 @@
+[
+ {
+  "site": "govuk_holiday",
+  "url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+  "run_dir": "runs\\real-20261106-v31s2-govuk_holiday",
+  "status": "done",
+  "tasks": 4,
+  "tested": 3,
+  "findings": 0,
+  "unconfirmed": 1,
+  "agent_findings": 3,
+  "agents": {
+   "Start the holiday entitlement calculator and select 'Yes' to": {},
+   "Search for 'National Insurance' using the search bar on the ": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   },
+   "Calculate holiday entitlement for a standard employee by cli": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Search for 'maternity pay' using the search box on the GOV.U": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   }
+  },
+  "tool_errors": 1,
+  "not_tested": [
+   "reference agent could not complete the task (max_steps: ran out of steps)"
+  ],
+  "minutes": 6.4
+ },
+ {
+  "site": "dmrc",
+  "url": "https://www.delhimetrorail.com/",
+  "run_dir": "runs\\real-20261106-v31s2-dmrc",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 4,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Use the search bar to find information about 'lost and found": {
+    "P1": "done",
+    "P2": "stuck",
+    "P3": "stuck"
+   }
+  },
+  "tool_errors": 1,
+  "not_tested": [],
+  "minutes": 2.2
+ },
+ {
+  "site": "flipkart",
+  "url": "https://www.flipkart.com/",
+  "run_dir": "runs\\real-20261106-v31s2-flipkart",
+  "status": "done",
+  "tasks": 3,
+  "tested": 2,
+  "findings": 8,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Search for 'Running Shoes' using the search bar and browse t": {
+    "P1": "done",
+    "P2": "stuck",
+    "P3": "done"
+   },
+   "Search for 'Gaming Laptops' using the search bar and browse ": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Navigate to the Fashion category and then select 'Casual sho": {}
+  },
+  "tool_errors": 5,
+  "not_tested": [
+   "reference agent could not complete the task (max_steps: ran out of steps)"
+  ],
+  "minutes": 11.2
+ },
+ {
+  "site": "indiapost",
+  "url": "https://www.indiapost.gov.in/",
+  "run_dir": "runs\\real-20261106-v31s2-indiapost",
+  "status": "done",
+  "tasks": 3,
+  "tested": 3,
+  "findings": 7,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Calculate the postage for a domestic letter weighing 250 gra": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   },
+   "Calculate the postage cost for a 250g letter being sent from": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Locate a post office in the Bangalore area by entering the p": {
+    "P1": "stuck",
+    "P2": "done",
+    "P3": "done"
+   }
+  },
+  "tool_errors": 6,
+  "not_tested": [],
+  "minutes": 6.9
+ },
+ {
+  "site": "nhs_bmi",
+  "url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+  "run_dir": "runs\\real-20261106-v31s2-nhs_bmi",
+  "status": "done",
+  "tasks": 3,
+  "tested": 3,
+  "findings": 4,
+  "unconfirmed": 2,
+  "agent_findings": 6,
+  "agents": {
+   "Use the search bar on the homepage to search for information": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   },
+   "Use the search bar on the homepage to search for 'diabetes',": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "stuck"
+   },
+   "Navigate to the adult BMI calculator and confirm that you ar": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "max_steps"
+   }
+  },
+  "tool_errors": 0,
+  "not_tested": [],
+  "minutes": 4.3
+ },
+ {
+  "site": "tata1mg",
+  "url": "https://www.1mg.com/",
+  "run_dir": "runs\\real-20261106-v31s2-tata1mg",
+  "status": "done",
+  "tasks": 4,
+  "tested": 4,
+  "findings": 32,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Navigate to the Lab Tests page and select the 'Thyroid' cate": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Open the 'All filters' dialog on the Sexual Wellness top pic": {
+    "P1": "max_steps",
+    "P2": "max_steps",
+    "P3": "stuck"
+   },
+   "Navigate to the Lab Tests page, select the 'Full Body Packag": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Navigate to the Sexual Wellness category, open the 'All filt": {
+    "P1": "stuck",
+    "P2": "max_steps",
+    "P3": "stuck"
+   }
+  },
+  "tool_errors": 4,
+  "not_tested": [],
+  "minutes": 11.7
+ },
+ {
+  "site": "uidai",
+  "url": "https://uidai.gov.in/en/",
+  "run_dir": "runs\\real-20261106-v31s2-uidai",
+  "status": "done",
+  "tasks": 2,
+  "tested": 2,
+  "findings": 4,
+  "unconfirmed": 0,
+  "agent_findings": 1,
+  "agents": {
+   "Navigate to the Documents page and use the category selectio": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   },
+   "Navigate through the 'How to Videos' section using the pagin": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   }
+  },
+  "tool_errors": 0,
+  "not_tested": [],
+  "minutes": 3.9
+ },
+ {
+  "site": "swiggy",
+  "url": "https://www.swiggy.com/",
+  "run_dir": "runs\\real-20261106-v31s2-swiggy",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 10,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Search for 'Korean Noodles' in the search bar and select a r": {
+    "P1": "done",
+    "P2": "stuck",
+    "P3": "max_steps"
+   }
+  },
+  "tool_errors": 0,
+  "not_tested": [],
+  "minutes": 2.0
+ },
+ {
+  "site": "practo",
+  "url": "https://www.practo.com/hyderabad/dentist",
+  "run_dir": "runs\\real-20261106-v31s2-practo",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 9,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Filter the list of dentists in Hyderabad to show only female": {
+    "P1": "max_steps",
+    "P2": "stuck",
+    "P3": "max_steps"
+   }
+  },
+  "tool_errors": 2,
+  "not_tested": [],
+  "minutes": 3.2
+ },
+ {
+  "site": "icici_emi",
+  "url": "https://www.icicibank.com/calculator/home-loan-emi-calculator",
+  "run_dir": "runs\\real-20261106-v31s2-icici_emi",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 7,
+  "unconfirmed": 0,
+  "agent_findings": 1,
+  "agents": {
+   "Calculate the monthly EMI for a home loan of ₹50,00,000 with": {
+    "P1": "max_steps",
+    "P2": "max_steps",
+    "P3": "done"
+   }
+  },
+  "tool_errors": 3,
+  "not_tested": [],
+  "minutes": 3.6
+ },
+ {
+  "site": "myntra",
+  "url": "https://www.myntra.com/",
+  "run_dir": "runs\\real-20261106-v31s2-myntra",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Go to the Personal Care section and filter the results to sh": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "reference agent could not complete the task (stuck: kept repeating the same actions with the same results (no progress))"
+  ],
+  "minutes": 1.0
+ },
+ {
+  "site": "passportseva",
+  "url": "https://www.passportindia.gov.in/",
+  "run_dir": "runs\\real-20261106-v31s2-passportseva",
+  "status": "done",
+  "tasks": 2,
+  "tested": 1,
+  "findings": 4,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Navigate to the Tatkaal Passport information page and find t": {
+    "P1": "max_steps",
+    "P2": "max_steps",
+    "P3": "max_steps"
+   },
+   "Browse through the latest news and circulars by using the pa": {}
+  },
+  "tool_errors": 1,
+  "not_tested": [
+   "reference agent could not complete the task (max_steps: ran out of steps)"
+  ],
+  "minutes": 4.3
+ },
+ {
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Main_Page",
+  "run_dir": "runs\\real-20261106-v31s2-wikipedia",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 2,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Search for 'Sovetsky Soyuz-class battleship' and navigate to": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "stuck"
+   }
+  },
+  "tool_errors": 2,
+  "not_tested": [],
+  "minutes": 2.2
+ }
+]

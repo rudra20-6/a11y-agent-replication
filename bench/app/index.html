@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BenchBook</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-bench="skip">Skip to main content</a>
+  <header class="site-header" data-bench="header">
+    <a class="brand" href="#/">BenchBook</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#/flights" data-bench="nav-flights">Flights</a></li>
+        <li><a href="#/seats" data-bench="nav-seats">Bus seats</a></li>
+        <li><a href="#/sip" data-bench="nav-sip">SIP calculator</a></li>
+        <li><a href="#/shop" data-bench="nav-shop">Shop</a></li>
+      </ul>
+    </nav>
+    <p class="cart-status" role="status" data-bench="cart-status">Cart: 0 items</p>
+  </header>
+  <main id="main" tabindex="-1" data-bench="main"></main>
+  <div class="route-announcer visually-hidden" aria-live="polite" data-bench="route-announcer"></div>
+  <footer class="site-footer">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32'%3E%3Crect width='120' height='32' rx='6' fill='%23334155'/%3E%3Ctext x='60' y='21' font-size='13' fill='white' text-anchor='middle' font-family='sans-serif'%3ERailCo%3C/text%3E%3C/svg%3E"
+         alt="Partner: RailCo" width="120" height="32" data-bench="footer-logo">
+    <p>BenchBook is a test application for accessibility research.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

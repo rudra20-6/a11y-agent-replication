@@ -1,0 +1,657 @@
+{
+ "summary": {
+  "placement": "path",
+  "units": 23,
+  "axe_killed": 5,
+  "rules_killed_strict": 5,
+  "rules_killed_sc": 5,
+  "either_killed_sc": 10,
+  "on_path_units": 16,
+  "persona_pairs": 24,
+  "rules_pairs_found": 7,
+  "rules_false_alarm_personas": 0,
+  "clean_rule_findings": {
+   "T1_flight_search": 0,
+   "T2_flight_cheapest": 0,
+   "T3_passenger_details": 0,
+   "T5_shop_headphones": 0,
+   "T6_shop_pincode": 0,
+   "T7_seat_women": 0
+  },
+  "rule_tool_errors": 2
+ },
+ "rows": [
+  {
+   "unit": "MP_F4_T1",
+   "failure": "F4",
+   "task": "T1_flight_search",
+   "on_path": true,
+   "severity": "none",
+   "affects": [],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": true,
+   "axe_rules": [
+    "color-contrast"
+   ],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F4_T2",
+   "failure": "F4",
+   "task": "T2_flight_cheapest",
+   "on_path": true,
+   "severity": "none",
+   "affects": [],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": true,
+   "axe_rules": [
+    "color-contrast"
+   ],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F4_T5",
+   "failure": "F4",
+   "task": "T5_shop_headphones",
+   "on_path": true,
+   "severity": "none",
+   "affects": [],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F4_T7",
+   "failure": "F4",
+   "task": "T7_seat_women",
+   "on_path": true,
+   "severity": "none",
+   "affects": [],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": true,
+   "axe_rules": [
+    "color-contrast"
+   ],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F22_T1",
+   "failure": "F22",
+   "task": "T1_flight_search",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F22_T2",
+   "failure": "F22",
+   "task": "T2_flight_cheapest",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F22_T5",
+   "failure": "F22",
+   "task": "T5_shop_headphones",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F22_T7",
+   "failure": "F22",
+   "task": "T7_seat_women",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F32_T1",
+   "failure": "F32",
+   "task": "T1_flight_search",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": true,
+   "rules_kill_sc": true,
+   "rules_flagged": [
+    "P5"
+   ],
+   "rules_tp": [
+    "P5"
+   ],
+   "rules_fp": [],
+   "rules_new": [
+    {
+     "profile": "P5",
+     "check": "Identify",
+     "sc": "2.5.3",
+     "step": 5,
+     "target": "td[gridcell] \"2 1 \u20b93,200\"",
+     "message": "visible label \"2 1 \u20b93,200\" is not in its name \"Wednesday, 21 October 2026, fare \u20b93,200\"",
+     "severity": "blocks",
+     "evidence": {
+      "label": "2 1 \u20b93,200",
+      "name": "Wednesday, 21 October 2026, fare \u20b93,200"
+     }
+    }
+   ]
+  },
+  {
+   "unit": "MP_F32_T2",
+   "failure": "F32",
+   "task": "T2_flight_cheapest",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": true,
+   "rules_kill_sc": true,
+   "rules_flagged": [
+    "P5"
+   ],
+   "rules_tp": [
+    "P5"
+   ],
+   "rules_fp": [],
+   "rules_new": [
+    {
+     "profile": "P5",
+     "check": "Identify",
+     "sc": "2.5.3",
+     "step": 5,
+     "target": "td[gridcell] \"2 1 \u20b93,200\"",
+     "message": "visible label \"2 1 \u20b93,200\" is not in its name \"Wednesday, 21 October 2026, fare \u20b93,200\"",
+     "severity": "blocks",
+     "evidence": {
+      "label": "2 1 \u20b93,200",
+      "name": "Wednesday, 21 October 2026, fare \u20b93,200"
+     }
+    }
+   ]
+  },
+  {
+   "unit": "MP_F32_T7",
+   "failure": "F32",
+   "task": "T7_seat_women",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F36_T1",
+   "failure": "F36",
+   "task": "T1_flight_search",
+   "on_path": false,
+   "severity": "degrades",
+   "affects": [],
+   "may_affect": [
+    "P1",
+    "P2"
+   ],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F36_T2",
+   "failure": "F36",
+   "task": "T2_flight_cheapest",
+   "on_path": false,
+   "severity": "degrades",
+   "affects": [],
+   "may_affect": [
+    "P1",
+    "P2"
+   ],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F36_T3",
+   "failure": "F36",
+   "task": "T3_passenger_details",
+   "on_path": true,
+   "severity": "breaks_all",
+   "affects": [],
+   "may_affect": [
+    "P1",
+    "P2"
+   ],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F36_T6",
+   "failure": "F36",
+   "task": "T6_shop_pincode",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F37_T2",
+   "failure": "F37",
+   "task": "T2_flight_cheapest",
+   "on_path": true,
+   "severity": "degrades",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F42_T6",
+   "failure": "F42",
+   "task": "T6_shop_pincode",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": true,
+   "rules_kill_sc": true,
+   "rules_flagged": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "rules_tp": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "rules_fp": [],
+   "rules_new": [
+    {
+     "profile": "P1",
+     "check": "Reach",
+     "sc": "4.1.2, 2.1.1",
+     "step": 0,
+     "target": "span \"Trail Runner shoes\"",
+     "message": "not exposed as a control a screen reader can activate",
+     "severity": "blocks",
+     "evidence": {
+      "ax_role": "generic"
+     }
+    },
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.1.1",
+     "step": 0,
+     "target": "span \"Trail Runner shoes\"",
+     "message": "can't be reached with the keyboard (Tab never lands on it)",
+     "severity": "blocks",
+     "evidence": {
+      "tabs": 57
+     }
+    },
+    {
+     "profile": "P5",
+     "check": "Reach",
+     "sc": "4.1.2",
+     "step": 0,
+     "target": "span \"Trail Runner shoes\"",
+     "message": "\"click Trail Runner shoes\" finds no control (not exposed as one)",
+     "severity": "blocks",
+     "evidence": {}
+    }
+   ]
+  },
+  {
+   "unit": "MP_F44_T5",
+   "failure": "F44",
+   "task": "T5_shop_headphones",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "caught",
+   "axe_rule_expected": "tabindex",
+   "axe_kill": true,
+   "axe_rules": [
+    "tabindex"
+   ],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F44_T6",
+   "failure": "F44",
+   "task": "T6_shop_pincode",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "caught",
+   "axe_rule_expected": "tabindex",
+   "axe_kill": true,
+   "axe_rules": [
+    "tabindex"
+   ],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F55_T6",
+   "failure": "F55",
+   "task": "T6_shop_pincode",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": true,
+   "rules_kill_sc": true,
+   "rules_flagged": [
+    "P2"
+   ],
+   "rules_tp": [
+    "P2"
+   ],
+   "rules_fp": [],
+   "rules_new": [
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.1.1",
+     "step": 0,
+     "target": "a \"Trail Runner shoes\"",
+     "message": "can't be reached with the keyboard (Tab never lands on it)",
+     "severity": "blocks",
+     "evidence": {
+      "tabs": 36
+     }
+    }
+   ]
+  },
+  {
+   "unit": "MP_F78_T6",
+   "failure": "F78",
+   "task": "T6_shop_pincode",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P2"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": true,
+   "rules_kill_sc": true,
+   "rules_flagged": [
+    "P2"
+   ],
+   "rules_tp": [
+    "P2"
+   ],
+   "rules_fp": [],
+   "rules_new": [
+    {
+     "profile": "P2",
+     "check": "Reach",
+     "sc": "2.4.7",
+     "step": 0,
+     "target": "a \"Trail Runner shoes\"",
+     "message": "keyboard focus is invisible on this control",
+     "severity": "blocks",
+     "evidence": {
+      "unfocused": "none|3px|rgb(29, 78, 216)|none|rgb(29, 78, 216)|0px|rgba(0, 0, 0, 0)|rgb(29, 78, 216)|underline",
+      "focused": "none|3px|rgb(29, 78, 216)|none|rgb(29, 78, 216)|0px|rgba(0, 0, 0, 0)|rgb(29, 78, 216)|underline"
+     }
+    }
+   ]
+  },
+  {
+   "unit": "MP_F91_T1",
+   "failure": "F91",
+   "task": "T1_flight_search",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  },
+  {
+   "unit": "MP_F91_T2",
+   "failure": "F91",
+   "task": "T2_flight_cheapest",
+   "on_path": true,
+   "severity": "blocks",
+   "affects": [
+    "P1"
+   ],
+   "may_affect": [],
+   "axe_expected": "missed",
+   "axe_rule_expected": "",
+   "axe_kill": false,
+   "axe_rules": [],
+   "rules_kill": false,
+   "rules_kill_sc": false,
+   "rules_flagged": [],
+   "rules_tp": [],
+   "rules_fp": [],
+   "rules_new": []
+  }
+ ],
+ "tool_errors": [
+  {
+   "profile": "P2",
+   "step": 3,
+   "where": "check",
+   "error": "ElementHandle.evaluate: Execution context was destroyed, most likely because of a navigation"
+  },
+  {
+   "profile": "P2",
+   "step": 2,
+   "where": "check",
+   "error": "ElementHandle.evaluate: Execution context was destroyed, most likely because of a navigation"
+  }
+ ],
+ "clean_rules": {
+  "T1_flight_search": [],
+  "T2_flight_cheapest": [],
+  "T3_passenger_details": [],
+  "T5_shop_headphones": [],
+  "T6_shop_pincode": [],
+  "T7_seat_women": []
+ }
+}

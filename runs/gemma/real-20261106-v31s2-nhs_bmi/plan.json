@@ -1,0 +1,53 @@
+{
+ "url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Use the search bar on the homepage to search for information about 'Diabetes'.",
+   "start_url": "https://www.nhs.uk/",
+   "success": "The search results page for 'Diabetes'.",
+   "stop_before": "Clicking on a specific search result.",
+   "features": [
+    "form",
+    "combobox",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-nhs_bmi/t2"
+  },
+  {
+   "id": "t2",
+   "goal": "Use the search bar on the homepage to search for 'diabetes', then select the first relevant search result to view its information.",
+   "start_url": "https://www.nhs.uk/",
+   "success": "The page containing detailed information about diabetes is displayed.",
+   "stop_before": null,
+   "features": [
+    "combobox",
+    "form"
+   ],
+   "frozen_from": "real-20261102-ext-r2c-nhs_bmi/t1"
+  },
+  {
+   "id": "t3",
+   "goal": "Navigate to the adult BMI calculator and confirm that you are 18 or over to reach the measurement input stage.",
+   "start_url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+   "success": "The form asking for height and weight measurements is displayed.",
+   "stop_before": "Entering height and weight.",
+   "features": [
+    "form"
+   ],
+   "frozen_from": "real-20261102-ext-r2c-nhs_bmi/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": false,
+  "Operate": true,
+  "Notice": true,
+  "Recover": true,
+  "Colour": false
+ },
+ "rejected_tasks": []
+}

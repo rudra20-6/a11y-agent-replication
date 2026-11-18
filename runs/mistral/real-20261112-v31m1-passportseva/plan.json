@@ -1,0 +1,41 @@
+{
+ "url": "https://www.passportindia.gov.in/",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Navigate to the Tatkaal Passport information page and find the heading 'Documents Required for Tatkaal Application'.",
+   "start_url": "https://www.passportindia.gov.in/psp",
+   "success": "The Tatkaal Passport page is displayed with the heading 'Documents Required for Tatkaal Application'.",
+   "stop_before": "logging in",
+   "features": [
+    "combobox",
+    "images"
+   ],
+   "frozen_from": "real-20261103-ext-r2b-passportseva/t1"
+  },
+  {
+   "id": "t2",
+   "goal": "Browse through the latest news and circulars by using the pagination buttons to view different sets of updates. Click on button '2' and then button '3'.",
+   "start_url": "https://www.passportindia.gov.in/psp",
+   "success": "The list of circulars or news items updates to show different entries as the page number changes.",
+   "stop_before": "creating an account",
+   "features": [
+    "dynamic_results",
+    "images"
+   ],
+   "frozen_from": "real-20261103-ext-r2b-passportseva/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": true,
+  "Operate": true,
+  "Notice": true,
+  "Recover": false,
+  "Colour": true
+ },
+ "rejected_tasks": []
+}

@@ -1,0 +1,31 @@
+[
+ {
+  "site": "nhs_bmi",
+  "url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+  "run_dir": "runs\\real-20261113-v31m2-nhs_bmi",
+  "status": "done",
+  "tasks": 3,
+  "tested": 2,
+  "findings": 4,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Use the search bar on the homepage to search for information": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   },
+   "Use the search bar on the homepage to search for 'diabetes',": {},
+   "Navigate to the adult BMI calculator and confirm that you ar": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "max_steps"
+   }
+  },
+  "tool_errors": 3,
+  "not_tested": [
+   "reference agent could not complete the task (stuck: The page navigated to an error page after attempting to click a search result, making it impossible to proceed with the )"
+  ],
+  "minutes": 18.5
+ }
+]

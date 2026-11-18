@@ -1,0 +1,71 @@
+{
+ "url": "https://www.1mg.com/",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Navigate to the Lab Tests page and select the 'Thyroid' category to view specific thyroid test packages.",
+   "start_url": "https://www.1mg.com/labs/",
+   "success": "The page displays thyroid-related test packages such as 'Thyroid Profile Total (T3, T4 & TSH)'.",
+   "stop_before": "Booking the test",
+   "features": [
+    "images",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-r2c-tata1mg/t1"
+  },
+  {
+   "id": "t2",
+   "goal": "Open the 'All filters' dialog on the Sexual Wellness top picks page and select 'Condoms' to refine the results.",
+   "start_url": "https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363",
+   "success": "The product list is updated to show only items in the selected category, such as Okamoto or KamaSutra products.",
+   "stop_before": "Adding an item to the cart",
+   "features": [
+    "dialog",
+    "filters",
+    "images",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-r2c-tata1mg/t2"
+  },
+  {
+   "id": "t3",
+   "goal": "Navigate to the Lab Tests page, select the 'Full Body Packages' category, and click on the 'Comprehensive Gold Full Body Checkup' package to view its details.",
+   "start_url": "https://www.1mg.com/labs/",
+   "success": "The product details page for the Comprehensive Gold Full Body Checkup is displayed.",
+   "stop_before": "Login or payment",
+   "features": [
+    "filters",
+    "button",
+    "images",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-tata1mg/t1"
+  },
+  {
+   "id": "t4",
+   "goal": "Navigate to the Sexual Wellness category, open the 'All filters' dialog, and select 'Condoms' to filter the product list.",
+   "start_url": "https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363",
+   "success": "The product list is updated to show only products within the Condoms category.",
+   "stop_before": "Login or payment",
+   "features": [
+    "filters",
+    "dialog",
+    "button",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-tata1mg/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": true,
+  "Operate": true,
+  "Notice": true,
+  "Recover": false,
+  "Colour": true
+ },
+ "rejected_tasks": []
+}

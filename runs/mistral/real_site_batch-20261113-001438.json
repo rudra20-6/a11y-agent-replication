@@ -1,0 +1,28 @@
+[
+ {
+  "site": "indiapost",
+  "url": "https://www.indiapost.gov.in/",
+  "run_dir": "runs\\real-20261113-v31m2-indiapost",
+  "status": "done",
+  "tasks": 3,
+  "tested": 1,
+  "findings": 2,
+  "unconfirmed": 2,
+  "agent_findings": 2,
+  "agents": {
+   "Calculate the postage for a domestic letter weighing 250 gra": {},
+   "Calculate the postage cost for a 250g letter being sent from": {
+    "P1": "stuck",
+    "P2": "stuck",
+    "P3": "max_steps"
+   },
+   "Locate a post office in the Bangalore area by entering the p": {}
+  },
+  "tool_errors": 2,
+  "not_tested": [
+   "reference agent could not complete the task (stuck: kept repeating the same actions with the same results (no progress))",
+   "reference agent could not complete the task (max_steps: ran out of steps)"
+  ],
+  "minutes": 13.1
+ }
+]

@@ -1,0 +1,54 @@
+{
+ "url": "https://www.indiapost.gov.in/",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Calculate the postage for a domestic letter weighing 250 grams from origin pincode 110001 to destination pincode 400001.",
+   "start_url": "https://www.indiapost.gov.in/calculate-postage",
+   "success": "The calculated postage amount is displayed on the screen.",
+   "stop_before": null,
+   "features": [
+    "form",
+    "combobox",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-ext-indiapost/t1"
+  },
+  {
+   "id": "t2",
+   "goal": "Calculate the postage cost for a 250g letter being sent from Mumbai (400001) to Chennai (600001).",
+   "start_url": "https://www.indiapost.gov.in/calculate-postage",
+   "success": "The calculated postage amount for the specified letter is displayed on the screen.",
+   "stop_before": "any payment or login step",
+   "features": [
+    "form",
+    "combobox"
+   ],
+   "frozen_from": "real-20261102-ext-r2b-indiapost/t1"
+  },
+  {
+   "id": "t3",
+   "goal": "Locate a post office in the Bangalore area by entering the pincode 560001 and completing the captcha verification.",
+   "start_url": "https://www.indiapost.gov.in/locate-postoffice",
+   "success": "A list of post offices located in or near the 560001 pincode area is displayed.",
+   "stop_before": "any login or registration step",
+   "features": [
+    "form",
+    "combobox"
+   ],
+   "frozen_from": "real-20261102-ext-r2b-indiapost/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": false,
+  "Operate": true,
+  "Notice": true,
+  "Recover": true,
+  "Colour": true
+ },
+ "rejected_tasks": []
+}

@@ -1,0 +1,302 @@
+[
+ {
+  "site": "govuk_holiday",
+  "url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+  "run_dir": "runs\\real-20261112-v31m2-govuk_holiday",
+  "status": "done",
+  "tasks": 4,
+  "tested": 3,
+  "findings": 0,
+  "unconfirmed": 2,
+  "agent_findings": 3,
+  "agents": {
+   "Start the holiday entitlement calculator and select 'Yes' to": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Search for 'National Insurance' using the search bar on the ": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Calculate holiday entitlement for a standard employee by cli": {},
+   "Search for 'maternity pay' using the search box on the GOV.U": {
+    "P1": "done",
+    "P2": "done",
+    "P3": "done"
+   }
+  },
+  "tool_errors": 3,
+  "not_tested": [
+   "reference agent could not complete the task (max_steps: ran out of steps)"
+  ],
+  "minutes": 8.8
+ },
+ {
+  "site": "dmrc",
+  "url": "https://www.delhimetrorail.com/",
+  "run_dir": "runs\\real-20261112-v31m2-dmrc",
+  "status": "done",
+  "tasks": 1,
+  "tested": 1,
+  "findings": 2,
+  "unconfirmed": 1,
+  "agent_findings": 2,
+  "agents": {
+   "Use the search bar to find information about 'lost and found": {
+    "P1": "done",
+    "P2": "stuck",
+    "P3": "stuck"
+   }
+  },
+  "tool_errors": 1,
+  "not_tested": [],
+  "minutes": 2.0
+ },
+ {
+  "site": "flipkart",
+  "url": "https://www.flipkart.com/",
+  "run_dir": "runs\\real-20261112-v31m2-flipkart",
+  "status": "done",
+  "tasks": 3,
+  "tested": 3,
+  "findings": 11,
+  "unconfirmed": 1,
+  "agent_findings": 2,
+  "agents": {
+   "Search for 'Running Shoes' using the search bar and browse t": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "done"
+   },
+   "Search for 'Gaming Laptops' using the search bar and browse ": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "stuck"
+   },
+   "Navigate to the Fashion category and then select 'Casual sho": {
+    "P1": "done",
+    "P2": "max_steps",
+    "P3": "max_steps"
+   }
+  },
+  "tool_errors": 6,
+  "not_tested": [],
+  "minutes": 21.7
+ },
+ {
+  "site": "indiapost",
+  "url": "https://www.indiapost.gov.in/",
+  "run_dir": "runs\\real-20261112-v31m2-indiapost",
+  "status": "done",
+  "tasks": 3,
+  "tested": 2,
+  "findings": 6,
+  "unconfirmed": 1,
+  "agent_findings": 1,
+  "agents": {
+   "Calculate the postage for a domestic letter weighing 250 gra": {
+    "P1": "stuck",
+    "P2": "max_steps",
+    "P3": "max_steps"
+   },
+   "Calculate the postage cost for a 250g letter being sent from": {
+    "P1": "error",
+    "P2": "error",
+    "P3": "error"
+   },
+   "Locate a post office in the Bangalore area by entering the p": {}
+  },
+  "tool_errors": 7,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.indiapost.gov.in/locate-postoffice\nCall log:\n  - navigating to \"https://www.indiapost.gov.in/locate-postoffice\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 27.1
+ },
+ {
+  "site": "nhs_bmi",
+  "url": "https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults",
+  "run_dir": "runs\\real-20261112-v31m2-nhs_bmi",
+  "status": "done",
+  "tasks": 3,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Use the search bar on the homepage to search for information": {},
+   "Use the search bar on the homepage to search for 'diabetes',": {},
+   "Navigate to the adult BMI calculator and confirm that you ar": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.nhs.uk/\nCall log:\n  - navigating to \"https://www.nhs.uk/\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.nhs.uk/\nCall log:\n  - navigating to \"https://www.nhs.uk/\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults\nCall log:\n  - navigating to \"https://www.nhs.uk/health-asses"
+  ],
+  "minutes": 0.1
+ },
+ {
+  "site": "tata1mg",
+  "url": "https://www.1mg.com/",
+  "run_dir": "runs\\real-20261112-v31m2-tata1mg",
+  "status": "done",
+  "tasks": 4,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Navigate to the Lab Tests page and select the 'Thyroid' cate": {},
+   "Open the 'All filters' dialog on the Sexual Wellness top pic": {},
+   "Navigate to the Lab Tests page, select the 'Full Body Packag": {},
+   "Navigate to the Sexual Wellness category, open the 'All filt": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.1mg.com/labs/\nCall log:\n  - navigating to \"https://www.1mg.com/labs/\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363\nCall log:\n  - navigating to \"https://www.1mg.com/categories/sexual-wellness/top-p",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.1mg.com/labs/\nCall log:\n  - navigating to \"https://www.1mg.com/labs/\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.1mg.com/categories/sexual-wellness/top-picks-sexual-wellness-3363\nCall log:\n  - navigating to \"https://www.1mg.com/categories/sexual-wellness/top-p"
+  ],
+  "minutes": 0.1
+ },
+ {
+  "site": "uidai",
+  "url": "https://uidai.gov.in/en/",
+  "run_dir": "runs\\real-20261112-v31m2-uidai",
+  "status": "done",
+  "tasks": 2,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Navigate to the Documents page and use the category selectio": {},
+   "Navigate through the 'How to Videos' section using the pagin": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://uidai.gov.in/en/documents\nCall log:\n  - navigating to \"https://uidai.gov.in/en/documents\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://uidai.gov.in/en/how-to-videos\nCall log:\n  - navigating to \"https://uidai.gov.in/en/how-to-videos\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.1
+ },
+ {
+  "site": "swiggy",
+  "url": "https://www.swiggy.com/",
+  "run_dir": "runs\\real-20261112-v31m2-swiggy",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Search for 'Korean Noodles' in the search bar and select a r": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.swiggy.com/search\nCall log:\n  - navigating to \"https://www.swiggy.com/search\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.0
+ },
+ {
+  "site": "practo",
+  "url": "https://www.practo.com/hyderabad/dentist",
+  "run_dir": "runs\\real-20261112-v31m2-practo",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Filter the list of dentists in Hyderabad to show only female": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.practo.com/hyderabad/dentist\nCall log:\n  - navigating to \"https://www.practo.com/hyderabad/dentist\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.0
+ },
+ {
+  "site": "icici_emi",
+  "url": "https://www.icicibank.com/calculator/home-loan-emi-calculator",
+  "run_dir": "runs\\real-20261112-v31m2-icici_emi",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Calculate the monthly EMI for a home loan of ₹50,00,000 with": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.icici.bank.in/personal-banking/loans/home-loan/emi-calculator\nCall log:\n  - navigating to \"https://www.icici.bank.in/personal-banking/loans/home-lo"
+  ],
+  "minutes": 0.0
+ },
+ {
+  "site": "myntra",
+  "url": "https://www.myntra.com/",
+  "run_dir": "runs\\real-20261112-v31m2-myntra",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Go to the Personal Care section and filter the results to sh": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.myntra.com/personal-care\nCall log:\n  - navigating to \"https://www.myntra.com/personal-care\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.0
+ },
+ {
+  "site": "passportseva",
+  "url": "https://www.passportindia.gov.in/",
+  "run_dir": "runs\\real-20261112-v31m2-passportseva",
+  "status": "done",
+  "tasks": 2,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Navigate to the Tatkaal Passport information page and find t": {},
+   "Browse through the latest news and circulars by using the pa": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.passportindia.gov.in/psp\nCall log:\n  - navigating to \"https://www.passportindia.gov.in/psp\", waiting until \"domcontentloaded\"\n",
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.passportindia.gov.in/psp\nCall log:\n  - navigating to \"https://www.passportindia.gov.in/psp\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.1
+ },
+ {
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Main_Page",
+  "run_dir": "runs\\real-20261112-v31m2-wikipedia",
+  "status": "done",
+  "tasks": 1,
+  "tested": 0,
+  "findings": 0,
+  "unconfirmed": 0,
+  "agent_findings": 0,
+  "agents": {
+   "Search for 'Sovetsky Soyuz-class battleship' and navigate to": {}
+  },
+  "tool_errors": 0,
+  "not_tested": [
+   "run failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://en.wikipedia.org/wiki/Main_Page\nCall log:\n  - navigating to \"https://en.wikipedia.org/wiki/Main_Page\", waiting until \"domcontentloaded\"\n"
+  ],
+  "minutes": 0.0
+ }
+]

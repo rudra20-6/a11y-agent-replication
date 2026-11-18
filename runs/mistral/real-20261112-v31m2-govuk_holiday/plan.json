@@ -1,0 +1,63 @@
+{
+ "url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Start the holiday entitlement calculator and select 'Yes' to indicate that the employee works irregular hours.",
+   "start_url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+   "success": "The next question in the holiday entitlement calculation process.",
+   "stop_before": "Entering specific dates or personal information.",
+   "features": [
+    "form"
+   ],
+   "frozen_from": "real-20261030-v23-govuk_holiday/t1"
+  },
+  {
+   "id": "t2",
+   "goal": "Search for 'National Insurance' using the search bar on the GOV.UK homepage.",
+   "start_url": "https://www.gov.uk/",
+   "success": "A list of search results for 'National Insurance'.",
+   "stop_before": "None",
+   "features": [
+    "combobox",
+    "form"
+   ],
+   "frozen_from": "real-20261030-v23-govuk_holiday/t2"
+  },
+  {
+   "id": "t3",
+   "goal": "Calculate holiday entitlement for a standard employee by clicking 'Start now' and selecting 'No' to the question 'Does the employee work irregular hours or for part of the year?'",
+   "start_url": "https://www.gov.uk/calculate-your-holiday-entitlement",
+   "success": "The next question in the holiday entitlement calculation flow.",
+   "stop_before": null,
+   "features": [
+    "form"
+   ],
+   "frozen_from": "real-20261103-r2c-govuk_holiday/t1"
+  },
+  {
+   "id": "t4",
+   "goal": "Search for 'maternity pay' using the search box on the GOV.UK homepage to find relevant guidance.",
+   "start_url": "https://www.gov.uk/",
+   "success": "A list of search results related to maternity pay.",
+   "stop_before": null,
+   "features": [
+    "combobox",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261103-r2c-govuk_holiday/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": false,
+  "Operate": true,
+  "Notice": true,
+  "Recover": true,
+  "Colour": false
+ },
+ "rejected_tasks": []
+}

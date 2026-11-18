@@ -1,0 +1,1983 @@
+{
+ "states": "all",
+ "model": "gemma-4-26b-a4b-it",
+ "clean": {
+  "T1_flight_search": [
+   {
+    "k": 31,
+    "profiles": [
+     "P1"
+    ],
+    "check": "Identify",
+    "why": "The button uses aria-describedby pointing to a span that repeats the button's own text, creating redundant announcements for screen reader users.",
+    "state": "load",
+    "in_region": false
+   },
+   {
+    "k": 32,
+    "profiles": [
+     "P1"
+    ],
+    "check": "Identify",
+    "why": "The departure date is controlled by a button using aria-describedby instead of a standard label association, which can be less reliable for screen reader users to identify the field purpose.",
+    "state": "after step 0",
+    "in_region": false
+   },
+   {
+    "k": 32,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The departure date is a button rather than a date input, which may make it difficult for screen reader or keyboard users to select a specific future date like 21 October 2026 if the resulting widget is not properly accessible.",
+    "state": "after step 1",
+    "in_region": false
+   },
+   {
+    "k": 33,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The departure date is implemented as a button rather than a standard date input, which requires complex custom keyboard handling to select a specific date like 'Wednesday 21 October 2026'.",
+    "state": "after step 2",
+    "in_region": false
+   },
+   {
+    "k": 130,
+    "profiles": [
+     "P5"
+    ],
+    "check": "Operate",
+    "why": "The target date is a table cell (td) rather than a button, which can make it difficult for voice-control users to activate by saying 'click 21 October'.",
+    "state": "after step 4",
+    "in_region": false
+   },
+   {
+    "k": 39,
+    "profiles": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "check": "Recover",
+    "why": "The search results container is empty, meaning the user cannot see or find the number of available flights as requested by the task.",
+    "state": "after step 5",
+    "in_region": false
+   }
+  ],
+  "T2_flight_cheapest": [
+   {
+    "k": 32,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The departure date is a button that likely opens a complex widget; without knowing the widget's implementation, it may be difficult for keyboard or screen reader users to select a specific date like 21 October 2026.",
+    "state": "after step 0",
+    "in_region": false
+   },
+   {
+    "k": 22,
+    "profiles": [
+     "P1"
+    ],
+    "check": "Identify",
+    "why": "The combobox value 'Hyd' in the accessibility tree may not clearly communicate to a screen reader user that they need to select the full 'Hyderabad (HYD)' option from the listbox to proceed correctly.",
+    "state": "after step 0",
+    "in_region": false
+   },
+   {
+    "k": 27,
+    "profiles": [
+     "P1",
+     "P2",
+     "P5"
+    ],
+    "check": "Operate",
+    "why": "The 'To' combobox lacks a populated listbox in the current state, which may prevent users from selecting 'Delhi' via standard combobox keyboard patterns.",
+    "state": "after step 1",
+    "in_region": false
+   },
+   {
+    "k": 32,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Identify",
+    "why": "The departure date trigger is a button that likely opens a calendar dialog, but it lacks aria-haspopup to inform users that a widget will appear.",
+    "state": "after step 1",
+    "in_region": false
+   },
+   {
+    "k": 27,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The 'To' combobox is expanded with a listbox, but there is no clear indication of how to navigate the options via keyboard or how the selection will be communicated to a screen reader user.",
+    "state": "after step 2",
+    "in_region": false
+   },
+   {
+    "k": 33,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The departure date is a button that likely opens a date picker; if this picker is not keyboard-navigable or lacks proper ARIA roles, the user cannot select the required date.",
+    "state": "after step 2",
+    "in_region": false
+   },
+   {
+    "k": 33,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The departure date is a button that requires interaction to open a date picker, but there is no indication of how a keyboard user or screen reader user should interact with the resulting widget once it opens.",
+    "state": "after step 3",
+    "in_region": false
+   },
+   {
+    "k": 39,
+    "profiles": [
+     "P1",
+     "P2",
+     "P5"
+    ],
+    "check": "Operate",
+    "why": "The flight results container is empty, so the user cannot see, select, or interact with any flights to find the cheapest fare.",
+    "state": "after step 5",
+    "in_region": false
+   }
+  ],
+  "T3_passenger_details": [
+   {
+    "k": 19,
+    "profiles": [
+     "P2"
+    ],
+    "check": "Operate",
+    "why": "The error summary contains a link to the mobile number field (#pphone), but the error summary itself is a focusable element that might trap or confuse keyboard users if they cannot easily navigate from the alert to the actual input field to correct it.",
+    "state": "after step 3",
+    "in_region": false
+   },
+   {
+    "k": 35,
+    "profiles": [
+     "P1"
+    ],
+    "check": "Identify",
+    "why": "The mobile number input is marked as invalid (aria-invalid='true'), but the user has already corrected the value to a valid 10-digit number, which may cause confusion for screen reader users if the error state is not programmatically cleared.",
+    "state": "after step 4",
+    "in_region": false
+   },
+   {
+    "k": 19,
+    "profiles": [
+     "P1",
+     "P2"
+    ],
+    "check": "Notice",
+    "why": "The error summary alert (role='alert') is present, but if the user has corrected the error, the presence of a persistent error summary can be confusing unless it is removed or updated upon successful validation.",
+    "state": "after step 4",
+    "in_region": false
+   }
+  ],
+  "T5_shop_headphones": [],
+  "T6_shop_pincode": [
+   {
+    "k": 27,
+    "profiles": [
+     "P1"
+    ],
+    "check": "Identify",
+    "why": "The error summary link 'Enter a 6-digit pincode' is repetitive and provides redundant information already present in the field's error text and aria-describedby attributes.",
+    "state": "after step 3",
+    "in_region": false
+   }
+  ],
+  "T7_seat_women": []
+ },
+ "mutants": [
+  {
+   "mutant": "MP_F4_T1",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 31,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date button uses aria-describedby for a label that is already part of its own text content, causing redundant announcements for screen reader users.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date button uses aria-describedby for a span instead of being a properly labeled form input, which can make it difficult for screen reader users to understand its role in the form context.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is implemented as a button rather than a native date input, which likely requires navigating a complex custom dialog/grid that may not be keyboard-accessible or properly announced.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is expanded, but there is no clear instruction or standard keyboard pattern indicated for navigating the listbox options to select 'Delhi (DEL)'.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Identify",
+     "why": "The departure date is a button rather than a date input, which may be confusing for screen reader users expecting a standard date picker interaction.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date button text 'Departure date: choose a date' suggests the date has not been selected, which would prevent the user from completing the task of searching for a specific date.",
+     "state": "after step 3",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F4_T2",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [
+    "P4"
+   ],
+   "findings": [
+    {
+     "k": 31,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The button text 'Departure date: choose a date' combined with aria-describedby pointing to 'Departure date' creates redundant and potentially confusing announcements for screen reader users.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 37,
+     "profiles": [
+      "P4"
+     ],
+     "check": "Notice",
+     "why": "The cheapest fare is identified via a specific green color in the CSS (.lowest .fare), which may be indistinguishable to color-blind users if no text label is present.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget; without knowing if it handles keyboard navigation or focus management, it poses a risk to keyboard and screen reader users.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The 'To' combobox is currently collapsed (aria-expanded='false'), and if it requires specific voice commands or keyboard sequences to expand and select 'Delhi', it may be difficult to operate.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is implemented as a button that likely opens a dialog, but it lacks a clear indication of whether a date is currently selected or how to interact with the resulting widget via keyboard/screen reader once opened.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 130,
+     "profiles": [
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The visible text in the date cell is only '21' and '₹3,200', while the full date information is only available via aria-label, making it difficult for voice-control users to target the element by name.",
+     "state": "after step 4",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F4_T5",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [
+    "P1",
+    "P2"
+   ],
+   "findings": [
+    {
+     "k": 56,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "The 'Showing X products' status message is a live region, but if the filter application doesn't trigger a change in the text or if the user isn't notified of the new results, they won't know the filter worked.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 57,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The task requires showing *only* headphones, but the current state shows 3 products (including what might be non-headphones if the filter failed) despite the checkbox being checked, which may indicate a functional failure in applying filters.",
+     "state": "after step 0",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F4_T7",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [],
+   "findings": []
+  },
+  {
+   "mutant": "MP_F22_T1",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 31,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button rather than a date input, requiring the user to interact with a potentially complex date-picker widget which may not be keyboard-accessible or properly announced as a dialog.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date input is implemented as a button with aria-describedby, which may not clearly communicate to screen reader users that this is the primary input for the departure date field.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget; if focus is not managed within the resulting dialog, keyboard and voice users will struggle.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The 'To' field is a combobox that requires specific keyboard interactions (arrow keys) to select a city from the listbox, which may not be intuitive if not implemented with full ARIA patterns.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 37,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "The user needs to know how many flights are available; if the results status is not announced via the live region after clicking search, a blind user won't know the results loaded.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date label is a span using aria-describedby instead of a proper label association, which can be less reliable for some screen reader users.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that must trigger a date picker; if this picker is not keyboard-accessible or doesn't update the button's accessible name upon selection, the user cannot fulfill the task requirements.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 131,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The date '21' is implemented as a span with an onclick handler instead of a button, making it unreachable via keyboard and invisible to voice control commands like 'click 21'.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 130,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The gridcell for the 21st has tabindex='-1', preventing keyboard users from navigating to it using arrow keys as the hint suggests.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 38,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "The results status element is empty, so a screen reader user won't be notified of the number of flights found unless they manually navigate to it after searching.",
+     "state": "after step 5",
+     "in_region": false
+    },
+    {
+     "k": 39,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The results container is an empty div; if results are injected dynamically, they may not be announced to screen reader users unless an aria-live region is properly utilized and updated.",
+     "state": "after step 5",
+     "in_region": false
+    },
+    {
+     "k": 38,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "The flight count information is in a status role after the focused search button, which may be missed by screen reader users if they do not expect a live region update or navigate past the form.",
+     "state": "after step 6",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F22_T2",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 32,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date interactive element is a button associated with a span via aria-describedby rather than a standard label element, which may not be announced as a form field label by all screen readers.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is implemented as a button rather than a date input, which may not clearly communicate to screen reader users how to interact with it to select a specific date like 21 October 2026.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 131,
+     "profiles": [
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The interactive element for the 21st is a span with an onclick handler instead of a button, and it is not keyboard focusable, preventing keyboard users from selecting the date and voice users from clicking it.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 130,
+     "profiles": [
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The date cell for the 21st contains a span that redirects to Google instead of selecting the date, which breaks the functional requirement of the task.",
+     "state": "after step 4",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F22_T5",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 92,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The span inside the 'Add to cart' button for Pocket Buds earphones contains an onclick handler that opens Google, which interferes with the button's intended purpose and creates unexpected behavior for screen reader and voice control users.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 78,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'Add to cart' button for Pocket Buds earphones contains a span with an onclick handler that navigates to Google, preventing the user from actually adding the item to the cart.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 78,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The span inside the 'Add to cart' button for the cheapest item contains an onclick handler that opens a new window, which will likely prevent the intended 'add to cart' action and confuse users.",
+     "state": "after step 1",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F22_T7",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [
+    "P1",
+    "P2",
+    "P4",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 38,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "There is a nested interactive span with an onclick handler inside a button element, which is invalid HTML and interferes with the button's primary function and keyboard/voice interaction.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 38,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The seat number 'L3' is wrapped in a span with an onclick handler, which is not keyboard accessible and creates an unpredictable interaction within a button.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 24,
+     "profiles": [
+      "P1",
+      "P4"
+     ],
+     "check": "Identify",
+     "why": "The color swatch in the legend for 'Women only' seats is an empty span with no accessible name, making the legend's visual information unavailable to screen reader or color-blind users.",
+     "state": "after step 1",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F32_T1",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P5"
+   ],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 31,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a date picker, but there is no indication of how to navigate or select a specific date (21 October 2026) using only a keyboard or screen reader.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 22,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'From' combobox requires selecting a specific city from a listbox; if the listbox is not keyboard-navigable or doesn't announce selections, the user cannot complete the task.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 26,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox requires selecting 'Delhi' from a listbox; if the listbox is not keyboard-navigable or doesn't announce selections, the user cannot complete the task.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is controlled by a button rather than a standard date input, which may not communicate its purpose as a date selection field clearly to screen reader users via its current aria-describedby relationship.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The departure date input is implemented as a button with aria-describedby pointing to a span, which may not be announced as a clear label for the input purpose by all screen readers.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is in an intermediate state ('Del') with an expanded listbox, which may cause confusion for screen reader or voice users regarding whether the selection is complete or requires further interaction (like pressing Enter).",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is implemented as a button rather than a standard date input, which may not clearly communicate to screen reader or keyboard users how to select a specific date (e.g., Wednesday 21 October 2026).",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 131,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The day '21' is rendered with a space ('2 1') in the HTML, which may cause a screen reader to announce it as 'two one' instead of 'twenty-one', making it difficult to find the correct date.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 130,
+     "profiles": [
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The gridcell for the 21st has a very long accessible name ('Wednesday, 21 October 2026, fare ₹3,200'), making it difficult for a voice-control user to select it by saying a simple command like 'click 21'.",
+     "state": "after step 4",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F32_T2",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P5"
+   ],
+   "lenient_flagged": [
+    "P4"
+   ],
+   "findings": [
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget (calendar); if this widget is not keyboard-accessible or doesn't trap focus, the user cannot select the required date.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Identify",
+     "why": "The departure date control is a button using aria-describedby instead of a proper label association, which may make it harder for screen reader users to understand the purpose of the control immediately.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is expanded with a listbox, but there is no clear instruction or standard implementation visible to ensure a keyboard or screen reader user can easily navigate and select the 'Delhi (DEL)' option to complete the search.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is triggered by a button that requires a specific date (21 October 2026), which likely opens a complex widget that may not be easily navigable via keyboard or screen reader.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The departure date is implemented as a button rather than a date input, which may not clearly communicate its purpose or expected interaction to screen reader or voice control users.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 131,
+     "profiles": [
+      "P4",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The date '21' is visually rendered with a space as '2 1', which may confuse sighted users or voice control users trying to verify the date.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 51,
+     "profiles": [
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "Most date cells have tabindex='-1', meaning a keyboard user cannot Tab into the grid and must rely on specific arrow key navigation which may not be intuitive if they miss the hint.",
+     "state": "after step 4",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F32_T7",
+   "affects": [
+    "P1",
+    "P5"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P5"
+   ],
+   "lenient_flagged": [
+    "P1",
+    "P2"
+   ],
+   "findings": [
+    {
+     "k": 99,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The 'Continue with selected seat' button has initial focus on page load, which may cause users to accidentally submit the form before they have navigated to the seat selection area.",
+     "state": "after step 1",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F36_T1",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 22,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'From' combobox is a text input that relies on a hidden listbox; without proper keyboard handling to populate and navigate the list, users cannot select cities from the suggested list.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 26,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is a text input that relies on a hidden listbox; without proper keyboard handling to populate and navigate the list, users cannot select cities from the suggested list.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 31,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button rather than a standard date input, which may be confusing for screen reader users and requires specific keyboard interaction to open a date picker.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 34,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The passenger input automatically submits the form on change, which can be disorienting for users who are not finished adjusting their search criteria.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date button uses aria-describedby for the label, but it lacks a proper accessible name via aria-labelledby, which may cause screen reader users to perceive the label as a description rather than the field's name.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The 'To' combobox lacks 'aria-controls' and 'aria-expanded' attributes, so screen reader users won't be notified that a list of cities will appear when they type.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date button is described by a span instead of a proper label element, which may cause confusion for screen reader users regarding the purpose of the button.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is currently a button that says 'choose a date', requiring an extra interaction to open a date picker before the search can be performed.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 51,
+     "profiles": [
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The date picker uses a grid where most cells have tabindex='-1', meaning a keyboard user cannot Tab to the target date and must rely on arrow key navigation which may not be intuitive.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 38,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Notice",
+     "why": "The results status element is empty, so a screen reader user or keyboard user won't be notified of how many flights were found after searching.",
+     "state": "after step 5",
+     "in_region": false
+    },
+    {
+     "k": 39,
+     "profiles": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The results container is empty, meaning the flight availability information is not present on the page for the user to find.",
+     "state": "after step 5",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F36_T2",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [
+    "P4"
+   ],
+   "findings": [
+    {
+     "k": 22,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The combobox for 'From' lacks instructions on how to interact with the listbox to select a city.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 26,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The combobox for 'To' lacks instructions on how to interact with the listbox to select a city.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 31,
+     "profiles": [
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The date picker is a button that likely opens a complex widget; without knowing if focus is managed, keyboard users may struggle to navigate the calendar.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 37,
+     "profiles": [
+      "P4"
+     ],
+     "check": "Notice",
+     "why": "If the cheapest fare is identified only by a specific green color in the results, color-blind users will be unable to identify it.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a dialog, but it lacks a role (like 'button' with 'aria-haspopup') that clearly communicates it is a date picker widget.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 35,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The passenger input is a spinbutton which may be difficult for some users to navigate or increment correctly compared to a standard number input.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a custom widget, which may not be easily navigable or predictable for screen reader or voice control users compared to a standard date input.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 35,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The passenger input triggers an automatic form submission on change, which can interrupt the user's workflow and prevent them from filling out the rest of the form.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 36,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The passenger input field triggers an automatic form submission on change, which can disorient users and prevent them from reviewing their input before searching.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": null,
+     "profiles": [
+      "P4"
+     ],
+     "check": "Identify",
+     "why": "The cheapest fare is styled with a specific color (green) via the '.lowest' class, which may not be identifiable to color-blind users if no text label like 'Cheapest' is provided.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": null,
+     "profiles": [
+      "P1",
+      "P4"
+     ],
+     "check": "Identify",
+     "why": "The CSS indicates the cheapest fare is identified only by a green color, which provides no semantic information for screen reader users or visual distinction for color-blind users.",
+     "state": "after step 5",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F36_T3",
+   "affects": [],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [],
+   "lenient_flagged": [
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input triggers an automatic form submission on change, which prevents users from correcting errors or navigating away without accidentally submitting the form.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input triggers an automatic form submission on change, which prevents users from reviewing or correcting errors before the page navigates or reloads.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input automatically submits the form on change, which prevents users from correcting errors or completing the input if the form validates prematurely.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input triggers an automatic form submission on change, which can cause premature submission before the user has finished correcting the input or navigating the form.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input triggers an automatic form submission on change, which can unexpectedly interrupt users before they finish filling out the rest of the form.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number input triggers an automatic form submission on change, which can unexpectedly interrupt users (especially screen reader or keyboard users) before they have finished interacting with the field or reviewing their input.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 38,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The mobile number field automatically submits the form on change, which can cause unexpected page reloads and disrupt the user's flow.",
+     "state": "after step 5",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F36_T6",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P2"
+   ],
+   "lenient_flagged": [
+    "P2",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": null,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The current page does not provide a pincode input field or a delivery checker, making it impossible to perform the task of checking delivery availability.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The input field automatically submits the form on change, which can cause unexpected page reloads or state changes before a user (especially screen reader or keyboard users) has finished interacting with the field.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The input field triggers an automatic form submission on 'onchange', which can prematurely submit incomplete data (like a 5-digit pincode when 6 are required) before the user has finished typing.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The input field triggers an automatic form submission on 'change', which can be disorienting for screen reader and keyboard users who may not expect the page to update immediately upon finishing input.",
+     "state": "after step 2",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F37_T2",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P2"
+   ],
+   "lenient_flagged": [
+    "P3"
+   ],
+   "findings": [
+    {
+     "k": 22,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'From' combobox is currently empty and its associated listbox is hidden, making it difficult to select a specific city like Hyderabad via keyboard or voice.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 26,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is currently empty and its associated listbox is hidden, making it difficult to select a specific city like Delhi via keyboard or voice.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 31,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a date picker; without seeing the picker, it is a barrier to selecting the specific date '21 October 2026' if the picker is not keyboard-accessible or properly labeled.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox is collapsed (aria-expanded='false') and its listbox is hidden, requiring specific keyboard or voice interactions to reveal and select 'Delhi'.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget; without seeing the widget, it is a potential barrier for selecting a specific date like 21 October 2026 via keyboard.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 27,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The 'To' combobox lacks a visible or populated listbox in the current state, which may make it difficult for users to know how to select 'Delhi' from suggestions if they rely on autocomplete.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget (calendar); without seeing the widget, there is a risk that it is not keyboard-navigable or properly announced as a dialog.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is not yet set (button text is 'choose a date'), which prevents the user from completing the task of searching for a specific date.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 39,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Notice",
+     "why": "No flight results are visible or present in the accessibility tree, so the user cannot find or select the cheapest fare.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 114,
+     "profiles": [
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The cheapest fare cell (16 October) is a gridcell containing spans; a voice user saying 'click 16' might fail if the command doesn't target the cell correctly or if the label is perceived as part of a complex structure.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 46,
+     "profiles": [
+      "P3"
+     ],
+     "check": "Operate",
+     "why": "The date dialog has a fixed max-width of 420px, which will cause overflow and horizontal scrolling for users at 400% zoom on a 320px wide screen.",
+     "state": "after step 4",
+     "in_region": false
+    },
+    {
+     "k": 46,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "Selecting the cheapest fare triggers an unexpected navigation to an external website (google.com) via an onclick handler, preventing the user from completing the task.",
+     "state": "after step 6",
+     "in_region": false
+    },
+    {
+     "k": 46,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "Selecting the cheapest fare radio button triggers an unexpected navigation to an external website (google.com), preventing the user from completing the booking task.",
+     "state": "after step 7",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F42_T6",
+   "affects": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "lenient_flagged": [
+    "P2",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 61,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The product name 'Trail Runner shoes' is a span with an onclick handler instead of a semantic link, making it unreachable via keyboard and unidentifiable as a link to screen readers.",
+     "state": "load",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F44_T5",
+   "affects": [
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P2"
+   ],
+   "lenient_flagged": [],
+   "findings": []
+  },
+  {
+   "mutant": "MP_F44_T6",
+   "affects": [
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P2"
+   ],
+   "lenient_flagged": [
+    "P2",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 61,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 68,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 75,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 82,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 89,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 96,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 103,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 110,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The product link uses a positive tabindex, which disrupts the natural keyboard tab order and makes navigation unpredictable.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 26,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The hint text says '6 digits', but the task requires entering a 5-digit pincode ('50003'), which may lead to user confusion or perceived errors.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The input field contains a 6-digit pincode ('500032') but is still marked as invalid with the error 'Enter a 6-digit pincode', preventing the user from successfully proceeding.",
+     "state": "after step 3",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F55_T6",
+   "affects": [
+    "P1",
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1",
+    "P2"
+   ],
+   "lenient_flagged": [
+    "P2",
+    "P5"
+   ],
+   "findings": [
+    {
+     "k": 61,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The link has an 'onfocus=\"this.blur();\"' attribute which prevents keyboard users from focusing on the link and screen reader users from interacting with it.",
+     "state": "load",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F78_T6",
+   "affects": [
+    "P2"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P2"
+   ],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 23,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "The error summary is marked as an alert but requires manual navigation or specific focus management to ensure a screen reader user is aware of the error context immediately upon form submission.",
+     "state": "after step 3",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F91_T1",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [],
+   "findings": [
+    {
+     "k": 31,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is controlled by a button rather than a date input, which requires opening a dialog that may not be keyboard-accessible or properly announced as a modal.",
+     "state": "load",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date control uses a span as aria-describedby rather than a proper label, which can make it difficult for screen reader users to understand the purpose of the button during form navigation.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button rather than a standard date input, which may not clearly communicate its purpose or the resulting interaction (like opening a dialog) to screen reader or keyboard users.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2",
+      "P5"
+     ],
+     "check": "Operate",
+     "why": "The departure date is implemented as a button rather than a standard input, which may be confusing for screen reader users expecting a date input and may require specific keyboard interactions to navigate the resulting date picker.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date button text 'Departure date: choose a date' does not reflect the selected date, which may confuse screen reader users about whether the date was actually set.",
+     "state": "after step 3",
+     "in_region": false
+    }
+   ]
+  },
+  {
+   "mutant": "MP_F91_T2",
+   "affects": [
+    "P1"
+   ],
+   "region_flagged": [],
+   "tp": [],
+   "fp": [],
+   "missed": [
+    "P1"
+   ],
+   "lenient_flagged": [
+    "P4"
+   ],
+   "findings": [
+    {
+     "k": 22,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The combobox value 'Hyd' does not match the visible option text 'Hyderabad (HYD)', which can confuse screen reader users and voice-control users.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The departure date is a button that likely opens a complex widget; without seeing the widget, it is a high-risk area for keyboard and screen reader navigation failures.",
+     "state": "after step 0",
+     "in_region": false
+    },
+    {
+     "k": 32,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Identify",
+     "why": "The departure date control is a button using aria-describedby instead of a proper <label> element, which may lead to inconsistent label announcement in some screen readers.",
+     "state": "after step 1",
+     "in_region": false
+    },
+    {
+     "k": 29,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "The user must be able to navigate the listbox options using arrow keys and select them; if the combobox implementation doesn't handle keyboard focus correctly within the listbox, the task is blocked.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 39,
+     "profiles": [
+      "P1"
+     ],
+     "check": "Notice",
+     "why": "When the search is submitted, the results container must use an aria-live region or move focus so the screen reader user is notified that flight results have appeared.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": null,
+     "profiles": [
+      "P4"
+     ],
+     "check": "Identify",
+     "why": "The cheapest fare is styled with a specific color (green), which may not be sufficient for color-blind users to identify without a text-based indicator like 'Cheapest'.",
+     "state": "after step 2",
+     "in_region": false
+    },
+    {
+     "k": 33,
+     "profiles": [
+      "P1",
+      "P5"
+     ],
+     "check": "Identify",
+     "why": "The departure date is implemented as a button rather than a date input, which may not clearly communicate its purpose or expected interaction to screen reader or voice control users.",
+     "state": "after step 3",
+     "in_region": false
+    },
+    {
+     "k": 114,
+     "profiles": [
+      "P1",
+      "P2"
+     ],
+     "check": "Operate",
+     "why": "While the lowest fare is labeled in the aria-label, a user must navigate through every single date cell using arrow keys to find it, as there is no way to jump directly to the cheapest option.",
+     "state": "after step 4",
+     "in_region": false
+    }
+   ]
+  }
+ ],
+ "usage": {
+  "baseline": {
+   "calls": 192,
+   "input": 1010994,
+   "output": 97617,
+   "cached": 0
+  },
+  "endpoints": {
+   "openrouter_paid": 192
+  }
+ },
+ "api_errors": []
+}

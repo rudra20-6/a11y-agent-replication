@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>a11y agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Monochrome, after x.ai and agentic.ai: near-black ink on white, zinc greys, hairline rules, black pill actions.
+     Colour only where it carries meaning (status). Every text colour passes WCAG AA on its background. */
+  :root {
+    --ink:#0a0a0a; --ink2:#3f3f46; --mute:#63636b; --faint:#a1a1aa; --line:#e4e4e7; --line2:#f0f0f2; --bg:#fafafa; --card:#fff;
+    --ok:#15803d; --bad:#b42318; --warn:#9a5b00;
+    --sans:"Geist", ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    --mono:"Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    --r:14px;
+  }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  html { -webkit-font-smoothing:antialiased; }
+  body { margin:0; font:15px/1.55 var(--sans); color:var(--ink); background:var(--bg); }
+  :focus-visible { outline:2px solid var(--ink); outline-offset:3px; border-radius:6px; }
+  a { color:inherit; }
+  .mono, code { font-family:var(--mono); font-size:.86em; letter-spacing:-.01em; }
+  .small { font-size:13px; color:var(--mute); }
+  .eyebrow { font:500 11.5px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--mute); }
+  .visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  /* Top bar */
+  header.top { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:28px; padding:0 28px; height:60px;
+               background:rgba(255,255,255,.88); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line); }
+  .brand { display:flex; align-items:baseline; gap:10px; text-decoration:none; }
+  .brand b { font-weight:600; font-size:17px; letter-spacing:-.02em; }
+  .brand span { font:12px var(--mono); color:var(--mute); }
+  header.top nav { display:flex; gap:22px; font-size:13.5px; color:var(--ink2); }
+  header.top .meta { margin-left:auto; display:flex; gap:8px; align-items:center; }
+  .pill { display:inline-flex; align-items:center; gap:7px; height:28px; padding:0 12px; border:1px solid var(--line); border-radius:999px;
+          background:#fff; font:12px var(--mono); color:var(--ink2); white-space:nowrap; }
+  .pill .d { width:7px; height:7px; border-radius:50%; background:var(--faint); }
+  .pill .d.on { background:var(--ok); } .pill .d.off { background:var(--bad); }
+
+  .layout { display:grid; grid-template-columns:330px minmax(0,1fr); gap:28px; padding:28px; max-width:1500px; margin:0 auto; }
+  @media (max-width: 960px) { .layout { grid-template-columns:1fr; padding:18px; } header.top nav { display:none; } }
+
+  section.card { background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:20px; margin-bottom:20px; }
+  h2 { font-size:15px; font-weight:600; letter-spacing:-.01em; margin:0 0 14px; }
+  h3 { font-size:15px; font-weight:600; letter-spacing:-.01em; }
+
+  /* Form */
+  label { display:block; font-size:13px; font-weight:500; color:var(--ink2); margin:14px 0 6px; }
+  input[type=url], input[type=number], select { width:100%; font:inherit; font-size:14px; height:42px; padding:0 12px; color:var(--ink);
+    background:#fff; border:1px solid #c9c9cf; border-radius:10px; transition:border-color .15s, box-shadow .15s; }
+  input[type=url]:hover, input[type=number]:hover { border-color:#8e8e96; }
+  input[type=url]:focus, input[type=number]:focus { outline:none; border-color:var(--ink); box-shadow:0 0 0 3px rgba(10,10,10,.08); }
+  .hint { font-size:12.5px; color:var(--mute); margin:6px 0 0; }
+  fieldset { border:0; padding:0; margin:14px 0 0; }
+  legend { font-size:13px; font-weight:500; color:var(--ink2); padding:0; margin-bottom:8px; }
+  .toggles { display:flex; flex-wrap:wrap; gap:6px; }
+  .toggles label { position:relative; margin:0; display:inline-flex; align-items:center; gap:6px; height:32px; padding:0 12px; border:1px solid var(--line);
+                   border-radius:999px; font:400 12.5px var(--sans); color:var(--ink2); cursor:pointer; background:#fff; user-select:none; }
+  .toggles input { position:absolute; opacity:0; width:1px; height:1px; }
+  .toggles label:has(input:checked) { background:var(--ink); border-color:var(--ink); color:#fff; }
+  .toggles label:has(input:focus-visible) { outline:2px solid var(--ink); outline-offset:2px; }
+  .toggles .k { font-family:var(--mono); font-size:11px; opacity:.75; }
+  .switch { display:flex; align-items:center; gap:10px; margin-top:16px; font-size:13px; color:var(--ink2); font-weight:400; }
+  .switch input { width:16px; height:16px; accent-color:var(--ink); margin:0; }
+  button { font:inherit; font-size:14px; font-weight:500; height:40px; padding:0 18px; border-radius:999px; border:1px solid var(--ink);
+           background:var(--ink); color:#fff; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:background .15s, opacity .15s; }
+  button:hover { background:#262629; }
+  button.secondary { background:#fff; color:var(--ink); border-color:var(--line); }
+  button.secondary:hover { background:var(--line2); }
+  button.danger { background:#fff; color:var(--bad); border-color:#f1c8c3; height:32px; font-size:13px; }
+  button.danger:hover { background:#fef3f2; }
+  button[disabled] { opacity:.45; cursor:not-allowed; }
+  .go { width:100%; justify-content:center; margin-top:18px; height:44px; }
+  .error { color:var(--bad); font-size:13px; font-weight:500; }
+  .error:empty { display:none; }
+
+  /* Runs list */
+  ul.runs { list-style:none; margin:0 -8px; padding:0; max-height:52vh; overflow:auto; }
+  ul.runs li button { width:100%; height:auto; text-align:left; background:transparent; color:var(--ink); border:0; border-radius:10px;
+                      padding:9px 10px; display:grid; grid-template-columns:10px minmax(0,1fr); column-gap:10px; row-gap:1px; font-weight:400; }
+  ul.runs li button:hover { background:var(--line2); }
+  ul.runs li button[aria-current=true] { background:#f4f4f5; box-shadow:inset 0 0 0 1px var(--line); }
+  .sd { width:8px; height:8px; border-radius:50%; margin-top:7px; background:var(--faint); }
+  .sd.s-running { background:var(--ink); box-shadow:0 0 0 3px rgba(10,10,10,.12); animation:pulse 1.6s ease-in-out infinite; }
+  .sd.s-done { background:var(--ok); } .sd.s-failed, .sd.s-interrupted { background:var(--bad); } .sd.s-stopped { background:var(--warn); }
+  @keyframes pulse { 50% { box-shadow:0 0 0 6px rgba(10,10,10,0); } }
+  @media (prefers-reduced-motion: reduce) { .sd.s-running { animation:none; } }
+  .host { font-weight:500; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .rmeta { grid-column:2; font:11.5px var(--mono); color:var(--mute); }
+
+  /* Empty state */
+  .hero { position:relative; overflow:hidden; border:1px solid var(--line); border-radius:var(--r); background:#fff; padding:64px 48px 40px; }
+  .hero::before { content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:linear-gradient(var(--line2) 1px, transparent 1px), linear-gradient(90deg, var(--line2) 1px, transparent 1px);
+    background-size:44px 44px; -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 0%, #000 30%, transparent 75%);
+    mask-image:radial-gradient(ellipse 70% 80% at 50% 0%, #000 30%, transparent 75%); }
+  .hero > * { position:relative; }
+  .hero h1 { font-size:clamp(34px, 4.4vw, 54px); line-height:1.04; letter-spacing:-.035em; font-weight:600; margin:22px 0 16px; max-width:16ch; }
+  .hero h1 em { font-style:normal; color:var(--mute); }
+  .hero p.lede { font-size:17px; color:var(--mute); max-width:58ch; margin:0 0 40px; }
+  .personas { display:grid; grid-template-columns:repeat(3, 1fr); border-top:1px solid var(--line); }
+  @media (max-width: 760px) { .personas { grid-template-columns:1fr; } .hero { padding:40px 24px; } .personas div + div { border-left:0; padding-left:0; } }
+  .personas div { padding:18px 18px 4px 0; }
+  .personas div + div { padding-left:18px; border-left:1px solid var(--line); }
+  .personas b { display:block; font-weight:500; margin:8px 0 4px; }
+  .personas p { margin:0; font-size:13.5px; color:var(--mute); }
+
+  /* Run header */
+  .runhead { display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; }
+  .runhead h2 { font-size:28px; letter-spacing:-.03em; font-weight:600; margin:6px 0 0; line-height:1.15; word-break:break-all; }
+  .badge { display:inline-flex; align-items:center; gap:6px; height:26px; padding:0 11px; border-radius:999px; font:500 12px var(--mono);
+           border:1px solid var(--line); background:#fff; color:var(--ink2); }
+  .badge::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .s-running { color:var(--ink); } .s-done { color:var(--ok); } .s-failed, .s-interrupted { color:var(--bad); } .s-stopped { color:var(--warn); }
+  #run-meta { font:12px/1.7 var(--mono); color:var(--mute); margin:10px 0 0; }
+  .stats { display:grid; grid-template-columns:repeat(4, 1fr); margin:22px 0 4px; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fff; }
+  .stats:empty { display:none; }
+  @media (max-width: 760px) { .stats { grid-template-columns:repeat(2, 1fr); } }
+  .stats div { padding:14px 16px; }
+  .stats div + div { border-left:1px solid var(--line); }
+  .stats b { display:block; font-size:26px; font-weight:500; letter-spacing:-.03em; line-height:1.15; font-variant-numeric:tabular-nums; }
+  .stats span { font-size:12.5px; color:var(--mute); }
+
+  /* Tabs: text with an underline, as in the references */
+  .tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:24px 0 20px; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; }
+  .tabs [role=tab] { height:42px; padding:0; border:0; border-radius:0; background:none; color:var(--mute); font-weight:500;
+                     border-bottom:2px solid transparent; margin-bottom:-1px; }
+  .tabs [role=tab]:hover { color:var(--ink); background:none; }
+  .tabs [role=tab][aria-selected=true] { color:var(--ink); border-bottom-color:var(--ink); }
+
+  /* Tables */
+  table { border-collapse:collapse; width:100%; font-size:13.5px; background:#fff; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line2); vertical-align:top; }
+  th[scope=col] { font:500 11px var(--mono); letter-spacing:.05em; text-transform:uppercase; color:var(--mute); border-bottom:1px solid var(--line); }
+  .tablewrap { border:1px solid var(--line); border-radius:12px; overflow:auto; }
+  .tablewrap tr:last-child > * { border-bottom:0; }
+  .grid td.st { font-weight:500; }
+  .st-done { color:var(--ok); } .st-stuck, .st-max_steps, .st-error { color:var(--bad); } .st-tool_error { color:var(--warn); } .st-running { color:var(--ink); } .st-pending { color:var(--faint); }
+
+  /* Live feed and console: light, monospaced */
+  .feed, pre.log { max-height:480px; overflow:auto; font:12px/1.6 var(--mono); background:#fff; color:var(--ink2); border:1px solid var(--line);
+                   border-radius:12px; padding:12px 14px; margin:0; }
+  pre.log { white-space:pre-wrap; }
+  .feed > div { padding:2px 0; border-bottom:1px dashed var(--line2); }
+  .feed .t { color:var(--faint); } .feed .k { color:var(--ink); font-weight:500; } .feed .f { color:var(--bad); font-weight:500; } .feed .ok { color:var(--ok); font-weight:500; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .row label { margin:0; }
+  .row select { width:auto; height:34px; }
+
+  /* Report */
+  .report { max-width:78ch; } .report h3 { font-size:20px; letter-spacing:-.02em; margin:26px 0 8px; } .report h4 { margin:18px 0 6px; }
+  .report li { margin:5px 0; } .report hr { border:0; border-top:1px solid var(--line); margin:22px 0; }
+  .sev-blocks { color:var(--bad); font-weight:500; } .sev-degrades { color:var(--warn); font-weight:500; }
+
+  /* Live, visual */
+  .viewtoggle { display:inline-flex; padding:3px; border:1px solid var(--line); border-radius:999px; background:#fff; margin-bottom:18px; }
+  .viewtoggle button { height:30px; padding:0 14px; font-size:13px; background:transparent; color:var(--mute); border:0; }
+  .viewtoggle button:hover { background:transparent; color:var(--ink); }
+  .viewtoggle button[aria-pressed=true] { background:var(--ink); color:#fff; }
+  ol.stages { list-style:none; display:flex; flex-wrap:wrap; padding:0; margin:0 0 20px; font:12px var(--mono); }
+  ol.stages li { padding:6px 12px 6px 0; color:var(--faint); }
+  ol.stages li + li::before { content:"/"; margin-right:12px; color:var(--line); }
+  ol.stages li.done { color:var(--ink2); }
+  ol.stages li[aria-current=step] { color:var(--ink); font-weight:500; }
+  ol.stages li.bad { color:var(--bad); }
+  .vtask { border:1px solid var(--line); border-radius:var(--r); padding:18px 20px; margin-bottom:16px; background:#fff; }
+  .vtask > h3 { font-size:15px; margin:0 0 16px; line-height:1.45; font-weight:500; }
+  .vtask > summary { cursor:pointer; font-size:14.5px; line-height:1.45; }
+  details.vtask[open] > summary { margin-bottom:16px; }
+  .agents { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:14px; }
+  .acard { border:1px solid var(--line); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:8px; background:#fff; }
+  .acard h4 { margin:0; font-size:13.5px; font-weight:500; }
+  .acard img { width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top; border:1px solid var(--line2); border-radius:8px; background:var(--bg); display:block; }
+  .acard img.narrow { object-fit:contain; }
+  .noshot { aspect-ratio:16/10; border:1px dashed var(--line); border-radius:8px; display:flex; align-items:center; justify-content:center;
+            color:var(--mute); font-size:12px; text-align:center; padding:8px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; font:500 11.5px var(--mono); color:var(--ink2); }
+  .chip::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .c-waiting { color:var(--mute); } .c-working, .c-thinking { color:var(--ink); } .c-retrying, .c-tool_error { color:var(--warn); }
+  .c-done { color:var(--ok); } .c-stuck, .c-max_steps, .c-error, .c-invalid { color:var(--bad); }
+  progress { width:100%; height:4px; -webkit-appearance:none; appearance:none; border:0; border-radius:4px; background:var(--line2); overflow:hidden; display:block; margin-top:6px; }
+  progress::-webkit-progress-bar { background:var(--line2); } progress::-webkit-progress-value { background:var(--ink); } progress::-moz-progress-bar { background:var(--ink); }
+  .thought { font-size:12.5px; color:var(--mute); margin:0; }
+  .last { font-size:12.5px; margin:0; word-break:break-word; color:var(--ink2); }
+  .problem { font-size:12.5px; margin:0; padding:8px 10px; border-left:2px solid var(--ink); background:var(--bg); border-radius:0 8px 8px 0; }
+  .dots { display:flex; flex-wrap:wrap; gap:3px; }
+  .dot { width:8px; height:8px; border-radius:2px; background:var(--ink2); }
+  .dot.flat { background:var(--line); } .dot.bad { background:var(--bad); } .dot.note, .dot.rep { background:#fff; box-shadow:inset 0 0 0 2px var(--ink); }
+  .dot.fin { background:#fff; box-shadow:inset 0 0 0 2px var(--ok); } .dot.fb { background:#d9a441; }
+  table.lanes td, table.lanes th { padding:7px 10px; }
+  .planbox { display:grid; grid-template-columns:minmax(220px, 360px) 1fr; gap:18px; align-items:start; }
+  @media (max-width: 900px) { .planbox { grid-template-columns:1fr; } }
+  .planbox img { width:100%; border:1px solid var(--line); border-radius:8px; }
+  ul.pages { margin:8px 0 0; padding-left:18px; font-size:13px; }
+  .vfind { font-size:13px; margin:4px 0 0; padding-left:18px; }
+  h4.sub { font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--mute); margin:20px 0 8px; }
+
+  /* Findings (v3: the agents' own reports first) */
+  .flist { display:grid; gap:10px; margin:0 0 30px; padding:0; list-style:none; }
+  .fitem { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:grid; grid-template-columns:44px minmax(0,1fr); gap:4px 12px; }
+  .fitem .who { font:500 12px var(--mono); padding-top:2px; }
+  .fitem .what { font-size:14px; }
+  .fitem .why { grid-column:2; font-size:13px; color:var(--mute); }
+  .tag { display:inline-block; font:500 11px var(--mono); padding:1px 8px; border:1px solid var(--line); border-radius:999px; color:var(--ink2); margin-right:6px; }
+  .tag.a { border-color:var(--ink); color:var(--ink); }
+  .sectionhead { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:4px 0 12px; }
+  .sectionhead h3 { margin:0; font-size:18px; letter-spacing:-.02em; }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><b>a11y agent</b><span>task-level accessibility testing</span></a>
+  <nav aria-label="Personas"><span>P1 screen reader</span><span>P2 keyboard only</span><span>P3 400% zoom</span></nav>
+  <div class="meta" id="sysinfo"></div>
+</header>
+<div class="layout">
+  <nav aria-label="Runs">
+    <section class="card" aria-labelledby="new-h">
+      <h2 id="new-h">New test</h2>
+      <form id="newrun" novalidate>
+        <label for="url">Website</label>
+        <input id="url" type="url" required placeholder="https://www.example.com" aria-describedby="url-hint" autocomplete="url">
+        <p class="hint" id="url-hint">It explores the site, writes its own tasks, and never logs in or pays.</p>
+        <label for="tasks">Tasks</label>
+        <input id="tasks" type="number" min="1" max="8" value="2">
+        <fieldset><legend>Who tests it</legend>
+          <div class="toggles">
+            <label><input type="checkbox" name="prof" value="P1" checked><span class="k">P1</span> Screen reader</label>
+            <label><input type="checkbox" name="prof" value="P2" checked><span class="k">P2</span> Keyboard</label>
+            <label><input type="checkbox" name="prof" value="P3" checked><span class="k">P3</span> 400% zoom</label>
+            <label><input type="checkbox" name="prof" value="P4"><span class="k">P4</span> Colour</label>
+            <label><input type="checkbox" name="prof" value="P5"><span class="k">P5</span> Voice</label>
+          </div>
+          <p class="hint">P4 and P5 run rule checks only.</p>
+        </fieldset>
+        <label class="switch"><input type="checkbox" id="agents" checked> Run the persona agents</label>
+        <p id="form-error" class="error" role="alert"></p>
+        <button type="submit" class="go">Start test <span aria-hidden="true">&rarr;</span></button>
+      </form>
+    </section>
+    <section class="card" aria-labelledby="runs-h">
+      <h2 id="runs-h">Runs</h2>
+      <ul class="runs" id="runs"></ul>
+    </section>
+  </nav>
+  <main id="main">
+    <section class="hero" id="empty">
+      <span class="pill"><span class="d on"></span>Three agent personas, rule checks for five</span>
+      <h1>Test a website the way <em>disabled people</em> use it.</h1>
+      <p class="lede">A sighted agent does a real task first. Then agents limited to a screen reader, a keyboard or 400% zoom try the same task, and report what got in their way.</p>
+      <div class="personas">
+        <div><span class="eyebrow">P1</span><b>Screen reader</b><p>Hears the accessibility tree and announcements. No picture of the screen.</p></div>
+        <div><span class="eyebrow">P2</span><b>Keyboard only</b><p>Sees the screen, knows focus only when the page shows it. No mouse.</p></div>
+        <div><span class="eyebrow">P3</span><b>400% zoom</b><p>Sees a 320 px wide window and only what fits inside it.</p></div>
+      </div>
+    </section>
+    <section id="run" hidden aria-labelledby="run-h">
+      <div class="runhead">
+        <div style="flex:1;min-width:260px">
+          <span class="eyebrow">Run</span>
+          <h2 id="run-h"></h2>
+        </div>
+        <span id="run-status"></span>
+        <button class="danger" id="stop" type="button">Stop run</button>
+      </div>
+      <p id="run-meta"></p>
+      <div class="stats" id="stats" aria-label="Run summary"></div>
+      <p role="status" class="visually-hidden" id="announce"></p>
+      <div class="tabs" role="tablist" aria-label="Run views">
+        <button role="tab" id="tab-live" aria-controls="panel-live" aria-selected="true">Live</button>
+        <button role="tab" id="tab-findings" aria-controls="panel-findings" aria-selected="false" tabindex="-1">Findings</button>
+        <button role="tab" id="tab-report" aria-controls="panel-report" aria-selected="false" tabindex="-1">Report</button>
+        <button role="tab" id="tab-tasks" aria-controls="panel-tasks" aria-selected="false" tabindex="-1">Tasks &amp; agents</button>
+        <button role="tab" id="tab-log" aria-controls="panel-log" aria-selected="false" tabindex="-1">Console</button>
+      </div>
+      <div role="tabpanel" id="panel-live" aria-labelledby="tab-live">
+        <div class="viewtoggle" role="group" aria-label="Live view">
+          <button type="button" id="view-visual" aria-pressed="true">Visual</button>
+          <button type="button" id="view-text" aria-pressed="false">Text log</button>
+        </div>
+        <div id="visual"></div>
+        <div id="textview" hidden>
+          <h4 class="sub">Progress</h4>
+          <div id="grid"></div>
+          <h4 class="sub">Event feed</h4>
+          <div class="row" style="margin-bottom:10px"><label for="filter">Show</label>
+            <select id="filter"><option value="">everything</option><option value="finding">findings</option><option value="agent">agent steps</option><option value="llm">model calls and retries</option><option value="stage">stages</option><option value="error">errors and retries</option></select></div>
+          <div class="feed" id="feed" tabindex="0" aria-label="Event feed"></div>
+        </div>
+      </div>
+      <div role="tabpanel" id="panel-findings" aria-labelledby="tab-findings" hidden><div id="findings"></div></div>
+      <div role="tabpanel" id="panel-report" aria-labelledby="tab-report" hidden><div class="report" id="report"></div></div>
+      <div role="tabpanel" id="panel-tasks" aria-labelledby="tab-tasks" hidden><div id="tasks-detail"></div></div>
+      <div role="tabpanel" id="panel-log" aria-labelledby="tab-log" hidden><pre class="log" id="log"></pre></div>
+    </section>
+  </main>
+</div>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const api = async (p, opt) => { const r = await fetch(p, opt); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; };
+let current = null, evNext = 0, events = [], lastStatus = '';
+
+const fmtTime = (s) => s ? new Date(s * 1000).toLocaleString() : '';
+const shortTime = (s) => s ? new Date(s * 1000).toLocaleString([], { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+const host = (u) => { try { return new URL(u).host.replace(/^www[.]/, ''); } catch (e) { return u || ''; } };
+const dur = (a, b) => { if (!a) return ''; const s = Math.round((b || Date.now() / 1000) - a); return `${Math.floor(s / 60)}m ${s % 60}s`; };
+
+async function loadStatus() {
+  const s = await api('/api/status');
+  $('#sysinfo').innerHTML = `<span class="pill">${esc(s.model)}</span><span class="pill"><span class="d ${s.key ? 'on' : 'off'}"></span>API key ${s.key ? 'set' : 'missing'}</span>`;
+}
+
+async function loadRuns() {
+  const runs = await api('/api/runs');
+  $('#runs').innerHTML = runs.map(r => `<li><button type="button" data-id="${esc(r.id)}" aria-current="${r.id === current}">
+      <span class="sd s-${esc(r.status)}" aria-hidden="true"></span><span class="host">${esc(host(r.url))}</span>
+      <span class="rmeta"><span class="visually-hidden">${esc(r.status)}, </span>${esc(shortTime(r.started))} · ${r.agent_findings ?? 0} agent · ${r.findings} rule</span>
+    </button></li>`).join('') || '<li class="small" style="padding:0 8px">No runs yet.</li>';
+}
+$('#runs').addEventListener('click', (e) => { const b = e.target.closest('button[data-id]'); if (b) select(b.dataset.id); });
+
+$('#newrun').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  $('#form-error').textContent = '';
+  const profiles = [...document.querySelectorAll('[name=prof]:checked')].map(x => x.value);
+  try {
+    const r = await api('/api/runs', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: $('#url').value.trim(), tasks: +$('#tasks').value, profiles, agents: $('#agents').checked }) });
+    await loadRuns(); select(r.id);
+  } catch (err) { $('#form-error').textContent = err.message; $('#url').focus(); }
+});
+
+// Tabs (arrow keys move between tabs, as in the ARIA pattern)
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function showTab(t) {
+  tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+  t.focus();
+  if (current) refreshPanels();
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => showTab(t));
+  t.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') showTab(tabs[(i + 1) % tabs.length]);
+    if (e.key === 'ArrowLeft') showTab(tabs[(i - 1 + tabs.length) % tabs.length]);
+  });
+});
+
+$('#stop').addEventListener('click', async () => { if (current && confirm('Stop this run?')) { await api(`/api/runs/${current}/stop`, { method: 'POST' }); refresh(); } });
+$('#filter').addEventListener('change', drawFeed);
+
+async function select(id) {
+  current = id; evNext = 0; events = []; lastStatus = ''; lastVisual = '';
+  $('#empty').hidden = true; $('#run').hidden = false;
+  $('#feed').innerHTML = ''; $('#visual').innerHTML = ''; $('#report').innerHTML = ''; $('#findings').innerHTML = ''; $('#log').textContent = '';
+  await refresh(); loadRuns();
+}
+
+function kindClass(k) { return (k === 'finding' || k === 'llm_retry' || k === 'llm_failed' || k.includes('error')) ? 'f' : (k.endsWith('done') || k === 'llm_ok' ? 'ok' : 'k'); }
+function filterOk(ev) {
+  const f = $('#filter').value;
+  if (!f) return ev.kind !== 'llm_start' && ev.kind !== 'checks_step';  // one per step: only under "model calls"
+  if (f === 'finding') return ev.kind === 'finding' || ev.kind === 'judge';
+  if (f === 'agent') return ev.kind.startsWith('agent');
+  if (f === 'llm') return ev.kind.startsWith('llm');
+  if (f === 'error') return ev.kind.includes('error') || ev.kind.includes('fail') || ev.kind === 'task_invalid' || ev.kind === 'llm_retry';
+  return !ev.kind.startsWith('agent_step') && ev.kind !== 'finding' && !ev.kind.startsWith('llm') && ev.kind !== 'checks_step';
+}
+
+// ---------------------------------------------------------------- live view: visual or text
+const NAMES = { REF: 'Sighted mouse user (reference)', P1: 'P1 · screen reader', P2: 'P2 · keyboard only', P3: 'P3 · 400% zoom',
+                P4: 'P4 · colour-blind', P5: 'P5 · voice control', planner: 'Planner' };
+const STATE_TEXT = { waiting: 'waiting', working: 'acting', thinking: 'asking the model', retrying: 'model error, retrying',
+                     done: 'finished', stuck: 'stuck', max_steps: 'ran out of steps', error: 'error', tool_error: 'tool error (model/API failed)' };
+function setView(v) {
+  localStorage.setItem('liveView', v);
+  $('#view-visual').setAttribute('aria-pressed', v === 'visual');
+  $('#view-text').setAttribute('aria-pressed', v === 'text');
+  $('#visual').hidden = v !== 'visual'; $('#textview').hidden = v !== 'text';
+  if (detail) drawVisual(detail.plan, detail.meta || {});
+}
+$('#view-visual').addEventListener('click', () => setView('visual'));
+$('#view-text').addEventListener('click', () => setView('text'));
+
+function liveState(meta) {
+  const S = { stage: 'starting', budget: 15, pages: [], plannerShot: 0, plannerLLM: null, tasks: {}, order: [], end: null };
+  const task = (id) => S.tasks[id] || (S.tasks[id] = { id, goal: '', status: 'waiting', agents: {}, checks: {}, findings: [], judge: {}, errors: [] });
+  const agent = (t, p) => task(t).agents[p] || (task(t).agents[p] = { status: 'waiting', max: 25, steps: [], shot: 0, since: null, retry: null });
+  for (const ev of events) {
+    const k = ev.kind;
+    if (k === 'plan_start') { S.stage = 'planning'; S.budget = ev.budget || 15; }
+    else if (k === 'explore_page') { S.pages.push(ev); if (ev.shot) S.plannerShot = ev.i; }
+    else if (k === 'plan_done') { S.stage = 'tasks'; S.plannerLLM = null; }
+    else if (k === 'task_start') { task(ev.task).goal = ev.goal; task(ev.task).status = 'running'; if (!S.order.includes(ev.task)) S.order.push(ev.task); }
+    else if (k === 'agent_start') { const a = agent(ev.task, ev.profile); a.status = 'working'; a.max = ev.max_steps || a.max; }
+    else if (k === 'agent_step') { const a = agent(ev.task, ev.profile); a.steps.push(ev); a.status = 'working'; a.since = null; a.retry = null; if (ev.shot) a.shot = ev.i + 1; }
+    else if (k === 'agent_done') { const a = agent(ev.task, ev.profile); a.status = (ev.tool_error ?? ev.status === 'error') ? 'tool_error' : ev.status; a.reason = ev.reason; a.answer = ev.answer; a.total = ev.steps; a.since = null; a.retry = null; if (ev.shot) a.shot = 9999; }
+    else if (k === 'llm_start') {
+      if (ev.profile === 'planner') S.plannerLLM = { since: ev.t };
+      else if (ev.task && ev.stage === 'judge') task(ev.task).judge[ev.profile] = { pending: ev.t };
+      else if (ev.task && ev.profile) { const a = agent(ev.task, ev.profile); if (!['done', 'stuck', 'max_steps', 'error', 'tool_error'].includes(a.status)) { a.status = 'thinking'; a.since = ev.t; a.retry = null; } }
+    }
+    else if (k === 'llm_retry' || k === 'llm_failed' || k === 'llm_ok') {
+      const r = k === 'llm_retry' ? { ...ev, until: ev.t + (ev.wait || 0) } : null;
+      if (ev.profile === 'planner') S.plannerLLM = r ? { ...S.plannerLLM, retry: r } : S.plannerLLM;
+      else if (ev.task && ev.profile && ev.stage !== 'judge') { const a = agent(ev.task, ev.profile); a.retry = r; if (r) a.status = 'retrying'; else if (a.status === 'retrying') a.status = 'thinking'; if (k === 'llm_failed') a.lastError = ev.reason; }
+    }
+    else if (k === 'checks_start') task(ev.task).checks[ev.profile] = { status: 'running', i: 0, n: ev.n || 0, findings: 0, toolErrors: 0 };
+    else if (k === 'checks_step') { const c = task(ev.task).checks[ev.profile]; if (c) { c.i = ev.i; c.n = ev.n; } }
+    else if (k === 'checks_done') { const c = task(ev.task).checks[ev.profile]; if (c) { c.status = 'done'; c.i = c.n; c.findings = ev.findings; c.toolErrors = ev.tool_errors || 0; } }
+    else if (k === 'finding') task(ev.task).findings.push(ev);
+    else if (k === 'judge') task(ev.task).judge[ev.profile] = ev;
+    else if (k === 'task_invalid') { task(ev.task).status = 'invalid'; task(ev.task).reason = ev.reason; }
+    else if (k === 'task_done') task(ev.task).status = 'done';
+    else if (k === 'error' && ev.task) task(ev.task).errors.push(ev);
+    else if (k === 'run_done') S.end = 'done';
+    else if (k === 'run_failed') S.end = 'failed';
+  }
+  if (['stopped', 'interrupted'].includes(meta.status)) S.end = S.end || meta.status;
+  return S;
+}
+
+function dotOf(st) {
+  const r = (st.result || '').toLowerCase();
+  if (st.action && st.action.type === 'done') return ['fin', 'said done'];
+  if (st.problem) return ['rep', 'reported a problem'];
+  if (r.startsWith('noted')) return ['note', 'noted a barrier'];
+  if (r.startsWith('error') || r.startsWith('not allowed') || r.startsWith('no such') || r.startsWith('unknown') || r.includes("isn't") || r.includes("can't")) return ['bad', 'failed'];
+  if (st.fallback) return ['fb', `ok, needed a fallback: ${st.fallback}`];
+  if (r.includes('nothing visible changed')) return ['flat', 'nothing changed'];
+  return ['', 'ok'];
+}
+function actionText(a) {
+  if (!a) return '';
+  const t = a.type;
+  if (t === 'click' || t === 'activate' || t === 'focus') return `${t} ${a.ref || ''}`;
+  if (t === 'type') return `type "${(a.text || '').slice(0, 40)}"`;
+  if (t === 'press') return `press ${a.key}`;
+  if (t === 'select') return `choose "${a.option}"`;
+  if (t === 'scroll') return `scroll ${a.dir}`;
+  if (t === 'done') return `done: ${(a.answer || '').slice(0, 60)}`;
+  if (t === 'stuck') return `stuck: ${(a.reason || '').slice(0, 60)}`;
+  return t || '';
+}
+
+function agentCard(t, p, a) {
+  const img = a.shot ? `<a href="/api/runs/${current}/live/${t.id}_${p}.jpg?v=${a.shot}" target="_blank" rel="noopener">
+      <img class="${p === 'P3' ? 'narrow' : ''}" src="/api/runs/${current}/live/${t.id}_${p}.jpg?v=${a.shot}"
+        alt="What the ${esc(NAMES[p])} agent's browser shows${a.shot === 9999 ? ' at the end' : ` after step ${a.shot}`}"></a>`
+    : `<div class="noshot">${a.status === 'waiting' ? 'starts after the sighted run' : 'no screenshot yet'}</div>`;
+  let state = esc(STATE_TEXT[a.status] || a.status);
+  if (a.status === 'thinking' && a.since) state += ` · <span data-since="${a.since}"></span>`;
+  if (a.status === 'retrying' && a.retry) state = `model error: ${esc(a.retry.reason)} · retry ${a.retry.attempt} of ${a.retry.of} <span data-until="${a.retry.until}"></span>`;
+  const last = a.steps[a.steps.length - 1];
+  const counts = a.steps.reduce((m, s) => { const k = dotOf(s)[1]; m[k] = (m[k] || 0) + 1; return m; }, {});
+  return `<article class="acard" aria-label="${esc(NAMES[p])}">
+    <h4>${esc(NAMES[p])}</h4>
+    <div><span class="chip c-${esc(a.status)}">${state}</span></div>
+    ${img}${p === 'P1' && a.shot ? '<p class="small" style="margin:0">Shown for you; this agent only reads the accessibility tree.</p>' : ''}
+    <label class="small" style="margin:0;font-weight:400">Step ${a.total ?? a.steps.length} of ${a.max}
+      <progress max="${a.max}" value="${a.total ?? a.steps.length}"></progress></label>
+    ${last ? `<p class="thought">“${esc(last.thought)}”</p><p class="last"><strong>${esc(actionText(last.action))}</strong> → ${esc(last.result)}</p>` : ''}
+    ${a.status === 'done' && a.answer ? `<p class="last"><strong>Said done:</strong> ${esc(a.answer)}</p>` : ''}
+    ${(() => { const r = a.steps.filter(s => s.problem); return r.length ? `<p class="problem"><span class="eyebrow">Reported${r.length > 1 ? ` · ${r.length}` : ''}</span><br>${esc(r[r.length - 1].problem)}</p>` : ''; })()}
+    ${a.status === 'tool_error' ? '<p class="last">The model or API failed, so this agent did not finish. Not a site problem and not counted as a barrier.</p>' : ''}${a.reason ? `<p class="last">Reason: ${esc(a.reason)}</p>` : ''}${a.lastError ? `<p class="last error">Last model failure: ${esc(a.lastError)}</p>` : ''}
+    <div class="dots" aria-hidden="true">${a.steps.map(s => { const [c, w] = dotOf(s); return `<span class="dot ${c}" title="${s.i}: ${esc(actionText(s.action))} → ${esc(w)}"></span>`; }).join('')}${a.status === 'done' ? '<span class="dot fin" title="said done"></span>' : ''}</div>
+    <p class="visually-hidden">${Object.entries(counts).map(([k, v]) => `${v} ${k}`).join(', ')}</p>
+  </article>`;
+}
+
+function taskBlock(t, meta, open) {
+  const agentProfiles = ['REF', ...(meta.agents ? (meta.profiles || []).filter(p => ['P1', 'P2', 'P3'].includes(p)) : [])];
+  const cards = agentProfiles.map(p => agentCard(t, p, t.agents[p] || { status: 'waiting', max: p === 'P1' || p === 'P2' ? 35 : 25, steps: [], shot: 0 })).join('');
+  const lanes = (meta.profiles || []).map(p => { const c = t.checks[p];
+    const n = t.findings.filter(f => f.profile === p).length;
+    return `<tr><th scope="row" style="font-weight:400">${esc(NAMES[p])}</th>
+      <td>${c ? `<progress max="${c.n || 1}" value="${c.i}" aria-label="${esc(p)} checks progress"></progress> <span class="small">step ${c.i} of ${c.n}</span>` : '<span class="small">waits for the sighted run</span>'}</td>
+      <td><span class="chip c-${c ? (c.status === 'done' ? 'done' : 'working') : 'waiting'}">${c ? (c.status === 'done' ? 'done' : 'checking') : 'waiting'}</span></td>
+      <td>${n} finding${n === 1 ? '' : 's'}${c && c.toolErrors ? ` · <span class="error">${c.toolErrors} tool error${c.toolErrors === 1 ? '' : 's'}</span>` : ''}</td></tr>`; }).join('');
+  const judges = Object.entries(t.judge).map(([p, j]) => j.pending
+      ? `<li>${esc(NAMES[p])}: judge is looking at why it got stuck · <span data-since="${j.pending}"></span></li>`
+      : `<li>${esc(NAMES[p])}: ${j.corroborated ? '<strong>barrier, confirmed by a rule check</strong>' : (j.verdict === 'barrier' ? 'judge says barrier, but no rule check confirms it (unconfirmed)' : 'agent mistake, not counted')} ${j.explanation ? '· ' + esc(j.explanation) : ''}</li>`).join('');
+  const status = t.status === 'invalid' ? `<p class="error">Not tested: ${esc(t.reason).replace(/^not tested: /i, '')}</p>` : '';
+  const finds = t.findings.slice(-6).reverse().map(f => `<li><strong>${esc(f.profile)} · ${esc(f.check)}</strong> <span class="sev-${esc(f.severity)}">${esc(f.severity)}</span>: ${esc(f.target)}: ${esc(f.message)}</li>`).join('');
+  const body = `${status}<div class="agents">${cards}</div>
+    <h4 class="sub">Rule checks along the sighted path</h4>
+    <div class="tablewrap"><table class="lanes"><caption class="visually-hidden">Rule checks per persona</caption>${lanes}</table></div>
+    ${judges ? `<h4 class="sub">Judge</h4><ul class="vfind">${judges}</ul>` : ''}
+    ${finds ? `<h4 class="sub">Latest rule findings (${t.findings.length} so far)</h4><ul class="vfind">${finds}</ul>` : ''}
+    ${t.errors.length ? `<p class="error">${t.errors.length} error(s): ${esc(t.errors[t.errors.length - 1].error || '')}</p>` : ''}`;
+  const head = `${esc(t.goal)} <span class="chip c-${t.status === 'running' ? 'working' : t.status === 'done' ? 'done' : t.status === 'invalid' ? 'invalid' : 'waiting'}">${t.status === 'invalid' ? 'not tested' : t.status}</span>`;
+  return open ? `<section class="vtask"><h3>${head}</h3>${body}</section>`
+              : `<details class="vtask"><summary>${head} <span class="small">· ${t.findings.length} rule findings</span></summary>${body}</details>`;
+}
+
+let lastVisual = '';
+function drawVisual(plan, meta) {
+  if ($('#visual').hidden) return;
+  const S = liveState(meta);
+  const tasks = (plan && plan.tasks) || [];
+  const planDone = S.stage === 'tasks' || !!tasks.length;
+  const stages = [`<li class="${planDone ? 'done' : ''}" ${S.stage === 'planning' ? 'aria-current="step"' : ''}>Planning${planDone ? ' ✓' : ''}</li>`,
+    ...tasks.map((t, i) => { const st = (S.tasks[t.id] || {}).status || 'waiting';
+      return `<li class="${st === 'done' ? 'done' : st === 'invalid' ? 'bad' : ''}" ${st === 'running' ? 'aria-current="step"' : ''}>Task ${i + 1}${st === 'done' ? ' ✓' : st === 'invalid' ? ' (not tested)' : ''}</li>`; }),
+    `<li class="${S.end === 'done' ? 'done' : S.end ? 'bad' : ''}" ${S.end ? 'aria-current="step"' : ''}>${S.end === 'done' ? 'Report ✓' : S.end ? `Run ${esc(S.end)}` : 'Report'}</li>`];
+  let html = `<ol class="stages" aria-label="Run stages">${stages.join('')}</ol>`;
+  if (S.stage === 'planning' || (!planDone && S.pages.length)) {
+    const last = S.pages.slice(-6).reverse();
+    const llm = S.plannerLLM;
+    html += `<section class="vtask"><h3>Exploring the site</h3><div class="planbox">
+      <div>${S.plannerShot ? `<img src="/api/runs/${current}/live/planner.jpg?v=${S.plannerShot}" alt="The page the planner is reading now">` : '<div class="noshot">opening the first page…</div>'}</div>
+      <div><label class="small" style="margin:0;font-weight:400">Pages read: ${S.pages.length} of ${S.budget}<progress max="${S.budget}" value="${S.pages.length}"></progress></label>
+      ${llm ? `<p><span class="chip c-${llm.retry ? 'retrying' : 'thinking'}">${llm.retry ? `model error: ${esc(llm.retry.reason)} · retry ${llm.retry.attempt} of ${llm.retry.of} <span data-until="${llm.retry.until}"></span>` : `writing the tasks · <span data-since="${llm.since}"></span>`}</span></p>` : ''}
+      <ul class="pages">${last.map(p => `<li>${esc(p.title || '(no title)')} <span class="small">${esc(p.url)}</span></li>`).join('')}</ul></div></div></section>`;
+  }
+  const current_ = S.order[S.order.length - 1];
+  for (const t of tasks) {
+    const st = S.tasks[t.id];
+    if (!st) continue;
+    st.goal = st.goal || t.goal;
+    html += taskBlock(st, meta, t.id === current_);
+  }
+  if (planDone && !S.order.length && !S.end) html += '<p class="small">Starting the first task…</p>';
+  if (html !== lastVisual) { $('#visual').innerHTML = html; lastVisual = html; }
+  tick();
+}
+
+function tick() {
+  const now = Date.now() / 1000;
+  document.querySelectorAll('#visual [data-since]').forEach(e => { e.textContent = `${Math.max(0, Math.round(now - +e.dataset.since))} s`; });
+  document.querySelectorAll('#visual [data-until]').forEach(e => { const s = Math.round(+e.dataset.until - now); e.textContent = s > 0 ? `in ${s} s` : 'now'; });
+}
+setInterval(tick, 1000);
+function evText(ev) {
+  const skip = new Set(['t', 'elapsed', 'kind']);
+  return Object.entries(ev).filter(([k]) => !skip.has(k)).map(([k, v]) => `${k}=${typeof v === 'object' ? JSON.stringify(v) : v}`).join('  ');
+}
+function drawFeed() {
+  const box = $('#feed'), atEnd = box.scrollTop + box.clientHeight >= box.scrollHeight - 30;
+  box.innerHTML = events.filter(filterOk).slice(-600).map(ev =>
+    `<div><span class="t">${ev.elapsed}s</span> <span class="${kindClass(ev.kind)}">${esc(ev.kind)}</span> ${esc(evText(ev)).slice(0, 400)}</div>`).join('');
+  if (atEnd) box.scrollTop = box.scrollHeight;
+}
+
+function drawGrid(plan, meta) {
+  const profiles = ['REF', ...((meta.agents ? (meta.profiles || []).filter(p => ['P1', 'P2', 'P3'].includes(p)) : []))];
+  const checkProfiles = meta.profiles || [];
+  const tasks = (plan && plan.tasks) || [];
+  if (!tasks.length) { $('#grid').innerHTML = `<p class="small">${esc(meta.stage || 'starting')}…</p>`; return; }
+  const st = {}; const chk = {}; const nf = {};
+  for (const ev of events) {
+    const k = `${ev.task}|${ev.profile}`;
+    if (ev.kind === 'agent_start') st[k] = { s: 'running', n: 0 };
+    if (ev.kind === 'agent_step') st[k] = { s: 'running', n: ev.i + 1 };
+    if (ev.kind === 'agent_done') st[k] = { s: (ev.tool_error ?? ev.status === 'error') ? 'tool_error' : ev.status, n: ev.steps };
+    if (ev.kind === 'checks_start') chk[k] = 'running';
+    if (ev.kind === 'checks_done') { chk[k] = 'done'; nf[k] = ev.findings; }
+    if (ev.kind === 'task_invalid') st[`${ev.task}|REF`] = { s: ev.tool_error ? 'tool_error' : 'error', n: '' };
+  }
+  const head = `<tr><th scope="col">Task</th>${profiles.map(p => `<th scope="col">${p} agent</th>`).join('')}${checkProfiles.map(p => `<th scope="col">${p} checks</th>`).join('')}</tr>`;
+  const rows = tasks.map(t => `<tr><th scope="row" style="font-weight:400">${esc(t.goal)}</th>${profiles.map(p => {
+      const x = st[`${t.id}|${p}`] || { s: 'pending', n: '' };
+      return `<td class="st st-${esc(x.s)}">${esc(x.s)}${x.n !== '' ? ` <span class="small">(${x.n} steps)</span>` : ''}</td>`; }).join('')}
+    ${checkProfiles.map(p => { const c = chk[`${t.id}|${p}`] || 'pending'; const n = nf[`${t.id}|${p}`];
+      return `<td class="st st-${c}">${c}${n !== undefined ? ` <span class="small">(${n} findings)</span>` : ''}</td>`; }).join('')}</tr>`).join('');
+  $('#grid').innerHTML = `<div class="tablewrap"><table class="grid"><caption class="visually-hidden">Progress per task and profile</caption>${head}${rows}</table></div>`;
+}
+
+const PNAME = { P1: 'Screen reader', P2: 'Keyboard only', P3: '400% zoom', P4: 'Colour vision', P5: 'Voice control' };
+function agentEvidence(results) {
+  // v3 (D97): what the persona agents found themselves: verified problem reports, and tasks they could not finish.
+  const out = [];
+  for (const r of ((results && results.results) || [])) {
+    for (const x of (r.agent_reports || [])) if (x.kept) out.push({ task: r.task.goal, profile: x.profile, step: x.step,
+        what: x.problem, why: x.explanation, sc: x.sc, confirmed: x.tier === 'A' });
+    for (const f of (r.findings || [])) if ((f.evidence || {}).source === 'agent') out.push({ task: r.task.goal, profile: f.profile,
+        what: 'Could not finish the task', why: f.message.replace(/^task stalled: /, ''), sc: f.sc, confirmed: true });
+    for (const f of (r.agent_findings || [])) out.push({ task: r.task.goal, profile: f.profile, what: f.message, why: '', sc: f.sc, confirmed: false });
+  }
+  return out;
+}
+function drawStats(d, m) {
+  const res = (d.results && d.results.results) || [];
+  const planned = ((d.plan && d.plan.tasks) || []).length || res.length;
+  const ev = agentEvidence(d.results);
+  const rules = res.reduce((n, r) => n + (r.findings || []).filter(f => (f.evidence || {}).source !== 'agent').length, 0);
+  const cell = (n, l) => `<div><b>${n}</b><span>${l}</span></div>`;
+  $('#stats').innerHTML = res.length
+    ? cell(`${res.filter(r => !r.invalid).length}<span class="small"> / ${planned}</span>`, 'tasks tested')
+      + cell(ev.length, 'found by the agents') + cell(ev.filter(x => x.confirmed).length, 'confirmed by a rule') + cell(rules, 'rule findings')
+    : '';
+}
+function drawFindings(results) {
+  const ev = agentEvidence(results);
+  const live = events.filter(e => e.kind === 'finding');
+  const rows = [];
+  for (const r of ((results && results.results) || [])) for (const f of r.findings) if ((f.evidence || {}).source !== 'agent') rows.push({ task: r.task.goal, ...f });
+  const src = rows.length ? rows : live.map(e => ({ task: e.task, ...e }));
+  const agentHtml = ev.length ? `<ul class="flist">${ev.map(x => `<li class="fitem">
+      <span class="who">${esc(x.profile)}</span>
+      <div class="what">${esc(x.what)}${x.step !== undefined ? ` <span class="small mono">step ${esc(x.step)}</span>` : ''}</div>
+      <div class="why"><span class="tag ${x.confirmed ? 'a' : ''}">${x.confirmed ? 'rule-confirmed' : 'agent only'}</span>${x.sc && x.sc !== 'no SC' ? `<span class="tag">WCAG ${esc(x.sc)}</span>` : ''}${esc(x.why || '')}<br><span class="small">${esc(PNAME[x.profile] || '')} · ${esc(x.task)}</span></div></li>`).join('')}</ul>`
+    : '<p class="small" style="margin:0 0 30px">The agents have not reported anything yet.</p>';
+  const ruleHtml = src.length ? `<div class="tablewrap"><table><caption class="visually-hidden">Rule findings</caption>
+    <tr><th scope="col">Persona</th><th scope="col">Check</th><th scope="col">WCAG</th><th scope="col">Severity</th><th scope="col">Control</th><th scope="col">What happens</th><th scope="col">Task</th></tr>
+    ${src.map(f => `<tr><td class="mono">${esc(f.profile)}</td><td>${esc(f.check)}</td><td class="mono">${esc(f.sc)}</td><td class="sev-${esc(f.severity)}">${esc(f.severity)}</td>
+      <td>${esc(f.target)}</td><td>${esc(f.message)}</td><td class="small">${esc(f.task)}</td></tr>`).join('')}</table></div>`
+    : '<p class="small">No rule findings yet.</p>';
+  $('#findings').innerHTML = `<div class="sectionhead"><h3>Found by the agents</h3><span class="small">${ev.length} · problems they reported, checked against their own steps, and tasks they could not finish</span></div>${agentHtml}
+    <div class="sectionhead"><h3>Rule checks</h3><span class="small">${src.length}${rows.length ? '' : ' so far'} · along the sighted user's path; they confirm, they don't lead</span></div>${ruleHtml}`;
+}
+
+function md(text) {
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/_(.+?)_/g, '<em>$1</em>').replace(/`(.+?)`/g, '<code>$1</code>');
+  let html = '', inList = false;
+  for (const line of text.split('\n')) {
+    if (/^- /.test(line)) { if (!inList) { html += '<ul>'; inList = true; } html += `<li>${inline(line.slice(2))}</li>`; continue; }
+    if (inList) { html += '</ul>'; inList = false; }
+    if (/^### /.test(line)) html += `<h4>${inline(line.slice(4))}</h4>`;
+    else if (/^## /.test(line)) html += `<h3>${inline(line.slice(3))}</h3>`;
+    else if (/^# /.test(line)) html += `<h3>${inline(line.slice(2))}</h3>`;
+    else if (/^---/.test(line)) html += '<hr>';
+    else if (line.trim()) html += `<p>${inline(line)}</p>`;
+  }
+  return html + (inList ? '</ul>' : '');
+}
+
+function drawTasks(plan, results) {
+  if (!plan) { $('#tasks-detail').innerHTML = '<p>Planning…</p>'; return; }
+  const res = (results && results.results) || [];
+  $('#tasks-detail').innerHTML = `<p><strong>Capabilities found:</strong> ${esc((plan.capabilities || []).join(', '))}</p>
+    <p class="small">Pages explored: ${plan.pages.length}. Specialist checks on: ${esc(Object.entries(plan.specialists || {}).filter(([, v]) => v).map(([k]) => k).join(', '))}</p>` +
+    plan.tasks.map(t => { const r = res.find(x => x.task.id === t.id);
+      const agents = r ? Object.entries(r.profiles || {}).map(([p, v]) => `<details><summary>${p}: ${v.tool_error ? 'tool error' : esc(v.status)} (${v.steps.length} steps) ${esc(v.reason || '')}</summary><ol>${v.steps.map(s => `<li>${esc(JSON.stringify(s.action))} → ${esc(s.result)}<br><span class="small">${esc(s.thought)}</span></li>`).join('')}</ol></details>`).join('') : '';
+      const ref = r && r.reference ? `<details><summary>Reference: ${r.reference.tool_error ? 'tool error' : esc(r.reference.status)} (${r.reference.steps.length} steps)</summary><ol>${r.reference.steps.map(s => `<li>${esc(JSON.stringify(s.action))} → ${esc(s.result)}</li>`).join('')}</ol></details>` : '';
+      return `<section class="card"><h3 style="font-size:15px;margin:0">${esc(t.goal)}</h3><p class="small">Start: ${esc(t.start_url)} · Features: ${esc((t.features || []).join(', '))}</p>${r && r.invalid ? `<p class="error">${esc(r.invalid)}</p>` : ''}${ref}${agents}</section>`; }).join('');
+}
+
+let detail = null;
+async function refresh() {
+  if (!current) return;
+  const id = current;
+  const [d, ev] = await Promise.all([api(`/api/runs/${id}`), api(`/api/runs/${id}/events?since=${evNext}`)]);
+  if (id !== current) return;
+  detail = d; events.push(...ev.events); evNext = ev.next;
+  const m = d.meta || {};
+  $('#run-h').textContent = host(m.url) || id;
+  $('#run-status').innerHTML = `<span class="badge s-${esc(m.status)}">${esc(m.status)}</span>${m.stage && m.stage !== m.status ? ` <span class="small">${esc(m.stage)}</span>` : ''}`;
+  drawStats(d, m);
+  $('#run-meta').textContent = `${m.url || ''} · started ${fmtTime(m.started)} · ${dur(m.started, m.ended)} · ${m.model || ''} · ${(m.profiles || []).join(' ')}${m.agents ? '' : ' · agents off'}`
+    + (d.results && d.results.usage ? ` · ${Object.values(d.results.usage).reduce((a, u) => a + (+(u && u.calls) || 0), 0)} model calls` : '') + (m.error ? ` · error: ${m.error}` : '');
+  $('#stop').hidden = m.status !== 'running';
+  if (m.status !== lastStatus && lastStatus) $('#announce').textContent = `Run ${m.status}`;
+  lastStatus = m.status;
+  drawGrid(d.plan, m); drawFeed(); drawVisual(d.plan, m);
+  refreshPanels();
+}
+async function refreshPanels() {
+  const sel = tabs.find(t => t.getAttribute('aria-selected') === 'true').id;
+  if (sel === 'tab-findings') drawFindings(detail && detail.results);
+  if (sel === 'tab-tasks') drawTasks(detail && detail.plan, detail && detail.results);
+  if (sel === 'tab-report') { const r = await api(`/api/runs/${current}/report`); $('#report').innerHTML = r.markdown ? md(r.markdown) : '<p>The report appears when the run finishes. See the Findings tab for live results.</p>'; }
+  if (sel === 'tab-log') { const l = await api(`/api/runs/${current}/log`); const box = $('#log'); const end = box.scrollTop + box.clientHeight >= box.scrollHeight - 30; box.textContent = l.text; if (end) box.scrollTop = box.scrollHeight; }
+}
+
+loadStatus(); loadRuns(); setView(localStorage.getItem('liveView') || 'visual');
+setInterval(() => { refresh().catch(() => {}); }, 2000);
+setInterval(() => { loadRuns().catch(() => {}); }, 5000);
+</script>
+</body>
+</html>

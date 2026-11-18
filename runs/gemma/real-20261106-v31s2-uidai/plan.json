@@ -1,0 +1,40 @@
+{
+ "url": "https://uidai.gov.in/en/",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Navigate to the Documents page and use the category selection to filter for 'Enrolment & Updates' to find specific official forms.",
+   "start_url": "https://uidai.gov.in/en/documents",
+   "success": "The page displays the list of documents specifically categorized under 'Enrolment & Updates'.",
+   "stop_before": "Any login or personal information entry.",
+   "features": [
+    "combobox",
+    "filters"
+   ],
+   "frozen_from": "real-20261102-extb-uidai/t1"
+  },
+  {
+   "id": "t2",
+   "goal": "Navigate through the 'How to Videos' section using the pagination links to view the second page of tutorials.",
+   "start_url": "https://uidai.gov.in/en/how-to-videos",
+   "success": "The video gallery updates to show the second set of instructional videos.",
+   "stop_before": "Clicking play on any video.",
+   "features": [
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261103-ext-r2b-uidai/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": false,
+  "Operate": true,
+  "Notice": true,
+  "Recover": false,
+  "Colour": true
+ },
+ "rejected_tasks": []
+}

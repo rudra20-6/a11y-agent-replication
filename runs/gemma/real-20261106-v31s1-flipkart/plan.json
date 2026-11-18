@@ -1,0 +1,52 @@
+{
+ "url": "https://www.flipkart.com/",
+ "pages": [],
+ "capabilities": [],
+ "tasks": [
+  {
+   "id": "t1",
+   "goal": "Search for 'Running Shoes' using the search bar and browse the resulting product list.",
+   "start_url": "https://www.flipkart.com/",
+   "success": "The search results page displaying various running shoes.",
+   "stop_before": "Adding a product to the shopping cart.",
+   "features": [
+    "form",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261030-v232-flipkart/t2"
+  },
+  {
+   "id": "t2",
+   "goal": "Search for 'Gaming Laptops' using the search bar and browse the results.",
+   "start_url": "https://www.flipkart.com/",
+   "success": "A list of gaming laptops is displayed on the screen.",
+   "stop_before": "Logging in or adding an item to the cart.",
+   "features": [
+    "form",
+    "dynamic_results"
+   ],
+   "frozen_from": "real-20261102-r2b-flipkart/t1"
+  },
+  {
+   "id": "t3",
+   "goal": "Navigate to the Fashion category and then select 'Casual shoes' to browse the collection.",
+   "start_url": "https://www.flipkart.com/",
+   "success": "The page displays a variety of casual shoes.",
+   "stop_before": "Selecting a specific product to view details or purchase.",
+   "features": [
+    "images"
+   ],
+   "frozen_from": "real-20261102-r2b-flipkart/t2"
+  }
+ ],
+ "specialists": {
+  "Reach": true,
+  "Identify-names": true,
+  "Identify-semantic": true,
+  "Operate": true,
+  "Notice": true,
+  "Recover": true,
+  "Colour": false
+ },
+ "rejected_tasks": []
+}

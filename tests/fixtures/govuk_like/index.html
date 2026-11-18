@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><title>Does the employee work irregular hours?</title>
+<style>
+  .radios__item { position: relative; padding-left: 40px; margin: 10px 0; }
+  .radios__input { position: absolute; left: 0; top: 0; width: 40px; height: 40px; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
+  .radios__label { display: inline-block; padding: 8px 15px 5px; cursor: pointer; }
+  .radios__label::before { content: ""; position: absolute; left: 0; top: 0; width: 34px; height: 34px; border: 2px solid; border-radius: 50%; }
+  .radios__input:focus + .radios__label::before { outline: 3px solid #fd0; }
+</style></head>
+<body><main>
+  <h1>Does the employee work irregular hours?</h1>
+  <form action="next.html" method="get">
+    <fieldset><legend>Choose one</legend>
+      <div class="radios__item"><input class="radios__input" id="yes" name="irregular" type="radio" value="yes"><label class="radios__label" for="yes">Yes</label></div>
+      <div class="radios__item"><input class="radios__input" id="no" name="irregular" type="radio" value="no"><label class="radios__label" for="no">No</label></div>
+    </fieldset>
+    <button type="submit" id="continue">Continue</button>
+  </form>
+</main></body></html>

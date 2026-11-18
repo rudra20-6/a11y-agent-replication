@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Focus indicators</title>
+<style>
+  a, button, li { outline: none; }
+  #ring:focus { box-shadow: 0 0 0 3px #ffdd00; }
+  ul.opts { list-style:none; padding:0; }
+  ul.opts li:focus { background:#1d70b8; color:#fff; }
+  .item { position:relative; padding-left:40px; }
+  .item input { position:absolute; left:0; opacity:0; width:40px; height:40px; margin:0; }
+  .item label::before { content:""; position:absolute; left:0; top:0; width:34px; height:34px; border:2px solid #0b0c0c; border-radius:50%; }
+  .item input:focus + label::before { box-shadow:0 0 0 4px #ffdd00; }
+  nav a { margin-right:8px; }
+</style></head>
+<body><main>
+<button id="ring">Ring button</button>
+<ul class="opts" role="listbox"><li tabindex="-1" id="o1" role="option">Maternity pay</li><li tabindex="-1" id="o2" role="option">Maternity leave</li></ul>
+<div class="item"><input id="yes" name="r" type="radio"><label for="yes">Yes</label></div>
+<nav><a href="#a" id="n1">One</a><a href="#b" id="n2">Two</a><a href="#c" id="n3">Three</a></nav>
+<button id="bare">Bare button</button>
+</main></body></html>

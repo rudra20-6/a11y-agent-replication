@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Overlay fixture</title>
+<!-- Offline fixture for tests/test_click_fallbacks.py: a login popup that covers the page, controls that are
+     re-rendered, an animated control and a disabled one. Nothing here is specific to any real site. -->
+<style>
+  body { font: 16px sans-serif; margin: 0; padding: 12px; }
+  button, input { font: inherit; margin: 4px 0; }
+  #backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, .5); display: flex; align-items: center;
+              justify-content: center; z-index: 10; }
+  #backdrop[hidden] { display: none; }
+  #modal { background: #fff; padding: 12px; width: 220px; }
+  /* never settles, so Playwright's "wait until the element is stable" check times out */
+  #moving { animation: slide 1s linear infinite alternate; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(30px); } }
+</style>
+</head>
+<body>
+<button id="search">Search</button>
+<div id="status" role="status">not searched</div>
+
+<div id="list"><label>Name <input id="name" type="text"></label> <button class="apply">Apply</button></div>
+<div id="applied" role="status">applied 0</div>
+
+<button id="moving">Moving</button>
+<div id="movedlog" role="status">moved 0</div>
+
+<button id="off" disabled>Pay now</button>
+
+<div id="backdrop">
+  <div id="modal" role="dialog" aria-label="Login or Create Account">
+    <h2>Login or Create Account</h2>
+    <button id="close" aria-label="Close">Close</button>
+  </div>
+</div>
+
+<script>
+  let searches = 0, applied = 0, moved = 0;
+  const $ = (id) => document.getElementById(id);
+  const say = (id, text) => { $(id).textContent = text; };
+  $('search').addEventListener('click', () => say('status', 'searched ' + (++searches)));
+  $('moving').addEventListener('click', () => say('movedlog', 'moved ' + (++moved)));
+  $('close').addEventListener('click', () => setModal(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setModal(false); });
+  function setModal(open) { $('backdrop').hidden = !open; }
+
+  // The page re-renders the list: the old elements are replaced by new ones that look the same.
+  function applyButton() {
+    const b = document.createElement('button');
+    b.className = 'apply'; b.textContent = 'Apply';
+    b.addEventListener('click', () => say('applied', 'applied ' + (++applied)));
+    return b;
+  }
+  function renderList(applyCount) {
+    const list = $('list');
+    list.textContent = '';
+    const label = document.createElement('label');
+    label.append('Name ');
+    const input = document.createElement('input'); input.id = 'name'; input.type = 'text';
+    label.append(input);
+    list.append(label, ' ');
+    for (let i = 0; i < applyCount; i++) list.append(applyButton());
+  }
+  renderList(1);
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Radios (GOV.UK pattern)</title>
+<style>
+  /* The GOV.UK Design System pattern: the real input is invisible and the label draws the circle and the dot. */
+  .item { position: relative; padding-left: 40px; margin: 10px 0; min-height: 40px; }
+  .item input { position: absolute; left: 0; top: 0; width: 40px; height: 40px; margin: 0; opacity: 0; cursor: pointer; }
+  .item label { display: inline-block; padding: 8px 15px 5px; cursor: pointer; }
+  .item label::before { content: ""; position: absolute; left: 0; top: 0; width: 34px; height: 34px; border: 3px solid #0b0c0c; border-radius: 50%; }
+  .item label::after { content: ""; position: absolute; left: 10px; top: 10px; border: 10px solid #0b0c0c; border-radius: 50%; opacity: 0; }
+  .item input:checked + label::after { opacity: 1; }
+</style></head>
+<body><main>
+<h1>Does the employee work irregular hours?</h1>
+<div class="item"><input id="yes" name="irr" type="radio" value="yes"><label for="yes">Yes</label></div>
+<div class="item"><input id="no" name="irr" type="radio" value="no"><label for="no">No</label></div>
+<div class="item"><input id="plain" type="checkbox" style="opacity:1"><label for="plain">Plain checkbox</label></div>
+<button>Continue</button>
+</main></body></html>
