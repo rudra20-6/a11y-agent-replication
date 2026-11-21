@@ -1,8 +1,8 @@
 # Mistral Small 3.2 24B, clean application: cause of every kept report (11 Nov 2026)
 
-Source: runs/full_bench_dev-20261111-{043607,063223,112309}.json, tested tasks only. 53 kept reports in 25 attempts.
+Source: runs/mistral/full_bench_dev-20261111-{043607,063223,112309}.json, tested tasks only. 53 kept reports in 25 attempts.
 Numbering (#) follows the dump order: run, task, agent, report. Each was checked against the trace, the step
-screenshots (live/steps) and bench/app/app.js.
+screenshots (live/steps, not included in this package) and bench/app/app.js.
 
 | Row | Cause | Agent | Reports (#) | Count |
 |---|---|---|---|---|

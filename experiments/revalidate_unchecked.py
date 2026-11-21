@@ -1,11 +1,12 @@
-"""Validate, after the fact, the tasks a run kept as `unchecked` because the validator call failed (D81).
+"""Validate, after the fact, the tasks a run kept as `unchecked` because the validator call failed.
 
 The validator only needs the task card and the pages the explorer saw, and every run saves both in plan.json, so the
 check can be made later with the same prompt and model. The verdict is stored next to the original under
 `post_validation` (the original `validation` is left as it was); the run date is passed as "today", as in the run.
 A task judged invalid here is excluded from the analysis like any other invalid task.
 
-Usage: python experiments/revalidate_unchecked.py [--runs "runs/real-2026110[23]-*"] [--dry-run]
+Usage: python experiments/revalidate_unchecked.py [--runs "data/task_generation/real-2026110[23]-*"] [--dry-run]
+(without --dry-run it writes the verdicts into each plan.json)
 """
 import argparse
 import glob
@@ -24,7 +25,7 @@ from a11y_agent.planner import validate_tasks  # noqa: E402
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--runs", default=str(ROOT / "runs" / "real-2026110[23]-*"))
+    ap.add_argument("--runs", default=str(ROOT / "data" / "task_generation" / "real-2026110[23]-*"))
     ap.add_argument("--dry-run", action="store_true", help="list the unchecked tasks, call nothing")
     a = ap.parse_args()
     llm = LLM(SETTINGS.planner_model, role="validator", use_cache=False)

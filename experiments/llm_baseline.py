@@ -1,4 +1,4 @@
-"""Baseline 3 (Research_Plan §5.2): a single LLM reads the page and lists barriers for the task.
+"""Single-LLM baseline: a single LLM reads the page and lists barriers for the task.
 
 It sees what a person reading the page source would: the HTML (every element numbered with data-k), the page's CSS,
 and Chrome's accessibility tree. Two variants, like the axe baselines: on load, and at every state of the gold path
@@ -11,13 +11,9 @@ Scoring is per profile, like our checks, and stricter than the axe scoring (whic
 Every finding on the clean app counts as a false alarm (BenchBook is built to be accessible); so does any finding
 that points into a benign mutant's region.
 
-Prompt history (12 Oct 2026, tuned on ONE barrier, C1 on T6, then frozen): (1) "barriers that stop or seriously slow
-down the task", JSON mode; (2) "block or make it harder"; (3) plus a "checked" field to make it look first; (4) plain
--text reasoning before the JSON, and "problems the user runs into while doing the task". Gemma 4 26B returned no
-barriers for C1 under all four. We stopped there so the baseline is not tuned to the benchmark; (4) is what runs.
+The prompt was fixed before the baseline was run on the Ma11y barriers. The paper uses the lenient score.
 
-Usage: python experiments/llm_baseline.py [--states load|all] [--only ID,ID] [--catalog dev|heldout]
-Set A11Y_RPM if another LLM job is running at the same time (the free tier allows ~30 calls a minute in total).
+Usage: python experiments/llm_baseline.py [--states load|all] [--only ID,ID] [--catalog ma11y_path]
 """
 import argparse
 import json

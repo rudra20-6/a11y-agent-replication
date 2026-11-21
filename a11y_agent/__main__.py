@@ -1,6 +1,6 @@
 """CLI.
 
-  python -m a11y_agent run <url> [--tasks 4] [--profiles P1,P2,P3,P4,P5]   full pipeline on any site (needs GEMINI_API_KEY)
+  python -m a11y_agent run <url> [--tasks 4] [--profiles P1,P2,P3]   full pipeline on any site (needs OPENROUTER_API_KEY, see .env.example)
                                        [--no-agents] [--all-checks]      rule checks only / ignore the planner's check selection
   python -m a11y_agent models                                               list Gemini models available to your key
   python -m a11y_agent bench                                                serve the local benchmark app and print its URL
@@ -20,7 +20,7 @@ def main(argv=None):
     r.add_argument("--profiles", default="P1,P2,P3,P4,P5")
     r.add_argument("--no-agents", action="store_true", help="skip profile agents; only step checks on the reference path")
     r.add_argument("--run-dir", default="", help="where to write results (default runs/<timestamp>)")
-    r.add_argument("--all-checks", action="store_true", help="keep every check group, ignoring the planner's choice (ablation A2)")
+    r.add_argument("--all-checks", action="store_true", help="keep every check group, ignoring the planner's choice")
     d = sub.add_parser("dashboard", help="web dashboard: start runs, watch them live, read reports")
     d.add_argument("--port", type=int, default=8800)
     sub.add_parser("models", help="list Gemini models available to your key")

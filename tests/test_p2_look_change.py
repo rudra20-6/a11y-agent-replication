@@ -1,4 +1,4 @@
-"""Offline check (no LLM) of D88: the keyboard persona P2 is told when the control it pressed changes how it looks
+"""Offline check (no LLM): the keyboard persona P2 is told when the control it pressed changes how it looks
 (a bus seat turns green when selected), is told nothing when a Tab moves focus away, and is not told ARIA states.
 
 Usage: python tests/test_p2_look_change.py      (prints FAILURES: 0 when everything holds)

@@ -1,4 +1,4 @@
-"""S3 / D84–D85: the deterministic methods (our rule checks, axe) on the Ma11y benchmark. No LLM, so it runs free.
+"""The deterministic methods (our rule checks, axe) on the Ma11y barriers. No model is called.
 
 For each labelled unit (bench/mutants/ma11y.yaml or ma11y_path.yaml) and each task's clean app:
 - **axe**, on load and at every gold-path state. Ma11y's oracle: a mutant is **killed** when axe reports a violation on
@@ -11,8 +11,6 @@ For each labelled unit (bench/mutants/ma11y.yaml or ma11y_path.yaml) and each ta
   one of the operator's WCAG criteria (**sc**: the only difference from the clean run is the mutation). Both counts
   are reported. Task-level recall: the personas with a new finding, against the unit's `affects`.
 - False alarms: new findings for personas outside affects + may_affect.
-
-The scoring rules are fixed here before the first run (commit order shows it).
 
 Usage: python experiments/ma11y_bench.py [--placement page|path] [--only ID,ID]
 """

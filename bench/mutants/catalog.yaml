@@ -1,8 +1,8 @@
-# Seeded barriers. Ground truth for scoring:
+# Hand-written barriers on BenchBook's tasks (not used in the paper; the clean runs use only the task list). Labels:
 #   affects:     profiles whose task this mutant blocks or clearly degrades (a finding here is a true positive)
 #   may_affect:  profiles where a report is defensible (not counted as a false positive, not required)
 #   any other profile reporting it  -> false positive
-#   axe_expected: our prediction (checked in E4)
+#   axe_expected: our prediction of whether axe-core flags it
 # Profiles: P1 screen reader, P2 keyboard only, P3 400% zoom, P4 colour-vision deficiency, P5 voice control.
 
 mutants:

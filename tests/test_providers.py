@@ -1,4 +1,4 @@
-﻿"""Offline check (no network, no keys) of the rolling key pool (D71): rotation, cool-down on 429, same-model rule,
+﻿"""Offline check (no network, no keys) of the endpoint pool: rotation, cool-down on 429, same-model rule,
 substitutes only when mixing is allowed, and that substitute answers never enter the shared cache.
 
 Usage: python tests/test_providers.py      (prints FAILURES: 0 when everything holds)
@@ -38,10 +38,10 @@ class Fake(Endpoint):
             raise RuntimeError("Error code: 500 - INTERNAL")
         if r == "timeout":
             raise RuntimeError("The read operation timed out")
-        if r == "leaked":
-            raise RuntimeError("403 PERMISSION_DENIED. Your API key was reported as leaked. Please use another API key.")
+        if r == "revoked":
+            raise RuntimeError("403 PERMISSION_DENIED. API key not valid.")
         if r == "daily":
-            raise RuntimeError("Error code: 429 - 4006: you have used up your daily free allocation of 10,000 neurons")
+            raise RuntimeError("Error code: 429 - 4006: daily allocation used up")
         return '{"from": "%s", "model": "%s"}' % (self.name, model), 10, 5
 
 
@@ -99,7 +99,7 @@ def main():
     m.json("s", "cached")
     check("an exact answer is cached and reused for the same prompt", len(a.calls) + len(b.calls) == before)
 
-    # --- Cloudflare (D72): two accounts
+    # --- two endpoints of the same kind
     import time
     from a11y_agent.providers import endpoints_from_env
     saved = dict(os.environ)
@@ -129,10 +129,10 @@ def main():
     check("an account over its daily allowance hands the call to the other account", r["from"] == "cloudflare#2", r)
     rest = c1.cooldown_until - time.time()
     expected = min(3600, llm._secs_to_utc_midnight())   # the real time left, so the test holds at any hour
-    check("and rests up to an hour before trying again (the allowance comes back gradually, D83)", abs(rest - expected) < 15,
+    check("and rests up to an hour before trying again (the allowance comes back gradually)", abs(rest - expected) < 15,
           (rest, expected))
 
-    # --- health (2 Nov): a key that times out must not keep winning ties
+    # --- health: an endpoint that times out must not keep winning ties
     g1, g2, c1 = Fake("gemini#1", "gemini", ["timeout"]), Fake("gemini#2", "gemini", ["timeout"]), Fake("cloudflare#1", "cloudflare", [])
     m = make_llm([g1, g2, c1])
     r = m.json("s", "slow-google")
@@ -150,16 +150,16 @@ def main():
     m.pool.ok(a)
     check("a success clears a key's failure count", a.fails == 0)
 
-    # --- a revoked key (2 Nov: Google's 403 "reported as leaked") must not take every retry
-    bad, g = Fake("gemini#3", "gemini", ["leaked"] * 20), Fake("gemini#1", "gemini", [])
-    g.fails = 2   # the healthy key had recent failures, so the bad one won the pick before the fix
+    # --- a revoked key (403) must not take every retry
+    bad, g = Fake("gemini#3", "gemini", ["revoked"] * 20), Fake("gemini#1", "gemini", [])
+    g.fails = 2   # the healthy key had recent failures, so without resting the bad one it would win the pick
     m = make_llm([bad, g])
     r = m.json("s", "revoked")
     check("a 403 key hands the call to another key", r["from"] == "gemini#1", r)
     check("and is set aside for days, so it isn't picked again", bad.cooldown_until - time.time() > 6 * 24 * 3600 and len(bad.calls) == 1,
           (bad.cooldown_until - time.time(), len(bad.calls)))
 
-    # --- D87: paid OpenRouter route
+    # --- paid OpenRouter route (the paper's setting)
     o = Fake("openrouter", "openrouter", [])
     check("an OpenRouter id (vendor/model) is served as named, e.g. for the second-model diagnostic",
           o.model_for("google/gemini-3.8-flash", False) == ("google/gemini-3.8-flash", True))
@@ -174,7 +174,7 @@ def main():
     check("with A11Y_OPENROUTER_PAID=1 Gemma is the paid id (no :free), pinned",
           o.model_for("gemma-4-26b-a4b-it", False) == ("google/gemma-4-26b-a4b-it", True) and o.pin == "example-provider")
 
-    # --- D92: free OpenRouter first, paid only while the free one rests
+    # --- both OpenRouter routes: the paid one answers while the other rests
     os.environ.pop("A11Y_OPENROUTER_PAID")
     os.environ["A11Y_OPENROUTER_MIX"] = "1"
     eps = {e.name: e for e in prov.endpoints_from_env()}
@@ -189,7 +189,7 @@ def main():
     check("mix: the free one is used first", first == "openrouter", first)
     nxt = pool.acquire("gemma-4-26b-a4b-it")[0].name   # free one's next slot is 6 s away (10/min): don't wait for it
     check("mix: overflow goes to the paid one instead of waiting", nxt == "openrouter_paid", nxt)
-    pool.cool(eps["openrouter"], 3 * 3600)   # its 1,000/day used up
+    pool.cool(eps["openrouter"], 3 * 3600)   # rate limited
     check("mix: the paid one answers while the free one rests", pool.acquire("gemma-4-26b-a4b-it")[0].name == "openrouter_paid")
     for k, v in saved.items():
         if v is None:
@@ -197,7 +197,7 @@ def main():
         else:
             os.environ[k] = v
 
-    # --- D82: a reply with a second JSON object after the first is read, not rejected
+    # --- a reply with a second JSON object after the first is read, not rejected
     pj = llm.parse_json
     check("two JSON objects back to back: the first is used", pj('{"a": 1}{"b": 2}') == {"a": 1})
     check("an object followed by text and another object", pj('{"action": {"type": "click"}}\nThen: {"x": 1}') == {"action": {"type": "click"}})
@@ -209,7 +209,7 @@ def main():
     except Exception:
         check("text with no object still raises", True)
 
-    # --- D81: a prompt too big for Google's per-minute token allowance goes to a key that can take it
+    # --- a prompt too big for an endpoint's input limit goes to one that can take it
     g, c = Fake("gemini#1", "gemini", []), Fake("cloudflare#1", "cloudflare", [])
     g.max_input_tokens = 12000
     m = make_llm([g, c])
@@ -222,7 +222,7 @@ def main():
     e, _, _ = m.pool.acquire("gemma-4-26b-a4b-it", tokens=17000)
     check("if one that fits is free soon, the call waits for it", e.name == "cloudflare#1", e.name)
 
-    # --- D77: a key that hangs on screenshots stays in use for text
+    # --- an endpoint that hangs on screenshots stays in use for text
     g, c = Fake("gemini#1", "gemini", ["timeout"]), Fake("cloudflare#1", "cloudflare", [])
     m = make_llm([g, c])
     r = m.json("s", "with-screenshot", images=[b"png"])

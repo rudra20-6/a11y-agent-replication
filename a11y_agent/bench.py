@@ -12,12 +12,11 @@ from .browser import Session
 from .config import BENCH
 
 MUTANTS_JS = (BENCH / "mutants" / "mutants.js").read_text(encoding="utf-8")
-# Held-out operators (written blind to the checks, see bench/HELDOUT_GUIDE.md) live in their own file. Each file applies
-# only the ops it defines and ignores the rest.
+# Extra operator files are appended when present; each file applies only the ops it defines and ignores the rest.
 _HELDOUT = BENCH / "mutants" / "heldout.js"
 if _HELDOUT.exists():
     MUTANTS_JS += "\n" + _HELDOUT.read_text(encoding="utf-8")
-# Ma11y's 25 operators (ISSTA 2024, MIT), ported to run in the page; each picks its own target (S3, D84).
+# Ma11y's 25 operators (ISSTA 2024, MIT licence), ported to run in the page; each picks its own target.
 MA11Y_JS = (BENCH / "mutants" / "ma11y.js").read_text(encoding="utf-8")
 MUTANTS_JS += "\n" + MA11Y_JS
 CATALOGS = {"dev": BENCH / "mutants" / "catalog.yaml", "heldout": BENCH / "mutants" / "heldout.yaml",
@@ -68,9 +67,9 @@ def install_mutant(session: Session, mutant: Mutant | None) -> None:
     session.ctx.add_init_script(MUTANTS_JS)
 
 
-# v3 (D97) scoring probe: did the agent's action at a step involve the mutated element (clicked, focused, typed into or
+# Scoring probe: did the agent's action at a step involve the mutated element (clicked, focused, typed into or
 # a key pressed on it, or a small control containing it)? Kept in sessionStorage, so a reload caused by the barrier
-# (F36 submits the form on change) doesn't lose it. Benchmark instrumentation only: the agents never see it.
+# (e.g. a form that submits on change) doesn't lose it. Benchmark instrumentation only: the agents never see it.
 PROBE_JS = """(() => { if (window.__mutProbe) return; window.__mutProbe = true;
   const hit = (t) => { if (!t || t.nodeType !== 1) return false;
     for (const m of document.querySelectorAll('[data-mutated]')) {

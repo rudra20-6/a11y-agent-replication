@@ -60,7 +60,7 @@ class Events:
 def part1_navigator(pool):
     for profile in ("REF", "P1", "P2", "P3"):
         s = pool.session(Viewport(320, 640) if profile == "P3" else Viewport(1280, 800))
-        for exc in (LLMError("Gemini call failed after 8 tries: 503"), QuotaExhausted("gemma: quota exhausted")):
+        for exc in (LLMError("model call failed after 8 tries: 503"), QuotaExhausted("gemma: quota exhausted")):
             llm = FailingLLM(exc)
             out = Navigator(s, profile, llm, 3).run("any task", FIXTURE)
             check(f"{profile}: {type(exc).__name__} -> status error, tool_error True",
@@ -84,7 +84,7 @@ def fake_pipeline(outcomes, judge_calls, check_calls):
 
     def judge_stall(llm, profile, goal, ref, out, det):
         judge_calls.append(profile)
-        return None   # "agent error": the old behaviour for a plain stall
+        return None   # "agent error": the judge's verdict for a plain stall
 
     pipeline._agent, pipeline._check_profile, pipeline.judge_stall = _agent, _check_profile, judge_stall
 
@@ -94,7 +94,7 @@ def part2_run_task():
     task = {"id": "t1", "goal": "find something", "start_url": "http://x"}
     click = Step(0, "", "", {"type": "click", "ref": "el:1"}, "ok", "http://x", "#go")
     ref_done = Outcome("REF", "done", "ok", [click])
-    api_down = "Gemini call failed after 8 tries: 503 UNAVAILABLE"
+    api_down = "model call failed after 8 tries: 503 UNAVAILABLE"
     try:
         # A: P1's model call failed, P2 finished
         judge, checks, ev = [], [], Events()
@@ -110,7 +110,7 @@ def part2_run_task():
         check("A: the profile record says tool_error", rec_a["profiles"]["P1"]["tool_error"] is True and rec_a["profiles"]["P2"]["tool_error"] is False)
         check("A: the rule checks still ran for both profiles", sorted(checks) == ["P1", "P2"], checks)
 
-        # B: a plain stall (not an LLM failure) still goes to the judge, as before
+        # B: a plain stall (not an LLM failure) goes to the judge
         judge, checks, ev = [], [], Events()
         fake_pipeline({"REF": ref_done, "P1": Outcome("P1", "stuck", "", [click], "cannot reach it"),
                        "P2": Outcome("P2", "error", "", [click], "something else", tool_error=False)}, judge, checks)
@@ -124,15 +124,15 @@ def part2_run_task():
         fake_pipeline({"REF": Outcome("REF", "error", "", [], api_down, tool_error=True)}, judge, checks)
         rec_c = pipeline.run_task(task, ("P1", "P2"), llm=object(), ev=ev)
         check("C: REF tool error -> invalid says the model/API failed",
-              rec_c.get("invalid", "").startswith("not tested: the model/API failed during the reference run: Gemini call failed"), rec_c.get("invalid"))
+              rec_c.get("invalid", "").startswith("not tested: the model/API failed during the reference run: model call failed"), rec_c.get("invalid"))
         check("C: not described as the agent failing the task", "could not complete" not in rec_c["invalid"])
         check("C: REF tool error is also in tool_errors, nothing else ran", rec_c["tool_errors"][0]["profile"] == "REF" and checks == [] and judge == [], rec_c)
         check("C: task_invalid event carries tool_error", ev.of("task_invalid")[0].get("tool_error") is True, ev.events)
 
-        # C2: an ordinary REF failure keeps the old wording
+        # C2: an ordinary REF failure keeps the usual wording
         fake_pipeline({"REF": Outcome("REF", "stuck", "", [click], "no button")}, [], [])
         rec_c2 = pipeline.run_task(task, ("P1",), llm=object(), ev=Events())
-        check("C2: ordinary REF stall keeps the old wording", rec_c2["invalid"].startswith("reference agent could not complete the task"), rec_c2["invalid"])
+        check("C2: ordinary REF stall keeps the usual wording", rec_c2["invalid"].startswith("reference agent could not complete the task"), rec_c2["invalid"])
 
         # D: a persona agent that crashes (not an LLM failure) is also a tool problem, never a stall
         judge, checks, ev = [], [], Events()
@@ -144,7 +144,7 @@ def part2_run_task():
         # E: the report shows them
         pl = SimpleNamespace(pages=[], capabilities=["search"])
         md = pipeline.report_md("http://x", pl, [rec_a, rec_c, rec_d])
-        check("E: report lists the agent tool error and labels the profile", "Tool errors" in md and "P1 step 2 (agent): Gemini call failed" in md and "P1: tool error" in md, md)
+        check("E: report lists the agent tool error and labels the profile", "Tool errors" in md and "P1 step 2 (agent): model call failed" in md and "P1: tool error" in md, md)
         check("E: report does not call it a barrier or an unconfirmed stall", "Unconfirmed" not in md.split("## ")[1], md)
         check("E: report says the reference run's task was not tested, without doubling it",
               "Not tested: the model/API failed during the reference run" in md and "Not tested: not tested" not in md, md)
@@ -184,7 +184,7 @@ def part3_screenshot(pool):
     png = s.screenshot()
     check("screenshot: the retry can succeed", png[:4] == b"\x89PNG" and state["n"] == 2, (png[:4], state))
     obs, images = Navigator(s, "REF", None, 1).observe()
-    check("REF: a working screenshot is sent as before", len(images) == 1 and "screenshot unavailable" not in obs)
+    check("REF: a working screenshot is sent", len(images) == 1 and "screenshot unavailable" not in obs)
     s.page.screenshot = real
     s.close()
 

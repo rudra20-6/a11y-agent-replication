@@ -1,4 +1,4 @@
-"""Offline check (no LLM) of method v3 (D97):
+"""Offline check (no LLM) of the agent reports:
 - every persona is told when the page opens a new tab, and when the page reloads after typing or a focus move;
 - P1 is told that letter-spaced text is spoken letter by letter;
 - the persona's "problem" lands on its step, repeats are dropped, and the verifier's verdicts are attached;
@@ -75,7 +75,7 @@ def main() -> int:
         check("P2: sees its effort", "YOUR EFFORT SO FAR: 2 actions, 1 key presses" in obs, obs[:200])
         s.close()
 
-        s = pool.session(Viewport(320, 640))   # v3.1 (D102): P3 types after clicking a label or the box around a field
+        s = pool.session(Viewport(320, 640))   # P3 types after clicking a label or the box around a field
         s.goto((ROOT / "tests" / "fixtures" / "govuk_like" / "fields.html").as_uri())
         s.settle(300)
         nav = Navigator(s, "P3", None, 5)

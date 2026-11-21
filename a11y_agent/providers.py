@@ -1,21 +1,14 @@
-"""Rolling pool of free-tier LLM endpoints (D71). Calls rotate across every key that serves the requested model.
-
-Keys go in a11y-agent/.env (git-ignored; never commit or print them):
-  GEMINI_API_KEY, GEMINI_API_KEY_2, GEMINI_API_KEY_3 ...   Google AI Studio, one key per Google account
-  OPENROUTER_API_KEY                                     OpenRouter (free model ids end in ':free')
-  CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN           Cloudflare Workers AI; a second account is the same two
-  CLOUDFLARE_ACCOUNT_ID_2 + CLOUDFLARE_API_TOKEN_2       names ending _2 (each id pairs with the token of its suffix)
-  NVIDIA_API_KEY                                         NVIDIA NIM, build.nvidia.com ('nvapi-...')
+"""LLM endpoints. The paper's runs use OpenRouter's paid route: OPENROUTER_API_KEY with A11Y_OPENROUTER_PAID=1 and
+A11Y_KEYS=openrouter (see .env.example). Keys go in .env at the package root (git-ignored; never commit or print them).
+The code can also read keys for other endpoints (GEMINI_API_KEY..., CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_API_TOKEN...,
+NVIDIA_API_KEY); none of them was used in the paper.
 
 A call names a canonical model (e.g. gemma-4-26b-a4b-it). Only endpoints serving exactly that model are used, so every
-answer in an experiment comes from the same model. A11Y_ALLOW_MIXED=1 also lets other endpoints answer with their
-substitute model (NIM has Gemma 4 31B, not 26B): for quick dashboard runs only; every substitution is counted in the
-usage summary, and substitute answers are never written to the shared cache.
+answer in an experiment comes from the same model. A11Y_ALLOW_MIXED=1 also lets other endpoints answer with a
+substitute model; every substitution is counted in the usage summary, and substitute answers are never cached.
 
-Pacing (requests per minute, per endpoint): A11Y_RPM (Google keys; measured limit 30), A11Y_RPM_OPENROUTER (documented
-20/min and 50/day below $10 of credit), A11Y_RPM_CLOUDFLARE (documented 300/min; the real limit is 10,000 neurons a
-day per account, about 11 benchmark units), A11Y_RPM_NIM (about 40/min, unofficial). A rate-limited endpoint cools
-down for as long as the provider says (or 60 s; a daily cap: until it resets) while the others carry on.
+Pacing: A11Y_RPM_OPENROUTER requests per minute (A11Y_RPM, A11Y_RPM_CLOUDFLARE and A11Y_RPM_NIM for the other
+endpoints). A rate-limited endpoint cools down for as long as the provider says (or 60 s) while any others carry on.
 """
 
 from __future__ import annotations
@@ -26,20 +19,19 @@ import re
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
+import io
 from dataclasses import dataclass, field
-from pathlib import Path
 
 from . import config as _config  # noqa: F401  loads .env into os.environ; the pool below reads the keys at import time
 
 # Which canonical models each provider serves, under its own model id.
 OPENROUTER_MODELS = {"gemma-4-26b-a4b-it": "google/gemma-4-26b-a4b-it:free", "gemma-4-31b-it": "google/gemma-4-31b-it:free",
-                     # second model (11 Nov 2026): paid only, no free copy; run with A11Y_KEYS=openrouter_paid
+                     # the paper's second model (paid route only)
                      "mistral-small-3.2-24b-instruct": "mistralai/mistral-small-3.2-24b-instruct",
                      "qwen3-vl-30b-a3b-instruct": "qwen/qwen3-vl-30b-a3b-instruct"}
-# Paid route: A11Y_OPENROUTER_PAID=1 uses the same model without ":free" (no daily cap). Optionally,
+# Paid route (used for every run in the paper): A11Y_OPENROUTER_PAID=1 uses the model id without ":free". Optionally,
 # A11Y_OPENROUTER_PROVIDER=<provider slug> pins one OpenRouter provider with no fallback.
-# Mixed (D92): A11Y_OPENROUTER_MIX=1 adds both, "openrouter" (free) and "openrouter_paid"; the free one is always
-# preferred, and the paid one answers while the free one rests (its 20/min or 1,000/day limit).
+# A11Y_OPENROUTER_MIX=1 adds both routes, "openrouter" and "openrouter_paid".
 OPENROUTER_PAID_MODELS = {k: v.removesuffix(":free") for k, v in OPENROUTER_MODELS.items()}
 NIM_MODELS = {"gemma-4-31b-it": "google/gemma-4-31b-it"}
 CLOUDFLARE_MODELS = {"gemma-4-26b-a4b-it": "@cf/google/gemma-4-26b-a4b-it"}
@@ -49,7 +41,7 @@ SUBSTITUTE = {"openrouter": lambda: os.environ.get("A11Y_OPENROUTER_MODEL") or "
 
 @dataclass
 class Endpoint:
-    name: str                 # "gemini#1", "cloudflare#2", "nim": shown in logs and the usage summary, never the key
+    name: str                 # e.g. "openrouter": shown in logs and the usage summary, never the key
     kind: str                 # gemini | openrouter | cloudflare | nim
     key: str = field(repr=False)
     rpm: float
@@ -57,10 +49,10 @@ class Endpoint:
     next_slot: float = 0.0
     cooldown_until: float = 0.0
     fails: int = 0            # consecutive server errors/timeouts; reset by a success
-    no_images_until: float = 0.0   # failed a screenshot call: text only until then (D77)
-    max_input_tokens: int = 0      # largest single prompt this key can take (0: no limit we know of) (D81)
-    paid: bool = False             # OpenRouter paid model ids (no ":free"); used only when free ones rest (D92)
-    pin: str = ""                  # OpenRouter host pinned with no fallback (D87, D91)
+    no_images_until: float = 0.0   # failed a screenshot call: text only until then
+    max_input_tokens: int = 0      # largest single prompt this endpoint can take (0: no limit)
+    paid: bool = False             # OpenRouter paid route
+    pin: str = ""                  # OpenRouter provider pinned with no fallback (A11Y_OPENROUTER_PROVIDER)
     _client: object = field(default=None, repr=False)
     _no_json_mode: bool = False
 
@@ -68,7 +60,7 @@ class Endpoint:
         """(the provider's model id, whether it is the same model) or None if this endpoint can't serve it."""
         if self.kind == "gemini":
             return None if "/" in canonical else (canonical, True)   # vendor/model ids are OpenRouter's
-        if self.kind == "openrouter" and "/" in canonical:   # an OpenRouter id (vendor/model) is served as named (D87)
+        if self.kind == "openrouter" and "/" in canonical:   # an OpenRouter id (vendor/model) is served as named
             return canonical, True
         served = {"openrouter": OPENROUTER_PAID_MODELS if self.paid else OPENROUTER_MODELS, "nim": NIM_MODELS, "cloudflare": CLOUDFLARE_MODELS}[self.kind].get(canonical)
         if served:
@@ -83,7 +75,7 @@ class Endpoint:
             from google import genai
             from google.genai import types
             if self._client is None:
-                # Without a timeout a stuck HTTP call can hang a run forever (it happened once); 120 s per call.
+                # 120 s per call, so a stuck HTTP call cannot hang a run.
                 self._client = genai.Client(api_key=self.key, http_options=types.HttpOptions(timeout=120_000))
             parts = [types.Part.from_text(text=prompt)] + [types.Part.from_bytes(data=i, mime_type="image/png") for i in images]
             config = types.GenerateContentConfig(system_instruction=system, temperature=temperature,
@@ -103,9 +95,8 @@ class Endpoint:
             self._client = OpenAI(base_url=base, api_key=self.key, timeout=120, max_retries=0, default_headers=headers)
         content = [{"type": "text", "text": prompt}] + [
             {"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(i).decode()}} for i in images]
-        # 11 Nov 2026: Novita (Qwen3-VL) rejects a plain-string user message that contains any URL (400 "invalid
-        # request"), but accepts the same text as a text part. A11Y_TEXT_AS_PARTS=1 sends text-only prompts that way;
-        # the text the model reads is identical. Off by default, so the Gemma runs are unchanged.
+        # A11Y_TEXT_AS_PARTS=1 sends text-only prompts as a text part in a content list instead of a plain string (some
+        # endpoints require it; reproduce.py sets it for Mistral). The text the model reads is identical.
         parts = bool(images) or os.environ.get("A11Y_TEXT_AS_PARTS") == "1"
         kw = dict(model=model, temperature=temperature, max_tokens=4096,
                   messages=[{"role": "system", "content": system}, {"role": "user", "content": content if parts else prompt}])
@@ -141,9 +132,7 @@ def _gemini_keys() -> list[str]:
 
 def endpoints_from_env() -> list[Endpoint]:
     gem_rpm = float(os.environ.get("A11Y_RPM") or 28)
-    # Google's free tier allows 16,000 input tokens per minute per key for Gemma (quota
-    # GenerateContentInputTokensPerModelPerMinute-FreeTier, seen 3 Nov). The validator's ~59 KB prompt is over that on
-    # its own, so Google refused it every time; such calls go to the other providers (D81).
+    # Largest prompt (in tokens) sent to a Google key; bigger prompts go to other endpoints.
     gem_max = int(os.environ.get("A11Y_GEMINI_MAX_INPUT") or 12000)
     eps = [Endpoint(f"gemini#{i}", "gemini", k, gem_rpm, max_input_tokens=gem_max) for i, k in enumerate(_gemini_keys(), 1)]
     if os.environ.get("OPENROUTER_API_KEY", "").strip():
@@ -166,20 +155,32 @@ def endpoints_from_env() -> list[Endpoint]:
             eps.append(Endpoint(f"cloudflare#{len(seen_accounts)}", "cloudflare", token, cf_rpm, account=acct))
     if os.environ.get("NVIDIA_API_KEY", "").strip():
         eps.append(Endpoint("nim", "nim", os.environ["NVIDIA_API_KEY"].strip(), float(os.environ.get("A11Y_RPM_NIM") or 35)))
-    # A11Y_KEYS=gemini#1,cloudflare#3,...: this process uses only these keys, so two batches can run side by side
-    # without sharing rate limits (D79). Names are numbered before filtering, so they match across processes.
+    # A11Y_KEYS=openrouter,...: this process uses only the named endpoints.
     only = {n.strip() for n in os.environ.get("A11Y_KEYS", "").split(",") if n.strip()}
     return [e for e in eps if e.name in only] if only else eps
 
 
 def probe_png() -> bytes:
-    """A real page screenshot (1280 px wide) for checking that a key answers image calls (D75-D77). A 32x32 test image
-    is not enough: on 2 Nov Google's Gemma answered it in 5 s while every real screenshot, even at 40 KB, timed out."""
-    return (Path(__file__).parent / "probe_screenshot.png").read_bytes()
+    """A page-sized image (1280 x 800, text and boxes like a web page) for checking that an endpoint answers image
+    calls; a tiny test image can be answered while real screenshots are not."""
+    from PIL import Image, ImageDraw
+    img = Image.new("RGB", (1280, 800), "white")
+    d = ImageDraw.Draw(img)
+    d.rectangle((0, 0, 1279, 64), fill=(30, 60, 110))
+    d.text((24, 22), "Example page header  Home  Search  Help", fill="white")
+    for i in range(14):
+        y = 96 + i * 48
+        d.rectangle((24, y, 860, y + 36), outline=(160, 160, 160))
+        d.text((36, y + 12), f"Result {i + 1}: a line of page text with a price, a date and a link", fill=(20, 20, 20))
+        d.rectangle((900, y, 1040, y + 36), fill=(0, 102, 204))
+        d.text((930, y + 12), "Select", fill="white")
+    buf = io.BytesIO()
+    img.save(buf, "PNG")
+    return buf.getvalue()
 
 
 class AllCoolingDown(RuntimeError):
-    """Every endpoint for this model is rate limited for a long time (e.g. all daily caps used)."""
+    """Every endpoint for this model is rate limited for more than 10 minutes."""
 
 
 class Pool:
@@ -192,10 +193,9 @@ class Pool:
         return os.environ.get("A11Y_ALLOW_MIXED", "") == "1"
 
     def acquire(self, canonical: str, on_wait=None, images: bool = False, tokens: int = 0) -> tuple[Endpoint, str, bool]:
-        """Block until some endpoint serving `canonical` may be called; reserve its next slot (pacing). A call with
-        images skips keys that recently failed a screenshot call, unless every key has (D77). A prompt of about
-        `tokens` input tokens skips keys that can't take one that big, unless none that can will be free within 10 min
-        (then it is tried anyway and the caller handles the failure, e.g. the validator marks the task unchecked) (D81)."""
+        """Block until some endpoint serving `canonical` may be called; reserve its next slot (pacing). With several
+        endpoints, a call with images skips ones that recently failed a screenshot call, and a prompt of about `tokens`
+        input tokens skips ones that can't take one that big, unless none that can will be free within 10 min."""
         while True:
             with self._lock:
                 now = time.time()
@@ -211,10 +211,7 @@ class Pool:
                 ready = [(e, m) for e, m in cands if e.cooldown_until <= now]
                 if ready:
                     # Same-model endpoints first; then the healthiest (fewest recent failures); then the one whose next
-                    # pacing slot comes soonest. Without the health term a key that times out kept winning ties
-                    # (2 Nov: each step lost ~10 min to two Google keys timing out while Cloudflare answered in 2 s).
-                    # Free before paid (D92): a paid key counts as 2 s later, so a free key is used whenever its next
-                    # pacing slot is that close, and the paid one takes only the overflow and the free key's rests.
+                    # pacing slot comes soonest (a paid route counts as 2 s later when both routes are configured).
                     e, (served, exact) = min(ready, key=lambda x: (not x[1][1], x[0].fails,
                                                                    max(x[0].next_slot, now) + (2.0 if x[0].paid else 0.0)))
                     slot = max(e.next_slot, now)
@@ -229,7 +226,7 @@ class Pool:
             if cool > 600 and os.environ.get("A11Y_WAIT_FOR_QUOTA") != "1":
                 raise AllCoolingDown(f"every endpoint for {canonical} is rate limited for {int(cool // 60)}+ min")
             # With A11Y_WAIT_FOR_QUOTA=1 (unattended batches) a long rest is waited out in 60 s slices instead, so the
-            # batch resumes when a daily allowance resets rather than failing every remaining site.
+            # batch resumes when the rate limit lifts rather than failing every remaining site.
             if on_wait:
                 on_wait(cool)
             time.sleep(min(cool, 60) + 0.1)
@@ -254,15 +251,14 @@ class Pool:
             e.fails = 0
 
     def no_images(self, e: Endpoint, seconds: float = 1800.0) -> None:
-        """This key timed out on a screenshot: keep it for text calls, send images elsewhere for a while (D77)."""
+        """This endpoint timed out on a screenshot: keep it for text calls, send images elsewhere for a while."""
         with self._lock:
             e.no_images_until = max(e.no_images_until, time.time() + seconds)
 
     def preflight(self, canonical: str, image: bytes) -> list[str]:
         """Which endpoints answer a screenshot call right now (every persona except P1 sends screenshots). Probed in
-        parallel, since a failing key takes the full 120 s timeout. A key that answers is cleared of earlier failures
-        and rests, so the run uses it at once; one that fails is kept for text only for 30 min and isn't re-probed until
-        then (D77). 2 Nov: Google answered text but timed out on every real screenshot."""
+        parallel, since a failing endpoint takes the full 120 s timeout. One that answers is cleared of earlier failures,
+        so the run uses it at once; one that fails is kept for text only for 30 min and isn't re-probed until then."""
         now = time.time()
         todo = [(e, m[0]) for e in self.endpoints
                 if (m := e.model_for(canonical, False)) and e.no_images_until <= now]

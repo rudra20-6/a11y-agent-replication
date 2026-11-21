@@ -1,4 +1,4 @@
-"""The prompts of the constrained agents P1, P2 and P3 (method v3.1), taken from the code itself (a11y_agent/navigator.py
+"""The prompts of the constrained agents P1, P2 and P3 taken from the code itself (a11y_agent/navigator.py
 and personas.yaml), so the PDF shows exactly what the model receives. Renders HTML to PDF with headless Chrome.
 Usage: python experiments/export_prompts.py [out.pdf]   (default: agent_prompts.pdf in the repository root)
 """

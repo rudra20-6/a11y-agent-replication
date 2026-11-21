@@ -1,4 +1,4 @@
-"""Offline check (no LLM) of D104: P2 is told focus is visible when the page draws any indicator (a box-shadow ring, a
+"""Offline check (no LLM): P2 is told focus is visible when the page draws any indicator (a box-shadow ring, a
 ring on the label of a hidden radio, a highlighted option), and invisible when nothing distinguishes the focused
 control (outline removed, nothing else). BenchBook's own focus styles must stay visible.
 

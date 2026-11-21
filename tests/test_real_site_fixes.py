@@ -1,7 +1,7 @@
-"""Offline check (no LLM) of the v2.1 fixes for false positives seen on GOV.UK (D65), on GOV.UK-style markup:
+"""Offline check (no LLM) on GOV.UK-style markup:
 the sighted user clicks a radio's visible label (the hidden radio is what gets checked), then submits the form (a full
 page load, which a screen reader announces by itself). An accessible page: no persona should get a finding.
-Also: what sighted agents are offered to click inside a <main tabindex=-1> (D67).
+Also: what sighted agents are offered to click inside a <main tabindex=-1>.
 
 Usage: python tests/test_real_site_fixes.py      (prints FAILURES: 0 when everything holds)
 """
@@ -41,12 +41,12 @@ def main():
         check("a label resolves to its radio", h.evaluate("e => e.id") == "yes")
         h = _resolve(s, {"click": "#continue"})
         check("a button resolves to itself", h.evaluate("e => e.id") == "continue")
-        # D67: a clickable-looking div inside <main tabindex=-1> must be listed for sighted agents; main and h1 must not
+        # A clickable-looking div inside <main tabindex=-1> must be listed for sighted agents; main and h1 must not
         s.goto(base + "divbutton.html")
         els = [(e["tag"], e["text"]) for e in s.interactive_elements(False)]
         check("a pointer-cursor div inside <main tabindex=-1> is offered to sighted agents", ("div", "Continue") in els, els)
         check("<main>/<h1> with tabindex=-1 are not offered as controls", not any(t in ("main", "h1") for t, _ in els), els)
-        # D68: scrolling after typing in a number field scrolls the page and leaves the value alone
+        # Scrolling after typing in a number field scrolls the page and leaves the value alone
         from a11y_agent.navigator import Navigator
         nav = Navigator(s, "P3", None, 5)
         s.goto(base + "scroll.html")
@@ -61,7 +61,7 @@ def main():
         pool.close()
         httpd.shutdown()
 
-    # D80: a page load that times out is retried (2 Nov: Flipkart lost P1 and P3 for a task to one timeout each)
+    # A page load that times out is retried
     from a11y_agent.browser import Session
 
     class SlowPage:

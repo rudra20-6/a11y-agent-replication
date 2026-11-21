@@ -1,14 +1,15 @@
-"""Method v3 (D97) on the frozen live tasks: what the persona agents reported, per site, and which reports recur.
+"""Kept reports on the frozen live tasks, per site, and which reports recur in both runs.
 
-For each seed tag (default v3s1, v3s2) it reads runs/real-*-<tag>-<site>/results.json and counts, per site:
+For two run tags (default v31s1 and v31s2 in runs/gemma; Mistral: --dir mistral --a v31m1 --b v31m2) it reads
+runs/<dir>/real-*-<tag>-<site>/results.json and counts, per site:
   - kept reports (the verifier's "site" verdict), rule-confirmed (tier A) vs agent only (tier B);
   - stalls (the persona could not finish);
-  - AGREED reports (D101): kept in both seeds for the same task and persona, with the same WCAG SC (first criterion) and
+  - AGREED reports: kept in both runs for the same task and persona, with the same WCAG SC (first criterion) and
     the same control acted on at the reported step, or similar wording (word overlap >= 0.3).
-Reports that may be harness artefacts (D101: a name the harness cut at 50 characters read as the site's truncation)
-are flagged for manual review, not removed.
+Reports about truncated text may come from the harness shortening long names; they are flagged for manual review, not
+removed.
 
-Writes results/<date>/v3_live_summary.md.   Usage: python experiments/v3_live_summary.py [--a v3s1 --b v3s2]
+Writes results/<date>/v3_live_summary.md.   Usage: python experiments/v3_live_summary.py [--dir gemma --a v31s1 --b v31s2]
 """
 import argparse
 import re
@@ -21,9 +22,9 @@ RUNS = ROOT / "runs"
 ARTEFACT = re.compile(r"truncat|cut off|cuts off|cut-off|mid-word", re.I)
 
 
-def load(tag):
+def load(tag, base=RUNS):
     out = {}
-    for d in sorted(RUNS.glob(f"real-*-{tag}-*")):
+    for d in sorted(base.glob(f"real-*-{tag}-*")):
         f = d / "results.json"
         if f.exists():
             site = d.name.split(f"-{tag}-", 1)[1]
@@ -63,12 +64,13 @@ def same(a, b):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--a", default="v3s1")
-    ap.add_argument("--b", default="v3s2")
+    ap.add_argument("--dir", default="gemma", help="folder under runs/ (gemma or mistral)")
+    ap.add_argument("--a", default="v31s1")
+    ap.add_argument("--b", default="v31s2")
     a = ap.parse_args()
-    A, B = load(a.a), load(a.b)
+    A, B = load(a.a, RUNS / a.dir), load(a.b, RUNS / a.dir)
     sites = sorted(set(A) | set(B))
-    L = [f"# Method v3 on the frozen live tasks: agent reports ({a.a} vs {a.b})", "",
+    L = [f"# Kept reports on the frozen live tasks ({a.a} vs {a.b})", "",
          "| Site | kept reports A | B | rule-confirmed A/B | stalls A/B | agreed in both | possible artefacts |", "|---|---|---|---|---|---|---|"]
     agreed_all, flagged = [], []
     tot = {"ka": 0, "kb": 0, "ag": 0}
@@ -89,12 +91,12 @@ def main():
         tot["ka"] += len(ka); tot["kb"] += len(kb); tot["ag"] += len(ag)
         L.append(f"| {s} | {len(ka)} | {len(kb)} | {sum(x['tier'] == 'A' for _, x in ka)}/{sum(x['tier'] == 'A' for _, x in kb)} | "
                  f"{stall(A.get(s, []))}/{stall(B.get(s, []))} | {len(ag)} | {len(art)} |")
-    L += ["", f"Total kept: {tot['ka']} ({a.a}), {tot['kb']} ({a.b}); agreed in both seeds: {tot['ag']}.", "",
-          "## Reports agreed in both seeds", ""]
+    L += ["", f"Total kept: {tot['ka']} ({a.a}), {tot['kb']} ({a.b}); agreed in both runs: {tot['ag']}.", "",
+          "## Reports agreed in both runs", ""]
     for s, t, x, y in agreed_all:
         L.append(f"- **{s}/{t} {x['profile']}** (WCAG {sc1(x.get('sc')) or '?'}, tier {x['tier']}/{y['tier']}): {x['problem'][:200]}"
-                 f"  \n  _seed 2:_ {y['problem'][:160]}")
-    L += ["", "## Possible harness artefacts (review by hand; D101)", ""]
+                 f"  \n  _run 2:_ {y['problem'][:160]}")
+    L += ["", "## Possible harness artefacts (review by hand)", ""]
     L += [f"- {s}/{t} {x['profile']} step {x['step']}: {x['problem'][:200]}" for s, t, x in flagged] or ["- none"]
     out = ROOT / "results" / time.strftime("%Y-%m-%d") / "v3_live_summary.md"
     out.parent.mkdir(parents=True, exist_ok=True)

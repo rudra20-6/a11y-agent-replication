@@ -1,11 +1,10 @@
-# Held-out barriers, written blind to the detection tool (see bench/HELDOUT_GUIDE.md). Same shape as catalog.yaml.
+# Additional hand-written barriers (not used in the paper). Same shape as catalog.yaml.
 #   affects:     profiles whose task this mutant blocks or clearly degrades (a finding here is a true positive)
 #   may_affect:  profiles where a report is defensible (not counted as a false positive, not required)
 #   any other profile reporting it  -> false positive
 #   axe_expected: our prediction of whether axe-core flags it
 #   why:         one sentence on how it stops which user on that task
 # Profiles: P1 screen reader, P2 keyboard only, P3 400% zoom, P4 colour-vision deficiency, P5 voice control.
-# Labels were written before anything was run on these.
 
 mutants:
   - {id: H01_key_trap_from, op: h_key_trap, sel: "#from", task: T1_flight_search, check: Operate, sc: "2.1.2", affects: [P2], may_affect: [P1], severity: blocks, axe_expected: missed, why: "A keyboard-only user who tabs into the From field cannot Tab or Shift+Tab out of it, so they never reach the To field, the date or the Search button."}

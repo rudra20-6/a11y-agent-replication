@@ -1,4 +1,4 @@
-"""Deterministic step checks for the five disability profiles (no LLM).
+"""Deterministic rule checks per user group (no LLM).
 
 Given a task path (steps that a pointer user performs), we replay it once per profile. Before each step we check
 the control the step needs (can this profile reach / identify / operate it?); after each step we check what
@@ -100,7 +100,7 @@ class PathChecker:
         return out
 
     def run_profile(self, profile, start_url, steps, resolve, execute, prepare=None, progress=None) -> list[Finding]:
-        """progress(i, n), if given, is called before each step (for the live dashboard)."""
+        """progress(i, n), if given, is called before each step (for progress events)."""
         vp = Viewport(*SETTINGS.zoom_viewport) if profile == "P3" else Viewport(*SETTINGS.desktop)
         s = self.pool.session(vp)
         if prepare:
@@ -127,8 +127,8 @@ class PathChecker:
                     if target is not None:
                         findings += self.pre_checks(profile, s, i, step, target, before)
                 except Exception as e:
-                    # The page navigated away during a check (e.g. a form that submits itself when a field changes,
-                    # 3 Nov, Ma11y F36): record it and stop this persona's replay instead of losing the whole run.
+                    # The page navigated away during a check (e.g. a form that submits itself when a field changes):
+                    # record it and stop this persona's replay instead of losing the whole run.
                     self.tool_errors.append({"profile": profile, "step": i, "where": "check", "error": str(e)[:200]})
                     break
                 t0 = s.now()
@@ -136,7 +136,7 @@ class PathChecker:
                     execute(s, step)
                 except Exception as e:
                     msg = str(e)
-                    # v2.4 (D86, H12): at 320 px the sighted user's control can sit under a fixed panel. The replay can't
+                    # At 320 px the sighted user's control can sit under a fixed panel. The replay can't
                     # click it because something else is on top: that is evidence for the zoom persona, not a tool fault.
                     if profile == "P3" and target is not None and "intercepts pointer events" in msg:
                         by = re.search(r"<(\w+)[^>]*>", msg.split("intercepts pointer events")[0][-300:])
@@ -321,7 +321,7 @@ class PathChecker:
         if profile != "P1" or kind == "fill":
             return out
         if s.page.evaluate("() => performance.timeOrigin") != b.get("origin"):
-            return out  # a full page load: a screen reader announces the new page itself (D65; GOV.UK false positives)
+            return out  # a full page load: a screen reader announces the new page itself
 
         # Wait briefly for a polite announcement if something visible changed.
         significant = len(new_words) >= 3 or new_dialogs or after["hash"] != b["snap"]["hash"]

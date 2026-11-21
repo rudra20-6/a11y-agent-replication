@@ -1,17 +1,14 @@
-"""RQ1/RQ2 on BenchBook: the FULL method (sighted reference run, rule checks for all five personas, persona agents
-P1-P3, judge with rule corroboration), run end to end on the gold tasks of the clean app and of every barrier.
+"""RQ1/RQ2 on BenchBook: the full method (reference run, rule checks, agents P1-P3, verifier, end-state check and stall
+judge), run end to end on the tasks of the clean app and under every barrier of a catalog.
 
-Scoring, per barrier (catalog.yaml labels), against the clean run of the same task:
-  - a persona is FLAGGED if it has a finding in the barrier run that the clean run doesn't have (same profile, check,
-    message kind, target), or a corroborated agent stall;
-  - flagged and in `affects` -> detected; in `may_affect` -> tolerated; otherwise -> false positive;
-  - every finding on the clean app is a false alarm; so is any flag on a harmless change (check: none).
-Also recorded: which layer found it (rules / agent stall), agent outcomes, unconfirmed stalls, tool errors, effort.
-v2 (D64) scores twice. Tier A is the above. Tier A+B also counts agent-only evidence: a stall the rules don't back, a
-"done" that ends in a different state from the sighted run, an answer with values the agent never perceived. Every
-tier-B finding on the clean app is a false alarm. --personas limits both the run and the labels to those personas.
+The paper's score (score_v3, saved as flagged_v3/tp_v3/fp_v3): a persona flags a barrier by its own stall or by a kept
+problem report that points at the barrier. The paper's numbers are computed from the saved runs by
+experiments/paper_tables.py, with the affected-agent labels in experiments/ma11y_relabel.py (LABELS). The other fields
+(tp/fp from rule findings, *_ab with agent-only evidence) are earlier scores kept in the output for completeness.
+--personas limits both the run and the labels to those personas.
 
-Usage: python experiments/full_bench.py [--catalog dev|heldout] [--only ID,ID] [--personas P1,P2,P3] [--resume FILE [--redo-errors]]
+Usage: python experiments/full_bench.py [--catalog ma11y_path|dev] [--clean-only [--clean-tasks ID,ID]] [--only ID,ID]
+                                        [--personas P1,P2,P3] [--resume FILE [--redo-errors]]
 """
 import argparse
 import json
@@ -31,7 +28,7 @@ from a11y_agent.events import EventLog
 from a11y_agent.llm import LLM, USAGE, QuotaExhausted
 from a11y_agent.pipeline import run_task
 
-PERSONAS = ("P1", "P2", "P3", "P4", "P5")
+PERSONAS = ("P1", "P2", "P3")
 
 
 def fkey(f):
@@ -51,12 +48,12 @@ def run(base, task, mutant, llm, tag, personas=PERSONAS, ev=None, unit_dir=None)
     t = {"id": tag, "goal": task.goal, "start_url": base + task.start}
     t0 = time.time()
     def prepare(s, m=mutant):
-        install_probe(s)   # v3 (D97): on clean runs too, so both are instrumented the same way
+        install_probe(s)   # on clean runs too, so both are instrumented the same way
         install_mutant(s, m)
     extra = {"ev": ev} if ev is not None else {}
     rec = run_task(t, personas, llm, prepare=prepare, agents=True, probe=read_probe, **extra)
     rec["secs"] = round(time.time() - t0)
-    if unit_dir:   # 11 Nov 2026 (A11Y_BENCH_LOG=1): the full record of the unit, untruncated, for walkthroughs
+    if unit_dir:   # A11Y_BENCH_LOG=1: the full record of the unit, untruncated
         unit_dir.mkdir(parents=True, exist_ok=True)
         (unit_dir / f"{tag}.json").write_text(json.dumps(rec, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
     return rec
@@ -82,7 +79,7 @@ def stalled(rec, personas) -> list[str]:
 
 
 def local_reports(m, rec, personas) -> list[dict]:
-    """v3 (D97): kept problem reports that point at the barrier: the action at the reported step or the one before it
+    """Kept problem reports that point at the barrier: the action at the reported step or the one before it
     involved the mutated element (benchmark probe), or the report quotes the mutated element's text."""
     texts = mutated_texts(m) if m else []
     hits = []
@@ -98,7 +95,7 @@ def local_reports(m, rec, personas) -> list[dict]:
 
 
 def score_v3(m, rec, personas, benign, affects) -> dict:
-    """v3 (D97) score, agent-originated only: a persona is flagged by its own stall (task level, as tier A+B) or by a
+    """The paper's score, agent-originated only: a persona is flagged by its own stall (task level) or by a
     kept problem report that points at the barrier. Rules play no part; rule confirmation is reported separately."""
     loc = local_reports(m, rec, personas)
     flagged = sorted(set(stalled(rec, personas)) | {r["profile"] for r in loc})
@@ -123,7 +120,7 @@ def score(m, rec, clean, personas=PERSONAS):
     flagged = [p for p in flagged if p in personas]
     tp = [] if benign else sorted(set(flagged) & set(affects))
     fp = flagged if benign else sorted(set(flagged) - set(affects) - set(m.may_affect))
-    # v2 tier B: agent evidence (stall without rule evidence, end-state mismatch, made-up answer)
+    # with agent-only evidence too (stall without rule evidence, end-state mismatch, made-up answer)
     flagged_b = sorted(set(flagged) | {f["profile"] for f in rec.get("agent_findings", []) if f["profile"] in personas})
     tp_b = [] if benign else sorted(set(flagged_b) & set(affects))
     fp_b = flagged_b if benign else sorted(set(flagged_b) - set(affects) - set(m.may_affect))
@@ -146,12 +143,12 @@ def main():
     ap.add_argument("--resume", default="", help="a previous full_bench json: units already in it are not run again")
     ap.add_argument("--redo-errors", action="store_true",
                     help="with --resume: run again the units where the model/API failed (an agent or the reference run) "
-                         "or a rule-check replay hit a tool error (N2, 30 Oct: a timeout hid the barrier)")
+                         "or a rule-check replay hit a tool error")
     ap.add_argument("--clean-tasks", default="", help="with --clean-only: run only these clean tasks (comma-separated ids)")
     a = ap.parse_args()
     personas = tuple(a.personas.split(","))
     tasks, muts = load_tasks(), load_mutants(CATALOGS[a.catalog])
-    if a.clean_tasks:   # 11 Nov 2026: model comparison on a few clean tasks
+    if a.clean_tasks:   # run only these clean tasks
         tasks = {k: v for k, v in tasks.items() if k in a.clean_tasks.split(",")}
     if a.only:
         muts = {k: v for k, v in muts.items() if k in a.only.split(",")}
@@ -161,7 +158,7 @@ def main():
     llm = LLM(role="nav")
     path = RUNS / f"full_bench_{a.catalog}-{time.strftime('%Y%m%d-%H%M%S')}.json"
     ev, unit_dir = None, None
-    if os.environ.get("A11Y_BENCH_LOG") == "1":   # 11 Nov 2026: event log, screenshots and full unit records
+    if os.environ.get("A11Y_BENCH_LOG") == "1":   # event log, screenshots and full unit records
         run_dir = path.with_suffix("")
         run_dir.mkdir(parents=True, exist_ok=True)
         ev, unit_dir = EventLog(run_dir), run_dir / "units"
@@ -199,7 +196,7 @@ def main():
             c = clean[tid]
             kept = [(r["profile"], r["problem"][:60]) for r in c.get("agent_reports", []) if r.get("kept")]
             print(f"clean {tid:22s} findings {len(c.get('findings', []))} | unconfirmed {len(c.get('unconfirmed_stalls', []))} | "
-                  f"v3 reports kept {len(kept)} {kept} | "
+                  f"reports kept {len(kept)} {kept} | "
                   f"agents {[(p, v['status']) for p, v in c.get('profiles', {}).items()]} | {c.get('invalid') or ''} {c['secs']}s", flush=True)
             save()
         done = {r['mutant'] for r in rows}
@@ -233,7 +230,7 @@ def main():
           f"tier A+B: recall {sum(len(r.get('tp_ab', [])) for r in real)}/{pairs} | FP personas on barriers "
           f"{sum(len(r.get('fp_ab', [])) for r in rows)} | agent findings on clean app "
           f"{sum(len(c.get('agent_findings', [])) for c in clean.values())}\n"
-          f"v3 (agent-originated: a stall, or a kept report at the barrier): recall {sum(len(r.get('tp_v3', [])) for r in real)}/{pairs} "
+          f"paper score (a stall, or a kept report at the barrier): recall {sum(len(r.get('tp_v3', [])) for r in real)}/{pairs} "
           f"(by reports {sum(len(r.get('tp_v3_reports', [])) for r in real)}) | FP personas on barriers "
           f"{sum(len(r.get('fp_v3', [])) for r in rows)} | kept reports on clean app "
           f"{sum(1 for c in clean.values() for x in c.get('agent_reports', []) if x.get('kept'))}\n"

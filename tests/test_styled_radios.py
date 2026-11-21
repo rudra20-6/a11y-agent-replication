@@ -1,4 +1,4 @@
-"""Offline check (no LLM) of D95: a radio whose real input is invisible and whose label draws the state (the GOV.UK
+"""Offline check (no LLM): a radio whose real input is invisible and whose label draws the state (the GOV.UK
 pattern) shows its drawn state to the clicking personas, and a click on its label is reported as a tick, not as
 "nothing visible changed". A visible native checkbox keeps its state on the input, not on its label.
 
@@ -49,7 +49,7 @@ def main() -> int:
             check(f"{mode}: a visible checkbox's label does not carry its state",
                   all(not e["checked"] for e in plain if e["tag"] == "label"), plain)
             lab = [e for e in plain if e["tag"] == "label"]
-            if lab:   # v3 (D97): a visible tick is reported too (v2.5 reported only ticks drawn on a label)
+            if lab:   # a visible tick is reported too
                 res, _ = nav.act({"type": "click", "ref": lab[0]["ref"]})
                 check(f"{mode}: a visible checkbox's label click reports the tick", "it is now ticked" in res, res)
             s.close()

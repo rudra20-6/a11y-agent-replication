@@ -4,7 +4,7 @@
   const log = [];          // announcements (what a screen reader would be told)
   const focusLog = [];     // focus movements
   let nextId = 1;
-  let inField = null;      // v3.1 (D108): the text field whose change/input event is being handled
+  let inField = null;      // the text field whose change/input event is being handled
   const mark = (k, v) => { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (_) {} };
   try {
     const submit0 = HTMLFormElement.prototype.submit;
@@ -21,7 +21,7 @@
     const s = getComputedStyle(e);
     return s.visibility !== 'hidden' && s.display !== 'none' && parseFloat(s.opacity) > 0.01;
   };
-  // v2.4 (D86, H03): text cut off by an ancestor with overflow other than visible (e.g. a fare clipped to its card)
+  // Text cut off by an ancestor with overflow other than visible (e.g. a fare clipped to its card)
   // is in the DOM and in the viewport, but a sighted user can't read it.
   const clippedOut = (textNode) => {
     const rg = document.createRange();
@@ -43,14 +43,14 @@
     return 'el:' + e.dataset.aaId;
   };
   const clean = (t) => (t || '').replace(/\s+/g, ' ').trim();
-  // A rough accessible-name approximation, used only for logs; real names come from the AX tree.
+  // A rough accessible-name approximation for control lists and focus feedback; P1 and the rule checks use AX-tree names.
   const roughName = (e) => clean(e.getAttribute('aria-label') ||
       (e.labels && e.labels[0] && e.labels[0].innerText) || e.getAttribute('title') ||
       e.getAttribute('alt') || e.innerText || e.value || e.getAttribute('placeholder') || '').slice(0, 80);
 
   const liveSel = '[aria-live]:not([aria-live="off"]), [role="status"], [role="alert"], [role="log"]';
   const record = (region, kind) => {
-    // v2.4 (D86, H08): a screen reader never announces a live region inside aria-hidden content.
+    // A screen reader never announces a live region inside aria-hidden content.
     if (region.closest && region.closest('[aria-hidden="true"]')) return;
     const text = clean(region.innerText || region.textContent);
     if (!text) return;
@@ -76,7 +76,7 @@
       const e = ev.target;
       focusLog.push({ t: performance.now(), ref: e.dataset ? tag(e) : null, tag: e.tagName ? e.tagName.toLowerCase() : null, name: roughName(e) });
     }, true);
-    // v3.1 (D108): a page that changes context on input (Ma11y F36: the field's onchange calls form.submit()). The page
+    // A page that changes context on input (a field's onchange calls form.submit()). The page
     // helper wraps HTMLFormElement.submit (top of this file); a call made while a text field's change/input event is being handled
     // is recorded in sessionStorage, which survives the reload. A submit button, Enter's implicit submission and a
     // link are not recorded: they are requested by the user.
@@ -133,8 +133,7 @@
     interactiveElements: (viewportOnly) => {
       const sel = 'a[href], button, input, select, textarea, summary, [role=button], [role=link], [role=checkbox], [role=radio], ' +
                   '[role=tab], [role=option], [role=menuitem], [role=switch], [role=slider], [role=combobox], [role=gridcell], [onclick], ' +
-                  // tabindex=-1 marks a focus target (a skip-link <main>, a heading the router focuses), not a control; as a
-                  // candidate it hid every pointer-cursor control inside it from sighted agents (D67)
+                  // tabindex=-1 marks a focus target (a skip-link <main>, a heading the router focuses), not a control
                   '[tabindex]:not([tabindex="-1"])';
       const cands = new Set(document.querySelectorAll(sel));
       // Things that *look* clickable to a sighted user, even if nothing tells the browser so.
@@ -151,11 +150,11 @@
         const r = e.getBoundingClientRect();
         const inView = r.bottom > 0 && r.right > 0 && r.top < innerHeight && r.left < innerWidth;
         if (viewportOnly && !inView) continue;
-        // v2.5 (D95): a styled radio/checkbox (GOV.UK, NHS) hides the real input and draws its state on the label, so the
-        // label carries the drawn state; listing it without one sent REF clicking "Yes" until it gave up.
+        // A styled radio/checkbox hides the real input and draws its state on the label, so the label carries the drawn
+        // state.
         const hiddenCtl = e.tagName === 'LABEL' && e.control && ['checkbox', 'radio'].includes(e.control.type) && !visible(e.control);
         out.push({ ref: tag(e), tag: e.tagName.toLowerCase(), role: e.getAttribute('role'), type: e.type || null,
-                   text: roughName(e), checked: e.checked === true || (hiddenCtl && e.control.checked),   // v2.4 (D86, N3): visual personas get drawn state only; ARIA state is P1's (AX tree)
+                   text: roughName(e), checked: e.checked === true || (hiddenCtl && e.control.checked),   // visual personas get drawn state only; ARIA state is P1's (AX tree)
                    disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
                    value: (e.value !== undefined && e.tagName !== 'BUTTON') ? String(e.value).slice(0, 40) : null,
                    rect: [Math.round(r.left), Math.round(r.top), Math.round(r.width), Math.round(r.height)], inView });
@@ -200,8 +199,8 @@
     },
 
     styleSigOf: (el) => styleSig(el),
-    // v3.1 (D104): would a sighted keyboard user see where focus is? Any drawn indicator counts, not only an outline: a
-    // box-shadow ring, a ring drawn on the label of a hidden radio/checkbox (GOV.UK), or a background, colour, border
+    // Would a sighted keyboard user see where focus is? Any drawn indicator counts, not only an outline: a
+    // box-shadow ring, a ring drawn on the label of a hidden radio/checkbox, or a background, colour, border
     // or underline that differs from an unfocused neighbour of the same kind (a highlighted suggestion). Without a
     // neighbour to compare with, a missing outline and shadow counts as not shown. No blur/refocus (that would close
     // open suggestion lists while the persona is using them).
@@ -224,7 +223,7 @@
       return ['backgroundColor', 'color', 'borderTopColor', 'borderTopWidth', 'textDecorationLine', 'fontWeight'].some((k) => s[k] !== t[k]);
     },
 
-    // v3.1 (D108): read and clear the unload record (see the listeners in observe()). 'leftField' is the name of the field
+    // Read and clear the unload record (see the listeners in observe()). 'leftField' is the name of the field
     // whose committed value reloaded the page, or null.
     unloadCause: (clear) => {
       let rec = null;

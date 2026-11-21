@@ -18,7 +18,7 @@ also be rerun (section 3).
 | `data/task_generation/` | The planning sessions behind those tasks: the explored pages and task cards with validator verdicts (`plan.json`), the reference agent's attempt at each card (`results.json`), `meta.json`, `report.md` |
 | `data/axe_ma11y_bench_path.json` | axe (and rule-check) results on every barrier, Ma11y's oracle |
 | `data/ma11y_reach.json` | Reach test: whether each barrier fires when each agent performs the task step its own way |
-| `data/clean_causes_mistral.md` | Manual classification of every kept report on the clean application (Mistral) |
+| `data/clean_causes_gemma.md`, `data/clean_causes_mistral.md` | Manual classification of every kept report on the clean application, per model (the paper's table of false positives) |
 | `runs/gemma/`, `runs/mistral/` | The saved runs of the paper, one folder per model (section 4) |
 | `experiments/` | Scripts that produced the runs and the tables |
 | `results/paper_tables.md` | Output of `experiments/paper_tables.py`: the paper's numbers recomputed from `runs/` |
@@ -84,7 +84,8 @@ copy .env.example .env            # macOS/Linux: cp .env.example .env ; then set
 Check the setup without calling a model (about 5 minutes):
 
 ```
-python tests/test_gold.py                          # every task completes on BenchBook, and with a mouse under every barrier
+python tests/test_gold.py --catalog ma11y_path     # every task's scripted path completes on BenchBook, and with a mouse
+                                                   # under each of the 23 barriers (MP_F36_T3 breaks the path by design)
 python experiments/ma11y_bench.py --placement path  # axe and the rule checks on every barrier
 ```
 
@@ -137,6 +138,10 @@ It groups the new files by the model recorded in them and prints the same tables
 - **Live sites** change between visits (content, advertisements, pop-ups, redesigns). Some tasks may no longer be
   possible, and findings will differ. The paper reports how much two runs a day apart agree; a rerun months later will
   agree less.
+- **Step limits.** The reference agent, P1 and P2 may take up to 35 steps per task, and P3 up to 25
+  (`AGENT_STEPS` in `a11y_agent/pipeline.py`). P1 and P2 move through a page one key press at a time, so a task takes
+  them many more steps. P3 clicks controls directly, like the reference agent, and needs fewer. Every saved run used
+  these limits; each run's `events.jsonl` records them in its `agent_start` events.
 - **Model availability.** If a model is withdrawn from OpenRouter, set any OpenRouter model ID in `experiments/reproduce.py`
   (`MODELS`), or set `A11Y_NAV_MODEL`, `A11Y_PLANNER_MODEL`, `A11Y_JUDGE_MODEL` and `A11Y_VALIDATOR_MODEL` and run the
   scripts in the table directly.

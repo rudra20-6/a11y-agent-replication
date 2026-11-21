@@ -13,15 +13,13 @@ class _Quiet(http.server.SimpleHTTPRequestHandler):
         pass
 
     def do_POST(self):
-        """A static copy has no server code: a form POST gets the page it targets, not a 501 (the W3C demo's forms,
-        D70). Server-side behaviour (validation messages) is therefore missing from local copies."""
+        """A static server has no server code: a form POST gets the page it targets, not a 501."""
         self.rfile.read(int(self.headers.get("Content-Length") or 0))
         self.do_GET()
 
 
 class _Server(http.server.ThreadingHTTPServer):
-    # The default backlog is 5: six browser sessions loading an image-heavy page at once (the W3C demo) overflowed it
-    # and Windows refused connections, so two persona agents never started (30 Oct, D70).
+    # The default backlog (5) can overflow when several browser sessions load a page at once.
     request_queue_size = 128
     daemon_threads = True
 

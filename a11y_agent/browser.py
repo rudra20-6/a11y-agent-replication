@@ -65,9 +65,7 @@ class Session:
 
     def goto(self, url: str) -> None:
         # A refused or reset connection on the first load is the network or server, not the site's accessibility: try
-        # again before giving up (30 Oct: two persona agents lost a W3C-demo task to one refused connection). A load that
-        # times out is retried too, after a longer pause: 2 Nov, Flipkart's home page timed out for P1 and P3, which
-        # started within 0.5 s of P2, so both personas were lost for that task (D80).
+        # again before giving up. A load that times out is retried too, after a longer pause.
         for attempt in range(3):
             try:
                 self.page.goto(url, wait_until="domcontentloaded", timeout=60000)

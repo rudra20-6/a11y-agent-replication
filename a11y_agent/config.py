@@ -27,8 +27,7 @@ _load_dotenv(ROOT / ".env")
 @dataclass
 class Settings:
     gemini_api_key: str = field(default_factory=lambda: os.environ.get("GEMINI_API_KEY", ""))
-    # Free-tier Gemini Flash models allow only 20 requests/day each (Pro: 0), far too few for agent runs.
-    # Gemma 4 on the same API has far looser limits, so it is the default. Override in .env with a paid key.
+    # One model for every role by default; set A11Y_NAV_MODEL etc. in .env to use another (see .env.example).
     nav_model: str = field(default_factory=lambda: os.environ.get("A11Y_NAV_MODEL") or "gemma-4-26b-a4b-it")
     judge_model: str = field(default_factory=lambda: os.environ.get("A11Y_JUDGE_MODEL") or "gemma-4-26b-a4b-it")
     planner_model: str = field(default_factory=lambda: os.environ.get("A11Y_PLANNER_MODEL") or "gemma-4-26b-a4b-it")

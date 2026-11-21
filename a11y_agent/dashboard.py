@@ -18,6 +18,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from .config import ROOT, RUNS, SETTINGS
+from .providers import POOL
 
 PAGE = (Path(__file__).parent / "dashboard.html").read_text(encoding="utf-8")
 PROCS: dict[str, subprocess.Popen] = {}
@@ -59,7 +60,7 @@ def list_runs() -> list[dict]:
         res = _json(d.parent / "results.json", {}) or {}
         rs = res.get("results", [])
         agent = lambda f: (f.get("evidence") or {}).get("source") == "agent"
-        # v3 (D97): what the agents found (kept reports, stalls) is counted apart from the rule findings
+        # What the agents found (kept reports, stalls) is counted apart from the rule findings
         m.update(id=run, findings=sum(1 for r in rs for f in r.get("findings", []) if not agent(f)),
                  agent_findings=sum(sum(1 for x in r.get("agent_reports", []) if x.get("kept")) + len(r.get("agent_findings", []))
                                     + sum(1 for f in r.get("findings", []) if agent(f)) for r in rs))
@@ -124,7 +125,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             return None
         if parts == ["api", "status"]:
-            return self._send({"model": SETTINGS.nav_model, "key": bool(SETTINGS.gemini_api_key), "runs_dir": str(RUNS)})
+            return self._send({"model": SETTINGS.nav_model, "key": bool(POOL.endpoints), "runs_dir": str(RUNS)})
         if parts == ["api", "runs"]:
             return self._send(list_runs())
         if len(parts) >= 3 and parts[:2] == ["api", "runs"] and RUN_ID.match(parts[2]):
@@ -162,8 +163,8 @@ class Handler(BaseHTTPRequestHandler):
             url = (body.get("url") or "").strip()
             if not re.match(r"^https?://", url):
                 return self._send({"error": "Enter a full URL starting with http:// or https://"}, 400)
-            if not SETTINGS.gemini_api_key:
-                return self._send({"error": "No GEMINI_API_KEY in .env"}, 400)
+            if not POOL.endpoints:
+                return self._send({"error": "No API key in .env (see .env.example)"}, 400)
             profiles = ",".join(p for p in body.get("profiles", ["P1", "P2", "P3", "P4", "P5"]) if p in ("P1", "P2", "P3", "P4", "P5"))
             run_id = start_run(url, max(1, min(8, int(body.get("tasks", 3)))), profiles or "P1,P2,P3,P4,P5", bool(body.get("agents", True)))
             return self._send({"id": run_id})

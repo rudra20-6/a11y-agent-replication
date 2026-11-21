@@ -1,4 +1,4 @@
-// Ma11y's 25 WCAG-failure mutation operators, ported to run inside the page (S3, D84).
+// Ma11y's 25 WCAG-failure mutation operators, ported to run inside the page.
 //
 // Source: Tafreshipour, Deshpande, Mehralian, Ahmed, Malek. "Ma11y: A Mutation Framework for Web Accessibility
 // Testing", ISSTA 2024, doi:10.1145/3650212.3652113 (Table 1). Code: github.com/mahantaf/web-a11y-tool-analyzer at
@@ -39,8 +39,8 @@
       (!role || (role !== 'presentation' && role !== 'none')) &&
       (!ariaHidden || ariaHidden.toLowerCase() === 'false') && !hasHiddenParent;
   };
-  // Task-path placement (D85): with {placement: 'path', path: [css...]} an operator keeps its own conditions and
-  // mutation but may only take an element that is one of the gold path's controls, inside one, or contains one.
+  // Task-path placement: with {placement: 'path', path: [css...]} an operator keeps its own conditions and
+  // mutation but may only take an element that is one of the scripted path's controls, inside one, or contains one.
   // Page-wide operators (F24, F25, F77) have no position and don't apply under this placement.
   const PATH = (cfg[0] && cfg[0].placement === 'path') ? (cfg[0].path || []) : null;
   const nearPath = (e) => !PATH || PATH.some((sel) => {
@@ -126,7 +126,7 @@
       const t = document.querySelector('title');
       if (!t || !document.title.trim()) return;
       // Only when the app has put its own title back: setting it unconditionally changes the DOM, which re-runs the
-      // operators, which sets it again (an endless loop that froze the page on 3 Nov).
+      // operators, which would set it again in an endless loop.
       if (document.title !== RANDOM) document.title = RANDOM;
       return t;
     },

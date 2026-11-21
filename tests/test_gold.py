@@ -1,4 +1,5 @@
-"""Every gold path completes on the clean app, and (with a mouse) under every mutant."""
+"""Every scripted path completes on the clean app, and (with a mouse) under every barrier of a catalog
+(--catalog ma11y_path for the paper's 23; MP_F36_T3 breaks the path by design). Run from the package root."""
 import sys, traceback
 sys.path.insert(0, '.')
 from a11y_agent.benchserver import serve

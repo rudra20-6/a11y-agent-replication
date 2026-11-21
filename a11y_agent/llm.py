@@ -1,5 +1,5 @@
-"""Thin LLM wrapper: JSON answers, optional images, retries, on-disk cache, token accounting. Calls rotate across every
-configured API key that serves the model (providers.py, D71)."""
+"""Thin LLM wrapper: JSON answers, optional images, retries, optional on-disk answer cache (A11Y_NO_CACHE=1 turns it
+off), token accounting. Endpoints are set up in providers.py."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ class LLMError(RuntimeError):
 
 
 class QuotaExhausted(LLMError):
-    """Daily free-tier quota used up for this model: retrying won't help until it resets."""
+    """Every endpoint for this model is rate limited for a long time: retrying won't help until the limit lifts."""
 
 
 class Usage:
@@ -52,7 +52,7 @@ class Usage:
     def summary(self) -> dict:
         out = {k: dict(v) for k, v in self.by_role.items()}
         if self.by_endpoint:
-            out["endpoints"] = dict(self.by_endpoint)  # which key answered how many calls; substitutes are named
+            out["endpoints"] = dict(self.by_endpoint)  # which endpoint answered how many calls
         return out
 
 
@@ -79,8 +79,7 @@ def _emit(kind: str, **data) -> None:
 
 
 def _estimate_tokens(system: str, prompt: str, images: list[bytes]) -> int:
-    """Rough input size, erring high: ~3.5 characters per token (a 60,160-character prompt was over Google's 16,000
-    tokens per minute on its own), plus ~300 tokens per screenshot."""
+    """Rough input size, erring high: ~3.5 characters per token, plus ~300 tokens per screenshot."""
     return int((len(system) + len(prompt)) / 3.5) + 300 * len(images)
 
 
@@ -97,8 +96,7 @@ class LLM:
     def __init__(self, model: str | None = None, role: str = "nav", use_cache: bool = True):
         from .providers import POOL
         if not POOL.endpoints:
-            raise LLMError("No API key. Put GEMINI_API_KEY (and optionally GEMINI_API_KEY_2, OPENROUTER_API_KEY, "
-                           "NVIDIA_API_KEY) in a11y-agent/.env (see .env.example).")
+            raise LLMError("No API key. Put OPENROUTER_API_KEY in .env at the package root (see .env.example).")
         self.pool = POOL
         self.model = model or {"judge": SETTINGS.judge_model, "planner": SETTINGS.planner_model}.get(role, SETTINGS.nav_model)
         self.role = role
@@ -146,7 +144,7 @@ class LLM:
         last, temp = None, temperature
         t_call = time.time()
         _emit("llm_start", role=self.role, model=self.model, prompt_kb=round(len(prompt) / 1024, 1), images=len(images))
-        # A rate-limited endpoint is set aside and the next one tried at once, so each extra key adds attempts.
+        # With several endpoints, a rate-limited one is set aside and the next one tried at once.
         tries = max_retries + max(0, len(self.pool.endpoints) - 1)
         for attempt in range(tries):
             try:
@@ -173,15 +171,11 @@ class LLM:
                 last = e
                 msg = str(e)
                 wait = 0.0
-                # Cloudflare's free plan stops at 10,000 neurons a day. Its exact error wording isn't documented, so any
-                # mention of the daily allocation counts, whatever the status code. The allowance does not come back at
-                # 00:00 UTC as first assumed: on 3 Nov one account recovered at ~04:00 IST and six were still capped at
-                # 05:45, consistent with a rolling 24 h window. So a capped account is re-tried hourly (D83).
-                cf_daily = ep.kind == "cloudflare" and any(c in msg.lower() for c in ("4006", "daily free allocation", "neurons"))
-                # A revoked or blocked key (2 Nov: Google answered "Your API key was reported as leaked", 403) never
-                # recovers. Before this, a 403 didn't rest the key, so it kept winning the pick and took all 18 tries.
+                # A daily allocation message from Cloudflare: the endpoint is re-tried hourly.
+                cf_daily = ep.kind == "cloudflare" and any(c in msg.lower() for c in ("4006", "daily allocation"))
+                # A revoked or invalid key (401/403) never recovers: rest it so other endpoints take its calls.
                 dead = len(self.pool.endpoints) > 1 and any(c in msg for c in (
-                    "PERMISSION_DENIED", "API_KEY_INVALID", "API key not valid", "reported as leaked", "401"))
+                    "PERMISSION_DENIED", "API_KEY_INVALID", "API key not valid", "401"))
                 if dead:
                     self.pool.cool(ep, 7 * 24 * 3600)
                 elif "429" in msg or "RESOURCE_EXHAUSTED" in msg or cf_daily:
@@ -189,24 +183,23 @@ class LLM:
                         "limit: 0" in msg and "PerMinute" not in msg)
                     secs = min(3600.0, _secs_to_utc_midnight()) if cf_daily else (
                         _retry_seconds(msg) or _retry_after(e) or (3 * 3600 if daily else 60))
-                    self.pool.cool(ep, secs)   # this key rests; the next call goes to another one
+                    self.pool.cool(ep, secs)   # this endpoint rests for the time the provider asks
                 else:
-                    # Gemma returns random 500/503s on ~25% of calls. With several keys, rest this one briefly and
-                    # move on; with one key, back off as before (bursts can last minutes, up to ~4 min in total).
+                    # Transient server errors (500/503/504, timeouts): with one endpoint, back off and retry; with
+                    # several, rest this one briefly and move on.
                     transient = any(c in msg for c in ("500", "503", "504", "timed out", "Connection", "getaddrinfo"))
                     if len(self.pool.endpoints) > 1 and images and "timed out" in msg:
-                        # 2 Nov: Google's Gemma answered text but hung on every screenshot. Keep the key for text
-                        # (P1, planner, judge) and send screenshots to the other keys for 30 min (D77).
+                        # An endpoint that times out on screenshots is kept for text calls; images go elsewhere.
                         self.pool.no_images(ep)
                     elif len(self.pool.endpoints) > 1 and transient:
                         self.pool.failed(ep, timeout="timed out" in msg)
                     else:
                         wait = 1.5 + random.random() if (transient and attempt < 3) else min(60, (2 ** attempt) * 3 + random.random())
-                unreadable = isinstance(e, json.JSONDecodeError)   # at temperature 0 the same reply comes back (D82)
+                unreadable = isinstance(e, json.JSONDecodeError)   # at temperature 0 the same reply would come back
                 if unreadable or "504" in msg or "timed out" in msg or ("500" in msg and attempt >= 2):
                     # A 504 (or a client timeout) on a long prompt repeats if the model makes the same long generation
                     # every time; at temperature 0 it does. Retry with a little randomness instead. Same for a 500 that
-                    # survives the quick retries: on 29 Oct the zoom persona lost 3 runs to one request failing 8 times.
+                    # survives the quick retries.
                     temp = max(temperature, 0.4)
                 if attempt + 1 < tries:
                     _emit("llm_retry", role=self.role, attempt=attempt + 1, of=tries, reason=_reason(msg), endpoint=ep.name,
@@ -262,9 +255,7 @@ def parse_json(text: str) -> dict:
     try:
         return json.loads(text)
     except json.JSONDecodeError as first_error:
-        # The first complete object wins, whatever follows it. 3 Nov: Gemma sometimes answered with one JSON object
-        # followed by a second; taking everything between the first "{" and the last "}" failed with "Extra data", and
-        # at temperature 0 it did so 13 times in a row, losing Wikipedia's reference run (D82).
+        # The first complete object wins, whatever follows it: a reply can contain one JSON object followed by another.
         decoder = json.JSONDecoder()
         for m in re.finditer(r"\{", text):
             try:

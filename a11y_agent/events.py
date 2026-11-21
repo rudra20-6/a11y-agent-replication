@@ -27,7 +27,7 @@ class EventLog:
             tmp = self.live_dir / f".{name}.tmp"
             tmp.write_bytes(data)
             os.replace(tmp, self.live_dir / f"{name}.jpg")
-            if os.environ.get("A11Y_KEEP_SHOTS") == "1":   # 11 Nov 2026: also keep every step's view, for the paper
+            if os.environ.get("A11Y_KEEP_SHOTS") == "1":   # A11Y_KEEP_SHOTS=1: also keep every step's screenshot
                 with self._lock:
                     self._shot_n[name] = n = self._shot_n.get(name, 0) + 1
                 steps = self.live_dir / "steps"

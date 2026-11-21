@@ -1,4 +1,4 @@
-"""Label check for the Ma11y task-path units (D113): does each injected barrier actually reach each persona?
+"""Label check for the Ma11y task-path units: does each injected barrier actually reach each persona?
 
 No model is involved. For every unit and persona, the gold path is replayed with plain pointer actions up to the first
 step that touches the mutated element; that step is then performed the way the persona's harness performs it
@@ -13,7 +13,7 @@ step that touches the mutated element; that step is then performed the way the p
 Recorded: windows opened, form submits, whether focus reached and stayed on the control, and for P1 the accessibility
 node of the control plus whether the mutated text or a column header appears in what P1 reads.
 
-Usage: python experiments/ma11y_reach.py   (writes results/<date>/ma11y_reach.json)
+Usage: python experiments/ma11y_reach.py   (writes results/<date>/ma11y_reach.json; the paper's copy is data/ma11y_reach.json)
 """
 import json
 import re

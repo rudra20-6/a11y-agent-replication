@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  /* Monochrome, after x.ai and agentic.ai: near-black ink on white, zinc greys, hairline rules, black pill actions.
+  /* Monochrome: near-black ink on white, zinc greys, hairline rules, black pill actions.
      Colour only where it carries meaning (status). Every text colour passes WCAG AA on its background. */
   :root {
     --ink:#0a0a0a; --ink2:#3f3f46; --mute:#63636b; --faint:#a1a1aa; --line:#e4e4e7; --line2:#f0f0f2; --bg:#fafafa; --card:#fff;
@@ -125,7 +125,7 @@
   .stats b { display:block; font-size:26px; font-weight:500; letter-spacing:-.03em; line-height:1.15; font-variant-numeric:tabular-nums; }
   .stats span { font-size:12.5px; color:var(--mute); }
 
-  /* Tabs: text with an underline, as in the references */
+  /* Tabs: text with an underline */
   .tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:24px 0 20px; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; }
   .tabs [role=tab] { height:42px; padding:0; border:0; border-radius:0; background:none; color:var(--mute); font-weight:500;
                      border-bottom:2px solid transparent; margin-bottom:-1px; }
@@ -199,7 +199,7 @@
   .vfind { font-size:13px; margin:4px 0 0; padding-left:18px; }
   h4.sub { font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--mute); margin:20px 0 8px; }
 
-  /* Findings (v3: the agents' own reports first) */
+  /* Findings: the agents' own reports first */
   .flist { display:grid; gap:10px; margin:0 0 30px; padding:0; list-style:none; }
   .fitem { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:grid; grid-template-columns:44px minmax(0,1fr); gap:4px 12px; }
   .fitem .who { font:500 12px var(--mono); padding-top:2px; }
@@ -573,7 +573,7 @@ function drawGrid(plan, meta) {
 
 const PNAME = { P1: 'Screen reader', P2: 'Keyboard only', P3: '400% zoom', P4: 'Colour vision', P5: 'Voice control' };
 function agentEvidence(results) {
-  // v3 (D97): what the persona agents found themselves: verified problem reports, and tasks they could not finish.
+  // What the persona agents found themselves: verified problem reports, and tasks they could not finish.
   const out = [];
   for (const r of ((results && results.results) || [])) {
     for (const x of (r.agent_reports || [])) if (x.kept) out.push({ task: r.task.goal, profile: x.profile, step: x.step,

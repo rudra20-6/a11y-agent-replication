@@ -33,10 +33,9 @@ anything may be stale.
 Reply with ONE JSON object: {"thought": "<one or two sentences>", "action": {...}} (add "problem": "..." only when
 your profile asks you to report problems and you have one to report)."""
 
-# v3 (D97): the persona agents are the testers. Besides doing the task they report what made it harder for someone like
-# them, tied to the step where they noticed it, even when they finish. A finished task used to produce no agent evidence
-# at all (Ma11y: new windows, pages changing on input, finished every time and never reported). The problem types are the
-# ones screen-reader and keyboard users report most (WebAIM Screen Reader Survey #10), stated generally.
+# The persona agents are also the testers. Besides doing the task they report what made it harder for someone like
+# them, tied to the step where they noticed it, even when they finish. The problem types are the ones screen-reader and
+# keyboard users report most (WebAIM Screen Reader Survey #10), stated generally.
 TESTER = """YOU ARE ALSO THE TESTER. Besides doing the task, notice what makes it harder for someone like you than it should
 be. When the result of your last action, or what you perceive now, shows such a problem, add "problem": "<what the site
 did, in your own words, as you perceived it>" to that reply; otherwise leave "problem" out. Typical problems people like
@@ -92,7 +91,7 @@ PERSONA: You have a motor impairment and cannot use a mouse; you use only the ke
 # How each profile perceives and acts. Prompt-only personas get REF's perception and actions (only their prompt differs).
 MODE = {"P1T": "REF", "P2T": "REF"}
 
-# Persona-driven context (P1.1, D23/D24): P1–P3 get their context from the persona cards in personas.yaml. The action
+# P1–P3 get their context from the persona cards in personas.yaml. The action
 # formats stay as written above, because the harness enforces exactly those actions.
 PERSONAS = yaml.safe_load((Path(__file__).parent / "personas.yaml").read_text(encoding="utf-8"))
 
@@ -110,8 +109,8 @@ for _pid, _c in PERSONAS.items():
                            f"{_actions_part(PROFILE_RULES[_pid])}\n"
                            f"WHAT EXPERIENCED USERS DO: {_c['strategies']}\n{_c['do_not_assume']}\n\n{TESTER}")
 
-# v3 (D97): a screen reader reads a word written with spaces between its letters ("S e a r c h") letter by letter; the
-# model read it as the word (Ma11y F32, missed in 3/3 seeds). P1 is told how it is spoken.
+# A screen reader reads a word written with spaces between its letters ("S e a r c h") letter by letter; P1 is told how
+# it is spoken.
 SPACED = re.compile(r"(?<![\w])((?:[A-Za-z] ){2,}[A-Za-z])(?![\w])")
 # ... and a name that is nothing but spaced single characters ("2 1", a date written with a space) is read character by
 # character too: "two, one", not "twenty-one".
@@ -135,14 +134,14 @@ class Step:
     target_selector: str | None = None
     t: float = field(default_factory=time.time)
     fallback: str | None = None   # how a click/type was rescued: "re-found", "direct click", "escape" (comma separated)
-    problem: str | None = None    # v3 (D97): what the persona reported as a problem at this step, in its own words
+    problem: str | None = None    # what the persona reported as a problem at this step, in its own words
     probe: dict | None = None     # benchmark only: what the harness probe saw at this step (e.g. the barrier was touched)
-    target: str | None = None     # v3 (D97): what the action was done on, as the persona knew it (role and name)
-    focus_px: str | None = None   # v3.1 (D109): P2 pixel check where focus went: 'visible', 'invisible' or None (not checked)
+    target: str | None = None     # what the action was done on, as the persona knew it (role and name)
+    focus_px: str | None = None   # P2 pixel check where focus went: 'visible', 'invisible' or None (not checked)
 
 
 def effort(steps: list) -> dict:
-    """Effort of a run (D26): actions taken and key presses, so a finished task can still show what it cost."""
+    """Effort of a run: actions taken and key presses, so a finished task can still show what it cost."""
     return {"actions": len([s for s in steps if s.action.get("type") not in ("done", "stuck")]),
             "key_presses": sum(1 for s in steps if s.action.get("type") == "press")}
 
@@ -155,20 +154,20 @@ class Outcome:
     steps: list
     reason: str = ""
     tool_error: bool = False   # status "error" because the model/API call failed (says nothing about the site or the agent)
-    evidence: dict = field(default_factory=dict)   # v2: start/end page text and URL, answer values never perceived
-    debrief: list = field(default_factory=list)    # v3 (D97): [{step, problem}] the persona listed after the task
+    evidence: dict = field(default_factory=dict)   # start/end page text and URL, answer values never perceived
+    debrief: list = field(default_factory=list)    # [{step, problem}] the persona listed after the task
 
 
 NUM_RE = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
 
 def _as_dict(x) -> dict:
-    """Model replies are JSON but not always the right shape (Flipkart: "action" came back as a string)."""
+    """Model replies are JSON but not always the right shape (e.g. "action" as a string)."""
     return x if isinstance(x, dict) else {}
 
 
-# v2.4 (D86, H10): the values of the visible form fields, so a persona's end state can be compared with the sighted
-# user's on what the task changed (the field values), not on which page it ended.
+# The values of the visible form fields, so a persona's end state can be compared with the sighted user's on what the
+# task changed (the field values), not on which page it ended.
 FIELDS_JS = """() => { const out = {};
   for (const e of document.querySelectorAll('input, select, textarea')) {
     const r = e.getBoundingClientRect(); const cs = getComputedStyle(e);
@@ -204,7 +203,7 @@ CSS_PATH_JS ="""e => { if (!e || e.nodeType !== 1) return null;
   while (n && n.nodeType === 1 && n !== document.documentElement) {
     let p = n.tagName.toLowerCase();
     if (n.id && document.querySelectorAll('#' + CSS.escape(n.id)).length === 1) { parts.unshift('#' + CSS.escape(n.id)); break; }
-    if (!n.parentElement) break;   // detached by a re-render (v3.1, D102: "Cannot read properties of null")
+    if (!n.parentElement) break;   // detached by a re-render
     const sib = [...n.parentElement.children].filter(x => x.tagName === n.tagName);
     if (sib.length > 1) p += `:nth-of-type(${sib.indexOf(n) + 1})`;
     parts.unshift(p); n = n.parentElement;
@@ -250,10 +249,10 @@ class Navigator:
         self.known: dict[str, dict] = {}   # el:N -> what the last observation said it was (to follow it across a re-render)
         self.fallback: str | None = None   # set by act() when a click/type needed a rescue (see Step.fallback)
         self._rescues: list[tuple[str, str]] = []   # (tag, text for the result) of this action's rescues
-        self.perceived: set[str] = set()   # v2: every number this persona actually received (observations and feedback)
+        self.perceived: set[str] = set()   # every number this persona actually received (observations and feedback)
         self.start_text = ""
         self.start_fields: dict = {}
-        # v3 (D97): context changes a user notices. A new tab or window, and a page load or route change of the main frame.
+        # Context changes a user notices. A new tab or window, and a page load or route change of the main frame.
         self._popups: list = []
         self._navs = 0
         try:   # plain functions: Playwright inspects a handler's signature, which a builtin like list.append doesn't have
@@ -271,7 +270,7 @@ class Navigator:
 
     def unperceived(self, answer: str, goal: str) -> list[str]:
         """Values in the answer that this persona never perceived and the task didn't give: the model supplied them
-        itself (28 Oct: a screen-reader agent 'read' a result hidden from screen readers by calculating it)."""
+        itself."""
         return sorted(numbers(answer) - self.perceived - numbers(goal))
 
     # ------------------------------------------------------------------ observation
@@ -280,7 +279,7 @@ class Navigator:
         s, p = self.s, self.mode
         head = f"URL: {s.page.url}\nTITLE: {s.page.title()}\n"
         if self.profile in ("P1", "P2", "P3"):
-            # v3 (D97): a person feels the effort a task takes; the agent is shown its own count, so it can report it.
+            # A person feels the effort a task takes; the agent is shown its own count, so it can report it.
             e = effort(self.history)
             head += f"YOUR EFFORT SO FAR: {e['actions']} actions, {e['key_presses']} key presses\n"
         if p == "P1":
@@ -296,7 +295,7 @@ class Navigator:
         if p == "P2":
             f = s.focus_info()
             cue = "no visible focus indicator"
-            if f and s.js("focusShown"):   # v3.1 (D104): any drawn indicator, as the rule check counts it
+            if f and s.js("focusShown"):   # any drawn indicator: outline, ring, label ring or highlight
                 cue = f'focus indicator visible on: {f["tag"]} "{f["name"]}"'
             # Sighted: sees the same controls and states as the mouse user, without click targets.
             controls = self._controls(s.interactive_elements(viewport_only=True), refs=False)
@@ -333,7 +332,7 @@ class Navigator:
         k = self.known.get(a.get("ref", "")) if a.get("ref", "").startswith("el:") else None
         self._target = f'{k["kind"]} "{k["text"][:60]}"' if k else None
         navs0, pops0 = self._navs, len(self._popups)
-        try:   # v3.1 (D108): forget an unload record left by an earlier action
+        try:   # forget an unload record left by an earlier action
             s.js("unloadCause", True)
         except Exception:
             pass
@@ -362,9 +361,7 @@ class Navigator:
                 h, failure = self._click_like_user(a.get("ref", ""), h)
                 if not h:
                     return failure, None
-                # v3.1 (D102): a pointer user clicks a field's label, or the box around it, and types: the text goes into
-                # the field. Typing into the label itself failed (31 "not an <input>" errors in the v2.4 Ma11y runs), and
-                # v3 personas then reported the site's field as "not an input" (clean T3, T6).
+                # A pointer user clicks a field's label, or the box around it, and types: the text goes into the field.
                 h = h.evaluate_handle(FILLABLE_JS).as_element() or h
                 sel = h.evaluate(CSS_PATH_JS)
                 h.fill(a.get("text", ""))
@@ -381,9 +378,9 @@ class Navigator:
             sel = h.evaluate(CSS_PATH_JS)
             h.select_option(label=a.get("option", ""))
         elif kind == "scroll":
-            # Scroll the page, as the scrollbar, Page Down or a wheel over page content would. A wheel turned wherever the
-            # pointer last was changed a focused number field instead (D68: SIP 5000 -> 4500 -> 4000; the page never
-            # moved). If the window can't scroll, scroll the largest scrollable box (app shells that scroll a div).
+            # Scroll the page, as the scrollbar, Page Down or a wheel over page content would (a wheel at the pointer
+            # can change a focused number field instead). If the window can't scroll, scroll the largest scrollable box
+            # (app shells that scroll a div).
             s.page.evaluate(SCROLL_JS, 500 if a.get("dir") == "down" else -500)
         elif kind == "click":
             h, failure = self._resolve_el(a.get("ref", ""))
@@ -431,12 +428,12 @@ class Navigator:
         return (spoken(res) if p == "P1" else res), sel
 
     def _context_change(self, kind: str, key: str, navs0: int, pops0: int) -> str:
-        """v3 (D97): changes of context any user notices. A new tab opened by the page is reported and closed, so the run
+        """Changes of context any user notices. A new tab opened by the page is reported and closed, so the run
         goes on in the original page. A page load or route change after typing, choosing an option or moving focus (not
         after Enter, Space, a click or activating a control) is reported as unrequested.
-        v3.1 (D108): a reload the page started itself while handling a field's change (form.submit() called from the
-        field's change/input handler) is reported whatever the action was: keyboard users commit a field by leaving it,
-        with Tab, Enter or by activating the next control, and those were not reported (Ma11y F36 missed for P1/P2)."""
+        A reload the page started itself while handling a field's change (form.submit() called from the field's
+        change/input handler) is reported whatever the action was: keyboard users commit a field by leaving it, with Tab,
+        Enter or by activating the next control."""
         notes = []
         for pg in self._popups[pops0:]:
             try:
@@ -463,11 +460,9 @@ class Navigator:
                 notes.append("the page reloaded or moved to another address, although you did not submit anything or follow a link")
         return "".join("; " + n for n in notes)
 
-    # v2.5 (D95): a styled radio/checkbox (GOV.UK pattern) hides its input and draws the tick on the label. That tick is
-    # a visible change but not a text change, so a successful click on GOV.UK's "Yes" read as "nothing visible changed"
-    # (frz1/frz2, t1). Only that case: a visible input already shows [checked] on itself in the controls list.
-    # v3 (D97): every radio/checkbox click, the label or the input itself. A visible tick is a visible change too, and
-    # without it P3 reported "nothing changed visually" after picking a fare (clean T2, 4 Nov).
+    # A tick on a radio or checkbox is a visible change but not a text change, so every radio/checkbox click (the label
+    # or the input, including styled ones that hide the input and draw the tick on the label) reports whether it is now
+    # ticked.
     TICK_JS = """e => { const c = e.tagName === 'LABEL' ? e.control : e;
         return c && ['checkbox', 'radio'].includes(c.type) ? c.checked : null; }"""
 
@@ -479,7 +474,7 @@ class Navigator:
 
     def _field_value(self) -> str:
         """What the focused field now contains. Field values are not part of the page text the change report compares, so
-        without this a successful type looks like "nothing visible changed" and agents retype (seen 13 Oct, SIP task)."""
+        without this a successful type looks like "nothing visible changed" and agents retype."""
         try:
             v = self.s.page.evaluate("() => { const e = document.activeElement; return e && 'value' in e ? String(e.value) : null; }")
         except Exception:
@@ -551,7 +546,7 @@ class Navigator:
     @staticmethod
     def _css_path(h) -> str | None:
         """Replayable selector for an element, or None if it is gone. Recording must never turn a successful action
-        into an error (seen 28 Oct: a date-cell click worked, the dialog closed, and the step was logged as failed)."""
+        into an error (e.g. a date-cell click that closes its dialog)."""
         try:
             return h.evaluate(CSS_PATH_JS)
         except Exception:
@@ -608,7 +603,7 @@ class Navigator:
         text = " | ".join(spans)
         return f"; newly visible: {text[:240]}{'...' if len(text) > 240 else ''}"
 
-    # v2.4 (D86, N3): ARIA states are not visible on screen, so the sighted keyboard persona (P2) is not told them;
+    # ARIA states are not visible on screen, so the sighted keyboard persona (P2) is not told them;
     # it still gets a native checkbox's or radio's checked state, which is drawn. P1 hears them, as a screen reader does.
     FOCUS_KIND_JS = """(aria) => { const e = document.activeElement;
       if (!e || e === document.body || e === document.documentElement) return null;
@@ -622,8 +617,7 @@ class Navigator:
       return {kind, state: st.join(', ')}; }"""
 
     def _focus_kind(self) -> str:
-        """'slider ', 'checkbox (checked) ' ... for the focused control, so a persona knows WHAT it is on (13/28 Oct: a
-        keyboard agent typed into a slider 30 times, and toggled a checkbox back and forth, without knowing either)."""
+        """'slider ', 'checkbox (checked) ' ... for the focused control, so a persona knows WHAT it is on."""
         try:
             k = self.s.page.evaluate(self.FOCUS_KIND_JS, self.mode != "P2")
         except Exception:
@@ -632,9 +626,7 @@ class Navigator:
             return ""
         return f"{k['kind']}{' (' + k['state'] + ')' if k['state'] else ''} "
 
-    # v2.4 (D88): without ARIA states, P2 pressed Enter on a bus seat 20 times and was told "nothing visible changed",
-    # although the seat turns solid green when selected (clean T7, 3 Nov). A sighted user sees the control they pressed
-    # change colour, so P2 is told when the still-focused control's drawn style changes. Focus styles are unchanged
+    # A sighted user sees the control they pressed change colour, so P2 is told when the still-focused control's drawn style changes. Focus styles are unchanged
     # because focus stays on it; a Tab moves focus away, so nothing is reported then.
     LOOK_JS = """(phase) => { const sig = el => { const c = getComputedStyle(el);
         return {background: c.backgroundColor, text: c.color, border: c.borderTopColor + ' ' + c.borderTopWidth,
@@ -661,12 +653,12 @@ class Navigator:
 
     @staticmethod
     def _name(n: str) -> str:
-        """v3 (D97): a long name is cut here (and at 80 characters by the page helper); say so, or the persona reports our
-        cut as the site's (GOV.UK v3s1: 'You have accepted additional cookies. You can chan' read as a truncated message)."""
+        """A long name is cut here (and at 80 characters by the page helper); say so, or the persona reports our cut as
+        the site's."""
         n = n or ""
         return n if len(n) < 78 else n[:100] + " [...shortened by the test tool, not the site]"
 
-    # v3.1 (D109): pixel evidence for P2's focus feedback. The style rule (focusShown) misses indicators drawn in other
+    # Pixel evidence for P2's focus feedback. The style rule (focusShown) misses indicators drawn in other
     # ways; a sighted keyboard user sees whatever changed on screen where focus went.
     PX_BEFORE_JS = "() => { window.__aaPrevActive = document.activeElement; return {sx: scrollX, sy: scrollY}; }"
     PX_AFTER_JS = """() => { const e = document.activeElement; if (!e || e === document.body || e === document.documentElement) return null;
@@ -748,17 +740,16 @@ class Navigator:
                 anns = [a["text"] for a in self.s.announcements(self.t_last)][-2:]
                 return f"; focus: {what}{self._name(f['name']) if f else 'page'}" + (f"; announced: {anns}" if anns else "")
             if self.mode == "P2":
-                if f and self.s.js("focusShown"):   # v3.1 (D104): outline, ring, label ring or a highlight
+                if f and self.s.js("focusShown"):   # outline, ring, label ring or a highlight
                     self._focus_px = "visible"
                     return f"; focus now visibly on: {what}{self._name(f['name'])}{self._look_change()}"
-                if not f:   # v3 (D97): nothing focused (e.g. after a page change) is not an invisible focus indicator
+                if not f:   # nothing focused (e.g. after a page change) is not an invisible focus indicator
                     return "; no control has focus (focus is on the page itself)"
                 if self.s.page.evaluate(self.CONTROL_JS) is False:
-                    # v3.1 (D109): the page moved focus to a heading or a region (tabindex=-1) after a page change: the
-                    # recommended pattern, and not a control, so 2.4.7 doesn't ask for an indicator (smoke, 6 Nov:
-                    # BenchBook's h1 focus was "confirmed" as invisible focus on 3 clean tasks).
+                    # The page moved focus to a heading or a region (tabindex=-1) after a page change: the recommended
+                    # pattern, and not a control, so 2.4.7 doesn't ask for an indicator.
                     return "; no control has focus (the page moved focus to the start of its content)"
-                # v3.1 (D109): the style rule saw no indicator; compare what the screen showed around the newly focused
+                # The style rule saw no indicator; compare what the screen showed around the newly focused
                 # control before and after the key press. A ring or highlight that appeared is visible focus.
                 self._focus_px = self._focus_pixels()
                 if self._focus_px == "visible":
@@ -784,7 +775,7 @@ class Navigator:
 
     def _cycle(self) -> int:
         """Length of the latest run of steps that only alternate between two actions with two outcomes (a checkbox
-        toggled on and off, scrolling up and down). 28 Oct: a keyboard agent toggled 'Shoes' 33 times this way."""
+        toggled on and off, scrolling up and down)."""
         h, n = self.history, 0
         acts, res = [], []
         while n < len(h):
@@ -808,9 +799,8 @@ class Navigator:
                     "If the task is already complete, reply with done. Otherwise try a different approach.\n\n")
         return ""
 
-    # v3 (D97): after the task, the persona looks back over its own steps and lists what the site did to it. While acting,
-    # the model never filled the optional "problem" field, not even when told "a new browser tab opened by itself" or "the
-    # page reloaded although you did not submit anything" (smoke run, 4 Nov). A debrief is a separate, focused question.
+    # After the task, the persona looks back over its own steps and lists what the site did to it. The debrief is a
+    # separate, focused question.
     DEBRIEF_SYSTEM = ("You used a website as the person described in your profile, to do a task, and now report on it as an "
                       "accessibility tester. Reply with ONE JSON object.")
     DEBRIEF = """The task is over ({status}). Looking back at your steps above, list every problem the website caused someone
@@ -874,9 +864,9 @@ the site did, as you perceived it>"}}]}}, with an empty list if there were none.
                     a = _as_dict(reply.get("action"))
                 except Exception:
                     a = {}
-            problem = str(reply.get("problem") or "").strip()[:400] or None   # v3 (D97)
+            problem = str(reply.get("problem") or "").strip()[:400] or None
             if a.get("type") == "done" and not confirmed:
-                # Agents claim success they don't have (T4: a stale result read as the answer). One check, once.
+                # Agents can claim success they don't have (e.g. a stale result read as the answer). One check, once.
                 confirmed = True
                 obs2, images2 = self.observe()
                 self.perceived |= numbers(obs2)

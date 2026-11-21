@@ -1,4 +1,4 @@
-// Held-out accessibility mutation operators, written blind to the detection tool (see bench/HELDOUT_GUIDE.md).
+// Additional accessibility mutation operators (not used in the paper).
 // Same contract as mutants.js: configure with window.__MUTANTS = [{op, sel, ...args}] before this runs; each operator is
 // idempotent and re-applied whenever the DOM changes. This file is loaded in the same page as mutants.js, so it only
 // applies ops it defines (all names start with h_) and ignores the rest.

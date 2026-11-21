@@ -1,10 +1,11 @@
-"""End-to-end: URL -> planner -> reference run -> step checks + profile agents (in parallel) -> judge -> report.
+"""End-to-end: URL -> planner and validator -> reference run -> rule checks + persona agents (in parallel) -> end-state
+check and stall judge -> report verifier -> report.
 
-Judge rules (keep a finding only with evidence):
-  1. Deterministic findings on the reference path are kept as they are; they carry their own evidence.
-  2. A profile agent that does not finish while the reference did is a *barrier candidate*. It is kept if a
-     deterministic finding for that profile corroborates it; otherwise the judge model reviews the agent's last
-     observations and decides "barrier" vs "agent error", and only barriers are kept, marked uncorroborated.
+  1. Rule findings on the reference path carry their own evidence.
+  2. A persona agent that does not finish while the reference did is first compared with the reference's end state. If
+     it did not reach it, a rule finding for that persona is listed with the stall; otherwise the judge model labels the
+     likely cause, and the stall is kept as Tier B agent evidence.
+  3. Each problem a persona reported is checked against its own trace by the verifier and the trace filters.
 
 Writes into the run directory: meta.json (status), events.jsonl (live), plan.json, results.json (updated after
 every task), report.md (at the end).
@@ -38,9 +39,13 @@ barrier only if the observations show the site gave that user no workable way fo
 {"verdict": "barrier"|"agent_error", "step": <int>, "check": "Reach"|"Identify"|"Operate"|"Notice"|"Recover",
  "sc": "<WCAG SC or 'no SC'>", "explanation": "<one sentence a developer can act on>"}"""
 
-AGENT_STEPS = {"P1": 35, "P2": 35, "P3": 25, "REF": 35}  # REF 25 -> 35 (D65): real-site pickers ran it out of steps
+# Step limits per agent. P1 and P2 get 35, like the reference agent: they move through a page one key press at a time,
+# so a task takes them many more steps. P3 gets 25: it clicks controls directly, like the reference agent, and needs
+# fewer steps than the keyboard-only agents. These are the limits used in every run in runs/ (see agent_start in
+# events.jsonl).
+AGENT_STEPS = {"P1": 35, "P2": 35, "P3": 25, "REF": 35}
 
-# v3 (D97): problems a persona reported are checked against its own trace before they become findings.
+# Problems a persona reported are checked against its own trace before they become findings.
 VERIFY_SYSTEM = """You check problem reports from an accessibility test agent that used a website as one kind of user.
 For each report you get the step where it was made: the agent's previous action, what the website gave back, what the
 agent perceived, and its thinking. Decide whether the report describes something the WEBSITE did that makes the task
@@ -94,9 +99,9 @@ def reported_problems(out: Outcome) -> list[dict]:
 
 
 def own_submit(r: dict) -> bool:
-    """A check on the agent, not the site (v3, D100): the report is about an error that appeared when the agent pressed
-    Enter straight after typing, with no arrow key to highlight a suggestion. That submits the form, and the form saying
-    what is missing is the site working. The verifier kept this on clean T1 and T2 even when told so."""
+    """A check on the agent, not the site: the report is about an error that appeared when the agent pressed Enter
+    straight after typing, with no arrow key to highlight a suggestion. That submits the form, and the form saying what
+    is missing is the site working."""
     a, prev = str(r.get("action") or ""), str(r.get("prev_action") or "")
     erred = re.search(r"\b(alert|error|there is a problem|invalid|required)\b", (r.get("result") or "").lower())
     return a.startswith('{"type": "press", "key": "Enter"}') and prev.startswith('{"type": "type"') and bool(erred)
@@ -108,8 +113,7 @@ FOCUS_REPORT = re.compile(r"(can.?t|cannot|could not|not|no)\b.{0,30}\b(see|visi
 
 
 def own_mistake(r: dict) -> str | None:
-    """v3.1 (D110): checks on the agent, not the site, from its own steps (the verifier kept these on the clean app,
-    where nothing is broken). Returns the reason, or None."""
+    """Trace filters: checks on the agent, not the site, from its own steps. Returns the reason, or None."""
     a, prev = str(r.get("action") or ""), str(r.get("prev_action") or "")
     res, pres, prob = (r.get("result") or "").lower(), (r.get("prev_result") or "").lower(), r.get("problem", "").lower()
     alert = re.compile(r"\b(alert|error|there is a problem|invalid|required)\b")
@@ -148,7 +152,7 @@ def own_mistake(r: dict) -> str | None:
 
 
 def tool_focus_check(r: dict) -> str | None:
-    """v3.1 (D109): for a keyboard persona's report that focus can't be seen, the pixel check made at that step (or the
+    """For a keyboard persona's report that focus can't be seen, the pixel check made at that step (or the
     one before): 'invisible' confirms it, 'visible' contradicts it. None when not checked or not such a report."""
     if r.get("profile") != "P2" or not FOCUS_REPORT.search(r.get("problem", "")):
         return None
@@ -214,7 +218,7 @@ def path_from_reference(outcome: Outcome) -> list[dict]:
 
 
 # A sighted user clicks a radio's or checkbox's visible label; a persona operates the control the label is tied to, so
-# that control is what gets checked (D65; GOV.UK: the label was tested as "not a control").
+# that control is what gets checked.
 LABEL_TO_CONTROL = "e => { const l = e.closest('label'); return l && l.control && !e.closest('a, button, input, select, textarea') ? l.control : e; }"
 
 
@@ -252,7 +256,7 @@ def _control_name(target: str) -> str:
 def judge_stall(llm: LLM, profile: str, goal: str, ref: Outcome, out: Outcome, det: list[Finding]) -> dict | None:
     near = [f for f in det if f.profile == profile and f.severity == "blocks"] or [f for f in det if f.profile == profile]
     if near:
-        # v2.4 (D86): corroboration stays task-level (any rule finding for this persona on the task), and is also
+        # Corroboration is task-level (any rule finding for this persona on the task), and is also
         # reported step-local: the finding names a control the agent was dealing with in its last 4 steps.
         recent = " ".join(f"{json.dumps(s.action)} {s.result} {s.observation[:600]}" for s in out.steps[-4:]).lower()
         local = [g for g in near if _control_name(g.target) and _control_name(g.target) in recent]
@@ -288,7 +292,7 @@ def _agent(task: dict, profile: str, llm: LLM, ev: EventLog, prepare=None, probe
                 except Exception:
                     st.probe = None
             extra = {"fallback": st.fallback} if st.fallback else {}  # a rescued click shows in the log
-            if st.problem:   # v3 (D97): shown live on the dashboard
+            if st.problem:   # recorded in the event log
                 extra["problem"] = st.problem[:200]
             ev.emit("agent_step", task=task["id"], profile=profile, i=st.i, action=st.action, result=st.result[:160],
                     thought=st.thought[:200], shot=ev.snapshot(s, shot), **extra)
@@ -299,10 +303,10 @@ def _agent(task: dict, profile: str, llm: LLM, ev: EventLog, prepare=None, probe
         out = nav.run(task["goal"], task["start_url"])
         if profile in ("P1", "P2", "P3"):
             llmlib.context(task=task["id"], profile=profile, stage="debrief")
-            out.debrief = nav.debrief(task["goal"], out)   # v3 (D97)
+            out.debrief = nav.debrief(task["goal"], out)
             for d in out.debrief:
                 ev.emit("agent_debrief", task=task["id"], profile=profile, step=d["step"], problem=d["problem"][:200])
-        try:   # v2: where the persona ended up, so its "done" can be checked against the sighted user's end state
+        try:   # where the persona ended up, so its "done" can be checked against the sighted user's end state
             end_text, end_url = s.visible_text(False, 8000), s.page.url
         except Exception:
             end_text, end_url = "", ""
@@ -340,7 +344,7 @@ def _check_profile(task: dict, steps: list, profile: str, ev: EventLog, prepare=
 
 def run_task(task: dict, profiles=PROFILES, llm: LLM | None = None, prepare=None, agents: bool = True,
              ev: EventLog = NULL, specialists: dict | None = None, probe=None) -> dict:
-    """specialists: the planner's on/off map of check groups for this site; None keeps every check (ablation A2)."""
+    """specialists: the planner's on/off map of check groups for this site; None keeps every check."""
     llm = llm or LLM(role="nav")
     rec = {"task": task, "reference": None, "profiles": {}, "findings": []}
     ev.emit("task_start", task=task["id"], goal=task["goal"])
@@ -396,8 +400,8 @@ def run_task(task: dict, profiles=PROFILES, llm: LLM | None = None, prepare=None
             rec.setdefault("tool_errors", []).append(err)
             ev.emit("tool_error", task=task["id"], **err)
         elif out.status != "done" and (st := end_state(ref, out)) and st["matches"] and st["cover"] >= 0.8:
-            # v2.4 (D86): the persona reached the sighted user's end state but didn't say "done" before its step limit
-            # (P3 on the headphones task). That is a finished task, not a barrier.
+            # The persona reached the sighted user's end state but didn't say "done" before its step limit. That is a
+            # finished task, not a barrier.
             rec["profiles"][p].update(status="done", done_unsaid=True, end_state=st)
             ev.emit("judge", task=task["id"], profile=p, verdict="reached the end state without saying done", corroborated=None,
                     explanation=f"cover {st['cover']:.0%}")
@@ -417,17 +421,16 @@ def run_task(task: dict, profiles=PROFILES, llm: LLM | None = None, prepare=None
                                         "evidence": {"source": "agent", "corroborated": True, "local": v.get("local"),
                                                      "agent_reason": out.reason}})
             else:
-                # Without rule-based evidence a stall is NOT reported as a finding: on the clean benchmark the judge
-                # model called agent mistakes "barriers". Kept separately for manual review.
+                # Without rule-based evidence a stall is not a rule-backed finding; it is kept with the judge's verdict.
                 rec.setdefault("unconfirmed_stalls", []).append({"profile": p, "agent_status": out.status,
                                                                  "agent_reason": out.reason, "judge": v})
-                # v2 (D64): reported as tier-B agent evidence instead of being dropped.
+                # reported as Tier B agent evidence
                 _agent_finding(rec, ev, task, p, "Reach", "the persona could not finish the task (no rule-based evidence; "
                                f"agent: {out.status}: {out.reason[:100]})", {"judge": v})
         else:
             for f in done_checks(ref, out):
                 _agent_finding(rec, ev, task, p, f["check"], f["message"], f["evidence"])
-    # v3 (D97): what each persona reported as a problem, checked against its own trace. Kept reports are agent findings
+    # What each persona reported as a problem, checked against its own trace. Kept reports are agent findings
     # in their own right; a rule finding for the same persona naming the same control only marks one as rule-confirmed.
     for p, out in outcomes.items():
         if out.tool_error:
@@ -447,7 +450,7 @@ def run_task(task: dict, profiles=PROFILES, llm: LLM | None = None, prepare=None
             text = (r["problem"] + " " + r.get("explanation", "")).lower()
             rule = next((f for f in det if f.profile == p and _control_name(f.target) and _control_name(f.target) in text), None)
             r["kept"] = r["verdict"] == "site"
-            r["tier"] = "A" if r["kept"] and (rule or r.get("tool")) else "B"   # v3.1 (D109): or checked by the tool
+            r["tier"] = "A" if r["kept"] and (rule or r.get("tool")) else "B"   # Tier A: a rule check on the same control, or the focus check
             r["rule"] = f"{rule.check} {rule.sc}: {rule.target}" if rule else None
             rec.setdefault("agent_reports", []).append(r)
             ev.emit("agent_report", task=task["id"], profile=p, step=r["step"], verdict=r["verdict"], tier=r["tier"],
@@ -458,7 +461,7 @@ def run_task(task: dict, profiles=PROFILES, llm: LLM | None = None, prepare=None
 
 
 def _agent_finding(rec, ev, task, profile, check, message, evidence) -> None:
-    """Tier B (v2, D64): evidence from the persona agent alone. Kept apart from the rule-backed findings (tier A), so
+    """Tier B: evidence from the persona agent alone. Kept apart from the rule-backed findings (tier A), so
     both can be reported and scored separately."""
     f = {"profile": profile, "check": check, "sc": "no SC", "step": -1, "target": "task", "message": message,
          "severity": "blocks", "tier": "B", "evidence": {"source": "agent", **evidence}}
@@ -476,9 +479,9 @@ def _page(url: str) -> tuple[str, str]:
 
 
 def end_state(ref: Outcome, out: Outcome) -> dict | None:
-    """v2.4 (D86, H10): does the persona end where the sighted user's task ended? Compared on what the task changed:
+    """Does the persona end where the sighted user's task ended? Compared on what the task changed:
     the words it produced on screen (cover), and the form fields the reference changed (their end values). Which page
-    each ended on is reported but not used: the same result can be reached from a different page (H10: added to the
+    each ended on is reported but not used: the same result can be reached from a different page (e.g. added to the
     cart from the list instead of the product page). None when the reference produced too little to compare."""
     e, r = out.evidence or {}, ref.evidence or {}
     produced = _words(r.get("end_text")) - _words(r.get("start_text"))
@@ -494,10 +497,10 @@ def end_state(ref: Outcome, out: Outcome) -> dict | None:
 
 
 def done_checks(ref: Outcome, out: Outcome) -> list[dict]:
-    """v2 checks on a persona that says "done" (D64):
+    """Checks on a persona that says "done":
     - provenance: its answer holds values it never perceived (and the task didn't give), so the model supplied them;
-    - end state: it ended on a different page than the sighted reference, or most of what the reference's task
-      produced on screen (words that appeared between its start and end page) is missing from the persona's end page."""
+    - end state: most of what the reference's task produced on screen (words that appeared between its start and end
+      page) is missing from the persona's end page, or a field the reference changed holds a different value."""
     found, e, r = [], out.evidence or {}, ref.evidence or {}
     if e.get("unperceived"):
         found.append({"check": "Notice", "message": "answered with values it never perceived: " + ", ".join(e["unperceived"][:5]),
@@ -548,7 +551,7 @@ def run_url(url: str, n_tasks: int = 4, profiles=PROFILES, out_dir: Path | None 
                 _write_meta(out_dir, frozen_tasks=[t.get("frozen_from", "") for t in pl.tasks])
             else:
                 pl = plan(s, url, LLM(role="planner"), SETTINGS.explore_budget, n_tasks, on_page=on_page)
-        finally:  # a failed plan (e.g. no network) must not leave Playwright running: every later site would fail (30 Oct)
+        finally:  # a failed plan (e.g. no network) must not leave Playwright running: every later site would fail
             try:
                 s.close()
             finally:
@@ -559,8 +562,8 @@ def run_url(url: str, n_tasks: int = 4, profiles=PROFILES, out_dir: Path | None 
             _write_meta(out_dir, stage=f"task {i + 1}/{len(pl.tasks)}")
             try:
                 rec = run_task(t, profiles, llm, agents=agents, ev=ev, specialists=None if all_checks else pl.specialists)
-                # D76: a task lost because the model/API failed says nothing about the site, so wait (up to 30 min) for
-                # a key that answers image calls and run it once more. On by default; A11Y_TASK_RETRY=0 turns it off.
+                # A task lost because the model/API failed says nothing about the site, so wait (up to 30 min) until the
+                # model answers image calls and run it once more. On by default; A11Y_TASK_RETRY=0 turns it off.
                 if (os.environ.get("A11Y_TASK_RETRY", "1") == "1" and "model/API failed" in (rec.get("invalid") or "")
                         and _wait_for_image_calls(ev, t["id"], 30)):
                     rec = run_task(t, profiles, llm, agents=agents, ev=ev, specialists=None if all_checks else pl.specialists)
@@ -582,7 +585,7 @@ def run_url(url: str, n_tasks: int = 4, profiles=PROFILES, out_dir: Path | None 
 
 
 def _wait_for_image_calls(ev: EventLog, task_id: str, max_minutes: int) -> bool:
-    """Probe every 5 min until some key answers an image call; False if none does within max_minutes (D76)."""
+    """Probe every 5 min until the model answers an image call; False if it doesn't within max_minutes."""
     from .providers import POOL, probe_png
     deadline = time.time() + max_minutes * 60
     while True:
@@ -602,7 +605,7 @@ def _save(out_dir: Path, url: str, results: list) -> None:
                                                      indent=1, ensure_ascii=False, default=str), encoding="utf-8")
 
 
-# Step checks as people read them (P1.3, D27). Internal codes stay the same so stored results keep scoring the same way.
+# Step checks as people read them. Internal codes stay the same so stored results keep scoring the same way.
 CHECK_QUESTION = {
     "Reach": "Get to it: can this persona get to the control the next step needs?",
     "Identify": "Know what it is: can they tell what the control is and what state it's in?",

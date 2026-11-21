@@ -1,5 +1,4 @@
-// BenchBook: an accessible reference web application for the seeded-mutant benchmark.
-// Every widget follows the ARIA Authoring Practices patterns, so any barrier in a run comes from a mutant.
+// BenchBook: a booking and shopping web application. Widgets follow the ARIA Authoring Practices patterns.
 (() => {
   'use strict';
   const TODAY = new Date(2026, 9, 12); // fixed "today" (12 Oct 2026) so every run sees the same calendar

@@ -138,12 +138,12 @@ class Plan:
     capabilities: list
     tasks: list
     specialists: dict
-    # Cards the validator judged invalid (not typical, not feasible, or needing login/payment). Absent in old plan.json.
+    # Cards the validator judged invalid (not typical, not feasible, or needing login/payment); may be missing in a plan.json.
     rejected_tasks: list = field(default_factory=list)
 
     @classmethod
     def from_dict(cls, d: dict) -> "Plan":
-        """Load a plan.json written by any version (older files have no rejected_tasks, extra keys are ignored)."""
+        """Load a plan.json (rejected_tasks may be missing; unknown keys are ignored)."""
         known = set(cls.__dataclass_fields__)
         return cls(**{k: v for k, v in d.items() if k in known})
 
@@ -153,7 +153,7 @@ def same_site(a: str, b: str) -> bool:
     if pa.netloc != pb.netloc:
         return False
     if pb.hostname in ("127.0.0.1", "localhost"):
-        # A local copy of one site (the W3C demo, D70) shares the server with other files: stay in its folder.
+        # A local copy of a site shares the server with other files: stay in its folder.
         return pa.path.startswith(pb.path.rsplit("/", 1)[0] + "/")
     return True
 
@@ -169,7 +169,7 @@ def explore(session: Session, url: str, budget: int = 12, on_page=None) -> list[
         seen.add(key)
         try:
             session.goto(u)
-            for attempt in range(3):  # a page that redirects while being read (Swiggy, 31 Oct): wait, read again
+            for attempt in range(3):  # a page that redirects while being read: wait, read again
                 try:
                     inv = session.page.evaluate(INVENTORY_JS)
                     break
@@ -199,7 +199,7 @@ def explore(session: Session, url: str, budget: int = 12, on_page=None) -> list[
 
 
 def specialists_for(features: set) -> dict:
-    """Which specialist checks to switch on, from the features on the task paths (the 'n agents' rule)."""
+    """Which specialist checks to switch on, from the features on the task paths."""
     on = {"Reach": True, "Identify-names": True}
     on["Identify-semantic"] = "images" in features
     on["Operate"] = bool(features & {"combobox", "date_picker", "slider", "seat_or_grid_map", "tabs", "dialog"})
